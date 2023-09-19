@@ -1,3 +1,8 @@
+<?php
+
+    session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -34,18 +39,18 @@
                 <div class="form-right flex-item-1">
                     <div class="form-login-relative form-panel">
                         <div class="form-login">
-                            <form action="" class="form-login-fields">
+                            <form action="control/valida-acesso-usuario.php" method="POST" class="form-login-fields">
                                 <h6 class="title-login">Login</h6>
                                 <div class="input-field my-2">
-                                    <input type="email" required="required">
+                                    <input type="email" name="Email" required="required">
                                     <span>Email</span>
                                 </div>
                                 <div class="input-field my-2">
-                                    <input type="password" required="required">
+                                    <input type="password" name="Senha" required="required">
                                     <span>Senha</span>
                                 </div>
 
-                                <a href="#" class="btn mt-2 mb-1">Entrar</a>
+                                <input type="submit" class="btn mt-2 mb-1">
                                 
                                 <p class="form-text-cadastrar mt-2">Você não tem uma conta ainda? <a class="form-link-cadastrar" href="#">Cadastrar-se</a></p>
                             </form>
@@ -56,26 +61,26 @@
 
                     <div class="form-cadastro-relative form-panel">
                         <div class="form-cadastro">
-                            <form action="" class="form-cadastro-fields">
+                            <form action="control/cadastra-Perfil.php" method="POST" class="form-cadastro-fields">
                                 <h6 class="title-cadastro">Cadastro</h6>
                                 <div class="input-field my-2">
-                                    <input type="text" required="required">
+                                    <input type="text" name="Nome" required="required">
                                     <span>Nome de Usuário</span>
                                 </div>
                                 <div class="input-field my-2">
-                                    <input type="text" required="required">
+                                    <input type="text" name="Email" required="required">
                                     <span>Email</span>
                                 </div>
                                 <div class="input-field my-2">
-                                    <input type="password" required="required">
+                                    <input type="password" name="Senha" required="required">
                                     <span>Senha</span>
                                 </div>
                                 <div class="input-field my-2">
-                                    <input type="password" required="required">
+                                    <input type="password" name="ConfirmaSenha" required="required">
                                     <span>Confirma Senha</span>
                                 </div>
 
-                                <a href="#" class="btn mt-2 mb-1">Cadastrar-se</a>
+                                <input type="submit" class="btn mt-2 mb-1">
                                 
                                 <p class="form-text-Login mt-2">Você ja tem uma conta? <a class="form-link-login" href="#">Login</a></p>
                             </form>
@@ -94,44 +99,44 @@
 
             <!-- Form Mobile Login -->
 
-            <form action="" class="form-login-fields-mobile">
+            <form action="control/valida-acesso-usuario.php" method="POST" class="form-login-fields-mobile">
                 <h6 class="title-login-mobile mt-2">Login</h6>
                 <div class="input-field my-2">
-                    <input type="text" required="required">
+                    <input type="text" name="Email" required="required">
                     <span>Email</span>
                 </div>
                 <div class="input-field my-2">
-                    <input type="password" required="required">
+                    <input type="password" name="Senha" required="required">
                     <span>Senha</span>
                 </div>
 
-                <a href="#" class="btn mt-2 mb-1">Entrar</a>
+                <input type="submit" class="btn mt-2 mb-1">
                 
                 <p class="form-text-cadastrar mt-2">Você não tem uma conta ainda? <a class="form-link-cadastrar-mobile" href="#">Cadastrar-se</a></p>
             </form>
 
             <!-- Form Mobiile Cadastrar -->
 
-            <form action="" class="form-cadastro-fields-mobile">
+            <form action="control/cadastra-Perfil.php" method="POST" class="form-cadastro-fields-mobile">
                 <h6 class="title-login-mobile mt-2">Cadastro</h6>
                 <div class="input-field my-2">
-                    <input type="text" required="required">
+                    <input type="text" name="Nome" required="required">
                     <span>Nome de Usuário</span>
                 </div>
                 <div class="input-field my-2">
-                    <input type="text" required="required">
+                    <input type="text" name="Email" required="required">
                     <span>Email</span>
                 </div>
                 <div class="input-field my-2">
-                    <input type="password" required="required">
+                    <input type="password" name="Senha" required="required">
                     <span>Senha</span>
                 </div>
                 <div class="input-field my-2">
-                    <input type="password" required="required">
+                    <input type="password" name="ConfirmaSenha" required="required">
                     <span>Confirma Senha</span>
                 </div>
 
-                <a href="#" class="btn mt-2 mb-1">Cadastrar-se</a>
+                <input type="submit" class="btn mt-2 mb-1">
                 
                 <p class="form-text-Login mt-2">Você ja tem uma conta? <a class="form-link-login-mobile" href="#">Login</a></p>
             </form>

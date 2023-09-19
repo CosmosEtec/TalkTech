@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css">
-    <title>Perfil</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Feed</title>
 </head>
 <body>
     <!---========= HEADER =========-->
@@ -14,11 +14,11 @@
 
         <!---========= NAV-BAR DESKTOP =========-->
         <nav class="navbar-desktop border" data-aos="fade-up">
-            <a href="#Inicio" class="navbar-desktop-logo"><img src="svg/t-logo.svg" alt="" width="60px" height="70px"></a>
+            <a href="#Inicio" class="navbar-desktop-logo"><img src="../assets/svg/t-logo.svg" alt="" width="60px" height="70px"></a>
            
              <div class="search-field flex-start ">
                 <div class="px-1">
-                    <img src="svg/icon-search-nav.svg" alt="" width="26px" height="26px">
+                    <img src="../assets/svg/icon-search-nav.svg" alt="" width="26px" height="26px">
                 </div>
                     <input class="search-field" type="text" placeholder="Quem você busca?">
             </div>
@@ -35,10 +35,10 @@
     <nav class="nav-side-menu border " id="side-menu">
         <div class="nav-list-side-menu">
             
-            <a href="feed.html" class="nav-link-side-menu mb-1"><img src="svg/icon-home.svg" width="60" alt=""></a>
-            <a href="#Chats" class="nav-link-side-menu mb-1"><img src="svg/icon-chat.svg" width="60" alt=""></a>
-            <a class="nav-link-side-menu mb-1" id="create-post"><img src="svg/icon-add-plus-circle.svg" width="60" alt=""></a>
-            <a href="profile.html" class="nav-link-side-menu"><img src="svg/icon-profile-side-menu.svg" width="60" alt=""></a>
+            <a href="feed.php" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-home.svg" width="60" alt=""></a>
+            <a href="#Chats" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-chat.svg" width="60" alt=""></a>
+            <a class="nav-link-side-menu mb-1" id="create-post"><img src="../assets/svg/icon-add-plus-circle.svg" width="60" alt=""></a>
+            <a href="profile.php" class="nav-link-side-menu"><img src="../assets/svg/icon-profile-side-menu.svg" width="60" alt=""></a>
         </div>
     </nav>
 
@@ -50,7 +50,7 @@
         <div class="post-container back-bow border mb-2">
             <div class="profile-top-post border">
                 <div class="profile-pic border">
-                    <img class="profile-pic-img" src="img/bonoro-anao.jpg" alt="">
+                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
                 </div>
                 <div class="profile-username flex-column ml-1">
                     <h4>bolsonaro</h4>
@@ -59,24 +59,24 @@
                 
             </div>  
             <div class="content-post border">
-                <img src="img/bonoro-anao.jpg" alt="" height="350px">
+                <img src="../assets/img/bonoro-anao.jpg" alt="" height="350px">
             </div>
             <!---interações---->
             <div class="post-interactions border">
                 <div class="post-like-comment">
                     <div>
                     <button class="post-like-comment mt-1">
-                        <img class="" src="svg/icon-comment.svg" alt="">
+                        <img class="" src="../assets/svg/icon-comment.svg" alt="">
                     </button>
                     </div>
                 <div>    
                 <button class="post-like-heart mt-1 ml-1">
-                        <img class="" src="svg/icon-heart-like.svg" alt="">
+                        <img class="" src="../assets/svg/icon-heart-like.svg" alt="">
                     </button>
                 </div>
                 </div>
                 <div>
-                    <img src="svg/icon-3-points-horizontal.svg" alt="">
+                    <img src="../assets/svg/icon-3-points-horizontal.svg" alt="">
                 </div>
             </div>
             <div class="post-description">
@@ -92,31 +92,22 @@
          <div class="overlay" id="card-overlay" >
             <div class="container-create-post" id="info-card" >
               <div class="flex-start">
-                <button id="close-create-post"><img src="svg/icon-arrow-left.svg" alt=""></button>
+                <button id="close-create-post"><img src="../assets/svg/icon-arrow-left.svg" alt=""></button>
               </div>  
               <div id="image-preview-container">
                 <img id="image-preview" src="#" alt="" />
                 <label for="image-upload" class="custom-file-input">
-                    <img src="img/icon-img.png" alt="">
+                    <img src="../assets/img/icon-img.png" alt="">
                 </label>
                 <input type="file" id="image-upload" accept="image/*" onchange="previewImage()"/>
-              </div>
-              
-        
-              
-
+              </div>   
               <textarea class="mt-3" class="description-post" id="description" placeholder="Escreva a sua descrição"></textarea>
-              
               <div class="flex-end">
                 <button class="publish-button mt-1 mb-1">Publicar</button>
               </div>  
             </div>
-          </div>
-        
-        
-        
-        
+          </div> 
     </section>
-    <script src="js/createPost.js"></script>
+    <script src="../assets/js/createPost.js"></script>
 </body>
 </html>
