@@ -11,26 +11,19 @@
 <body>
     <!---========= HEADER =========-->
     <header id="header">
-
         <!---========= NAV-BAR DESKTOP =========-->
         <nav class="navbar-desktop border" data-aos="fade-up">
             <a href="#Inicio" class="navbar-desktop-logo"><img src="../assets/svg/t-logo.svg" alt="" width="60px" height="70px"></a>
-           
-             <div class="search-field flex-start ">
+            <div class="search-field flex-start ">
                 <div class="px-1">
                     <img src="../assets/svg/icon-search-nav.svg" alt="" width="26px" height="26px">
                 </div>
                     <input class="search-field" type="text" placeholder="Quem você busca?">
             </div>
-           
-            <div class="">
-                
+            <div class=""> 
             </div>
         </nav>
-
     </header>
-    
-    
     <!---========= SIDE MENU =========-->
     <nav class="nav-side-menu border " id="side-menu">
         <div class="nav-list-side-menu">
@@ -41,11 +34,8 @@
             <a href="profile.php" class="nav-link-side-menu"><img src="../assets/svg/icon-profile-side-menu.svg" width="60" alt=""></a>
         </div>
     </nav>
-
-
     <!---========= CONTAINER FEED =========-->
     <section class="container-feed border">
-        
        <!---========= POST =========-->
         <div class="post-container back-bow border mb-2">
             <div class="profile-top-post border">

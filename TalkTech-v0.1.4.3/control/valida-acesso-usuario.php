@@ -21,10 +21,10 @@ if($resposta == true){
     $dados = DaoPerfil::buscarDados($Perfil);
     $Perfil->setNome($dados['nome']);
 
-    $_SESSION['login-idCliente'] = $cliente->getId();
-    $_SESSION['login-nomeCliente'] = $cliente->getNome();
-    $_SESSION['login-emailCliente'] = $cliente->getEmail();
-    $_SESSION['login-senhaCliente'] = $cliente->getSenha();
+    $_SESSION['login-id'] = $Perfil->getId();
+    $_SESSION['login-nome'] = $Perfil->getNome();
+    $_SESSION['login-email'] = $Perfil->getEmail();
+    $_SESSION['login-senha'] = $Perfil->getSenha();
 
 } else {
     $_SESSION['mensagem'] = "Voce não pode acessar sem estar logado no sistema!";
