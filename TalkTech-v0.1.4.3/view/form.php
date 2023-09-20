@@ -107,11 +107,11 @@
                 <form id="loginForm">
             <h6 class="title-login-mobile mt-2">Login</h6>
                 <div class="input-field my-2">
-                    <input type="text" name="Email" id="email" required="required">
+                    <input type="text" name="Email" id="emailmobile" required="required">
                     <span>Email</span>
                 </div>
                 <div class="input-field my-2">
-                    <input type="password" name="Senha" id="senha" required="required">
+                    <input type="password" name="Senha" id="senhamobile" required="required">
                     <span>Senha</span>
                 </div>
 

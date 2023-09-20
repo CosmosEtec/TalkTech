@@ -1,8 +1,8 @@
 document.getElementById('loginForm').addEventListener('submit', function(event){
     event.preventDefault();
     
-    var email = document.getElementById('email').value;
-    var senha = document.getElementById('senha').value;
+    var email = document.getElementById('emailmobile').value;
+    var senha = document.getElementById('senhamobile').value;
     
     fetch('../control/valida-acesso-usuario.php', {
         method: 'POST',
@@ -28,10 +28,10 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
         return response.json();
     })
     .then(data => {
-            
+        if (data.status) {
             alert('Login bem-sucedido!');
-            window.location.href = './';
-  
+            window.location.href = 'feed.php';
+        }
     })
     .catch(error => alert('Erro na requisição: ' + error));
 });
