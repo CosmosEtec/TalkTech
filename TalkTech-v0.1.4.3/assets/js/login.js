@@ -18,7 +18,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
     .then(response => {
         if (!response.ok) {
             if (response.status === 401 || response.status === 403) {
-                throw new Error('Não autorizado');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'OPAN...',
+                    text: 'SENHA OU EMAIL INCORRETOS',
+                  })
                
             } else {
                 throw new Error('Sem rede ou não conseguiu localizar o recurso');
@@ -29,7 +33,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
     })
     .then(data => {
         if (data.status) {
-            alert('Login bem-sucedido!');
             window.location.href = 'feed.php';
         }
     })
