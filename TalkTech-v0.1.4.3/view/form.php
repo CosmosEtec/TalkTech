@@ -1,6 +1,10 @@
 <?php
 
     session_start();
+//  if(isset($_SESSION['mensagem'])){
+//         echo $_SESSION['mensagem'];
+//         unset($_SESSION['mensagem']);
+//     }
 
 ?>
 <!DOCTYPE html>
@@ -10,8 +14,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <script src="assets/js/app.js"></script>
+        <link rel="stylesheet" href="../assets/css/style.css">
         <title>Talk Tech</title>
     </head>
     <body>
@@ -46,7 +49,7 @@
                                     <span>Email</span>
                                 </div>
                                 <div class="input-field my-2">
-                                    <input type="password" name="Senha" required="required">
+                                    <input type="password" name="Senha" id="senha" required="required">
                                     <span>Senha</span>
                                 </div>
 
@@ -99,14 +102,16 @@
 
             <!-- Form Mobile Login -->
 
-            <form action="control/valida-acesso-usuario.php" method="POST" class="form-login-fields-mobile">
-                <h6 class="title-login-mobile mt-2">Login</h6>
+            <!--<form action="control/valida-acesso-usuario.php" method="POST" class="form-login-fields-mobile">
+                -->
+                <form id="loginForm">
+            <h6 class="title-login-mobile mt-2">Login</h6>
                 <div class="input-field my-2">
-                    <input type="text" name="Email" required="required">
+                    <input type="text" name="Email" id="email" required="required">
                     <span>Email</span>
                 </div>
                 <div class="input-field my-2">
-                    <input type="password" name="Senha" required="required">
+                    <input type="password" name="Senha" id="senha" required="required">
                     <span>Senha</span>
                 </div>
 
@@ -117,8 +122,10 @@
 
             <!-- Form Mobiile Cadastrar -->
 
-            <form action="control/cadastra-Perfil.php" method="POST" class="form-cadastro-fields-mobile">
-                <h6 class="title-login-mobile mt-2">Cadastro</h6>
+<form action="control/cadastra-Perfil.php" method="POST" class="form-cadastro-fields-mobile">
+
+        
+            <h6 class="title-login-mobile mt-2">Cadastro</h6>
                 <div class="input-field my-2">
                     <input type="text" name="Nome" required="required">
                     <span>Nome de Usuário</span>
@@ -142,5 +149,8 @@
             </form>
 
         </div>
+        <script src="../assets/js/login.js"></script>
+        <script src="../assets/js/script.js"></script>
+        <script src="../assets/js/app.js"></script>
     </body>
 </html>

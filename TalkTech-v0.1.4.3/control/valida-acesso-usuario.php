@@ -4,9 +4,14 @@ session_start();
 require_once '../model/Perfil.php';
 require_once '../dao/DaoPerfil.php';
 
+if(!$_POST){
+
+
+$body = json_decode(file_get_contents('php://input'), true);
+var_dump($body);exit;
 $Perfil = new Perfil();
-$email = $_POST['Email'];
-$senha = $_POST['Senha'];
+$email = $body['Email'];
+$senha = $body['Senha'];
 
 $Perfil->setEmail($email);
 $Perfil->setSenha(sha1($senha));
@@ -27,8 +32,12 @@ if($resposta == true){
     $_SESSION['login-senha'] = $Perfil->getSenha();
 
 } else {
-    $_SESSION['mensagem'] = "Voce não pode acessar sem estar logado no sistema!";
-    header('Location: ../index.php');
+ 
+    echo "Voce não pode acessar sem estar logado no sistema!";
+    exit;
+    //header('Location: ../index.php');
 }
 
+
+}
 ?>

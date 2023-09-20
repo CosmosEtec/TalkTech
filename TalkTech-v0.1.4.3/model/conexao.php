@@ -3,7 +3,7 @@
     class Conexao {
         public static function getConn(){
             $hostName = "localhost";
-            $nomeBD = "dbtalktech";
+            $nomeBD = "talktech";
             $usuario = "root";
             $senha = "";
 
