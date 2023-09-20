@@ -10,8 +10,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <script src="assets/js/app.js"></script>
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <script src="../assets/js/app.js"></script>
         <title>Talk Tech</title>
     </head>
     <body>
@@ -29,7 +29,7 @@
                 <div class="form-left flex-item-1">
                     <div class="form-logo-relative">
                         <div class="form-logo">
-                            <img src="assets/svg/TalkTechLogo.png" alt="">
+                            <img src="../assets/svg/TalkTechLogo.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
 
         <div class="form-mobile-father">
             <div class="form-logo-mobile">
-                <img src="assets/svg/TalkTechLogo.png" alt="">
+                <img src="../assets/svg/TalkTechLogo.png" alt="">
             </div>
 
             <!-- Form Mobile Login -->

@@ -28,7 +28,7 @@ if($resposta == true){
 
 } else {
     $_SESSION['mensagem'] = "Voce não pode acessar sem estar logado no sistema!";
-    header('Location: ../index.php');
+    header('Location: ../form.php');
 }
 
 ?>

@@ -20,9 +20,9 @@
 
     if(DaoPerfil::cadastra($Perfil)){
         $_SESSION['mensagem'] = "Perfil cadastrado com sucesso!";
-        header('Location: ../index.php');
+        header('Location: ../form.php');
     } else {
         $_SESSION['mensagem'] = "Erro ao cadastrar perfil!";
-        header('Location: ../index.php');
+        header('Location: ../form.php');
     }
 ?>
