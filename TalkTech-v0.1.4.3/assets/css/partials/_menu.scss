@@ -1,0 +1,130 @@
+header{
+    width: 100%;
+    background-color: transparent;
+    box-shadow: none;
+    transition: .5s ease;
+
+    position: fixed;
+    z-index: 800;
+}
+
+.active-header{
+    background: rgba(28, 28, 28, 0.45);
+    backdrop-filter: blur(19.5px);
+}
+
+// DESKTOP
+.navbar-desktop{
+    max-width: $container-xl;
+    height: 75px;
+    margin: 0px auto;
+    position: relative;
+    padding: 10px 24px 10px 211px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navbar-desktop-logo{
+    position: fixed;
+    cursor: pointer;
+    z-index: 1100;
+    left: 10px;
+}
+
+.navbar-desktop-item-1{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar-desktop-item-2{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-link-desktop{
+    margin-left: 16px;
+    display: inline-block;
+    padding: 12px 16px;
+}
+
+
+///////////////////////  Side Menu - Menu Lateral
+.nav-side-menu{
+  height: 100%;
+  background-color: $black-dark;
+  position: fixed;
+  z-index: 700;
+
+
+  display: flex;
+  justify-content: center;
+  padding-top: $gap-5;
+  left: 0;
+
+  transition: 0.7s ease;
+
+  @include responsive(s){
+    height: 50px;
+    bottom: 0;
+    align-items: center;
+    padding-top: 0;
+    width: 100%;
+  }
+}
+
+
+
+.nav-list-side-menu{
+    max-width: $container-xl;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+
+    @include responsive(s){
+        flex-direction: row;
+    }
+}
+
+.nav-link-side-menu{
+    display: inline-block;
+    @include typeface-1(h3, desktop);
+    position: relative;
+    cursor: pointer;
+
+    
+
+    transition: transform 0.2s ease-in-out;
+
+    p{
+        display: none;
+    }
+
+    &:hover{
+        transform: translateX(5px);
+
+        p{
+            display: flex;
+            z-index: 1100;
+            transform: translateX(5px);
+        }
+    }
+    
+
+    padding: 8px 24px 0 24px;
+    @include responsive(s){
+        padding: 8px 16px 0 16px;
+    }
+
+    
+
+}
