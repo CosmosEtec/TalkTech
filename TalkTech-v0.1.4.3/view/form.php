@@ -11,7 +11,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/style.css">
-        <script src="../assets/js/app.js"></script>
         <title>Talk Tech</title>
     </head>
     <body>
@@ -39,14 +38,14 @@
                 <div class="form-right flex-item-1">
                     <div class="form-login-relative form-panel">
                         <div class="form-login">
-                            <form action="../control/valida-acesso-usuario.php" method="POST" class="form-login-fields">
+                            <form action="../control/valida-acesso-usuario.php" method="POST"  id="loginForm" class="form-login-fields">
                                 <h6 class="title-login">Login</h6>
                                 <div class="input-field my-2">
-                                    <input type="email" name="Email" required="required">
+                                    <input type="email" name="Email" id="emailLogin" required="required">
                                     <span>Email</span>
                                 </div>
                                 <div class="input-field my-2">
-                                    <input type="password" name="Senha" required="required">
+                                    <input type="password" name="Senha" id="senhaLogin" required="required">
                                     <span>Senha</span>
                                 </div>
 
@@ -64,19 +63,19 @@
                             <form action="../control/cadastra-Perfil.php" method="POST" class="form-cadastro-fields">
                                 <h6 class="title-cadastro">Cadastro</h6>
                                 <div class="input-field my-2">
-                                    <input type="text" name="Nome" required="required">
+                                    <input type="text" name="NomeCadastro" required="required">
                                     <span>Nome de Usuário</span>
                                 </div>
                                 <div class="input-field my-2">
-                                    <input type="text" name="Email" required="required">
+                                    <input type="text" name="EmailCadastro" required="required">
                                     <span>Email</span>
                                 </div>
                                 <div class="input-field my-2">
-                                    <input type="password" name="Senha" required="required">
+                                    <input type="password" name="SenhaCadastro" required="required">
                                     <span>Senha</span>
                                 </div>
                                 <div class="input-field my-2">
-                                    <input type="password" name="ConfirmaSenha" required="required">
+                                    <input type="password" name="ConfirmaSenhaCadastro" required="required">
                                     <span>Confirma Senha</span>
                                 </div>
 
@@ -89,5 +88,9 @@
                 </div>
             </div>
         </section>
+        <script src="../assets/js/login.js"></script>
+        <script src="../assets/js/script.js"></script>
+        <script src="../assets/js/app.js"></script>
+        <script src="../assets/js/sweetalert.js"></script>
     </body>
 </html>

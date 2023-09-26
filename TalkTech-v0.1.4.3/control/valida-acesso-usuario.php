@@ -4,9 +4,14 @@ session_start();
 require_once '../model/Perfil.php';
 require_once '../dao/DaoPerfil.php';
 
+if(!$_POST){
+
+
+$body = json_decode(file_get_contents('php://input'), true);
+
 $Perfil = new Perfil();
-$email = $_POST['Email'];
-$senha = $_POST['Senha'];
+$email = $body['Email'];
+$senha = $body['Senha'];
 
 $Perfil->setEmail($email);
 $Perfil->setSenha(sha1($senha));
@@ -14,9 +19,6 @@ $Perfil->setSenha(sha1($senha));
 $resposta = DaoPerfil::login($Perfil);
 
 if($resposta == true){
-
-    header('Location: ../view/feed.php');
-
     $Perfil->setId(DaoPerfil::consultarId($Perfil));
     $dados = DaoPerfil::buscarDados($Perfil);
     $Perfil->setNome($dados['nome']);
@@ -25,10 +27,10 @@ if($resposta == true){
     $_SESSION['login-nome'] = $Perfil->getNome();
     $_SESSION['login-email'] = $Perfil->getEmail();
     $_SESSION['login-senha'] = $Perfil->getSenha();
-
+    echo json_encode(['status' => true]);
 } else {
-    $_SESSION['mensagem'] = "Voce não pode acessar sem estar logado no sistema!";
-    header('Location: ../form.php');
+    http_response_code(401);
+    echo json_encode(['error' => 'Nome de usuário ou senha inválidos.']);
 }
-
+}
 ?>
