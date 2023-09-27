@@ -2,9 +2,9 @@ header{
     width: 100%;
     background-color: transparent;
     box-shadow: none;
+    position: fixed;
     transition: .5s ease;
 
-    position: fixed;
     z-index: 800;
 }
 
@@ -55,11 +55,11 @@ header{
 }
 
 
-///////////////////////  Side Menu - Menu Lateral
+///////////////////////  Side Menu Left - Menu Lateral Esquerdo
 .nav-side-menu{
   height: 100%;
   background-color: $black-dark;
-  position: fixed;
+  position: absolute;
   z-index: 700;
 
 
@@ -126,5 +126,32 @@ header{
     }
 
     
+
+}
+
+// =========== SIDE MENU RIGHT
+
+.right-side-menu{
+    height: 100%;
+    width: 120px;
+    background-color: $black-dark;
+    position: absolute;
+  
+  
+    display: flex;
+    justify-content: center;
+    padding-top: $gap-5;
+    right: 0;
+  
+    transition: 0.7s ease;
+  
+    @include responsive(s){
+      height: 50px;
+      bottom: 0;
+      align-items: center;
+      padding-top: 0;
+      width: 100%;
+    }
+
 
 }

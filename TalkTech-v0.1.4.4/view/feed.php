@@ -24,19 +24,24 @@
             </div>
         </nav>
     </header>
-    <!---========= SIDE MENU =========-->
-    <nav class="nav-side-menu border " id="side-menu">
-        <div class="nav-list-side-menu">
-            
-            <a href="feed.php" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-home.svg" width="60" alt=""></a>
-            <a href="#Chats" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-chat.svg" width="60" alt=""></a>
-            <a class="nav-link-side-menu mb-1" id="create-post"><img src="../assets/svg/icon-add-plus-circle.svg" width="60" alt=""></a>
-            <a href="profile.php" class="nav-link-side-menu"><img src="../assets/svg/icon-profile-side-menu.svg" width="60" alt=""></a>
-        </div>
-    </nav>
+   
     <!---========= CONTAINER FEED =========-->
     <section class="container-feed border">
-       <!---========= POST =========-->
+        <container class="column-left-side flex-3 border">
+        <!---========= SIDE MENU =========-->
+        <nav class="nav-side-menu border " id="side-menu">
+            <div class="nav-list-side-menu">
+                
+                <a href="feed.php" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-home.svg" width="60" alt=""></a>
+                <a href="#Chats" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-chat.svg" width="60" alt=""></a>
+                <a class="nav-link-side-menu mb-1" id="create-post"><img src="../assets/svg/icon-add-plus-circle.svg" width="60" alt=""></a>
+                <a href="profile.php" class="nav-link-side-menu"><img src="../assets/svg/icon-profile-side-menu.svg" width="60" alt=""></a>
+            </div>
+        </nav>
+        <!---========= FIM MENU =========-->
+        </container>
+        <container class="column-center-side flex-5 border">
+            <!---========= POST =========-->
         <div class="post-container back-bow border mb-2">
             <div class="profile-top-post border">
                 <div class="profile-pic border">
@@ -76,7 +81,67 @@
                 </p>
             </div>
         </div>
+
+        <div class="post-container back-bow border mb-2">
+            <div class="profile-top-post border">
+                <div class="profile-pic border">
+                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                </div>
+                <div class="profile-username flex-column ml-1">
+                    <h4>bolsonaro</h4>
+                    <p>@suicidio</p>
+                </div>
+                
+            </div>  
+            <div class="content-post border">
+                <img src="../assets/img/bonoro-anao.jpg" alt="" height="350px">
+            </div>
+            <!---interações---->
+            <div class="post-interactions border">
+                <div class="post-like-comment">
+                    <div>
+                    <button class="post-like-comment mt-1">
+                        <img class="" src="../assets/svg/icon-comment.svg" alt="">
+                    </button>
+                    </div>
+                <div>    
+                <button class="post-like-heart mt-1 ml-1">
+                        <img class="" src="../assets/svg/icon-heart-like.svg" alt="">
+                    </button>
+                </div>
+                </div>
+                <div>
+                    <img src="../assets/svg/icon-3-points-horizontal.svg" alt="">
+                </div>
+            </div>
+            <div class="post-description">
+                <h4 class="mt-1">Congresso anula os traveseiros de waifu do bolsonaro!</h4>
+                <p>Infelizmente nesta manhã de terça-feira (15), bolsonaro teve seus bens confiscados
+                    e a Polícia Federal apreendeu todos seus dakimakura (travesseiros de waifu).
+                </p>
+            </div>
+        </div>
+        </container>
+        <container class="column-right flex-3 border">
+            <nav class="right-side-menu border">
+
+
+            </nav>
+        </container>
+
+    
+       
+         <!---========= INICIO RIGHT =========-->
+         
+
+
+         <!---========= FIM RIGHT =========-->
+         
+         
+         
          <!---========= FIM POST =========-->
+
+
         
          <!---========= Criar Post ===========-->
          <div class="overlay" id="card-overlay" >
