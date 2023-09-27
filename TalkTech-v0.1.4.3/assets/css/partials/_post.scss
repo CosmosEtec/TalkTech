@@ -7,9 +7,13 @@
     display: flex;
     flex-direction: column;
 
+   /* From https://css.glass */
+    background: rgba(4, 4, 4, 0.54);
     border-radius: 4px;
-    background: #EFEFEF;
-    box-shadow: 0px 0.07972968369722366px 1.5945937633514404px 0px rgba(0, 0, 0, 0.03), 0px 0.18115200102329254px 3.623039960861206px 0px rgba(0, 0, 0, 0.04), 0px 0.3152870237827301px 6.3057403564453125px 0px rgba(0, 0, 0, 0.05), 0px 0.5008620619773865px 10.017241477966309px 0px rgba(0, 0, 0, 0.06), 0px 0.7727929949760437px 15.455859184265137px 0px rgba(0, 0, 0, 0.07), 0px 1.2058829069137573px 24.117658615112305px 0px rgba(0, 0, 0, 0.08), 0px 2.001953125px 40.0390625px 0px rgba(0, 0, 0, 0.09), 0px 4px 80px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.9px);
+    -webkit-backdrop-filter: blur(0.9px);
+    border: 1px solid rgba(4, 4, 4, 0.94);
 
     .back-bow{
         background: #EFEFEF; 

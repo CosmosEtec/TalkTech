@@ -24,22 +24,26 @@
             </div>
         </nav>
     </header>
-    <!---========= SIDE MENU =========-->
-    <nav class="nav-side-menu border " id="side-menu">
-        <div class="nav-list-side-menu">
-            
-            <a href="feed.php" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-home.svg" width="60" alt=""></a>
-            <a href="#Chats" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-chat.svg" width="60" alt=""></a>
-            <a class="nav-link-side-menu mb-1" id="create-post"><img src="../assets/svg/icon-add-plus-circle.svg" width="60" alt=""></a>
-            <a href="profile.php" class="nav-link-side-menu"><img src="../assets/svg/icon-profile-side-menu.svg" width="60" alt=""></a>
-        </div>
-    </nav>
+    
     <!---========= CONTAINER FEED =========-->
     <section class="container-feed border">
-       <!---========= POST =========-->
-        <div class="post-container back-bow border mb-2">
-            <div class="profile-top-post border">
-                <div class="profile-pic border">
+        <!---========= SIDE MENU =========-->
+        <nav class="nav-side-menu border " id="side-menu">
+            <div class="nav-list-side-menu">
+                
+                <a href="feed.php" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-home.svg" width="60" alt=""></a>
+                <a href="#Chats" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-chat.svg" width="60" alt=""></a>
+                <a class="nav-link-side-menu mb-1" id="create-post"><img src="../assets/svg/icon-add-plus-circle.svg" width="60" alt=""></a>
+                <a href="profile.php" class="nav-link-side-menu"><img src="../assets/svg/icon-profile-side-menu.svg" width="60" alt=""></a>
+            </div>
+        </nav>
+    
+    
+    <!---========= POST =========-->
+        <div class="post-container back-bow   mb-2">
+    
+            <div class="profile-top-post  ">
+                <div class="profile-pic  ">
                     <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
                 </div>
                 <div class="profile-username flex-column ml-1">
@@ -48,7 +52,7 @@
                 </div>
                 
             </div>  
-            <div class="content-post border">
+            <div class="content-post  ">
                 <img src="../assets/img/bonoro-anao.jpg" alt="" height="350px">
             </div>
             <!---interações---->

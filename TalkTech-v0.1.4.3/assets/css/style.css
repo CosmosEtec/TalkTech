@@ -28,11 +28,10 @@
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
-  padding: 110px 20px 0 211px;
+  padding: 110px 20px 0 0px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: flex-start;
-  flex-direction: column;
 }
 @media screen and (max-width: 960px) {
   .container-feed {
@@ -790,12 +789,9 @@ header {
 .nav-side-menu {
   height: 100%;
   background-color: #161617;
-  position: fixed;
-  z-index: 700;
   display: flex;
   justify-content: center;
   padding-top: 128px;
-  left: 0;
   transition: 0.7s ease;
 }
 @media screen and (max-width: 960px) {
@@ -1185,9 +1181,13 @@ header {
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+  /* From https://css.glass */
+  background: rgba(4, 4, 4, 0.54);
   border-radius: 4px;
-  background: #EFEFEF;
-  box-shadow: 0px 0.0797296837px 1.5945937634px 0px rgba(0, 0, 0, 0.03), 0px 0.181152001px 3.6230399609px 0px rgba(0, 0, 0, 0.04), 0px 0.3152870238px 6.3057403564px 0px rgba(0, 0, 0, 0.05), 0px 0.500862062px 10.017241478px 0px rgba(0, 0, 0, 0.06), 0px 0.772792995px 15.4558591843px 0px rgba(0, 0, 0, 0.07), 0px 1.2058829069px 24.1176586151px 0px rgba(0, 0, 0, 0.08), 0px 2.001953125px 40.0390625px 0px rgba(0, 0, 0, 0.09), 0px 4px 80px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.9px);
+  -webkit-backdrop-filter: blur(0.9px);
+  border: 1px solid rgba(4, 4, 4, 0.94);
 }
 .post-container .back-bow {
   background: #EFEFEF;
