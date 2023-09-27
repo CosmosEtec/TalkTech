@@ -80,7 +80,7 @@
         }
 
         public static function buscarDados($perfil){
-            $sql = "SELECT * FROM tbPerfil WHERE id = ?";
+            $sql = "SELECT * FROM tbPerfil WHERE idPerfil = ?";
             $stmt = Conexao::getConn()->prepare($sql);
             $stmt->bindValue(1, $perfil->getId());
             $stmt->execute();
