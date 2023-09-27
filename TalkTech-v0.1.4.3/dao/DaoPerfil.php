@@ -4,18 +4,12 @@
 
     class DaoPerfil {
         public static function cadastra($perfil){
-            $sql = "INSERT INTO tbPerfil (nome, apelido, email, senha, idade, fotoPerfil, fotoBanner, biografia, perfilPrivado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO tbPerfil (nome, email, senha) VALUES (?, ?, ?)";
             $stmt = Conexao::getConn()->prepare($sql);
             $stmt->bindValue(1, $perfil->getNome());
-            $stmt->bindValue(2, $perfil->getApelido());
-            $stmt->bindValue(3, $perfil->getEmail());
-            $stmt->bindValue(4, $perfil->getSenha());
-            $stmt->bindValue(5, $perfil->getIdade());
-            $stmt->bindValue(6, $perfil->getFotoPerfil());
-            $stmt->bindValue(7, $perfil->getFotoBanner());
-            $stmt->bindValue(8, $perfil->getBiografia());
-            $stmt->bindValue(9, $perfil->getPerfilPrivado());
-            $stmt->execute();
+            $stmt->bindValue(2, $perfil->getEmail());
+            $stmt->bindValue(3, $perfil->getSenha());
+            return $stmt->execute();
         }
 
         public static function read(){
@@ -71,6 +65,18 @@
                 $result = $stmt->fetch(PDO::FETCH_ASSOC);
                 return $result['idPerfil'];
             }
+        }
+        public static function consultarEmail($perfil){
+            $sql = "SELECT idPerfil FROM tbPerfil WHERE email = ?";
+            $stmt = Conexao::getConn()->prepare($sql);
+            $stmt->bindValue(1, $perfil->getEmail());
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0){
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                return true;
+            }
+            return false;
         }
 
         public static function buscarDados($perfil){

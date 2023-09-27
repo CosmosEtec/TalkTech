@@ -60,26 +60,28 @@
 
                     <div class="form-cadastro-relative form-panel">
                         <div class="form-cadastro">
-                            <form action="../control/cadastra-Perfil.php" method="POST" class="form-cadastro-fields">
-                                <h6 class="title-cadastro">Cadastro</h6>
+                           <!-- <form action="../control/cadastra-Perfil.php" method="POST" class="form-cadastro-fields">
+-->
+                            <form id="cadForm">
+                           <h6 class="title-cadastro">Cadastro</h6>
                                 <div class="input-field my-2">
-                                    <input type="text" name="NomeCadastro" required="required">
+                                    <input type="text" name="NomeCadastro" id="NomeCadastro" required="required">
                                     <span>Nome de Usuário</span>
                                 </div>
                                 <div class="input-field my-2">
-                                    <input type="text" name="EmailCadastro" required="required">
+                                    <input type="text" name="EmailCadastro" id="EmailCadastro" required="required">
                                     <span>Email</span>
                                 </div>
                                 <div class="input-field my-2">
-                                    <input type="password" name="SenhaCadastro" required="required">
+                                    <input type="password" name="SenhaCadastro" id="SenhaCadastro" required="required">
                                     <span>Senha</span>
                                 </div>
                                 <div class="input-field my-2">
-                                    <input type="password" name="ConfirmaSenhaCadastro" required="required">
+                                    <input type="password" name="ConfirmaSenhaCadastro" id="ConfirmaSenhaCadastro" required="required">
                                     <span>Confirma Senha</span>
                                 </div>
 
-                                <input type="submit" class="btn mt-2 mb-1">
+                                <input type="submit" class="btn mt-2 mb-1" id="submitButton">
                                 
                                 <p class="form-text-Login mt-2">Você ja tem uma conta? <a class="form-link-login" href="#">Login</a></p>
                             </form>
@@ -89,6 +91,7 @@
             </div>
         </section>
         <script src="../assets/js/login.js"></script>
+        <script src="../assets/js/criaruser.js"></script>
         <script src="../assets/js/script.js"></script>
         <script src="../assets/js/app.js"></script>
         <script src="../assets/js/sweetalert.js"></script>
