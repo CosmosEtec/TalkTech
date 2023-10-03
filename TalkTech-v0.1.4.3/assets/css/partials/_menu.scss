@@ -16,10 +16,15 @@ header{
 // DESKTOP
 .navbar-desktop{
     max-width: $container-xl;
+    background: $black-dark;
     height: 75px;
     margin: 0px auto;
     position: relative;
     padding: 10px 24px 10px 211px;
+
+    border-bottom: 2px solid $gray-clean-border; /* Borda superior é azul */
+    border-right: 1px solid $gray-clean-border; /* Borda direita é vermelha */
+    border-left: 1px solid $gray-clean-border;
 
     display: flex;
     justify-content: space-between;
@@ -55,17 +60,19 @@ header{
 }
 
 
-///////////////////////  Side Menu - Menu Lateral
-.nav-side-menu{
-  height: 100%;
+///////////////////////  Side Menu - Menu Lateral Esquerdo  ///////////////////////
+.nav-left-side-menu{ 
+  height: 100vh;
   background-color: $black-dark;
 
 
   display: flex;
   justify-content: center;
-  padding-top: $gap-5;
 
   transition: 0.7s ease;
+    
+  border: 1px solid $gray-clean-border;
+
 
   @include responsive(s){
     height: 50px;
@@ -78,9 +85,7 @@ header{
 
 
 
-.nav-list-side-menu{
-    max-width: $container-xl;
-
+.nav-list-left-side-menu{ 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,7 +97,7 @@ header{
     }
 }
 
-.nav-link-side-menu{
+.nav-link-left-side-menu{
     display: inline-block;
     @include typeface-1(h3, desktop);
     position: relative;
@@ -125,3 +130,73 @@ header{
     
 
 }
+
+
+///////////////////////  Side Menu - Menu Lateral Direito  ///////////////////////
+
+.right-side-menu {
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    
+    transition: 0.7s ease;
+    padding-top: 1rem;
+
+
+    @include responsive(s){
+      height: 50px;
+      bottom: 0;
+      align-items: center;
+      padding-top: 0;
+      width: 100%;
+    }
+}
+ 
+
+.top-languages-right-side-menu{
+    max-width: 360px;
+    width: 100%;
+    height: 360px;
+
+    background: $black-dark;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: -1px -1px 10px 0px rgba(0,0,0,0.75);
+
+    .top-languages-head{
+        width: 100%;
+        
+        padding: 1rem 0 0.75rem 1rem;
+        background: $black-dark-notur;
+    }
+ 
+
+    .top-languages-language-skill{
+        width: 100%;
+        height: 4rem;
+        margin-top: 1rem;
+        border-bottom: 1px solid $gray-clean-border;
+        
+        padding: 0.25rem 0.25rem 0.25rem 1rem;
+        display: flex;
+        flex-direction: row;
+        
+    
+    
+            .language-icon{
+               max-width: 60px;
+               width: 100%; 
+               border-radius: 4px;
+               background: $black-light;    
+            }
+            .language-name{
+                display: flex;
+                align-items: center;
+                margin-left: 0.50rem;
+            }
+    }
+
+
+
+}
+

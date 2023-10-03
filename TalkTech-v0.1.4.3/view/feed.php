@@ -12,7 +12,7 @@
     <!---========= HEADER =========-->
     <header id="header">
         <!---========= NAV-BAR DESKTOP =========-->
-        <nav class="navbar-desktop border" data-aos="fade-up">
+        <nav class="navbar-desktop" data-aos="fade-up">
             <a href="#Inicio" class="navbar-desktop-logo"><img src="../assets/svg/t-logo.svg" alt="" width="60px" height="70px"></a>
             <div class="search-field flex-start ">
                 <div class="px-1">
@@ -26,21 +26,23 @@
     </header>
     
     <!---========= CONTAINER FEED =========-->
-    <section class="container-feed border">
-        <!---========= SIDE MENU =========-->
-        <nav class="nav-side-menu border " id="side-menu">
-            <div class="nav-list-side-menu">
+    <section class="container-feed ">
+        <!---========= LEFT SIDE MENU =========--> 
+        <nav class="nav-left-side-menu   " id="side-menu">
+            <div class="nav-list-left-side-menu">
                 
-                <a href="feed.php" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-home.svg" width="60" alt=""></a>
-                <a href="#Chats" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-chat.svg" width="60" alt=""></a>
-                <a class="nav-link-side-menu mb-1" id="create-post"><img src="../assets/svg/icon-add-plus-circle.svg" width="60" alt=""></a>
-                <a href="profile.php" class="nav-link-side-menu"><img src="../assets/svg/icon-profile-side-menu.svg" width="60" alt=""></a>
+                <a href="feed.php" class="nav-link-left-side-menu mb-1"><img src="../assets/svg/icon-home.svg" width="60" alt=""></a>
+                <a href="#Chats" class="nav-link-left-side-menu mb-1"><img src="../assets/svg/icon-chat.svg" width="60" alt=""></a>
+                <a class="nav-link-left-side-menu mb-1" id="create-post"><img src="../assets/svg/icon-add-plus-circle.svg" width="60" alt=""></a>
+                <a href="profile.php" class="nav-link-left-side-menu"><img src="../assets/svg/icon-profile-side-menu.svg" width="60" alt=""></a>
             </div>
         </nav>
+        <!---========= FIM LEFT SIDE MENU =========-->         
     
     
-    <!---========= POST =========-->
-        <div class="post-container back-bow   mb-2">
+        <!---========= POST =========-->
+        <div class="flex-item-2 pl-5 pt-3">
+        <div class="post-container   mb-2">
     
             <div class="profile-top-post  ">
                 <div class="profile-pic  ">
@@ -56,7 +58,7 @@
                 <img src="../assets/img/bonoro-anao.jpg" alt="" height="350px">
             </div>
             <!---interações---->
-            <div class="post-interactions border">
+            <div class="post-interactions  ">
                 <div class="post-like-comment">
                     <div>
                     <button class="post-like-comment mt-1">
@@ -80,10 +82,12 @@
                 </p>
             </div>
         </div>
-         <!---========= FIM POST =========-->
+        </div>
         
-         <!---========= Criar Post ===========-->
-         <div class="overlay" id="card-overlay" >
+        
+        
+        <!---========= Criar Post ===========-->
+        <div class="overlay" id="card-overlay" >
             <div class="container-create-post" id="info-card" >
               <div class="flex-start">
                 <button id="close-create-post"><img src="../assets/svg/icon-arrow-left.svg" alt=""></button>
@@ -100,8 +104,78 @@
                 <button class="publish-button mt-1 mb-1">Publicar</button>
               </div>  
             </div>
-          </div> 
-    </section>
+          </div>
+        <!---========= FIM Criar Post ===========-->
+
+         <!---========= FIM POST =========-->
+
+         <!---========= RIGHT SIDE MENU  =========-->
+        <nav class="right-side-menu  ">
+            
+            <div class="top-languages-right-side-menu  ">
+                <div class="top-languages-head">
+                    <h4>Top Linguagens</h4>
+                </div>       
+                <div class="top-languages-language-skill">
+                    <div class="language-icon">
+                        
+                    </div>
+                    <div class="language-name">
+                        <h3>React</h3>
+                    </div>
+                </div>   
+                <div class="top-languages-language-skill">
+                    <div class="language-icon">
+                        
+                    </div>
+                    <div class="language-name">
+                        <h3>React</h3>
+                    </div>
+                </div>
+                <div class="top-languages-language-skill">
+                    <div class="language-icon">
+                        
+                    </div>
+                    <div class="language-name">
+                        <h3>React</h3>
+                    </div>
+                </div> 
+            </div>
+            
+            <div class="top-languages-right-side-menu  ">
+                <div class="top-languages-head">
+                    <h4>Top Linguagens</h4>
+                </div>       
+                <div class="top-languages-language-skill">
+                    <div class="language-icon">
+                        
+                    </div>
+                    <div class="language-name">
+                        <h3>React</h3>
+                    </div>
+                </div>   
+                <div class="top-languages-language-skill">
+                    <div class="language-icon">
+                        
+                    </div>
+                    <div class="language-name">
+                        <h3>React</h3>
+                    </div>
+                </div>
+                <div class="top-languages-language-skill">
+                    <div class="language-icon">
+                        
+                    </div>
+                    <div class="language-name">
+                        <h3>React</h3>
+                    </div>
+                </div> 
+            </div>
+        </nav>   
+        <!---========= FIM RIGHT SIDE MENU  =========-->     
+          
+        
+        </section>
     <script src="../assets/js/createPost.js"></script>
 </body>
 </html>

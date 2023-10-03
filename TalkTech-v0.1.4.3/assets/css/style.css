@@ -28,7 +28,7 @@
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
-  padding: 110px 20px 0 0px;
+  padding: 75px 0px 0 0px;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -150,7 +150,7 @@
 ::-webkit-scrollbar {
   width: 8px;
   background-color: transparent;
-  border: 5px solid #131414;
+  border: 5px solid #1c1d1d;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -208,13 +208,12 @@ h3 {
 }
 
 h4 {
-  color: #161617;
+  color: #edeaef;
   font-family: "Sora", sans-serif;
   font-weight: 250;
   font-size: 18px;
   line-height: 130%;
   letter-spacing: -1px;
-  font-weight: bold;
 }
 @media screen and (max-width: 960px) {
   h4 {
@@ -222,7 +221,6 @@ h4 {
     font-weight: 250;
     font-size: 18px;
     line-height: 130%;
-    font-weight: bold;
   }
 }
 
@@ -248,7 +246,7 @@ h5 {
 }
 
 h6 {
-  color: #161617;
+  color: #131414;
   font-family: "Sora", sans-serif;
   font-weight: 250;
   font-size: 32px;
@@ -750,10 +748,14 @@ header {
 
 .navbar-desktop {
   max-width: 1440px;
+  background: #131414;
   height: 75px;
   margin: 0px auto;
   position: relative;
   padding: 10px 24px 10px 211px;
+  border-bottom: 2px solid #4d5252; /* Borda superior é azul */
+  border-right: 1px solid #4d5252; /* Borda direita é vermelha */
+  border-left: 1px solid #4d5252;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -786,16 +788,16 @@ header {
   padding: 12px 16px;
 }
 
-.nav-side-menu {
-  height: 100%;
-  background-color: #161617;
+.nav-left-side-menu {
+  height: 100vh;
+  background-color: #131414;
   display: flex;
   justify-content: center;
-  padding-top: 128px;
   transition: 0.7s ease;
+  border: 1px solid #4d5252;
 }
 @media screen and (max-width: 960px) {
-  .nav-side-menu {
+  .nav-left-side-menu {
     height: 50px;
     bottom: 0;
     align-items: center;
@@ -804,19 +806,18 @@ header {
   }
 }
 
-.nav-list-side-menu {
-  max-width: 1440px;
+.nav-list-left-side-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 @media screen and (max-width: 960px) {
-  .nav-list-side-menu {
+  .nav-list-left-side-menu {
     flex-direction: row;
   }
 }
 
-.nav-link-side-menu {
+.nav-link-left-side-menu {
   display: inline-block;
   font-family: "Sora", sans-serif;
   font-weight: 250;
@@ -827,21 +828,73 @@ header {
   transition: transform 0.2s ease-in-out;
   padding: 8px 24px 0 24px;
 }
-.nav-link-side-menu p {
+.nav-link-left-side-menu p {
   display: none;
 }
-.nav-link-side-menu:hover {
+.nav-link-left-side-menu:hover {
   transform: translateX(5px);
 }
-.nav-link-side-menu:hover p {
+.nav-link-left-side-menu:hover p {
   display: flex;
   z-index: 1100;
   transform: translateX(5px);
 }
 @media screen and (max-width: 960px) {
-  .nav-link-side-menu {
+  .nav-link-left-side-menu {
     padding: 8px 16px 0 16px;
   }
+}
+
+.right-side-menu {
+  height: 100vh;
+  max-width: 400px;
+  width: 100%;
+  transition: 0.7s ease;
+  padding-top: 1rem;
+}
+@media screen and (max-width: 960px) {
+  .right-side-menu {
+    height: 50px;
+    bottom: 0;
+    align-items: center;
+    padding-top: 0;
+    width: 100%;
+  }
+}
+
+.top-languages-right-side-menu {
+  max-width: 360px;
+  width: 100%;
+  height: 360px;
+  background: #131414;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.75);
+}
+.top-languages-right-side-menu .top-languages-head {
+  width: 100%;
+  padding: 1rem 0 0.75rem 1rem;
+  background: #0c0c0c;
+}
+.top-languages-right-side-menu .top-languages-language-skill {
+  width: 100%;
+  height: 4rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid #4d5252;
+  padding: 0.25rem 0.25rem 0.25rem 1rem;
+  display: flex;
+  flex-direction: row;
+}
+.top-languages-right-side-menu .top-languages-language-skill .language-icon {
+  max-width: 60px;
+  width: 100%;
+  border-radius: 4px;
+  background: #353436;
+}
+.top-languages-right-side-menu .top-languages-language-skill .language-name {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
 }
 
 #stars {
@@ -1181,16 +1234,8 @@ header {
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
-  /* From https://css.glass */
-  background: rgba(4, 4, 4, 0.54);
-  border-radius: 4px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(0.9px);
-  -webkit-backdrop-filter: blur(0.9px);
-  border: 1px solid rgba(4, 4, 4, 0.94);
-}
-.post-container .back-bow {
-  background: #EFEFEF;
+  background: #131414;
+  box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 .profile-top-post {
@@ -1206,7 +1251,7 @@ header {
 }
 
 img.profile-pic-img {
-  border: 1px solid #161617;
+  border: 1px solid #131414;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1453,7 +1498,7 @@ body {
   height: 100vh;
   position: relative;
   scroll-behavior: smooth;
-  background: #131414;
+  background: #1c1d1d;
 }
 
 img {

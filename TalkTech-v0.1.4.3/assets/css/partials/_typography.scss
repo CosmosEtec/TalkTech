@@ -26,11 +26,9 @@
     font-size: 18px;
     line-height: 130%;
     letter-spacing: -1px;
-    font-weight: bold;
   } @else if $size == h4 and $device == mobile {
     font-size: 18px;
     line-height: 130%;
-    font-weight: bold;
   } @else if $size == h5 and $device == desktop {
     font-size: 18px;
     line-height: 140%;
@@ -94,7 +92,7 @@ h3 {
 }
   
 h4 {
-  color: $black-dark;
+  color: $white-dark;
   @include typeface-1(h4, desktop);
   @include responsive(s) {
     @include typeface-1(h4, mobile);

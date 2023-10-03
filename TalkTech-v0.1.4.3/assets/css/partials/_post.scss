@@ -6,18 +6,10 @@
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
+    background: $black-dark;
+    box-shadow: -1px -1px 10px 0px rgba(0,0,0,0.75);
 
-   /* From https://css.glass */
-    background: rgba(4, 4, 4, 0.54);
-    border-radius: 4px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(0.9px);
-    -webkit-backdrop-filter: blur(0.9px);
-    border: 1px solid rgba(4, 4, 4, 0.94);
-
-    .back-bow{
-        background: #EFEFEF; 
-    }
+   
 }
 
 .profile-top-post{
