@@ -1,5 +1,5 @@
 
-var myInput = document.getElementById("senha");
+var myInput = document.getElementById("SenhaCadastro");
 var letter = document.getElementById("letter");
 var capital = document.getElementById("capital");
 var number = document.getElementById("number");
@@ -25,6 +25,7 @@ myInput.onkeyup = function() {
   } else {
     letter.classList.remove("valid");
     letter.classList.add("invalid");
+    return;
   }
   
   // Validate capital letters
@@ -35,6 +36,7 @@ myInput.onkeyup = function() {
   } else {
     capital.classList.remove("valid");
     capital.classList.add("invalid");
+    return;
   }
 
   // Validate numbers
@@ -45,6 +47,7 @@ myInput.onkeyup = function() {
   } else {
     number.classList.remove("valid");
     number.classList.add("invalid");
+    return;
   }
   
   // Validate length
@@ -52,7 +55,9 @@ myInput.onkeyup = function() {
     length.classList.remove("invalid");
     length.classList.add("valid");
   } else {
+    
     length.classList.remove("valid");
     length.classList.add("invalid");
+    return;
   }
 }
