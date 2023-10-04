@@ -28,6 +28,7 @@
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
+  background: transparent;
   padding: 75px 0px 0 0px;
   display: flex;
   justify-content: space-around;
@@ -150,7 +151,7 @@
 ::-webkit-scrollbar {
   width: 8px;
   background-color: transparent;
-  border: 5px solid #1c1d1d;
+  border: 5px solid linear-gradient(to right top, #1c1d1d, #1a1b1b, #181919, #151616, #131414, #131414, #131414, #131414, #151616, #181919, #1a1b1b, #1c1d1d);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -1234,8 +1235,8 @@ header {
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
-  background: #131414;
-  box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.75);
+  /* From https://css.glass */
+  box-shadow: 5px 4px 23px 10px rgba(0, 0, 0, 0.54);
 }
 
 .profile-top-post {
@@ -1498,7 +1499,7 @@ body {
   height: 100vh;
   position: relative;
   scroll-behavior: smooth;
-  background: #1c1d1d;
+  background: linear-gradient(to right top, #1c1d1d, #1a1b1b, #181919, #151616, #131414, #131414, #131414, #131414, #151616, #181919, #1a1b1b, #1c1d1d);
 }
 
 img {
