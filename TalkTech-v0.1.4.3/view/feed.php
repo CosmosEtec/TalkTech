@@ -114,62 +114,47 @@
             
             <div class="top-languages-right-side-menu  ">
                 <div class="top-languages-head">
-                    <h4>Top Linguagens</h4>
+                    <h3>Top Linguagens</h3>
                 </div>       
+                <!---========= DETALHES DA LINGUAGEM  =========-->
                 <div class="top-languages-language-skill">
                     <div class="language-icon">
-                        
+                        <img src="../assets/img/react-biblioteca.png" alt="">
                     </div>
-                    <div class="language-name">
-                        <h3>React</h3>
+                    <div class="language-details border">
+                        <h4>React</h4>
+                        <p class="p2">Framework</p>
                     </div>
                 </div>   
+                <!---========= DETALHES DA LINGUAGEM  =========-->
                 <div class="top-languages-language-skill">
                     <div class="language-icon">
-                        
+                        <img src="../assets/img/angular-framework.png" alt="">
                     </div>
-                    <div class="language-name">
-                        <h3>React</h3>
+                    <div class="language-details border">
+                        <h4>Angular</h4>
+                        <p class="p2">Framework</p>
                     </div>
-                </div>
+                </div>  
+                <!---========= DETALHES DA LINGUAGEM  =========-->
                 <div class="top-languages-language-skill">
                     <div class="language-icon">
-                        
+                        <img src="../assets/img/angular-framework.png" alt="">
                     </div>
-                    <div class="language-name">
-                        <h3>React</h3>
+                    <div class="language-details border">
+                        <h4>Angular</h4>
+                        <p class="p2">Framework</p>
+                    </div>
+                    <div class="language-details border">
+                        <h4>Angular</h4>
+                        <p class="p2">Framework</p>
                     </div>
                 </div> 
+
+                <button class=""></button>
             </div>
             
-            <div class="top-languages-right-side-menu  ">
-                <div class="top-languages-head">
-                    <h4>Top Linguagens</h4>
-                </div>       
-                <div class="top-languages-language-skill">
-                    <div class="language-icon">
-                        
-                    </div>
-                    <div class="language-name">
-                        <h3>React</h3>
-                    </div>
-                </div>   
-                <div class="top-languages-language-skill">
-                    <div class="language-icon">
-                        
-                    </div>
-                    <div class="language-name">
-                        <h3>React</h3>
-                    </div>
-                </div>
-                <div class="top-languages-language-skill">
-                    <div class="language-icon">
-                        
-                    </div>
-                    <div class="language-name">
-                        <h3>React</h3>
-                    </div>
-                </div> 
+
             </div>
         </nav>   
         <!---========= FIM RIGHT SIDE MENU  =========-->     

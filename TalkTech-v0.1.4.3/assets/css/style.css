@@ -151,13 +151,13 @@
 ::-webkit-scrollbar {
   width: 8px;
   background-color: transparent;
-  border: 5px solid linear-gradient(to right top, #1c1d1d, #1a1b1b, #181919, #151616, #131414, #131414, #131414, #131414, #151616, #181919, #1a1b1b, #1c1d1d);
+  border: 5px solid #262828;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #353436;
+  background-color: #4b4949;
   border-radius: 50px;
-  border: 2px solid #353436;
+  border: 2px solid #4b4949;
 }
 
 h1 {
@@ -264,13 +264,15 @@ h6 {
 
 p {
   color: #505055;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Sora", sans-serif;
+  font-weight: 250;
   font-size: 16px;
   line-height: 140%;
 }
 @media screen and (max-width: 960px) {
   p {
-    font-family: "Source Sans 3", sans-serif;
+    font-family: "Sora", sans-serif;
+    font-weight: 250;
     font-size: 14px;
     line-height: 150%;
   }
@@ -279,17 +281,51 @@ p.white {
   color: #edeaef;
 }
 
-.p1 {
-  color: #a6a6a7;
-  font-family: "Source Sans 3", sans-serif;
+.p1, .p2 {
+  color: #4b4949;
+  font-family: "Sora", sans-serif;
+  font-weight: 250;
   font-size: 24px;
   line-height: 130%;
 }
 @media screen and (max-width: 960px) {
-  .p1 {
-    font-family: "Source Sans 3", sans-serif;
+  .p1, .p2 {
+    font-family: "Sora", sans-serif;
+    font-weight: 250;
     font-size: 18px;
     line-height: 130%;
+  }
+}
+
+.p2 {
+  color: #4b4949;
+  font-family: "Sora", sans-serif;
+  font-weight: 250;
+  font-size: 16px;
+  line-height: 140%;
+}
+@media screen and (max-width: 960px) {
+  .p2 {
+    font-family: "Sora", sans-serif;
+    font-weight: 250;
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
+
+.p3 {
+  color: #4b4949;
+  font-family: "Sora", sans-serif;
+  font-weight: 250;
+  font-size: 12px;
+  line-height: 150%;
+}
+@media screen and (max-width: 960px) {
+  .p3 {
+    font-family: "Sora", sans-serif;
+    font-weight: 250;
+    font-size: 8px;
+    line-height: 150%;
   }
 }
 
@@ -299,18 +335,20 @@ span {
 
 .bold {
   font-weight: bold;
-  color: #353436;
+  color: #4b4949;
 }
 
 strong {
-  color: #232224;
-  font-family: "Source Sans 3", sans-serif;
+  color: #232324;
+  font-family: "Sora", sans-serif;
+  font-weight: 250;
   font-size: 16px;
   line-height: 140%;
 }
 @media screen and (max-width: 960px) {
   strong {
-    font-family: "Source Sans 3", sans-serif;
+    font-family: "Sora", sans-serif;
+    font-weight: 250;
     font-size: 14px;
     line-height: 150%;
   }
@@ -321,7 +359,8 @@ strong {
 }
 
 a {
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Sora", sans-serif;
+  font-weight: 250;
   font-size: 16px;
   line-height: 140%;
   text-decoration: none;
@@ -406,8 +445,9 @@ a:hover #btn-bv::after {
   border: none;
   border-radius: 14px;
   text-decoration: none;
-  font-family: "Source Sans 3", sans-serif;
-  font-size: 14px;
+  font-family: "Sora", sans-serif;
+  font-weight: 250;
+  font-size: 12px;
   line-height: 150%;
   color: #fefbff;
   letter-spacing: 0.1em;
@@ -867,35 +907,41 @@ header {
   max-width: 360px;
   width: 100%;
   height: 360px;
-  background: #131414;
+  background: #232324;
   overflow: hidden;
-  border-radius: 1rem;
-  box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 0.5rem;
+  border: 1px solid #4d5252;
+  box-shadow: 5px 4px 10px 10px rgba(0, 0, 0, 0.54);
 }
 .top-languages-right-side-menu .top-languages-head {
   width: 100%;
+  border-bottom: 1px solid #4d5252;
   padding: 1rem 0 0.75rem 1rem;
-  background: #0c0c0c;
 }
 .top-languages-right-side-menu .top-languages-language-skill {
   width: 100%;
   height: 4rem;
   margin-top: 1rem;
-  border-bottom: 1px solid #4d5252;
-  padding: 0.25rem 0.25rem 0.25rem 1rem;
+  padding: 0.25rem 0.25rem 0.25rem 0.7rem;
   display: flex;
   flex-direction: row;
 }
 .top-languages-right-side-menu .top-languages-language-skill .language-icon {
   max-width: 60px;
+  border-radius: 50px;
   width: 100%;
   border-radius: 4px;
-  background: #353436;
 }
-.top-languages-right-side-menu .top-languages-language-skill .language-name {
+.top-languages-right-side-menu .top-languages-language-skill .language-details {
   display: flex;
-  align-items: center;
-  margin-left: 0.5rem;
+  margin-left: 0.3rem;
+  padding-top: 0.15rem;
+  flex-direction: column;
+}
+.top-languages-right-side-menu button {
+  max-width: 12rem;
+  width: 100%;
+  padding: 1rem;
 }
 
 #stars {
@@ -1499,7 +1545,7 @@ body {
   height: 100vh;
   position: relative;
   scroll-behavior: smooth;
-  background: linear-gradient(to right top, #1c1d1d, #1a1b1b, #181919, #151616, #131414, #131414, #131414, #131414, #151616, #181919, #1a1b1b, #1c1d1d);
+  background: #262828;
 }
 
 img {
