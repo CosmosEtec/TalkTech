@@ -7,13 +7,67 @@ document.getElementById('cadForm').addEventListener('submit', function(event){
 
     if (!NomeCadastro) {
         alert("Por favor, insira um nome!");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Email já cadastrado!',
+            
+        })
         return;
     }
     if (SenhaCadastro !=ConfirmaSenhaCadastro) {
-        alert("Senhas não são iguais");
+       
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Senhas não são iguais',
+            footer: 'ErroId: 47'
+        })
+        return;
+    }
+    var lowerCaseLetters = /[a-z]/g;
+    if(!SenhaCadastro.match(lowerCaseLetters)) {  
+       
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Senha não possui letras minusculas',
+            
+        })
         return;
     }
 
+    var upperCaseLetters = /[A-Z]/g;
+    if(!SenhaCadastro.match(upperCaseLetters)) {  
+        
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Senha não possui letras maiusculas',
+        })
+        return;
+    }
+
+    var numbers = /[0-9]/g;
+    if(!SenhaCadastro.match(numbers)) {  
+       
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Senha não possui números',
+        })
+        return;
+    }
+
+    if(SenhaCadastro.length < 8) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Senha não possui 8 caracteres',
+            footer: 'ErroId: 47'
+        })
+        return;
+    }
     const usuario = {
         nome: NomeCadastro,
         email: EmailCadastro,
