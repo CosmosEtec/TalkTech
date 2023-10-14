@@ -69,7 +69,6 @@ header{
   display: flex;
   justify-content: center;
 
-  transition: 0.7s ease;
     
   border: 1px solid $gray-clean-border;
 
@@ -80,6 +79,7 @@ header{
     align-items: center;
     padding-top: 0;
     width: 100%;
+    position: fixed;
   }
 }
 
@@ -165,6 +165,10 @@ header{
     border: 1px solid $gray-clean-border;
     box-shadow: 5px 4px 10px 10px rgba(0,0,0,0.54);
 
+    @include responsive(s){
+        min-width: 280px;
+    }
+
     .top-languages-head{
         width: 100%;
         border-bottom: 1px solid $gray-clean-border;
@@ -186,8 +190,9 @@ header{
     
     
             .language-icon{
-               max-width: 60px;
-               border-radius: 50px;
+               max-width: 40px;
+               height: 40px;
+               border-radius: 60px;
                width: 100%; 
                border-radius: 4px;
             }

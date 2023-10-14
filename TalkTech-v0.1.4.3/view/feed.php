@@ -41,7 +41,7 @@
     
     
         <!---========= POST =========-->
-        <div class="flex-item-2 pl-5 pt-3">
+        <div class="flex-item-2 pl-5 pt-3 pr-3">
         <div class="post-container   mb-2">
     
             <div class="profile-top-post  ">
@@ -140,10 +140,6 @@
                 <div class="top-languages-language-skill">
                     <div class="language-icon">
                         <img src="../assets/img/angular-framework.png" alt="">
-                    </div>
-                    <div class="language-details border">
-                        <h4>Angular</h4>
-                        <p class="p2">Framework</p>
                     </div>
                     <div class="language-details border">
                         <h4>Angular</h4>
