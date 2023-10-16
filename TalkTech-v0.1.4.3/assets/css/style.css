@@ -41,6 +41,17 @@
   }
 }
 
+.container-timeline {
+  flex: 2 1 360px;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 960px) {
+  .container-timeline {
+    padding: 0;
+  }
+}
+
 .left-0 {
   left: 0;
 }
@@ -212,7 +223,7 @@ h4 {
   color: #edeaef;
   font-family: "Sora", sans-serif;
   font-weight: 250;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 130%;
   letter-spacing: -1px;
 }
@@ -281,7 +292,7 @@ p.white {
   color: #edeaef;
 }
 
-.p1, .p2 {
+.p1 {
   color: #4b4949;
   font-family: "Sora", sans-serif;
   font-weight: 250;
@@ -289,7 +300,7 @@ p.white {
   line-height: 130%;
 }
 @media screen and (max-width: 960px) {
-  .p1, .p2 {
+  .p1 {
     font-family: "Sora", sans-serif;
     font-weight: 250;
     font-size: 18px;
@@ -298,7 +309,6 @@ p.white {
 }
 
 .p2 {
-  color: #4b4949;
   font-family: "Sora", sans-serif;
   font-weight: 250;
   font-size: 16px;
@@ -369,6 +379,36 @@ a {
 }
 a:hover {
   opacity: 0.9;
+}
+
+a.nav-link {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+a.nav-link:hover {
+  opacity: 0.9;
+  transform: translateY(-5px);
+}
+a.nav-link span {
+  transition: 0.3s ease;
+}
+@media screen and (max-width: 1140px) {
+  a.nav-link span {
+    display: none;
+  }
+}
+@media screen and (max-width: 1140px) {
+  a.nav-link div.ml-1 {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1140px) {
+  a.nav-link {
+    margin-bottom: 0;
+  }
 }
 
 .btn-Ini {
@@ -791,7 +831,7 @@ header {
   max-width: 1440px;
   background: #131414;
   height: 75px;
-  margin: 0px auto;
+  margin: 0 auto;
   position: relative;
   padding: 10px 24px 10px 211px;
   border-bottom: 2px solid #4d5252; /* Borda superior é azul */
@@ -803,10 +843,10 @@ header {
 }
 
 .navbar-desktop-logo {
-  position: fixed;
   cursor: pointer;
   z-index: 1100;
   left: 10px;
+  position: absolute;
 }
 
 .navbar-desktop-item-1 {
@@ -831,31 +871,31 @@ header {
 
 .nav-left-side-menu {
   height: 100vh;
+  width: 15vw;
   background-color: #131414;
+  padding: 100px 0px 0 0px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid #4d5252;
+  transition: 0.7s ease;
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1140px) {
   .nav-left-side-menu {
     height: 50px;
+    transform: translateY(0);
     bottom: 0;
     align-items: center;
     padding-top: 0;
     width: 100%;
+    flex-direction: row;
     position: fixed;
   }
 }
 
-.nav-list-left-side-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-@media screen and (max-width: 960px) {
-  .nav-list-left-side-menu {
-    flex-direction: row;
-  }
+.div-nav-left-side-menu-link {
+  width: 100%;
+  background: gray !important;
 }
 
 .nav-link-left-side-menu {
@@ -867,17 +907,11 @@ header {
   position: relative;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
-  padding: 8px 24px 0 24px;
 }
 .nav-link-left-side-menu p {
   display: none;
 }
 .nav-link-left-side-menu:hover {
-  transform: translateX(5px);
-}
-.nav-link-left-side-menu:hover p {
-  display: flex;
-  z-index: 1100;
   transform: translateX(5px);
 }
 @media screen and (max-width: 960px) {
@@ -889,22 +923,20 @@ header {
 .right-side-menu {
   height: 100vh;
   max-width: 400px;
+  min-width: 240px;
+  padding: 0 2% 0 2%;
   width: 100%;
   transition: 0.7s ease;
   padding-top: 1rem;
 }
 @media screen and (max-width: 960px) {
   .right-side-menu {
-    height: 50px;
-    bottom: 0;
-    align-items: center;
-    padding-top: 0;
-    width: 100%;
+    display: none;
   }
 }
 
 .top-languages-right-side-menu {
-  max-width: 360px;
+  min-width: 280px;
   width: 100%;
   height: 360px;
   background: #232324;
@@ -915,25 +947,27 @@ header {
 }
 @media screen and (max-width: 960px) {
   .top-languages-right-side-menu {
-    min-width: 280px;
+    display: none;
   }
 }
 .top-languages-right-side-menu .top-languages-head {
   width: 100%;
   border-bottom: 1px solid #4d5252;
+  display: flex;
+  align-items: center;
   padding: 1rem 0 0.75rem 1rem;
 }
 .top-languages-right-side-menu .top-languages-language-skill {
   width: 100%;
   height: 4rem;
-  margin-top: 1rem;
+  margin-top: 0.45rem;
   padding: 0.25rem 0.25rem 0.25rem 0.7rem;
   display: flex;
   flex-direction: row;
 }
 .top-languages-right-side-menu .top-languages-language-skill .language-icon {
-  max-width: 40px;
-  height: 40px;
+  max-width: 30px;
+  height: 30px;
   border-radius: 60px;
   width: 100%;
   border-radius: 4px;
@@ -1280,8 +1314,7 @@ header {
 }
 
 .post-container {
-  max-width: 550px;
-  width: 100%;
+  width: 550px;
   height: 600px;
   padding: 10px 10px 0px 10px;
   margin-bottom: 30px;

@@ -11,6 +11,36 @@ a{
     }
 }
 
+a.nav-link{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+
+    &:hover{
+        opacity: 0.9;
+        transform: translateY(-5px);
+    }
+
+    span{
+        transition: 0.3s ease;
+        @include responsive(lu){
+            display: none;
+        }
+    }
+
+    div.ml-1{
+        @include responsive(lu){
+            margin-left: 0;
+        }
+    }
+
+    @include responsive(lu){
+        margin-bottom: 0;
+    }
+}
+
 // ============= Style Buttons Inicio =============
 
 .btn-Ini{

@@ -23,7 +23,7 @@
     font-size: 24px;
     line-height: 120%;
   } @else if $size == h4 and $device == desktop {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 130%;
     letter-spacing: -1px;
   } @else if $size == h4 and $device == mobile {
@@ -134,7 +134,7 @@ p {
   }
 }
 
-.p1, .p2 {
+.p1 {
   color: $black-light;
   @include typeface-2(p1, desktop);
   @include responsive(s) {
@@ -143,7 +143,6 @@ p {
 }
 
 .p2 {
-  color: $black-light;
   @include typeface-2(p2, desktop);
   @include responsive(s) {
     @include typeface-2(p2, mobile);

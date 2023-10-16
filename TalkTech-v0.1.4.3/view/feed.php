@@ -29,19 +29,52 @@
     <section class="container-feed ">
         <!---========= LEFT SIDE MENU =========--> 
         <nav class="nav-left-side-menu   " id="side-menu">
-            <div class="nav-list-left-side-menu">
-                
-                <a href="feed.php" class="nav-link-left-side-menu mb-1"><img src="../assets/svg/icon-home.svg" width="60" alt=""></a>
-                <a href="#Chats" class="nav-link-left-side-menu mb-1"><img src="../assets/svg/icon-chat.svg" width="60" alt=""></a>
-                <a class="nav-link-left-side-menu mb-1" id="create-post"><img src="../assets/svg/icon-add-plus-circle.svg" width="60" alt=""></a>
-                <a href="profile.php" class="nav-link-left-side-menu"><img src="../assets/svg/icon-profile-side-menu.svg" width="60" alt=""></a>
+            
+                <div class="div-nav-left-side-menu-link  ">
+                    
+                    <a href="feed.php" class="nav-link mb-1">
+                        <div class="ml-1">
+                        <img src="../assets/svg/icon-home.svg" width="50px" height="50px" alt="">
+                        </div>
+                        <span class="mb-1">Home</span>
+                    </a>   
+                    
+                </div>
+            
+
+              
+            <div class="div-nav-left-side-menu-link">
+                <a href="#Chats" class="nav-link mb-1"> 
+                    <div>
+                        <img src="../assets/svg/icon-chat.svg" width="60px" alt="">
+                    </div>
+                    <span class="mb-1">Chat</span>
+                </a>
+            </div>
+           
+            
+            <div class="div-nav-left-side-menu-link">
+                <a class="nav-link mb-1" id="create-post">
+                    <div>
+                        <img src="../assets/svg/icon-add-plus-circle.svg" width="60px" alt="">
+                    </div>
+                    <span class="mb-1">Criar</span>
+                </a>
+            </div>
+            <div class="div-nav-left-side-menu-link">
+                <a href="profile.php" class="nav-link ">
+                <div>
+                    <img src="../assets/svg/icon-profile-side-menu.svg" width="60px" alt="">
+                </div>
+                <span>Perfil</span>
+                </a>
             </div>
         </nav>
         <!---========= FIM LEFT SIDE MENU =========-->         
     
     
         <!---========= POST =========-->
-        <div class="flex-item-2 pl-5 pt-3 pr-3">
+        <div class="container-timeline pl-3 pt-3 pr-3">
         <div class="post-container   mb-2">
     
             <div class="profile-top-post  ">
@@ -114,7 +147,8 @@
             
             <div class="top-languages-right-side-menu  ">
                 <div class="top-languages-head">
-                    <h3>Top Linguagens</h3>
+
+                    <h4 class=""> <> Melhores Linguagens</h4>
                 </div>       
                 <!---========= DETALHES DA LINGUAGEM  =========-->
                 <div class="top-languages-language-skill">
@@ -122,8 +156,8 @@
                         <img src="../assets/img/react-biblioteca.png" alt="">
                     </div>
                     <div class="language-details border">
-                        <h4>React</h4>
-                        <p class="p2">Framework</p>
+                        <h4 class="p2">React</h4>
+                        <p class="p3">Framework</p>
                     </div>
                 </div>   
                 <!---========= DETALHES DA LINGUAGEM  =========-->
@@ -132,8 +166,8 @@
                         <img src="../assets/img/angular-framework.png" alt="">
                     </div>
                     <div class="language-details border">
-                        <h4>Angular</h4>
-                        <p class="p2">Framework</p>
+                        <h4 class="p2">Angular</h4>
+                        <p class="p3">Framework</p>
                     </div>
                 </div>  
                 <!---========= DETALHES DA LINGUAGEM  =========-->
@@ -142,13 +176,15 @@
                         <img src="../assets/img/angular-framework.png" alt="">
                     </div>
                     <div class="language-details border">
-                        <h4>Angular</h4>
-                        <p class="p2">Framework</p>
+                        <h4 class="p2">Angular</h4>
+                        <p class="p3">Framework</p>
                     </div>
                 </div> 
 
                 <button class=""></button>
             </div>
+
+            
             
 
             </div>

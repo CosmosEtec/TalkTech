@@ -16,6 +16,11 @@ $container-s: 540px;
     @media screen and (max-width: $container-xl) and (min-width: $container-l) {
       @content;
     }
+  } @else if $device == lu {
+    // Para resolucao menor que 1140px 
+    @media screen and (max-width: $container-l) {
+      @content;
+    }
   } @else if $device == m {
     // Para resolucao entre 960px e 1440px
     @media screen and (max-width: $container-l) and (min-width: $container-s) {
@@ -68,6 +73,17 @@ $container-s: 540px;
     @include responsive(s){
         align-items: center;
         padding: 110px 0 0 0;
+    }
+}
+
+.container-timeline{
+    flex: 2 1 360px;
+    display: flex;
+    justify-content: center;
+
+    
+    @include responsive(s){
+     padding: 0;   
     }
 }
 
