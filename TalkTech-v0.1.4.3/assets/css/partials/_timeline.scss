@@ -1,0 +1,61 @@
+.container-timeline{
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 0 0 16px;
+
+    display: flex;
+
+    
+    @include responsive(s){
+     padding: 48px 16px 0 16px;   
+    }
+
+    @include responsive(lu) {
+        padding-left: 16px;
+    }
+
+}
+
+nav.nav-menu-timeline {
+    width: 750px;
+    
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* From https://css.glass */
+    box-shadow: 3px 4px 17px 5px rgba(0.54,0,0,0.54);
+
+    div.nav-menu-list-buttons{
+        display: flex;
+        flex-direction: row;        
+    }
+    div.nav-menu-button-container{
+    
+    
+    }
+
+
+    @include responsive(s){
+     max-width: 820px;
+     width: 100%;
+    }
+    
+}
+
+div.create-post-directly-container{
+    width: 650px;
+    
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background: $black-light;
+    box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.54);
+    
+}

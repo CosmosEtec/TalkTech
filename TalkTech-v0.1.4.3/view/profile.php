@@ -15,17 +15,7 @@
     
     
     
-    <!---========= SIDE MENU =========-->
-    <nav class="nav-side-menu border " id="side-menu">
-        <div class="nav-list-side-menu">
-            
-            <a href="feed.php" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-home.svg" width="60" alt=""></a>
-            <a href="#Chats" class="nav-link-side-menu mb-1"><img src="../assets/svg/icon-chat.svg" width="60" alt=""></a>
-            <a class="nav-link-side-menu mb-1" id="create-post"><img src="../assets/svg/icon-add-plus-circle.svg" width="60" alt=""></a>
-            <a href="profile.php" class="nav-link-side-menu"><img src="../assets/svg/icon-profile-side-menu.svg" width="60" alt=""></a>
-        </div>
-    </nav>
-    <!---========= FIM SIDE MENU =========-->
+    
 
     <!---========= CONTAINER PERFIL =========-->
     <section class="container-profile border"> 
@@ -37,6 +27,50 @@
 
         <!---========= CONTAINER TIMELINE =========-->
         <div class="container-profile-timeline border">
+
+        <nav class="nav-left-side-menu   " id="side-menu">
+            
+                <div class="div-nav-left-side-menu-link  ">
+                    
+                    <a href="feed.php" class="nav-link mb-1">
+                        <div class=" ">
+                        <img src="../assets/svg/icon-home.svg" width="50px" height="30px" alt="">
+                        </div>
+                        <span class="mb-1">Home</span>
+                    </a>   
+                    
+                </div>
+            
+
+              
+            <div class="div-nav-left-side-menu-link">
+                <a href="#Chats" class="nav-link mb-1"> 
+                    <div>
+                        <img src="../assets/svg/icon-chat.svg" width="60px" alt="">
+                    </div>
+                    <span class="mb-1">Chat</span>
+                </a>
+            </div>
+           
+            
+            <div class="div-nav-left-side-menu-link">
+                <a class="nav-link mb-1" id="create-post">
+                    <div>
+                        <img src="../assets/svg/icon-add-plus-circle.svg" width="60px" alt="">
+                    </div>
+                    <span class="mb-1">Criar</span>
+                </a>
+            </div>
+            <div class="div-nav-left-side-menu-link">
+                <a href="profile.php" class="nav-link ">
+                <div>
+                    <img src="../assets/svg/icon-profile-side-menu.svg" width="60px" alt="">
+                </div>
+                <span>Perfil</span>
+                </a>
+            </div>
+        </nav>
+        <!---========= FIM LEFT SIDE MENU =========-->  
 
             <!---========= CONTAINER CABEÇALHO PERFIL =========-->
             <div class="container-profile-background border">

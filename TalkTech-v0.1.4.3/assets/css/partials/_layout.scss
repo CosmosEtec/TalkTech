@@ -1,5 +1,6 @@
 // Container-devices
 $container-xl: 1440px;
+$container-ml: 1280px;
 $container-l: 1140px;
 $container-m: 960px;
 $container-s: 540px;
@@ -16,9 +17,14 @@ $container-s: 540px;
     @media screen and (max-width: $container-xl) and (min-width: $container-l) {
       @content;
     }
-  } @else if $device == lu {
+  } @else if $device == ul {
     // Para resolucao menor que 1140px 
     @media screen and (max-width: $container-l) {
+      @content;
+    }
+  } @else if $device == uml {
+    // Para resolucao menor que 1280px 
+    @media screen and (max-width: $container-ml) {
       @content;
     }
   } @else if $device == m {
@@ -76,16 +82,7 @@ $container-s: 540px;
     }
 }
 
-.container-timeline{
-    flex: 2 1 360px;
-    display: flex;
-    justify-content: center;
 
-    
-    @include responsive(s){
-     padding: 0;   
-    }
-}
 
 .left-0{
     left: 0;

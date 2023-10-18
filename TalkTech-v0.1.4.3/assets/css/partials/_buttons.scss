@@ -13,31 +13,45 @@ a{
 
 a.nav-link{
     width: 100%;
-    height: 50px;
     display: flex;
-    align-items: end;
-    justify-content: center;
+    padding-left: 8%;
+    align-items: center;
+    justify-content: start;
 
     &:hover{
-        opacity: 0.9;
+       
+        opacity: 0.6;
         transform: translateY(-5px);
-    }
 
-    span{
-        transition: 0.3s ease;
-        @include responsive(lu){
-            display: none;
+        &::after{
+            width: 60px;
+            background: #5919a1;
         }
     }
 
+    
+
+    div.nav-left-side-menu-icon-container{
+        max-width: 40px;
+        width: 100%;
+    } 
+
     div.ml-1{
-        @include responsive(lu){
+        @include responsive(ul){
             margin-left: 0;
         }
     }
 
-    @include responsive(lu){
+    span {
+        @include responsive(uml){
+            display: none;
+        }
+    }
+
+    @include responsive(uml){
         margin-bottom: 0;
+        padding-left: 0;
+        justify-content: center;
     }
 }
 
@@ -140,5 +154,28 @@ a:hover #btn-bv::after{
     &:hover {
         transform: scale(1.02);
         opacity: 0.9;
+    }
+}
+
+button.nav-menu-button-timeline{
+    border: none;
+    padding: 0.65rem 1rem 0.65rem 1rem;
+    background: none;
+     
+    font-weight: 250;
+    font-size: 16px;
+    line-height: 140%;
+    color: #edeaef;
+
+    cursor: pointer;
+    transition: 0.5s ease;
+
+    &:hover{
+        background: $black-light;
+        opacity: 0.7;
+    }
+
+    &-ativo{
+      background: $black-light;
     }
 }

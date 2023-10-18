@@ -33,10 +33,10 @@
                 <div class="div-nav-left-side-menu-link  ">
                     
                     <a href="feed.php" class="nav-link mb-1">
-                        <div class="ml-1">
-                        <img src="../assets/svg/icon-home.svg" width="50px" height="50px" alt="">
+                        <div class="nav-left-side-menu-icon-container">
+                        <img src="../assets/svg/icon-home.svg" width="50px" height="30px" alt="">
                         </div>
-                        <span class="mb-1">Home</span>
+                        <span class="mt-1">Home</span>
                     </a>   
                     
                 </div>
@@ -45,78 +45,106 @@
               
             <div class="div-nav-left-side-menu-link">
                 <a href="#Chats" class="nav-link mb-1"> 
-                    <div>
+                    <div class="nav-left-side-menu-icon-container">
                         <img src="../assets/svg/icon-chat.svg" width="60px" alt="">
                     </div>
-                    <span class="mb-1">Chat</span>
+                    <span class="mt-1">Chat</span>
                 </a>
             </div>
            
             
             <div class="div-nav-left-side-menu-link">
-                <a class="nav-link mb-1" id="create-post">
-                    <div>
+                <a class="nav-link mb-1">
+                    <div class="nav-left-side-menu-icon-container">
                         <img src="../assets/svg/icon-add-plus-circle.svg" width="60px" alt="">
                     </div>
                     <span class="mb-1">Criar</span>
                 </a>
             </div>
             <div class="div-nav-left-side-menu-link">
-                <a href="profile.php" class="nav-link ">
-                <div>
+                <a href="profile.php" class="nav-link mb-1">
+                <div class="nav-left-side-menu-icon-container">
                     <img src="../assets/svg/icon-profile-side-menu.svg" width="60px" alt="">
                 </div>
-                <span>Perfil</span>
+                <span class="mt-1">Perfil</span>
                 </a>
             </div>
         </nav>
         <!---========= FIM LEFT SIDE MENU =========-->         
     
     
-        <!---========= POST =========-->
-        <div class="container-timeline pl-3 pt-3 pr-3">
-        <div class="post-container   mb-2">
-    
-            <div class="profile-top-post  ">
-                <div class="profile-pic  ">
-                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                </div>
-                <div class="profile-username flex-column ml-1">
-                    <h4>bolsonaro</h4>
-                    <p>@suicidio</p>
-                </div>
-                
-            </div>  
-            <div class="content-post  ">
-                <img src="../assets/img/bonoro-anao.jpg" alt="" height="350px">
-            </div>
-            <!---interações---->
-            <div class="post-interactions  ">
-                <div class="post-like-comment">
-                    <div>
-                    <button class="post-like-comment mt-1">
-                        <img class="" src="../assets/svg/icon-comment.svg" alt="">
-                    </button>
+        <!---========= TIMELINE =========-->
+        <div class="container-timeline">
+        
+            <!---========= NAV TIMELINE =========-->
+            <nav class="nav-menu-timeline">
+                <div class="nav-menu-list-buttons">
+                    <div class="nav-menu-button-container">
+                        <button class="nav-menu-button-timeline" onclick="buttonActive()">Timeline</button>
                     </div>
-                <div>    
-                <button class="post-like-heart mt-1 ml-1">
-                        <img class="" src="../assets/svg/icon-heart-like.svg" alt="">
-                    </button>
+                    <div class="nav-menu-button-container ml-2">
+                        <button class="nav-menu-button-timeline" onclick="buttonActive()">Issues</button>
+                    </div>
+                    <div class="nav-menu-button-container ml-2">
+                        <button class="nav-menu-button-timeline" onclick="buttonActive()">Jontex</button>
+                    </div>
                 </div>
+
+                <div class="nav-menu-button-container">
+                    <button class="nav-menu-button-timeline"  onclick="buttonActive()">[][][]</button>
                 </div>
-                <div>
-                    <img src="../assets/svg/icon-3-points-horizontal.svg" alt="">
+            </nav>
+
+            <!---========= FIM NAV TIMELINE =========-->
+
+            <div class="create-post-directly-container">
+                <input type="text">
+                <button id="create-post">+</button>
+            </div>
+        
+            <div class="post-container   mb-2">
+        
+                <div class="profile-top-post  ">
+                    <div class="profile-pic  ">
+                        <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                    </div>
+                    <div class="profile-username flex-column ml-1">
+                        <h4>bolsonaro</h4>
+                        <p>@suicidio</p>
+                    </div>
+                    
+                </div>  
+                <div class="content-post  ">
+                    <img src="../assets/img/codimg.jpg" alt="" height="350px">
+                </div>
+                <!---interações---->
+                <div class="post-interactions  ">
+                    <div class="post-like-comment">
+                        <div>
+                        <button class="post-like-comment mt-1">
+                            <img class="" src="../assets/svg/icon-comment.svg" alt="">
+                        </button>
+                        </div>
+                    <div>    
+                    <button class="post-like-heart mt-1 ml-1">
+                            <img class="" src="../assets/svg/icon-heart-like.svg" alt="">
+                        </button>
+                    </div>
+                    </div>
+                    <div>
+                        <img src="../assets/svg/icon-3-points-horizontal.svg" alt="">
+                    </div>
+                </div>
+                <div class="post-description">
+                    <h4 class="mt-1">Congresso anula os traveseiros de waifu do bolsonaro!</h4>
+                    <p>Infelizmente nesta manhã de terça-feira (15), bolsonaro teve seus bens confiscados
+                        e a Polícia Federal apreendeu todos seus dakimakura (travesseiros de waifu).
+                    </p>
                 </div>
             </div>
-            <div class="post-description">
-                <h4 class="mt-1">Congresso anula os traveseiros de waifu do bolsonaro!</h4>
-                <p>Infelizmente nesta manhã de terça-feira (15), bolsonaro teve seus bens confiscados
-                    e a Polícia Federal apreendeu todos seus dakimakura (travesseiros de waifu).
-                </p>
-            </div>
-        </div>
         </div>
         
+        <!---========= FIM TIMELINE ===========-->
         
         
         <!---========= Criar Post ===========-->
@@ -194,5 +222,6 @@
         
         </section>
     <script src="../assets/js/createPost.js"></script>
+    <script src="../assets/js/Feed/Timeline/navTimeline.js"></script>
 </body>
 </html>
