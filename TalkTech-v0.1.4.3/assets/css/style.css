@@ -1330,6 +1330,11 @@ header {
   padding: 0 10px;
 }
 
+.form-senhaCadastro {
+  margin-left: 20px;
+  color: white;
+}
+
 .post-container {
   width: 650px;
   height: 650px;

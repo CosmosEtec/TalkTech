@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Talk Tech</title>
     </head>
     <body>
@@ -75,7 +76,11 @@
                                 <div class="input-field my-2">
                                     <input type="password" name="SenhaCadastro" id="SenhaCadastro" required="required">
                                     <span>Senha</span>
+                                    <br>
+                                    <input type="checkbox" class="senhaCadastro" onclick="myFunction()">Visualizar Senha
                                 </div>
+                                    
+
                                 <div class="input-field my-2">
                                     <input type="password" name="ConfirmaSenhaCadastro" id="ConfirmaSenhaCadastro" required="required">
                                     <span>Confirma Senha</span>
@@ -83,11 +88,11 @@
 
                                 <input type="submit" class="btn mt-2 mb-1" id="submitButton">
                                 <div id="message" style="diplay:none">
-  <p>Password must contain the following:</p>
-  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-  <p id="number" class="invalid">A <b>number</b></p>
-  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+  <p>A sua senha precisa de:</p>
+  <p id="letter" class="invalid"><b>letra Minuscula</b> </p>
+  <p id="capital" class="invalid"><b>letra Maiuscula</b></p>
+  <p id="number" class="invalid"><b>Numeros</b></p>
+  <p id="length" class="invalid">Minimo <b>8 caracteres</b></p>
 </div>
                                 <p class="form-text-Login mt-2">Você ja tem uma conta? <a class="form-link-login" href="#">Login</a></p>
                             </form>

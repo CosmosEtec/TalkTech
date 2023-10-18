@@ -120,3 +120,12 @@ document.getElementById('cadForm').addEventListener('submit', function(event){
     })
     .catch(error => alert('Erro na requisição: ' + error));
 });
+
+function myFunction() {
+    var x = document.getElementById("SenhaCadastro");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
