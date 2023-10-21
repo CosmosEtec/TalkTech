@@ -890,6 +890,7 @@ header {
   min-width: 6rem;
   background-color: #131414;
   padding: 40px 0px 0 0px;
+  left: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1525,79 +1526,109 @@ input[type=text].search-field {
   border: none;
 }
 
-.background-bar-header {
-  width: 100%;
-  max-width: 1440px;
-  height: 250px;
-  margin: 0 auto;
-  position: absolute;
-}
-
 .container-profile {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   background-color: transparent;
   box-shadow: none;
   transition: 0.5s ease;
 }
 
-.container-profile-background {
-  width: 100%;
-  max-width: 800px;
-  height: 250px;
-  position: relative;
-  z-index: 1000;
-}
-
-.profile-pic-timeline {
-  width: 80px;
-  height: 80px;
+.imagem-fds {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  position: absolute;
-  margin-left: 1%;
-  bottom: -15%;
-}
-.profile-pic-timeline img {
-  border-radius: 50%;
+  background: blue;
 }
 
-.container-profile-description {
+.container-profile-father {
   width: 100%;
-  padding: 0 0 0 1%;
-}
-
-.container-follow-followers {
-  height: 50px;
-  padding-top: 1%;
+  height: 100vh;
+  z-index: 10;
+  margin-top: 90px;
   display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
+  justify-content: center;
+}
+
+.container-profile-child {
+  width: 100%;
+  height: 100vh;
+  max-width: 712px;
+}
+
+.container-profile-user {
+  width: 100%;
+}
+
+.container-profile-user-info {
+  width: 100%;
+  padding: 8px;
+  display: flex;
+}
+
+.user-info-detalhes {
+  width: 100%;
+}
+
+.user-detalhes-name-btn {
+  width: 100%;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.follow-followers-itens {
-  width: 45px;
-  height: 45px;
+.detalhes-btn {
+  width: 40%;
   display: flex;
-  margin-right: 5%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.user-info-seguidores {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info-seguidores {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
 }
 
-.follow-followers-itens-img {
-  width: 23px;
-  height: 23px;
+.text-profile {
+  color: #edeaef;
 }
 
-.container-profile-timeline {
+.btn-detalhes {
+  background: #f7f2fa;
+  color: #262828;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 7px;
+}
+.btn-detalhes:hover {
+  opacity: 0.5;
+}
+
+.public-title {
   width: 100%;
-  max-width: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.title-profile {
+  padding: 0px 5px;
+  border-bottom: 2px solid #f7f2fa;
+}
+
+.container-profile-child-public {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1609,6 +1640,7 @@ input[type=text].search-field {
   flex-direction: column;
   align-items: center;
   padding: 28px 0 0 16px;
+  overflow-y: scroll;
   display: flex;
 }
 @media screen and (max-width: 960px) {
@@ -1650,14 +1682,13 @@ div.create-post-directly-container {
 }
 
 html {
-  scroll-behavior: smooth;
+  overflow-y: hidden;
 }
 
 body {
   width: 100%;
   height: 100vh;
   position: relative;
-  scroll-behavior: smooth;
   background: #262828;
 }
 

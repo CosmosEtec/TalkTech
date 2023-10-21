@@ -19,18 +19,16 @@
 @import "partials/profile";
 @import "partials/timeline";
 
-
-html {
-  // Scrool mais suave de transição
-  scroll-behavior: smooth;
+html{
+  overflow-y: hidden;
 }
 
 body {
   width: 100%;
   height: 100vh;
   position: relative;
-
-  scroll-behavior: smooth;
+  
+  
 
   background: $black-fundo;
 }

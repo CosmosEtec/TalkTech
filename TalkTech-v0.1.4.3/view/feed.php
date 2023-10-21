@@ -74,7 +74,7 @@
     
     
         <!---========= TIMELINE =========-->
-        <div class="container-timeline">
+        <div class="container-timeline" id="scrollableDiv">
         
             <!---========= NAV TIMELINE =========-->
             <nav class="nav-menu-timeline">
@@ -222,6 +222,6 @@
         
         </section>
     <script src="../assets/js/createPost.js"></script>
-    <script src="../assets/js/Feed/Timeline/navTimeline.js"></script>
+    <script src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
 </body>
 </html>

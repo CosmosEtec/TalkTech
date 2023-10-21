@@ -1,12 +1,4 @@
-.background-bar-header{
-    width: 100%;
-    max-width: 1440px;
-    height: 250px;
-    margin: 0 auto;
-    position: absolute;
-}
-
-// Header
+// -- Header --
 .container-profile{
     width: 100%;
     max-width: 1440px;
@@ -14,79 +6,115 @@
     padding: 0;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 
     background-color: transparent;
     box-shadow: none;
     transition: .5s ease;
-
-
 }
 
-.container-profile-background{
-    width: 100%;
-    max-width: 800px;
-    height: 250px;
-    position: relative;
-    z-index: 1000;
-}
-
-.profile-pic-timeline{
-    width: 80px;
-    height: 80px;
+.imagem-fds{
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    position: absolute;
-    margin-left: 1%;
-    bottom: -15%;
+    background: blue;
+}
 
-    img{
-        border-radius: 50%;
+// -- Profile --
+.container-profile-father{
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    margin-top: 90px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.container-profile-child{
+    width: 100%;
+    height: 100vh;
+    max-width: 712px;
+}
+
+// -- Info da Conta --
+
+.container-profile-user{
+    width: 100%;
+}
+
+.container-profile-user-info{
+    width: 100%;
+    padding: 8px;
+
+    display: flex;
+}
+
+.user-info-detalhes{
+    width: 100%;
+}
+
+.user-detalhes-name-btn{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detalhes-btn{
+    width: 40%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user-info-seguidores{
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info-seguidores{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-profile{
+    color: $white-dark;
+}
+
+.btn-detalhes{
+    background: $white-normal;
+    color: $black-fundo;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 7px;
+
+    &:hover{
+        opacity: 0.5;
     }
 }
 
-// Fim Header
-
-// Descrição Perfil
-
-.container-profile-description{
+.public-title{
     width: 100%;
-    padding: 0 0 0 1%;
-}
 
-.container-follow-followers{
-    height: 50px;
-    padding-top: 1%;
     display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    align-items: center;
+    justify-content: center;
 }
 
-.follow-followers-itens{
-    width: 45px;
-    height: 45px;
-    display: flex;
-    margin-right: 5%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
+.title-profile{
+    padding: 0px 5px;
+    border-bottom: 2px solid $white-normal;
 }
 
-.follow-followers-itens-img{
-    width: 23px;
-    height: 23px;
-}
-
-
-// Timeline Posts
-.container-profile-timeline{
-    width: 100%;
-    max-width: 800px;
-
+.container-profile-child-public{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-
