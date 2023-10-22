@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Feed</title>
+</head>
+<body>
+    <!---========= HEADER =========-->
+    
+    
+    <!---========= CONTAINER FEED =========-->
+    <section class="container-chat ">
+        <!---========= LEFT SIDE MENU =========--> 
+        <nav class="nav-left-side-menu   " id="side-menu">
+            
+                <div class="div-nav-left-side-menu-link  ">
+                    
+                    <a href="feed.php" class="nav-link mb-1">
+                        <div class="nav-left-side-menu-icon-container">
+                        <img src="../assets/svg/icon-home.svg" width="50px" height="30px" alt="">
+                        </div>
+                        <span class="mt-1">Home</span>
+                    </a>   
+                    
+                </div>
+            
+
+              
+            <div class="div-nav-left-side-menu-link">
+                <a href="#Chats" class="nav-link mb-1"> 
+                    <div class="nav-left-side-menu-icon-container">
+                        <img src="../assets/svg/icon-chat.svg" width="60px" alt="">
+                    </div>
+                    <span class="mt-1">Chat</span>
+                </a>
+            </div>
+           
+            
+            <div class="div-nav-left-side-menu-link">
+                <a class="nav-link mb-1">
+                    <div class="nav-left-side-menu-icon-container">
+                        <img src="../assets/svg/icon-add-plus-circle.svg" width="60px" alt="">
+                    </div>
+                    <span class="mb-1">Criar</span>
+                </a>
+            </div>
+            <div class="div-nav-left-side-menu-link">
+                <a href="profile.php" class="nav-link mb-1">
+                <div class="nav-left-side-menu-icon-container">
+                    <img src="../assets/svg/icon-profile-side-menu.svg" width="60px" alt="">
+                </div>
+                <span class="mt-1">Perfil</span>
+                </a>
+            </div>
+
+            <div class="div-nav-left-side-menu-link">
+                <a href="profile.php" class="nav-link mb-1">
+                <div class="nav-left-side-menu-icon-container">
+                    <img src="../assets/svg/icon-notification.svg" width="60px" alt="">
+                </div>
+                <span class="mt-1">Notificações</span>
+                </a>
+            </div>
+        </nav>
+        <!---========= FIM LEFT SIDE MENU =========-->   
+        <nav class="nav-list-chats">
+            <div class="w-100">
+            <button class="dropdown-item" id="dropdown-button">Conversas</button>
+            </div>
+            <div class="dropdown-content mt-1" id="dropdown-list">
+                <a class="dropdown-item" href="#">Pessoa 1</a>
+                <a class="dropdown-item" href="#">Pessoa 2</a>
+                <a class="dropdown-item" href="#">Pessoa 3</a>
+                <!-- Adicione mais pessoas conforme necessário -->
+            </div>
+        </nav>
+        <div class="border container-chat-messages">
+
+            <div class="container-direct-messages">
+                <div class="header-profile-user-chat">
+                    <div class="profile-pic  ">
+                        <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                    </div>
+                    <div class="profile-username flex-column ml-1">
+                        <h4>bolsonaro</h4>
+                        <p>@suicidio</p>
+                    </div>
+                </div>
+                <div class="container-messages-roll">
+                    
+                    <!--=====================MENSAGEM RECEBIDA========================-->
+                    <div class="message-recivied mb-1">
+                        <div class="message-balloon-recivied">
+                            <h4 class="p2">oi eu estou bem como você está? a sei la eu to bem bom mano obrigado muito obrigado</h4>
+                        </div>
+                    </div>
+
+                    <div class="message-recivied mb-1">
+                        <div class="message-balloon-recivied">
+                            <h4 class="p2">oi eu estou bem como você está? a sei la eu to bem bom mano obrigado muito obrigado</h4>
+                        </div>
+                    </div>
+
+                    <!--=====================MENSAGEM ENVIADA========================-->
+                    <div class="message-sent mb-1">
+                        <div class="message-balloon-sent">
+                            <h4 class="p2">oi eu estou bem como você está? a sei la eu to bem bom mano obrigado muito obrigado</h4>
+                        </div>
+                    </div>
+
+                    
+                    
+                    
+                   
+
+                </div>
+            </div>
+            <div class="sending-container">
+                <input type="text" class="message-field">
+            </div>
+        </div>
+    
+    
+          
+        
+        </section>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
+</body>
+</html>

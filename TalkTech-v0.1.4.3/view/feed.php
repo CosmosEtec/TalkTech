@@ -44,7 +44,7 @@
 
               
             <div class="div-nav-left-side-menu-link">
-                <a href="#Chats" class="nav-link mb-1"> 
+                <a href="chat.php" class="nav-link mb-1"> 
                     <div class="nav-left-side-menu-icon-container">
                         <img src="../assets/svg/icon-chat.svg" width="60px" alt="">
                     </div>
@@ -67,6 +67,15 @@
                     <img src="../assets/svg/icon-profile-side-menu.svg" width="60px" alt="">
                 </div>
                 <span class="mt-1">Perfil</span>
+                </a>
+            </div>
+
+            <div class="div-nav-left-side-menu-link">
+                <a href="profile.php" class="nav-link mb-1">
+                <div class="nav-left-side-menu-icon-container">
+                    <img src="../assets/svg/icon-notification.svg" width="60px" alt="">
+                </div>
+                <span class="mt-1">Notificações</span>
                 </a>
             </div>
         </nav>
@@ -99,10 +108,12 @@
 
             <div class="create-post-directly-container">
                 <input type="text">
-                <button id="create-post">+</button>
+                <button id="create-post"> <div class="nav-left-side-menu-icon-container">
+                        <img src="../assets/svg/icon-add-plus-circle.svg" width="60px" alt="">
+                    </div></button>
             </div>
         
-            <div class="post-container   mb-2">
+            <div class="post-container   mb-2" >
         
                 <div class="profile-top-post  ">
                     <div class="profile-pic  ">
@@ -221,7 +232,8 @@
           
         
         </section>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../assets/js/createPost.js"></script>
-    <script src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
+    <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
 </body>
 </html>

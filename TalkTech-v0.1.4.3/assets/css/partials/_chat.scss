@@ -1,0 +1,193 @@
+.container-chat{
+    max-width: $container-xl;
+    margin: 0 auto;
+    position: relative;
+    background: transparent;
+    
+
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+
+    @include responsive(s){
+        align-items: center;
+        padding: 110px 0 0 0;
+    }
+}
+
+.container-chat-messages{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.45rem;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.container-direct-messages{
+    width: 96%;
+    height: 100vh;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+}
+
+.header-profile-user-chat{
+    width: 100%;
+    padding: 1rem;
+    overflow: hidden;
+    background: $black;
+    display: flex;
+    
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 1px solid $gray-clean-border;
+}
+
+.container-messages-roll{
+    width: 100%;
+    height: 100vh;
+    background: $black-blue;
+    overflow: auto;
+    padding: 0.5%;
+
+    &::-webkit-scrollbar-thumb{
+        background-color: $purple-dark;
+        border: none;
+        border-radius: 4px;
+    }
+    &::-webkit-scrollbar{
+        background-color: $black-blue;
+        border: none;
+    }
+}
+
+.message-recivied{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.message-balloon-recivied{
+    width: 48%;
+    padding: 1%;
+    background: $black-silly;
+    
+    border-top-left-radius: none;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.message-sent{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.message-balloon-sent{
+    width: 48%;
+    padding: 1%;
+    background: $purple-light;
+    
+    border-top-left-radius: 15px;
+    border-top-right-radius: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.sending-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+input.message-field{
+    color: $white-dark;
+    padding: 0.65rem;
+    border-radius: 5px;
+    border: none;
+    width: 96%;
+    background: $black-dark;
+    outline: 1px solid $purple-dark;
+
+    &:focus{
+        outline: 1px solid $purple-dark;
+    }
+}
+
+.nav-chats{
+    left: 0;
+    width: 19rem;
+    height: 100vh;
+    background: $black-dark-nuture;
+}
+
+.nav-chats {
+    
+    padding-top: 1rem;
+}
+
+.container-direct-chat{
+    width: 100%;
+    padding: 0 0.25rem 0 0.25rem;
+    border-top: 1px solid $gray-clean-border;
+}
+
+button.direct-chat{
+    width: 100%;
+    cursor: pointer;
+    padding: 1rem 0 1rem 0;
+    background: none;
+    border: none;
+    color: white;
+    
+    
+}
+
+.nav-list-chats{
+    width: 15%;
+    height: 100vh;
+    background: $black-dark-nuture;
+  }
+
+  .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
+    position: absolute;
+    background-color: black-light;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown:hover .dropdown-content, .dropdown.active .dropdown-content {
+    max-height: 200px; /* Ajuste a altura máxima conforme necessário */
+  }
+
+  .dropdown-item {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  button.dropdown-item{
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-item:hover {
+    background-color: $black-light;
+  }
+
+  
+
+
+

@@ -5,6 +5,7 @@
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
    /* From https://css.glass */
    box-shadow: 5px 4px 20px 10px rgba(0.30,0,0,0.45);
 
@@ -13,6 +14,16 @@
     width: 100%;
    }
    
+}
+
+.overlayed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 60%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 900; /* Para garantir que esteja sobre os outros elementos */
 }
 
 .profile-top-post{
@@ -29,8 +40,8 @@
 
 img.profile-pic-img{
     border: 1px solid $black-dark;
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
 }
 
