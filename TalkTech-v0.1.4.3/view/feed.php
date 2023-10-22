@@ -113,46 +113,49 @@
                     </div></button>
             </div>
         
-            <div class="post-container   mb-2" >
-        
-                <div class="profile-top-post  ">
-                    <div class="profile-pic  ">
-                        <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                    </div>
-                    <div class="profile-username flex-column ml-1">
-                        <h4>bolsonaro</h4>
-                        <p>@suicidio</p>
-                    </div>
-                    
-                </div>  
-                <div class="content-post  ">
-                    <img src="../assets/img/codimg.jpg" alt="" height="350px">
-                </div>
-                <!---interações---->
-                <div class="post-interactions  ">
-                    <div class="post-like-comment">
-                        <div>
-                        <button class="post-like-comment mt-1">
-                            <img class="" src="../assets/svg/icon-comment.svg" alt="">
-                        </button>
+            <div class="overlayed" id="overlay"> </div>
+                <div class="post-container   mb-2" >
+            
+                    <div class="profile-top-post  ">
+                        <div class="profile-pic  ">
+                            <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
                         </div>
-                    <div>    
-                    <button class="post-like-heart mt-1 ml-1">
-                            <img class="" src="../assets/svg/icon-heart-like.svg" alt="">
-                        </button>
+                        <div class="profile-username flex-column ml-1">
+                            <h4>bolsonaro</h4>
+                            <p>@suicidio</p>
+                        </div>
+                        
+                    </div>  
+                    <div class="content-post  ">
+                        <img src="../assets/img/codimg.jpg" alt="" height="350px">
                     </div>
+                    <!---interações---->
+                    <div class="post-interactions  ">
+                        <div class="post-like-comment">
+                            <div>
+                            <button class="post-like-comment mt-1">
+                                <img class="" src="../assets/svg/icon-comment.svg" alt="">
+                            </button>
+                            </div>
+                        <div>    
+                        <button class="post-like-heart mt-1 ml-1">
+                                <img class="" src="../assets/svg/icon-heart-like.svg" alt="">
+                            </button>
+                        </div>
+                        </div>
+                        <div>
+                            <img src="../assets/svg/icon-3-points-horizontal.svg" alt="">
+                        </div>
                     </div>
-                    <div>
-                        <img src="../assets/svg/icon-3-points-horizontal.svg" alt="">
+                    <div class="post-description">
+                        <h4 class="mt-1">Congresso anula os traveseiros de waifu do bolsonaro!</h4>
+                        <p>Infelizmente nesta manhã de terça-feira (15), bolsonaro teve seus bens confiscados
+                            e a Polícia Federal apreendeu todos seus dakimakura (travesseiros de waifu).
+                        </p>
                     </div>
                 </div>
-                <div class="post-description">
-                    <h4 class="mt-1">Congresso anula os traveseiros de waifu do bolsonaro!</h4>
-                    <p>Infelizmente nesta manhã de terça-feira (15), bolsonaro teve seus bens confiscados
-                        e a Polícia Federal apreendeu todos seus dakimakura (travesseiros de waifu).
-                    </p>
-                </div>
-            </div>
+            
+            
         </div>
         
         <!---========= FIM TIMELINE ===========-->
