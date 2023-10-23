@@ -74,6 +74,10 @@
   flex-direction: column;
 }
 
+.flex {
+  display: flex;
+}
+
 .relative {
   position: relative;
 }
@@ -151,13 +155,13 @@
 ::-webkit-scrollbar {
   width: 8px;
   background-color: transparent;
-  border: 5px solid #1d1d1f;
+  border: 5px solid #0E0E13;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #474747;
+  background-color: #b7b7b7;
   border-radius: 50px;
-  border: 2px solid #474747;
+  border: 2px solid #b7b7b7;
 }
 
 h1 {
@@ -282,7 +286,7 @@ p.white {
 }
 
 .p1 {
-  color: #474747;
+  color: #b7b7b7;
   font-family: "Sora", sans-serif;
   font-weight: 250;
   font-size: 24px;
@@ -313,7 +317,7 @@ p.white {
 }
 
 .p3 {
-  color: #474747;
+  color: #b7b7b7;
   font-family: "Sora", sans-serif;
   font-weight: 250;
   font-size: 12px;
@@ -328,13 +332,29 @@ p.white {
   }
 }
 
+.p4 {
+  color: #edeaef;
+  font-family: "Sora", sans-serif;
+  font-weight: 250;
+  font-size: 12px;
+  line-height: 150%;
+}
+@media screen and (max-width: 960px) {
+  .p4 {
+    font-family: "Sora", sans-serif;
+    font-weight: 250;
+    font-size: 8px;
+    line-height: 150%;
+  }
+}
+
 span {
   font-family: "Sora", sans-serif;
 }
 
 .bold {
   font-weight: bold;
-  color: #474747;
+  color: #b7b7b7;
 }
 
 strong {
@@ -509,11 +529,11 @@ button.nav-menu-button-timeline {
   transition: 0.5s ease;
 }
 button.nav-menu-button-timeline:hover {
-  background: #474747;
+  background: #b7b7b7;
   opacity: 0.7;
 }
 button.nav-menu-button-timeline-ativo {
-  background: #474747;
+  background: #b7b7b7;
 }
 
 .s-0 {
@@ -844,7 +864,7 @@ header {
 
 .navbar-desktop {
   max-width: 1440px;
-  background: #00000e;
+  background: #27272A;
   height: 75px;
   margin: 0 auto;
   position: relative;
@@ -888,9 +908,8 @@ header {
   height: 100vh;
   width: 13rem;
   min-width: 6rem;
-  background-color: #00000e;
+  background: #27272A;
   padding: 40px 0px 0 0px;
-  left: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -956,7 +975,7 @@ header {
   min-width: 280px;
   width: 100%;
   height: 360px;
-  background: #00000e;
+  background: #27272A;
   overflow: hidden;
   border-radius: 0.5rem;
   border: 1px solid #4d5252;
@@ -988,7 +1007,7 @@ header {
   border-radius: 60px;
   width: 100%;
   border-radius: 4px;
-  background-color: #474747;
+  background-color: #b7b7b7;
 }
 .top-languages-right-side-menu .top-languages-language-skill .language-details {
   display: flex;
@@ -1345,8 +1364,7 @@ header {
   flex-direction: column;
   cursor: pointer;
   /* From https://css.glass */
-  box-shadow: 5px 4px 20px 10px rgba(0, 0, 0, 0.45);
-  border: 1px solid #121111;
+  background: #27272A;
 }
 @media screen and (max-width: 960px) {
   .post-container {
@@ -1363,6 +1381,7 @@ header {
   bottom: 0;
   overflow-y: scroll;
   display: none;
+  padding: 1rem 0 0 0;
   justify-content: center;
   align-items: center;
   cursor: default;
@@ -1385,7 +1404,6 @@ header {
 }
 
 img.profile-pic-img {
-  border: 1px solid #00000e;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -1628,7 +1646,7 @@ input[type=text].search-field {
 
 .btn-detalhes {
   background: #121111;
-  color: #1d1d1f;
+  color: #0E0E13;
   font-size: 12px;
   padding: 5px 10px;
   border-radius: 7px;
@@ -1660,12 +1678,16 @@ input[type=text].search-field {
   flex-direction: column;
   align-items: center;
   padding: 28px 0 0 16px;
+  overflow-y: auto;
   display: flex;
 }
 @media screen and (max-width: 960px) {
   .container-timeline {
     padding: 48px 16px 0 16px;
   }
+}
+.container-timeline::-webkit-scrollbar {
+  width: 1px; /* Largura da barra de rolagem no Chrome/Safari */
 }
 
 nav.nav-menu-timeline {
@@ -1676,7 +1698,8 @@ nav.nav-menu-timeline {
   flex-direction: row;
   justify-content: space-between;
   /* From https://css.glass */
-  box-shadow: 3px 4px 17px 5px rgba(1, 0, 0, 0.54);
+  box-shadow: 3px 4px 8px 5px rgba(1, 0, 0, 0.54);
+  background: #27272A;
 }
 nav.nav-menu-timeline div.nav-menu-list-buttons {
   display: flex;
@@ -1696,14 +1719,35 @@ div.create-post-directly-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: #474747;
-  box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.54);
+  background: #27272A;
+  box-shadow: 5px 4px 10px 5px rgba(0, 0, 0, 0.54);
+}
+
+#description-directly {
+  opacity: 2;
+  background: #b7b7b7;
+  box-shadow: 3px 4px 17px 5px rgba(1, 0, 0, 0.54);
+  outline: #fefbff;
+  border-radius: 3px;
+  display: flex;
+  width: 90%;
+  max-height: 60px;
+  padding: 4px 0 10px 1%;
+  overflow: hidden;
+  resize: none;
+  color: #edeaef;
+  font-size: 14px;
+  color: #edeaef;
+  font-family: "Sora", sans-serif;
+  font-weight: 250;
+  font-size: 12px;
+  line-height: 150%;
 }
 
 #create-post {
   width: 40px;
   height: 40px;
-  background: #474747;
+  background: #b7b7b7;
   border: none;
   border-radius: 5px;
   display: flex;
@@ -1830,6 +1874,30 @@ div.create-post-directly-container {
   justify-content: end;
   align-items: center;
   padding-bottom: 1rem;
+  background: #0E0E13;
+}
+
+.sending-container {
+  width: 96%;
+  background: #00000e;
+  border: 1px solid #4d5252;
+  padding: 0.45rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+input.message-field {
+  color: #edeaef;
+  padding: 0.65rem;
+  border-radius: 5px;
+  border: none;
+  width: 90%;
+  background: #00000e;
+  outline: 1px solid #701f88;
+  font-size: 14px;
+}
+input.message-field:focus {
+  outline: 1px solid #701f88;
 }
 
 .container-direct-messages {
@@ -1856,7 +1924,12 @@ div.create-post-directly-container {
 .container-messages-roll {
   width: 100%;
   height: 100vh;
-  background: #060613;
+  /* From https://css.glass */
+  background: #27272A;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(13, 12, 43, 0.3);
   overflow: auto;
   padding: 0.5%;
 }
@@ -1879,7 +1952,7 @@ div.create-post-directly-container {
 .message-balloon-recivied {
   width: 48%;
   padding: 1%;
-  background: #25253B;
+  background: #505089;
   border-top-left-radius: none;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -1900,25 +1973,6 @@ div.create-post-directly-container {
   border-top-right-radius: none;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-}
-
-.sending-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-input.message-field {
-  color: #edeaef;
-  padding: 0.65rem;
-  border-radius: 5px;
-  border: none;
-  width: 96%;
-  background: #00000e;
-  outline: 1px solid #701f88;
-}
-input.message-field:focus {
-  outline: 1px solid #701f88;
 }
 
 .nav-chats {
@@ -1944,13 +1998,20 @@ button.direct-chat {
   padding: 1rem 0 1rem 0;
   background: none;
   border: none;
-  color: white;
+  color: #4d5252;
+}
+
+.img-users {
+  width: 20px;
+  height: 20px;
 }
 
 .nav-list-chats {
   width: 15%;
   height: 100vh;
   background: #000000;
+  padding-top: 0.25rem;
+  border-right: 1px solid #4d5252;
 }
 
 .dropdown-content {
@@ -1975,24 +2036,44 @@ button.direct-chat {
 }
 
 button.dropdown-item {
-  padding: 12px 16px;
+  padding: 0.1rem 2rem 0.25rem 0.25rem;
   text-decoration: none;
   display: block;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+button.dropdown-item:hover {
+  border-radius: 5px;
+  background: #4d5252;
+  opacity: 0.8;
+}
+button.dropdown-item i {
+  transition: 0.5s;
+}
+
+div.agroup-itens-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-item:hover {
-  background-color: #474747;
+  background-color: #b7b7b7;
 }
 
 html {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 body {
   width: 100%;
   height: 100vh;
   position: relative;
-  background: #1d1d1f;
+  background: #0E0E13;
 }
 
 img {

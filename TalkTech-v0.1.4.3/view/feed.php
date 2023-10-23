@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../assets/css/style.css">
     <title>Feed</title>
 </head>
@@ -107,10 +107,12 @@
             <!---========= FIM NAV TIMELINE =========-->
 
             <div class="create-post-directly-container">
-                <input type="text">
-                <button id="create-post"> <div class="nav-left-side-menu-icon-container">
+            <textarea id="description-directly" placeholder="Escreva a sua descrição"></textarea>
+                <button id="create-post"> 
+                    <div class="nav-left-side-menu-icon-container">
                         <img src="../assets/svg/icon-add-plus-circle.svg" width="60px" alt="">
-                    </div></button>
+                    </div>
+                </button>
             </div>
         
             <div class="overlayed" id="overlay"> </div>
@@ -139,7 +141,7 @@
                             </div>
                         <div>    
                         <button class="post-like-heart mt-1 ml-1">
-                                <img class="" src="../assets/svg/icon-heart-like.svg" alt="">
+                        <i class="fa-solid fa-heart" style="color: #bd02c0;"></i>
                             </button>
                         </div>
                         </div>

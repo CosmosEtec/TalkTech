@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     padding: 28px 0 0 16px;
+    overflow-y: auto;
 
     display: flex;
 
@@ -16,6 +17,9 @@
         padding-left: 16px;
     }
 
+    &::-webkit-scrollbar {
+        width: 1px; /* Largura da barra de rolagem no Chrome/Safari */
+      }
 }
 
 nav.nav-menu-timeline {
@@ -27,7 +31,13 @@ nav.nav-menu-timeline {
     flex-direction: row;
     justify-content: space-between;
     /* From https://css.glass */
-    box-shadow: 3px 4px 17px 5px rgba(0.54,0,0,0.54);
+
+    
+    box-shadow: 3px 4px 8px 5px rgba(0.54,0,0,0.54);
+    background: $smooth-dark;
+    
+
+
 
     div.nav-menu-list-buttons{
         display: flex;
@@ -55,10 +65,32 @@ div.create-post-directly-container{
     flex-direction: row;
     justify-content: space-between;
 
-    background: $black-light;
-    box-shadow: 5px 4px 15px 5px rgba(0, 0, 0, 0.54);
+    background: $smooth-dark;
+    box-shadow: 5px 4px 10px 5px rgba(0, 0, 0, 0.54);
+    
 
     
+}
+
+#description-directly{
+    opacity: 2;
+    background: $black-light;
+    box-shadow: 3px 4px 17px 5px rgba(0.54,0,0,0.54);
+    outline: $white-light;
+    border-radius: 3px;
+    display: flex;
+    width: 90%;
+    max-height: 60px;
+    padding: 4px 0 10px 1%;
+    overflow: hidden;
+    resize: none;
+    color: $white-dark;
+
+    font-size: 14px;
+
+    color: $white-dark;
+    
+    @include typeface-2(p3, desktop);
 }
 
 #create-post{

@@ -26,6 +26,33 @@
     justify-content: end;
     align-items: center;
     padding-bottom: 1rem;
+    background: $black-fundo; 
+
+}
+
+.sending-container{
+    width: 96%;
+    background: $black-dark;
+    
+    border: 1px solid $gray-clean-border;
+    padding: 0.45rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+input.message-field{
+    color: $white-dark;
+    padding: 0.65rem;
+    border-radius: 5px;
+    border: none;
+    width: 90%;
+    background: $black-dark;
+    outline: 1px solid $purple-dark;
+    font-size: 14px;
+
+    &:focus{
+        outline: 1px solid $purple-dark;
+    }
 }
 
 .container-direct-messages{
@@ -54,7 +81,12 @@
 .container-messages-roll{
     width: 100%;
     height: 100vh;
-    background: $black-blue;
+    /* From https://css.glass */
+background: $smooth-dark;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(25px);
+border: 1px solid rgba(13, 12, 43, 0.3);
     overflow: auto;
     padding: 0.5%;
 
@@ -102,25 +134,8 @@
     border-bottom-right-radius: 15px;
 }
 
-.sending-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-input.message-field{
-    color: $white-dark;
-    padding: 0.65rem;
-    border-radius: 5px;
-    border: none;
-    width: 96%;
-    background: $black-dark;
-    outline: 1px solid $purple-dark;
 
-    &:focus{
-        outline: 1px solid $purple-dark;
-    }
-}
-
+// ================================ NAVBAR CHATS
 .nav-chats{
     left: 0;
     width: 19rem;
@@ -145,15 +160,23 @@ button.direct-chat{
     padding: 1rem 0 1rem 0;
     background: none;
     border: none;
-    color: white;
+    color: $gray-clean-border;
     
     
+}
+
+.img-users{
+    width: 20px;
+    height: 20px;
 }
 
 .nav-list-chats{
     width: 15%;
     height: 100vh;
     background: $black-dark-nuture;
+    padding-top: 0.25rem;
+    
+    border-right: 1px solid $gray-clean-border;
   }
 
   .dropdown-content {
@@ -178,14 +201,38 @@ button.direct-chat{
   }
 
   button.dropdown-item{
-    padding: 12px 16px;
+    padding: 0.10rem 2rem 0.25rem 0.25rem;
     text-decoration: none;
     display: block;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+    transition: 0.5s ease;
+    &:hover{
+        border-radius: 5px;
+        background: $gray-clean-border;
+        opacity: 0.8;
+    }
+
+    i{
+        transition: 0.5s;
+    }
+  }
+
+  div.agroup-itens-button{
+    width: 100%;
+    display: flex;
+    align-items: center;
   }
 
   .dropdown-item:hover {
     background-color: $black-light;
   }
+
+  // ================================ FIM NAVBAR CHATS
 
   
 

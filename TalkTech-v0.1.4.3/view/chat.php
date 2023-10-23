@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../assets/css/style.css">
     <title>Feed</title>
 </head>
@@ -68,8 +68,16 @@
         </nav>
         <!---========= FIM LEFT SIDE MENU =========-->   
         <nav class="nav-list-chats">
-            <div class="w-100">
-            <button class="dropdown-item" id="dropdown-button">Conversas</button>
+            <div class="w-100 flex-start">
+                <button class="dropdown-item" id="dropdown-button">
+                    <div class="agroup-itens-button">
+                        <i class="fa-solid fa-caret-right" style="color: #ffffff;"></i>
+                            <div class="img-users">
+                                <img src="../assets/svg/icon-users.svg" alt="">
+                            </div>
+                        <p class="p4 mt-1">Conversas</p>
+                    </div>
+                </button>
             </div>
             <div class="dropdown-content mt-1" id="dropdown-list">
                 <a class="dropdown-item" href="#">Pessoa 1</a>
@@ -77,8 +85,12 @@
                 <a class="dropdown-item" href="#">Pessoa 3</a>
                 <!-- Adicione mais pessoas conforme necessário -->
             </div>
+
+            
         </nav>
-        <div class="border container-chat-messages">
+
+
+        <div class="container-chat-messages">
 
             <div class="container-direct-messages">
                 <div class="header-profile-user-chat">
@@ -129,6 +141,6 @@
         
         </section>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
+        <script type="module" src="../assets/js/Chat/functionsChat.js"></script>
 </body>
 </html>

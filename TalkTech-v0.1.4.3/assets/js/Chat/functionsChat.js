@@ -16,4 +16,18 @@ document.addEventListener("DOMContentLoaded", function() {
     dropdownButton.addEventListener("click", function() {
       dropdownList.style.maxHeight = dropdownList.style.maxHeight === "200px" ? "0" : "200px"; // Ajuste conforme necessário
       dropdownButton.parentNode.classList.toggle("active");
+});
+
+    const rotateArrow = document.getElementById("dropdown-button");
+    const arrow = document.querySelector(".fa-solid.fa-caret-right");
+
+    rotateArrow.addEventListener("click", function() {
+        if(arrow.style.transform != 'rotate(90deg)'){
+            arrow.style.transform = 'rotate(90deg)'
+        }
+        else{
+            arrow.style.transform = 'rotate(0deg)'
+        }
+
+
     });

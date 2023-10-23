@@ -157,6 +157,14 @@ p {
   }
 }
 
+.p4 {
+  color: $white-dark;
+  @include typeface-2(p3, desktop);
+  @include responsive(s) {
+    @include typeface-2(p3, mobile);
+  }
+}
+
 span{
   font-family: 'Sora', sans-serif;
 }
