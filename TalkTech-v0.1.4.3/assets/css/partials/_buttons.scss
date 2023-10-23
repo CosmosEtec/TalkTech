@@ -171,8 +171,8 @@ button.nav-menu-button-timeline{
     transition: 0.5s ease;
 
     &:hover{
-        background: $black-light;
-        opacity: 0.7;
+        border-radius: 4px;
+        background: $purple-dark;
     }
 
     &-ativo{

@@ -124,7 +124,7 @@
                         </div>
                         <div class="profile-username flex-column ml-1">
                             <h4>bolsonaro</h4>
-                            <p>@suicidio</p>
+                            <p class="p3">@suicidio</p>
                         </div>
                         
                     </div>  
@@ -133,21 +133,15 @@
                     </div>
                     <!---interações---->
                     <div class="post-interactions  ">
-                        <div class="post-like-comment">
-                            <div>
-                            <button class="post-like-comment mt-1">
-                                <img class="" src="../assets/svg/icon-comment.svg" alt="">
-                            </button>
+                        <div class="like-heart-comment-container">
+                                <button id="like-heart">
+                                <i class="fa-solid fa-heart fa-2xl" style="color: #bd02c0;"></i>
+                                </button>
+
+                                <button class="mt-1-4px" id="comment">
+                                <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2" style="color: #d1d1d1;"></i>
+                                </button>
                             </div>
-                        <div>    
-                        <button class="post-like-heart mt-1 ml-1">
-                        <i class="fa-solid fa-heart" style="color: #bd02c0;"></i>
-                            </button>
-                        </div>
-                        </div>
-                        <div>
-                            <img src="../assets/svg/icon-3-points-horizontal.svg" alt="">
-                        </div>
                     </div>
                     <div class="post-description">
                         <h4 class="mt-1">Congresso anula os traveseiros de waifu do bolsonaro!</h4>
@@ -197,11 +191,11 @@
                 <!---========= DETALHES DA LINGUAGEM  =========-->
                 <div class="top-languages-language-skill">
                     <div class="language-icon">
-                        <img src="../assets/img/react-biblioteca.png" alt="">
+                        <img src="../assets/img/python.png" alt="">
                     </div>
                     <div class="language-details border">
                         <h4 class="p2">React</h4>
-                        <p class="p3">Framework</p>
+                        <p class="p3">Biblioteca</p>
                     </div>
                 </div>   
                 <!---========= DETALHES DA LINGUAGEM  =========-->
@@ -225,7 +219,7 @@
                     </div>
                 </div> 
 
-                <button class=""></button>
+                <button class="">Sou corno</button>
             </div>
 
             

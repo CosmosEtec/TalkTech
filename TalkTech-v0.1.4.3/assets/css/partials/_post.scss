@@ -51,8 +51,6 @@
 }
 
 img.profile-pic-img{
-    width: 48px;
-    height: 48px;
     border-radius: 50%;
 }
 
@@ -65,46 +63,46 @@ img.profile-pic-img{
 
 .post-interactions{
     width: 100%;
-    height: 40px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
 }
 
-.post-like-comment{
+.like-heart-comment-container{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.post-like-comment{
-    width: 40px;
-    height: 35px;
+#like-heart{
     border: none;
-    background-color: transparent;
+    background: none;
+    width: 100%;
+    transition: 0.2s ease-in-out;
     cursor: pointer;
-    transition: transform 0.2s ease;
 
-    & img:hover{
+    &:hover{
         transform: scale(1.1);
     }
 }
 
-.post-like-heart {
-    width: 31px;
-    height: 25px;
-    border: none;
-    background-color: transparent;
+#comment{
     cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    transition: 0.2s ease-in-out;
 
-    img{
-        transition: transform 0.2s ease;   
-    }
-    & img:hover{
+    &:hover{
         transform: scale(1.1);
     }
 }
+
+
+
+
 
 .post-title-subject{
     display: flex;

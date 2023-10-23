@@ -10,14 +10,25 @@ document.addEventListener("DOMContentLoaded", function() {
     scrollToBottom();
   });
   
-  const dropdownButton = document.getElementById("dropdown-button");
+  document.addEventListener("DOMContentLoaded", function() {
+    const dropdownButton = document.getElementById("dropdown-button");
     const dropdownList = document.getElementById("dropdown-list");
+    const arrow = document.querySelector(".fa-solid.fa-caret-right");
+    
+    // Adicione a classe "active" ao elemento pai de dropdownButton
+    dropdownButton.parentNode.classList.add("active");
+    arrow.style.transform = 'rotate(90deg)'
+    // Defina a altura máxima para exibir o dropdown
+    dropdownList.style.maxHeight = "200px";
   
     dropdownButton.addEventListener("click", function() {
       dropdownList.style.maxHeight = dropdownList.style.maxHeight === "200px" ? "0" : "200px"; // Ajuste conforme necessário
       dropdownButton.parentNode.classList.toggle("active");
-});
+    });
+  });
 
+
+/// arrow down
     const rotateArrow = document.getElementById("dropdown-button");
     const arrow = document.querySelector(".fa-solid.fa-caret-right");
 

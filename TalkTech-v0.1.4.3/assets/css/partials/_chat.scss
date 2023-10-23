@@ -31,13 +31,25 @@
 }
 
 .sending-container{
-    width: 96%;
+    width: 99%;
     background: $black-dark;
     
     border: 1px solid $gray-clean-border;
     padding: 0.45rem 0;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+#button-send-menssage{
+    background: none;
+    border: none;
+    transition: 0.2s ease;
+    cursor: pointer;
+
+    &:hover{
+        transform: scale(1.1);
+    }
 }
 
 input.message-field{
@@ -56,7 +68,7 @@ input.message-field{
 }
 
 .container-direct-messages{
-    width: 96%;
+    width: 99%;
     height: 100vh;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -70,19 +82,21 @@ input.message-field{
     width: 100%;
     padding: 1rem;
     overflow: hidden;
-    background: $black;
+    background: $black-corno;
     display: flex;
+    align-items: center;
     
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     border: 1px solid $gray-clean-border;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 .container-messages-roll{
     width: 100%;
     height: 100vh;
     /* From https://css.glass */
-background: $smooth-dark;
+background: $dark-white;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(25px);
@@ -140,7 +154,7 @@ border: 1px solid rgba(13, 12, 43, 0.3);
     left: 0;
     width: 19rem;
     height: 100vh;
-    background: $black-dark-nuture;
+    background: $black-corno;
 }
 
 .nav-chats {
@@ -173,7 +187,7 @@ button.direct-chat{
 .nav-list-chats{
     width: 15%;
     height: 100vh;
-    background: $black-dark-nuture;
+    background: $black-corno;
     padding-top: 0.25rem;
     
     border-right: 1px solid $gray-clean-border;
@@ -213,7 +227,7 @@ button.direct-chat{
     transition: 0.5s ease;
     &:hover{
         border-radius: 5px;
-        background: $gray-clean-border;
+        background: $purple-dark;
         opacity: 0.8;
     }
 

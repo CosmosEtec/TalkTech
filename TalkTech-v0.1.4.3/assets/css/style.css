@@ -358,7 +358,7 @@ span {
 }
 
 strong {
-  color: #232324;
+  color: #1E1E1F;
   font-family: "Sora", sans-serif;
   font-weight: 250;
   font-size: 16px;
@@ -529,8 +529,8 @@ button.nav-menu-button-timeline {
   transition: 0.5s ease;
 }
 button.nav-menu-button-timeline:hover {
-  background: #b7b7b7;
-  opacity: 0.7;
+  border-radius: 4px;
+  background: #701f88;
 }
 button.nav-menu-button-timeline-ativo {
   background: #b7b7b7;
@@ -559,6 +559,10 @@ button.nav-menu-button-timeline-ativo {
 
 .m-5 {
   margin: 128px;
+}
+
+.mt-1-4px {
+  margin-top: 4px;
 }
 
 .mt-1 {
@@ -1002,12 +1006,12 @@ header {
   flex-direction: row;
 }
 .top-languages-right-side-menu .top-languages-language-skill .language-icon {
-  max-width: 30px;
-  height: 30px;
+  max-width: 50px;
+  height: 50px;
   border-radius: 60px;
   width: 100%;
   border-radius: 4px;
-  background-color: #b7b7b7;
+  background-color: #1E1E1F;
 }
 .top-languages-right-side-menu .top-languages-language-skill .language-details {
   display: flex;
@@ -1404,8 +1408,6 @@ header {
 }
 
 img.profile-pic-img {
-  width: 48px;
-  height: 48px;
   border-radius: 50%;
 }
 
@@ -1418,42 +1420,38 @@ img.profile-pic-img {
 
 .post-interactions {
   width: 100%;
-  height: 40px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
 }
 
-.post-like-comment {
+.like-heart-comment-container {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.post-like-comment {
-  width: 40px;
-  height: 35px;
+#like-heart {
   border: none;
-  background-color: transparent;
+  background: none;
+  width: 100%;
+  transition: 0.2s ease-in-out;
   cursor: pointer;
-  transition: transform 0.2s ease;
 }
-.post-like-comment img:hover {
+#like-heart:hover {
   transform: scale(1.1);
 }
 
-.post-like-heart {
-  width: 31px;
-  height: 25px;
-  border: none;
-  background-color: transparent;
+#comment {
   cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  transition: 0.2s ease-in-out;
 }
-.post-like-heart img {
-  transition: transform 0.2s ease;
-}
-.post-like-heart img:hover {
+#comment:hover {
   transform: scale(1.1);
 }
 
@@ -1878,12 +1876,23 @@ div.create-post-directly-container {
 }
 
 .sending-container {
-  width: 96%;
+  width: 99%;
   background: #00000e;
   border: 1px solid #4d5252;
   padding: 0.45rem 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+#button-send-menssage {
+  background: none;
+  border: none;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+#button-send-menssage:hover {
+  transform: scale(1.1);
 }
 
 input.message-field {
@@ -1901,7 +1910,7 @@ input.message-field:focus {
 }
 
 .container-direct-messages {
-  width: 96%;
+  width: 99%;
   height: 100vh;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -1914,18 +1923,20 @@ input.message-field:focus {
   width: 100%;
   padding: 1rem;
   overflow: hidden;
-  background: #000000;
+  background: #1B1B1C;
   display: flex;
+  align-items: center;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border: 1px solid #4d5252;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 .container-messages-roll {
   width: 100%;
   height: 100vh;
   /* From https://css.glass */
-  background: #27272A;
+  background: #B3B1B1;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(25px);
@@ -1979,7 +1990,7 @@ input.message-field:focus {
   left: 0;
   width: 19rem;
   height: 100vh;
-  background: #000000;
+  background: #1B1B1C;
 }
 
 .nav-chats {
@@ -2009,7 +2020,7 @@ button.direct-chat {
 .nav-list-chats {
   width: 15%;
   height: 100vh;
-  background: #000000;
+  background: #1B1B1C;
   padding-top: 0.25rem;
   border-right: 1px solid #4d5252;
 }
@@ -2048,7 +2059,7 @@ button.dropdown-item {
 }
 button.dropdown-item:hover {
   border-radius: 5px;
-  background: #4d5252;
+  background: #701f88;
   opacity: 0.8;
 }
 button.dropdown-item i {
