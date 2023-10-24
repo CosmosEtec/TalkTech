@@ -68,9 +68,10 @@ $container-s: 540px;
     margin: 0 auto;
     position: relative;
     background: transparent;
+    overflow-y: scroll;
     
-
-    padding: 75px 0px 0 0px;
+    
+    
 
     display: flex;
     justify-content: space-around;
@@ -83,7 +84,9 @@ $container-s: 540px;
     }
 }
 
-
+.fixed{
+  position: absolute;
+}
 
 .left-0{
     left: 0;

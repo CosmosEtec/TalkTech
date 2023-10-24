@@ -2,6 +2,7 @@ function openPost() {
     document.addEventListener('DOMContentLoaded', function () {
       const post = document.querySelector('.post-container');
       const overlayed = document.querySelector('.overlayed');
+      //const commentDisplay = document.querySelector('.')
       const originalParent = post.parentNode;
   
       post.addEventListener('click', function (event) {

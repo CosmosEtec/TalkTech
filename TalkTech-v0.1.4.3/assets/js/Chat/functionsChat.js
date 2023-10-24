@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     arrow.style.transform = 'rotate(90deg)'
     // Defina a altura máxima para exibir o dropdown
     dropdownList.style.maxHeight = "200px";
-  
+   
     dropdownButton.addEventListener("click", function() {
       dropdownList.style.maxHeight = dropdownList.style.maxHeight === "200px" ? "0" : "200px"; // Ajuste conforme necessário
       dropdownButton.parentNode.classList.toggle("active");

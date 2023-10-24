@@ -86,6 +86,7 @@
         <div class="container-timeline" id="scrollableDiv">
         
             <!---========= NAV TIMELINE =========-->
+            
             <nav class="nav-menu-timeline">
                 <div class="nav-menu-list-buttons">
                     <div class="nav-menu-button-container">
@@ -114,7 +115,7 @@
                     </div>
                 </button>
             </div>
-        
+        <div class="feed-roll">
             <div class="overlayed" id="overlay"> </div>
                 <div class="post-container   mb-2" >
             
@@ -144,15 +145,48 @@
                             </div>
                     </div>
                     <div class="post-description">
-                        <h4 class="mt-1">Congresso anula os traveseiros de waifu do bolsonaro!</h4>
-                        <p>Infelizmente nesta manhã de terça-feira (15), bolsonaro teve seus bens confiscados
+                        <h4 class="">Congresso anula os traveseiros de waifu do bolsonaro!</h4>
+                        <p class="p3">Infelizmente nesta manhã de terça-feira (15), bolsonaro teve seus bens confiscados
                             e a Polícia Federal apreendeu todos seus dakimakura (travesseiros de waifu).
                         </p>
                     </div>
+                    
+                    <div class="post-comment-section">
+                        <p class="p2">Comentários</p>
+                        <div class="post-comment-cell">
+                            <div class="post-comment-profile-pic mt-1-4px">
+                                <img src="../assets/img/bruno-kawaii.jpg" alt="">
+                            </div>
+                            <div class="post-commnet-profile-name">
+                            <p class="p4">@lambimia</p>
+                            
+                            <p class="p5 ml-1-4px" id="comentario">Parabés ai fera, pena que ninguém perguntou seu infeliz. Quero é mais que tu se lascou
+                                fi duma égua, vai caçar o que fazer já que não tem ninguém pra aperriar cabeça de xulipa inútil.
+                            </p>    
+                        </div>
+                        </div>
+                    </div>
                 </div>
             
-            
         </div>
+        <nav class="nav-menu-timeline">
+                <div class="nav-menu-list-buttons">
+                    <div class="nav-menu-button-container">
+                        <button class="nav-menu-button-timeline" onclick="buttonActive()">Timeline</button>
+                    </div>
+                    <div class="nav-menu-button-container ml-2">
+                        <button class="nav-menu-button-timeline" onclick="buttonActive()">Issues</button>
+                    </div>
+                    <div class="nav-menu-button-container ml-2">
+                        <button class="nav-menu-button-timeline" onclick="buttonActive()">Jontex</button>
+                    </div>
+                </div>
+
+                <div class="nav-menu-button-container">
+                    <button class="nav-menu-button-timeline"  onclick="buttonActive()">[][][]</button>
+                </div>
+            </nav>
+            </div>
         
         <!---========= FIM TIMELINE ===========-->
         
@@ -193,9 +227,9 @@
                     <div class="language-icon">
                         <img src="../assets/img/python.png" alt="">
                     </div>
-                    <div class="language-details border">
-                        <h4 class="p2">React</h4>
-                        <p class="p3">Biblioteca</p>
+                    <div class="language-details ">
+                        <h4 class="p2">Python</h4>
+                        <p class="p3">Linguagem</p>
                     </div>
                 </div>   
                 <!---========= DETALHES DA LINGUAGEM  =========-->
@@ -203,7 +237,7 @@
                     <div class="language-icon">
                         <img src="../assets/img/angular-framework.png" alt="">
                     </div>
-                    <div class="language-details border">
+                    <div class="language-details ">
                         <h4 class="p2">Angular</h4>
                         <p class="p3">Framework</p>
                     </div>
@@ -213,13 +247,18 @@
                     <div class="language-icon">
                         <img src="../assets/img/angular-framework.png" alt="">
                     </div>
-                    <div class="language-details border">
+                    <div class="language-details ">
                         <h4 class="p2">Angular</h4>
                         <p class="p3">Framework</p>
                     </div>
                 </div> 
-
-                <button class="">Sou corno</button>
+                <div class="btn-centralizar">
+                <button class="">
+                    <h4 class="p2">Adicionar mais</h4>
+                    <i class="fa-solid fa-plus fa-xl mt-1-4px ml-1" style="color: #e0e0e0;"></i>
+                </button>
+                </div>
+                
             </div>
 
             

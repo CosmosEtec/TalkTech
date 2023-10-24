@@ -2,7 +2,7 @@ import {openPost} from './readPost.js';
 
 openPost();
 
-
+// Apresentação
 $(document).ready(function() {
   var getProductHeight = $('.product.active').height();
 

@@ -49,7 +49,7 @@
 
               
             <div class="div-nav-left-side-menu-link">
-                <a href="#Chats" class="nav-link mb-1"> 
+                <a href="chat.php" class="nav-link mb-1"> 
                     <div class="nav-left-side-menu-icon-container">
                         <img src="../assets/svg/icon-chat.svg" width="60px" alt="">
                     </div>
@@ -72,6 +72,15 @@
                     <img src="../assets/svg/icon-profile-side-menu.svg" width="60px" alt="">
                 </div>
                 <span class="mt-1">Perfil</span>
+                </a>
+            </div>
+
+            <div class="div-nav-left-side-menu-link">
+                <a href="profile.php" class="nav-link mb-1">
+                <div class="nav-left-side-menu-icon-container">
+                    <img src="../assets/svg/icon-notification.svg" width="60px" alt="">
+                </div>
+                <span class="mt-1">Notificações</span>
                 </a>
             </div>
         </nav>

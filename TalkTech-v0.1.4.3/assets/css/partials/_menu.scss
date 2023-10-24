@@ -4,7 +4,6 @@ header{
     box-shadow: none;
     transition: .5s ease;  
 
-    position: fixed;
     z-index: 800;
 }
 
@@ -67,6 +66,8 @@ header{
   min-width: 6rem;
   background: $smooth-dark;
   padding: 40px 0px 0 0px; 
+  position: sticky;
+  top: 0;
 
 
   display: flex;
@@ -198,12 +199,37 @@ header{
             }
     }
 
-    button {
-        max-width: 12rem;
+
+    .btn-centralizar{
         width: 100%;
-        padding: 1rem;
-    
+        display: flex;
+        justify-content: center;
+        
+        
+        
+
+        button {
+            background: $black-normal;
+            max-width: 10rem;
+            width: 100%;
+            padding: 1rem;
+            margin: 0 auto;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+
+            &:hover{
+                transform: scale(1.03);
+                opacity: 1;
+            }
+        }
     }
+
+   
 
 }
 

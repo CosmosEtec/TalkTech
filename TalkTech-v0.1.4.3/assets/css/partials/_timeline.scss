@@ -3,8 +3,8 @@
     width: 100%;
     flex-direction: column;
     align-items: center;
-    padding: 28px 0 0 16px;
-    overflow-y: auto;
+    padding: 28px 0 0 0px;
+    
 
     display: flex;
 
@@ -21,6 +21,7 @@
         width: 1px; /* Largura da barra de rolagem no Chrome/Safari */
       }
 }
+
 
 nav.nav-menu-timeline {
     width: 750px;
@@ -42,10 +43,6 @@ nav.nav-menu-timeline {
     div.nav-menu-list-buttons{
         display: flex;
         flex-direction: row;        
-    }
-    div.nav-menu-button-container{
-    
-    
     }
 
 
