@@ -23,7 +23,7 @@ include_once '../control/valida-permanencia.php'
             
                 <div class="div-nav-left-side-menu-link  ">
                     
-                    <a href="feed.php" class="nav-link mb-1">
+                    <a href="Home.php" class="nav-link mb-1">
                         <div class="nav-left-side-menu-icon-container">
                         <img src="../assets/svg/icon-home.svg" width="50px" height="30px" alt="">
                         </div>

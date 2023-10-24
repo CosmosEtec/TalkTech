@@ -3,7 +3,6 @@ class Postagem {
     private $idPostagem;
     private $idPerfil;
     private $Conteudo;
-    private $Grupo;
     private $Legenda;
     private $dataPost;
 
@@ -29,14 +28,6 @@ class Postagem {
 
     public function setIdPerfil($idPerfil) {
         $this->idPerfil = $idPerfil;
-    }
-
-    public function getGrupo() {
-        return $this->Grupo;
-    }
-
-    public function setGrupo($Grupo) {
-        $this->Grupo = $Grupo;
     }
 
     public function getLegenda() {

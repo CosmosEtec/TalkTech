@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Set-2023 às 13:40
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 25/10/2023 às 00:49
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `permcargo`
+-- Estrutura para tabela `permcargo`
 --
 
 CREATE TABLE `permcargo` (
@@ -35,18 +35,7 @@ CREATE TABLE `permcargo` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `postgrupo`
---
-
-CREATE TABLE `postgrupo` (
-  `idGrupo` int(11) NOT NULL,
-  `idPostagem` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tbbloqueado`
+-- Estrutura para tabela `tbbloqueado`
 --
 
 CREATE TABLE `tbbloqueado` (
@@ -58,7 +47,7 @@ CREATE TABLE `tbbloqueado` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbcargo`
+-- Estrutura para tabela `tbcargo`
 --
 
 CREATE TABLE `tbcargo` (
@@ -70,7 +59,7 @@ CREATE TABLE `tbcargo` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbcargos`
+-- Estrutura para tabela `tbcargos`
 --
 
 CREATE TABLE `tbcargos` (
@@ -81,7 +70,7 @@ CREATE TABLE `tbcargos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbcomentario`
+-- Estrutura para tabela `tbcomentario`
 --
 
 CREATE TABLE `tbcomentario` (
@@ -95,7 +84,7 @@ CREATE TABLE `tbcomentario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbconteudo`
+-- Estrutura para tabela `tbconteudo`
 --
 
 CREATE TABLE `tbconteudo` (
@@ -108,24 +97,7 @@ CREATE TABLE `tbconteudo` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbgrupos`
---
-
-CREATE TABLE `tbgrupos` (
-  `idGrupo` int(11) NOT NULL,
-  `idPerfilCriador` int(11) NOT NULL,
-  `nomeGrupo` varchar(60) NOT NULL,
-  `descGrupo` varchar(450) NOT NULL,
-  `fotoGrupo` varchar(255) NOT NULL,
-  `fotoBanner` varchar(255) NOT NULL,
-  `dataCriação` date NOT NULL,
-  `grupoPrivado` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tbperfil`
+-- Estrutura para tabela `tbperfil`
 --
 
 CREATE TABLE `tbperfil` (
@@ -142,16 +114,16 @@ CREATE TABLE `tbperfil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `tbperfil`
+-- Despejando dados para a tabela `tbperfil`
 --
 
 INSERT INTO `tbperfil` (`idPerfil`, `nome`, `apelido`, `email`, `senha`, `idade`, `fotoPerfil`, `fotoBanner`, `biografia`, `perfilPrivado`) VALUES
-(1, 'Goes', NULL, 'gabrielgaldino205@outlook.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', NULL, NULL, NULL, NULL, NULL);
+(2, 'UserTeste', NULL, 'teste@teste', '4d750439e3f39848345c6ef74ef3d719e34e7111', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbperm`
+-- Estrutura para tabela `tbperm`
 --
 
 CREATE TABLE `tbperm` (
@@ -162,7 +134,7 @@ CREATE TABLE `tbperm` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbpostagem`
+-- Estrutura para tabela `tbpostagem`
 --
 
 CREATE TABLE `tbpostagem` (
@@ -177,7 +149,7 @@ CREATE TABLE `tbpostagem` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbreação`
+-- Estrutura para tabela `tbreação`
 --
 
 CREATE TABLE `tbreação` (
@@ -191,7 +163,7 @@ CREATE TABLE `tbreação` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbseguidor`
+-- Estrutura para tabela `tbseguidor`
 --
 
 CREATE TABLE `tbseguidor` (
@@ -205,21 +177,14 @@ CREATE TABLE `tbseguidor` (
 --
 
 --
--- Índices para tabela `permcargo`
+-- Índices de tabela `permcargo`
 --
 ALTER TABLE `permcargo`
   ADD KEY `fk_idCargo` (`idCargo`),
   ADD KEY `fk_idPerm` (`idPerm`);
 
 --
--- Índices para tabela `postgrupo`
---
-ALTER TABLE `postgrupo`
-  ADD KEY `fk_idGrupo` (`idGrupo`),
-  ADD KEY `fk_idPostagem` (`idPostagem`);
-
---
--- Índices para tabela `tbbloqueado`
+-- Índices de tabela `tbbloqueado`
 --
 ALTER TABLE `tbbloqueado`
   ADD PRIMARY KEY (`idBloqueado`),
@@ -227,20 +192,20 @@ ALTER TABLE `tbbloqueado`
   ADD KEY `fk_Perfil_bloqueado` (`idPerfilBloqueado`);
 
 --
--- Índices para tabela `tbcargo`
+-- Índices de tabela `tbcargo`
 --
 ALTER TABLE `tbcargo`
   ADD PRIMARY KEY (`idCargo`);
 
 --
--- Índices para tabela `tbcargos`
+-- Índices de tabela `tbcargos`
 --
 ALTER TABLE `tbcargos`
   ADD KEY `fk_idPerfil` (`idPerfil`),
   ADD KEY `fk_idCargo` (`idCargo`);
 
 --
--- Índices para tabela `tbcomentario`
+-- Índices de tabela `tbcomentario`
 --
 ALTER TABLE `tbcomentario`
   ADD PRIMARY KEY (`idComentario`),
@@ -248,40 +213,33 @@ ALTER TABLE `tbcomentario`
   ADD KEY `fk_idPerfil` (`idPerfil`);
 
 --
--- Índices para tabela `tbconteudo`
+-- Índices de tabela `tbconteudo`
 --
 ALTER TABLE `tbconteudo`
   ADD PRIMARY KEY (`idConteudo`),
   ADD KEY `fk_idPostagem` (`idPostagem`);
 
 --
--- Índices para tabela `tbgrupos`
---
-ALTER TABLE `tbgrupos`
-  ADD PRIMARY KEY (`idGrupo`),
-  ADD KEY `fk_Perfil_Criador` (`idPerfilCriador`);
-
---
--- Índices para tabela `tbperfil`
+-- Índices de tabela `tbperfil`
 --
 ALTER TABLE `tbperfil`
   ADD PRIMARY KEY (`idPerfil`);
 
 --
--- Índices para tabela `tbperm`
+-- Índices de tabela `tbperm`
 --
 ALTER TABLE `tbperm`
   ADD PRIMARY KEY (`idPerm`);
 
 --
--- Índices para tabela `tbpostagem`
+-- Índices de tabela `tbpostagem`
 --
 ALTER TABLE `tbpostagem`
   ADD PRIMARY KEY (`idPostagem`),
   ADD KEY `fk_idPerfil` (`idPerfil`);
 
 --
--- Índices para tabela `tbreação`
+-- Índices de tabela `tbreação`
 --
 ALTER TABLE `tbreação`
   ADD PRIMARY KEY (`idReação`),
@@ -290,7 +248,7 @@ ALTER TABLE `tbreação`
   ADD KEY `fk_idPerfil` (`idPerfil`);
 
 --
--- Índices para tabela `tbseguidor`
+-- Índices de tabela `tbseguidor`
 --
 ALTER TABLE `tbseguidor`
   ADD PRIMARY KEY (`idSeguidor`),
@@ -298,7 +256,7 @@ ALTER TABLE `tbseguidor`
   ADD KEY `fk_Perfil_Seguido` (`idPerfilSeguido`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -326,16 +284,10 @@ ALTER TABLE `tbconteudo`
   MODIFY `idConteudo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tbgrupos`
---
-ALTER TABLE `tbgrupos`
-  MODIFY `idGrupo` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `tbperfil`
 --
 ALTER TABLE `tbperfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tbperm`
@@ -362,64 +314,51 @@ ALTER TABLE `tbseguidor`
   MODIFY `idSeguidor` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `permcargo`
+-- Restrições para tabelas `permcargo`
 --
 ALTER TABLE `permcargo`
   ADD CONSTRAINT `permcargo_ibfk_1` FOREIGN KEY (`idPerm`) REFERENCES `tbperm` (`idPerm`),
   ADD CONSTRAINT `permcargo_ibfk_2` FOREIGN KEY (`idCargo`) REFERENCES `tbcargo` (`idCargo`);
 
 --
--- Limitadores para a tabela `postgrupo`
---
-ALTER TABLE `postgrupo`
-  ADD CONSTRAINT `postgrupo_ibfk_1` FOREIGN KEY (`idGrupo`) REFERENCES `tbgrupos` (`idGrupo`),
-  ADD CONSTRAINT `postgrupo_ibfk_2` FOREIGN KEY (`idPostagem`) REFERENCES `tbpostagem` (`idPostagem`);
-
---
--- Limitadores para a tabela `tbbloqueado`
+-- Restrições para tabelas `tbbloqueado`
 --
 ALTER TABLE `tbbloqueado`
   ADD CONSTRAINT `tbbloqueado_ibfk_1` FOREIGN KEY (`idPerfilBloqueador`) REFERENCES `tbperfil` (`idPerfil`),
   ADD CONSTRAINT `tbbloqueado_ibfk_2` FOREIGN KEY (`idPerfilBloqueado`) REFERENCES `tbperfil` (`idPerfil`);
 
 --
--- Limitadores para a tabela `tbcargos`
+-- Restrições para tabelas `tbcargos`
 --
 ALTER TABLE `tbcargos`
   ADD CONSTRAINT `tbcargos_ibfk_1` FOREIGN KEY (`idCargo`) REFERENCES `tbcargo` (`idCargo`),
   ADD CONSTRAINT `tbcargos_ibfk_2` FOREIGN KEY (`idPerfil`) REFERENCES `tbperfil` (`idPerfil`);
 
 --
--- Limitadores para a tabela `tbcomentario`
+-- Restrições para tabelas `tbcomentario`
 --
 ALTER TABLE `tbcomentario`
   ADD CONSTRAINT `tbcomentario_ibfk_1` FOREIGN KEY (`idPostagem`) REFERENCES `tbpostagem` (`idPostagem`),
   ADD CONSTRAINT `tbcomentario_ibfk_2` FOREIGN KEY (`idPerfil`) REFERENCES `tbperfil` (`idPerfil`);
 
 --
--- Limitadores para a tabela `tbconteudo`
+-- Restrições para tabelas `tbconteudo`
 --
 ALTER TABLE `tbconteudo`
   ADD CONSTRAINT `tbconteudo_ibfk_1` FOREIGN KEY (`idPostagem`) REFERENCES `tbpostagem` (`idPostagem`);
 
 --
--- Limitadores para a tabela `tbgrupos`
---
-ALTER TABLE `tbgrupos`
-  ADD CONSTRAINT `tbgrupos_ibfk_1` FOREIGN KEY (`idPerfilCriador`) REFERENCES `tbperfil` (`idPerfil`);
-
---
--- Limitadores para a tabela `tbpostagem`
+-- Restrições para tabelas `tbpostagem`
 --
 ALTER TABLE `tbpostagem`
   ADD CONSTRAINT `tbpostagem_ibfk_1` FOREIGN KEY (`idPerfil`) REFERENCES `tbperfil` (`idPerfil`);
 
 --
--- Limitadores para a tabela `tbreação`
+-- Restrições para tabelas `tbreação`
 --
 ALTER TABLE `tbreação`
   ADD CONSTRAINT `tbreação_ibfk_1` FOREIGN KEY (`idPostagem`) REFERENCES `tbpostagem` (`idPostagem`),
@@ -427,7 +366,7 @@ ALTER TABLE `tbreação`
   ADD CONSTRAINT `tbreação_ibfk_3` FOREIGN KEY (`idPerfil`) REFERENCES `tbperfil` (`idPerfil`);
 
 --
--- Limitadores para a tabela `tbseguidor`
+-- Restrições para tabelas `tbseguidor`
 --
 ALTER TABLE `tbseguidor`
   ADD CONSTRAINT `tbseguidor_ibfk_1` FOREIGN KEY (`idPerfilSeguidor`) REFERENCES `tbperfil` (`idPerfil`),

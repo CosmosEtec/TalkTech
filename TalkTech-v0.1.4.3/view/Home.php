@@ -37,7 +37,7 @@ include_once '../control/valida-permanencia.php'
             
                 <div class="div-nav-left-side-menu-link  ">
                     
-                    <a href="feed.php" class="nav-link mb-1">
+                    <a href="Home.php" class="nav-link mb-1">
                         <div class="nav-left-side-menu-icon-container">
                         <img src="../assets/svg/icon-home.svg" width="50px" height="30px" alt="">
                         </div>
@@ -90,7 +90,7 @@ include_once '../control/valida-permanencia.php'
         <!---========= TIMELINE =========-->
         <div class="container-timeline" id="scrollableDiv">
         
-            <!---========= NAV TIMELINE =========-->
+            <!---========= NAV TIMELINE =========
             
             <nav class="nav-menu-timeline">
                 <div class="nav-menu-list-buttons">
@@ -109,6 +109,7 @@ include_once '../control/valida-permanencia.php'
                     <button class="nav-menu-button-timeline"  onclick="buttonActive()">[][][]</button>
                 </div>
             </nav>
+            -->
 
             <!---========= FIM NAV TIMELINE =========-->
         <div class="feed-roll">
@@ -203,7 +204,7 @@ include_once '../control/valida-permanencia.php'
 
          <!---========= FIM POST =========-->
 
-         <!---========= RIGHT SIDE MENU  =========-->
+         <!---========= RIGHT SIDE MENU  =========
         <nav class="right-side-menu  ">
             
             <div class="top-languages-right-side-menu  ">
@@ -211,7 +212,7 @@ include_once '../control/valida-permanencia.php'
 
                     <h4 class=""> <> Melhores Linguagens</h4>
                 </div>       
-                <!---========= DETALHES DA LINGUAGEM  =========-->
+
                 <div class="top-languages-language-skill">
                     <div class="language-icon">
                         <img src="../assets/img/python.png" alt="">
@@ -221,7 +222,7 @@ include_once '../control/valida-permanencia.php'
                         <p class="p3">Linguagem</p>
                     </div>
                 </div>   
-                <!---========= DETALHES DA LINGUAGEM  =========-->
+
                 <div class="top-languages-language-skill">
                     <div class="language-icon">
                         <img src="../assets/img/angular-framework.png" alt="">
@@ -231,7 +232,7 @@ include_once '../control/valida-permanencia.php'
                         <p class="p3">Framework</p>
                     </div>
                 </div>  
-                <!---========= DETALHES DA LINGUAGEM  =========-->
+
                 <div class="top-languages-language-skill">
                     <div class="language-icon">
                         <img src="../assets/img/angular-framework.png" alt="">
@@ -255,6 +256,8 @@ include_once '../control/valida-permanencia.php'
 
             </div>
         </nav>   
+
+        -->
         <!---========= FIM RIGHT SIDE MENU  =========-->     
           
         
