@@ -17,9 +17,14 @@
             if(DaoPerfil::cadastra($Perfil)){
                 $pasta_usuario = "../user/" . $Perfil->getNome();
                 if (!file_exists($pasta_usuario)) {
-                    mkdir($pasta_usuario, 0777, true);
-                    mkdir($pasta_usuario . "/posts", 0777, true);
+                    $pasta_template = "../user/Template";
+                    $pasta_nova = $pasta_usuario;
+                    if (file_exists($pasta_template)) {
+                        // Copia a pasta "Template" para a nova pasta do usuário
+                        recursive_copy($pasta_template, $pasta_nova);
+                    }
                 }
+                
                 $data = [
                     'status' => true,
                     'mensagem' => "Perfil cadastrado com sucesso!",
@@ -64,5 +69,19 @@
     }
 
 
+    function recursive_copy($src, $dst) {
+        $dir = opendir($src);
+        @mkdir($dst);
+        while (($file = readdir($dir)) !== false) {
+            if (($file != '.') && ($file != '..')) {
+                if (is_dir($src . '/' . $file)) {
+                    recursive_copy($src . '/' . $file, $dst . '/' . $file);
+                } else {
+                    copy($src . '/' . $file, $dst . '/' . $file);
+                }
+            }
+        }
+        closedir($dir);
+    }
     
 ?>

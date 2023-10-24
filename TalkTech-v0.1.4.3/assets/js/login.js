@@ -31,7 +31,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
     })
     .then(data => {
         if (data.status) {
-            window.location.href = 'feed.php';
+            window.location.href = 'Home.php';
         }
     })
     .catch(error => alert('Erro na requisição: ' + error));

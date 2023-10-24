@@ -87,7 +87,7 @@
                                 </div>
 
                                 <input type="submit" class="btn mt-2 mb-1" id="submitButton">
-                                <div id="message" style="diplay:none">
+                                <div id="message" style="display:none">
   <p>A sua senha precisa de:</p>
   <p id="letter" class="invalid"><b>letra Minuscula</b> </p>
   <p id="capital" class="invalid"><b>letra Maiuscula</b></p>
