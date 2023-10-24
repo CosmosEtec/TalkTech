@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once '../control/valida-permanencia.php'
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -53,7 +58,7 @@
             </div>
            
             
-            <div class="div-nav-left-side-menu-link">
+            <div class="div-nav-left-side-menu-link"  id="create-post">
                 <a class="nav-link mb-1">
                     <div class="nav-left-side-menu-icon-container">
                         <img src="../assets/svg/icon-add-plus-circle.svg" width="60px" alt="">
@@ -106,15 +111,6 @@
             </nav>
 
             <!---========= FIM NAV TIMELINE =========-->
-
-            <div class="create-post-directly-container">
-            <textarea id="description-directly" placeholder="Escreva a sua descrição"></textarea>
-                <button id="create-post"> 
-                    <div class="nav-left-side-menu-icon-container">
-                        <img src="../assets/svg/icon-add-plus-circle.svg" width="60px" alt="">
-                    </div>
-                </button>
-            </div>
         <div class="feed-roll">
             <div class="overlayed" id="overlay"> </div>
                 <div class="post-container   mb-2" >
@@ -124,11 +120,14 @@
                             <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
                         </div>
                         <div class="profile-username flex-column ml-1">
-                            <h4>bolsonaro</h4>
-                            <p class="p3">@suicidio</p>
+                            <h4>UserApelido</h4>
+                            <p class="p3">@user</p>
                         </div>
                         
                     </div>  
+                    <div class="post-description">
+                        <p class="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatum ipsam aperiam eveniet voluptatibus possimus nemo maiores ullam obcaecati quisquam laborum doloribus sed, saepe unde harum non itaque odit id!</p>
+                    </div>
                     <div class="content-post  ">
                         <img src="../assets/img/codimg.jpg" alt="" height="350px">
                     </div>
@@ -144,13 +143,6 @@
                                 </button>
                             </div>
                     </div>
-                    <div class="post-description">
-                        <h4 class="">Congresso anula os traveseiros de waifu do bolsonaro!</h4>
-                        <p class="p3">Infelizmente nesta manhã de terça-feira (15), bolsonaro teve seus bens confiscados
-                            e a Polícia Federal apreendeu todos seus dakimakura (travesseiros de waifu).
-                        </p>
-                    </div>
-                    
                     <div class="post-comment-section">
                         <p class="p2">Comentários</p>
                         <div class="post-comment-cell">
@@ -158,11 +150,8 @@
                                 <img src="../assets/img/bruno-kawaii.jpg" alt="">
                             </div>
                             <div class="post-commnet-profile-name">
-                            <p class="p4">@lambimia</p>
-                            
-                            <p class="p5 ml-1-4px" id="comentario">Parabés ai fera, pena que ninguém perguntou seu infeliz. Quero é mais que tu se lascou
-                                fi duma égua, vai caçar o que fazer já que não tem ninguém pra aperriar cabeça de xulipa inútil.
-                            </p>    
+                            <p class="p4">@user</p>
+                            <p class="p5 ml-1-4px" id="comentario"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet corporis repellat temporibus est dignissimos tenetur aperiam impedit, eligendi at quae. Labore nostrum magni eos! Facilis nisi qui libero aut sunt.</p>    
                         </div>
                         </div>
                     </div>

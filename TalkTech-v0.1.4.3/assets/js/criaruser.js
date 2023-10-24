@@ -94,12 +94,19 @@ document.getElementById('cadForm').addEventListener('submit', function(event){
     })
     .then(data => {
         if(!data.status){
-            if(data.id = 47){
+            if(data.id == 47){
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Email já cadastrado!',
                     footer: 'ErroId: 47'
+                })
+            }else if(data.id == 46){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Nome já cadastrado!',
+                    footer: 'ErroId: 46'
                 })
             }else{
                 Swal.fire({
@@ -129,3 +136,18 @@ function myFunction() {
       x.type = "password";
     }
   }
+
+const SenhaCadastro = document.getElementById('SenhaCadastro');
+const ConfirmaSenhaCadastro = document.getElementById('ConfirmaSenhaCadastro');
+const NomeCadastro = document.getElementById('NomeCadastro');
+const EmailCadastro = document.getElementById('EmailCadastro');
+  
+SenhaCadastro.addEventListener('input', noSpaces);
+ConfirmaSenhaCadastro.addEventListener('input', noSpaces);
+NomeCadastro.addEventListener('input', noSpaces);
+EmailCadastro.addEventListener('input', noSpaces);
+  
+function noSpaces(event) {
+    const value = event.target.value.replace(/\s/g, '');
+    event.target.value = value;
+}

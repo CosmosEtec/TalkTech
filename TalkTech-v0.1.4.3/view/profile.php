@@ -1,3 +1,7 @@
+<?php
+session_start();
+include_once '../control/valida-permanencia.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

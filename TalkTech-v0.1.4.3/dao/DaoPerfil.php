@@ -79,6 +79,19 @@
             return false;
         }
 
+        public static function consultarNome($perfil){
+            $sql = "SELECT idPerfil FROM tbPerfil WHERE nome = ?";
+            $stmt = Conexao::getConn()->prepare($sql);
+            $stmt->bindValue(1, $perfil->getNome());
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0){
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                return true;
+            }
+            return false;
+        }
+
         public static function buscarDados($perfil){
             $sql = "SELECT * FROM tbPerfil WHERE idPerfil = ?";
             $stmt = Conexao::getConn()->prepare($sql);
