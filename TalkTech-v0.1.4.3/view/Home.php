@@ -159,23 +159,6 @@ include_once '../control/valida-permanencia.php'
                 </div>
             
         </div>
-        <nav class="nav-menu-timeline">
-                <div class="nav-menu-list-buttons">
-                    <div class="nav-menu-button-container">
-                        <button class="nav-menu-button-timeline" onclick="buttonActive()">Timeline</button>
-                    </div>
-                    <div class="nav-menu-button-container ml-2">
-                        <button class="nav-menu-button-timeline" onclick="buttonActive()">Issues</button>
-                    </div>
-                    <div class="nav-menu-button-container ml-2">
-                        <button class="nav-menu-button-timeline" onclick="buttonActive()">Jontex</button>
-                    </div>
-                </div>
-
-                <div class="nav-menu-button-container">
-                    <button class="nav-menu-button-timeline"  onclick="buttonActive()">[][][]</button>
-                </div>
-            </nav>
             </div>
         
         <!---========= FIM TIMELINE ===========-->
