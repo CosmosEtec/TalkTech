@@ -1,10 +1,30 @@
 <?php
 
 require_once '../model/Postagem.php';
+require_once '../model/Reacao.php';
 require_once '../model/conexao.php.php';
 
 Class DaoPostagem{
-    
+    public static function inserir(Postagem $postagem){
+        $sql = "INSERT INTO tbPostagem (idPerfil, Conteudo, legenda, dataPost) VALUES (?, ?, ?, ?)";
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $postagem->getIdPerfil());
+        $stmt->bindValue(2, $postagem->getConteudo());
+        $stmt->bindValue(3, $postagem->getLegenda());
+        $stmt->bindValue(4, $postagem->getDataPost());
+        return $stmt->execute();
+    }
+
+    public static function buscarDados(Postagem $postagem){
+        $sql= "SELECT p.*, COUNT(r.idReacao) AS qtdReacoes FROM tbPostagem p LEFT JOIN tbReacao r ON p.idPostagem = r.idPostagem GROUP BY p.idPostagem ORDER BY p.dataPost DESC";
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        }
+    }
+
 }
 
 ?>

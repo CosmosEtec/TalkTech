@@ -5,7 +5,6 @@
         Private $idPostagem;
         Private $idComentario;
         Private $idPerfil;
-        Private $reacao;
 
         public function getIdReacao(){
             return $this->idReacao;
@@ -37,14 +36,6 @@
 
         public function setIdPerfil($idPerfil){
             $this->idPerfil = $idPerfil;
-        }
-
-        public function getReacao(){
-            return $this->reacao;
-        }
-
-        public function setReacao($reacao){
-            $this->reacao = $reacao;
         }
 
     }

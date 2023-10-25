@@ -3,8 +3,8 @@ session_start();
 include_once '../control/valida-permanencia.php';
 include_once '../dao/DaoPerfil.php';
 
-if(!$_GET['id']){
-    $perfil = new Perfil();
+if(!isset($_GET['id'])){
+$perfil = new Perfil();
 $perfil->setId($_SESSION['login-id']);
 
 $perfil = DaoPerfil::buscarDados($perfil);

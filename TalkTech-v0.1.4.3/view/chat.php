@@ -102,8 +102,8 @@ include_once '../control/valida-permanencia.php'
                         <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
                     </div>
                     <div class="profile-username flex-column ml-1">
-                        <h4>bolsonaro</h4>
-                        <p>@suicidio</p>
+                        <h4>UserApelido</h4>
+                        <p>@User</p>
                     </div>
                 </div>
                 <div class="container-messages-roll">

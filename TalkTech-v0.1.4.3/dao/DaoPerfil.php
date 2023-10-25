@@ -3,7 +3,7 @@
     require_once "../model/conexao.php";
 
     class DaoPerfil {
-        public static function cadastra($perfil){
+        public static function cadastra(Perfil $perfil){
             $perfil->setFotoPerfil("user/". $perfil->getNome() ."/fotoperfil.png");
             $perfil->setFotoBanner("user/". $perfil->getNome() ."/fotobanner.png");
 
@@ -30,7 +30,7 @@
             }
         }
 
-        public static function login($Perfil){
+        public static function login(Perfil $Perfil){
             $sql = "SELECT * FROM tbPerfil WHERE email = ? AND senha = ?";
             $stmt = Conexao::getConn()->prepare($sql);
             $stmt->bindValue(1, $Perfil->getEmail());
@@ -45,7 +45,7 @@
             }
         }
 
-        public static function consultarId($perfil){
+        public static function consultarId(Perfil $perfil){
             $sql = "SELECT idPerfil FROM tbPerfil WHERE email = ? AND senha = ?";
             $stmt = Conexao::getConn()->prepare($sql);
             $stmt->bindValue(1, $perfil->getEmail());
@@ -57,7 +57,7 @@
                 return $result['idPerfil'];
             }
         }
-        public static function consultarEmail($perfil){
+        public static function consultarEmail(Perfil $perfil){
             $sql = "SELECT idPerfil FROM tbPerfil WHERE email = ?";
             $stmt = Conexao::getConn()->prepare($sql);
             $stmt->bindValue(1, $perfil->getEmail());
@@ -70,7 +70,7 @@
             return false;
         }
 
-        public static function consultarNome($perfil){
+        public static function consultarNome(Perfil $perfil){
             $sql = "SELECT idPerfil FROM tbPerfil WHERE nome = ?";
             $stmt = Conexao::getConn()->prepare($sql);
             $stmt->bindValue(1, $perfil->getNome());
@@ -83,7 +83,7 @@
             return false;
         }
 
-        public static function buscarDados($perfil){
+        public static function buscarDados(Perfil $perfil){
             $sql = "SELECT * FROM tbPerfil WHERE idPerfil = ?";
             $stmt = Conexao::getConn()->prepare($sql);
             $stmt->bindValue(1, $perfil->getId());
