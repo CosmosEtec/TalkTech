@@ -21,28 +21,22 @@ class DaoSeguidor{
         return $stmt->execute();
     }
 
-    public static function buscarSeguidores(Perfil $perfil){
-        $sql = "SELECT * FROM tbSeguidor WHERE idPerfilSeguido = ?";
+    public static function buscarSeguidores($perfil){
+        $sql = "SELECT COUNT(*) AS qtdSeguidores FROM tbSeguidor WHERE idPerfilSeguido = ?";
         $stmt = Conexao::getConn()->prepare($sql);
-        $stmt->bindValue(1, $perfil->getId());
+        $stmt->bindValue(1, $perfil['idPerfil']);
         $stmt->execute();
-
-        if($stmt->rowCount() > 0){
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
-        }
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $resultado['qtdSeguidores'];
     }
 
-    public static function buscarSeguidos(Perfil $perfil){
-        $sql = "SELECT * FROM tbSeguidor WHERE idPerfilSeguidor = ?";
+    public static function buscarSeguidos($perfil){
+        $sql = "SELECT COUNT(idSeguidor) AS qtdSeguidos FROM tbSeguidor WHERE idPerfilSeguidor = ?";
         $stmt = Conexao::getConn()->prepare($sql);
-        $stmt->bindValue(1, $perfil->getId());
+        $stmt->bindValue(1, $perfil['idPerfil']);
         $stmt->execute();
-
-        if($stmt->rowCount() > 0){
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
-        }
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        return isset($resultado['qtdSeguidos']) ? $resultado['qtdSeguidos'] : 0;
     }
 }
 ?>

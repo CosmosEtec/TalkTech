@@ -2,6 +2,9 @@
 session_start();
 include_once '../control/valida-permanencia.php';
 include_once '../dao/DaoPerfil.php';
+include_once '../dao/DaoSeguidor.php';
+include_once '../dao/DaoBloqueado.php';
+include_once '../dao/DaoPostagem.php';
 
 if(!isset($_GET['id'])){
 $perfil = new Perfil();
@@ -126,15 +129,15 @@ $perfil = DaoPerfil::buscarDados($perfil);
                             </div>
                             <div class="user-info-seguidores mb-2">
                                 <div class="info-seguidores">
-                                    <p class="p2 text-profile">00</p>
+                                    <p class="p2 text-profile"><?php echo DaoPostagem::buscarQtddPostagem($perfil) ?></p>
                                     <p class="p2 text-profile">Publicações</p>
                                 </div>
                                 <div class="info-seguidores">
-                                    <p class="p2 text-profile">00</p>
+                                    <p class="p2 text-profile"><?php echo DaoSeguidor::buscarSeguidores($perfil) ?></p>
                                     <p class="p2 text-profile">Seguidores</p>
                                 </div>
                                 <div class="info-seguidores">
-                                    <p class="p2 text-profile">00</p>
+                                    <p class="p2 text-profile"><?php echo DaoSeguidor::buscarSeguidos($perfil) ?></p>
                                     <p class="p2 text-profile">Seguindo</p>
                                 </div>
                             </div>
@@ -158,15 +161,20 @@ $perfil = DaoPerfil::buscarDados($perfil);
                         <p>Não foram feitas publicações ainda!</p>
                     </div>
 
-                    <!-- Publicação do Bolso
+                    <!--
                     <div class="post-container back-bow mb-2">
                         <div class="profile-top-post">
                             <div class="profile-pic">
                                 <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
                             </div>
                             <div class="profile-username flex-column ml-1">
-                                <h4>bolsonaro</h4>
-                                <p>@suicidio</p>
+                                <h4><?php if(!$perfil['apelido']){
+                                    echo $perfil['nome'];
+                                    }else{
+                                    echo $perfil['apelido'];}?></h4>
+                                <p><?php if($perfil['apelido']){
+                                    echo $perfil['nome'];
+                                    }?></p>
                             </div>
                             
                         </div>  
@@ -197,7 +205,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
                             </p>
                         </div>
                     </div>
-                    -->
+                                -->
                 </div>
             </div>
         </div>
