@@ -37,6 +37,21 @@ Class DaoPostagem{
         return $resultado['qtdPostagem'];
     }
 
+    public static function buscarPostagensPerfil($perfil){
+        $sql = "SELECT p.*, COUNT(r.idReação) AS qtdReação FROM tbPostagem p 
+        LEFT JOIN tbreação r ON p.idPostagem = r.idPostagem 
+        WHERE p.idPerfil = ? 
+        GROUP BY p.idPostagem 
+        ORDER BY p.dataPost DESC";
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $perfil['idPerfil']);
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        }
+    }
+
 }
 
 ?>
