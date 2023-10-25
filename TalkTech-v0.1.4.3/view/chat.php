@@ -35,7 +35,7 @@ include_once '../control/valida-permanencia.php'
 
               
             <div class="div-nav-left-side-menu-link">
-                <a href="#Chats" class="nav-link mb-1"> 
+                <a href="chat.php" class="nav-link mb-1"> 
                     <div class="nav-left-side-menu-icon-container">
                         <img src="../assets/svg/icon-chat.svg" width="60px" alt="">
                     </div>
@@ -45,13 +45,14 @@ include_once '../control/valida-permanencia.php'
            
             
             <div class="div-nav-left-side-menu-link">
-                <a class="nav-link mb-1">
+                <a class="nav-link mb-1" id="create-post">
                     <div class="nav-left-side-menu-icon-container">
                         <img src="../assets/svg/icon-add-plus-circle.svg" width="60px" alt="">
                     </div>
                     <span class="mb-1">Criar</span>
                 </a>
             </div>
+
             <div class="div-nav-left-side-menu-link">
                 <a href="profile.php" class="nav-link mb-1">
                 <div class="nav-left-side-menu-icon-container">
@@ -67,6 +68,15 @@ include_once '../control/valida-permanencia.php'
                     <img src="../assets/svg/icon-notification.svg" width="60px" alt="">
                 </div>
                 <span class="mt-1">Notificações</span>
+                </a>
+            </div>
+
+            <div class="div-nav-left-side-menu-link">
+                <a href="../control/Logout-usuario.php" class="nav-link mb-1">
+                <div class="nav-left-side-menu-icon-container">
+                    <i class="fa-solid fa-right-from-bracket fa-2xl" style="color: #ffffff;"></i>
+                </div>
+                <span class="mt-1">Logout</span>
                 </a>
             </div>
         </nav>

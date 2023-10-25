@@ -86,11 +86,11 @@ include_once '../control/valida-permanencia.php'
             </div>
 
             <div class="div-nav-left-side-menu-link">
-                <a href="profile.php" class="nav-link mb-1">
+                <a href="../control/Logout-usuario.php" class="nav-link mb-1">
                 <div class="nav-left-side-menu-icon-container">
                     <i class="fa-solid fa-right-from-bracket fa-2xl" style="color: #ffffff;"></i>
                 </div>
-                <span class="mt-1">Notificações</span>
+                <span class="mt-1">Logout</span>
                 </a>
             </div>
         </nav>
