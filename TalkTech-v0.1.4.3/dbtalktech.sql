@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25/10/2023 às 00:49
+-- Tempo de geração: 25/10/2023 às 10:50
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -81,6 +81,14 @@ CREATE TABLE `tbcomentario` (
   `dataComentario` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Despejando dados para a tabela `tbcomentario`
+--
+
+INSERT INTO `tbcomentario` (`idComentario`, `idPostagem`, `idPerfil`, `comentario`, `dataComentario`) VALUES
+(1, 1, 14, 'Teste', '2023-10-25'),
+(2, 1, 15, 'Teste2', '2023-10-25');
+
 -- --------------------------------------------------------
 
 --
@@ -118,7 +126,8 @@ CREATE TABLE `tbperfil` (
 --
 
 INSERT INTO `tbperfil` (`idPerfil`, `nome`, `apelido`, `email`, `senha`, `idade`, `fotoPerfil`, `fotoBanner`, `biografia`, `perfilPrivado`) VALUES
-(2, 'UserTeste', NULL, 'teste@teste', '4d750439e3f39848345c6ef74ef3d719e34e7111', NULL, NULL, NULL, NULL, NULL);
+(14, 'UserTeste', NULL, 'Teste@Teste', '4d750439e3f39848345c6ef74ef3d719e34e7111', NULL, 'user/UserTeste/fotoperfil.png', 'user/UserTeste/fotobanner.png', NULL, 0),
+(15, 'LerO', NULL, 'Lero@Lero', '4d750439e3f39848345c6ef74ef3d719e34e7111', NULL, 'user/LerO/fotoperfil.png', 'user/LerO/fotobanner.png', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -141,10 +150,16 @@ CREATE TABLE `tbpostagem` (
   `idPostagem` int(11) NOT NULL,
   `idPerfil` int(11) NOT NULL,
   `Conteudo` tinyint(1) NOT NULL,
-  `Grupo` tinyint(1) NOT NULL,
   `legenda` varchar(450) NOT NULL,
   `dataPost` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tbpostagem`
+--
+
+INSERT INTO `tbpostagem` (`idPostagem`, `idPerfil`, `Conteudo`, `legenda`, `dataPost`) VALUES
+(1, 14, 0, 'Teste teste teste', '2023-10-25');
 
 -- --------------------------------------------------------
 
@@ -156,8 +171,7 @@ CREATE TABLE `tbreação` (
   `idReação` int(11) NOT NULL,
   `idPostagem` int(11) DEFAULT NULL,
   `idComentario` int(11) DEFAULT NULL,
-  `idPerfil` int(11) NOT NULL,
-  `reação` varchar(90) NOT NULL
+  `idPerfil` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -275,7 +289,7 @@ ALTER TABLE `tbcargo`
 -- AUTO_INCREMENT de tabela `tbcomentario`
 --
 ALTER TABLE `tbcomentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tbconteudo`
@@ -287,7 +301,7 @@ ALTER TABLE `tbconteudo`
 -- AUTO_INCREMENT de tabela `tbperfil`
 --
 ALTER TABLE `tbperfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `tbperm`
@@ -299,7 +313,7 @@ ALTER TABLE `tbperm`
 -- AUTO_INCREMENT de tabela `tbpostagem`
 --
 ALTER TABLE `tbpostagem`
-  MODIFY `idPostagem` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPostagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `tbreação`

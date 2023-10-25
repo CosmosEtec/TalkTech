@@ -123,9 +123,11 @@ include_once '../control/valida-permanencia.php'
 
             <!---========= FIM NAV TIMELINE =========-->
         <div class="feed-roll">
-            <div class="overlayed" id="overlay" > </div>
+
+        <div class="overlayed" id="overlay" > </div>
+        <?php include_once '../control/ControlPostagem.php'; mostrarPosts(); ?> 
                 <div class="post-container   mb-2" >
-            
+                
                     <div class="profile-top-post  ">
                         <div class="profile-pic  ">
                             <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
@@ -165,17 +167,8 @@ include_once '../control/valida-permanencia.php'
                                 <p class="p5 ml-1-4px" id="comentario"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet corporis repellat temporibus est dignissimos tenetur aperiam impedit, eligendi at quae. Labore nostrum magni eos! Facilis nisi qui libero aut sunt.</p>    
                             </div>
                         </div>
-
-                        
                     </div>
                 </div>
-
-                
-
-                
-
-                
-            
         </div>
             </div>
         

@@ -12,9 +12,9 @@ Class DaoComentario{
     }
 
     public static function buscarDados(Comentario $comentario){
-        $sql= "SELECT c.*, p.nome, COUNT(r.idReacao) AS qtdReacoes FROM tbComentario c 
+        $sql= "SELECT c.*, p.nome, COUNT(r.idReação) AS qtdReacoes FROM tbComentario c 
         INNER JOIN tbPerfil p ON c.idPerfil = p.idPerfil 
-        LEFT JOIN tbReacao r ON c.idComentario = r.idComentario 
+        LEFT JOIN tbreação r ON c.idComentario = r.idComentario 
         WHERE c.idPostagem = ? 
         GROUP BY c.idComentario 
         ORDER BY c.dataComentario DESC";

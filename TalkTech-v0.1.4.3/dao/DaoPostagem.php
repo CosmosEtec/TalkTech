@@ -16,7 +16,10 @@ Class DaoPostagem{
     }
 
     public static function buscarDados(Postagem $postagem){
-        $sql= "SELECT p.*, COUNT(r.idReacao) AS qtdReacoes FROM tbPostagem p LEFT JOIN tbReacao r ON p.idPostagem = r.idPostagem GROUP BY p.idPostagem ORDER BY p.dataPost DESC";
+        $sql= "SELECT p.*, COUNT(r.idReação) AS qtdReação FROM tbPostagem p 
+        LEFT JOIN tbreação r ON p.idPostagem = r.idPostagem 
+        GROUP BY p.idPostagem 
+        ORDER BY p.dataPost DESC";
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->execute();
         if($stmt->rowCount() > 0){
