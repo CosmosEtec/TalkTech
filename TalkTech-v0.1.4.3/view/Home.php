@@ -63,7 +63,7 @@ include_once '../control/valida-permanencia.php'
                     <div class="nav-left-side-menu-icon-container">
                         <img src="../assets/svg/icon-add-plus-circle.svg" width="60px" alt="">
                     </div>
-                    <span class="mb-1">Criar</span>
+                    <span class="mb-1">Postar</span>
                 </a>
             </div>
 
