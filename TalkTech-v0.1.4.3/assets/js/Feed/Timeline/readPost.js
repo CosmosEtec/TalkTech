@@ -1,24 +1,24 @@
 function openPost() {
-    document.addEventListener('DOMContentLoaded', function () {
-      const post = document.querySelector('.post-container');
-      const overlayed = document.querySelector('.overlayed');
-      //const commentDisplay = document.querySelector('.')
-      const originalParent = post.parentNode;
-  
-      post.addEventListener('click', function (event) {
-        overlayed.style.display = 'flex';
-        event.stopPropagation();
-        overlayed.appendChild(post);
-      });
+  document.addEventListener('DOMContentLoaded', function () {
+    const containerPosts = document.querySelectorAll('.post-container');
+    const contentPosts = document.querySelectorAll('.content-post');
+    const feedRoll = document.querySelector('.feed-roll');
+    const overlayed = document.querySelector('.overlayed');
 
-      overlayed.addEventListener('click', function (event) {
-        overlayed.style.display = 'none';
-        originalParent.appendChild(post);
-        event.stopPropagation();
-        
+    contentPosts.forEach(function (contentPost, index) {
+      contentPost.addEventListener('click', function (event) {
+        overlayed.style.display = 'flex';
+        overlayed.appendChild(containerPosts[index]); // Use o índice para encontrar o container de postagem correspondente
       });
     });
-  }
-  
+
+    overlayed.addEventListener('click', function (event) {
+      overlayed.style.display = 'none';
+      containerPosts.forEach(function (containerPost) {
+        feedRoll.appendChild(containerPost);
+      });
+    });
+  });
+}
 
 export { openPost };

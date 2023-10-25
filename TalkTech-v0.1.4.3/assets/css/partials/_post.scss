@@ -4,6 +4,7 @@
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
+    position: relative;
     cursor: pointer;
 
     /* From https://css.glass */
@@ -15,6 +16,10 @@
    }
    
 }
+
+.content-post.active {
+    z-index: 2; /* Coloque a postagem ativa acima de outros elementos */
+  }
 
 .vazio{
     height: 400px;
@@ -88,7 +93,20 @@ img.profile-pic-img{
     cursor: pointer;
 
     &:hover{
-        transform: scale(1.1);
+        transform: scale(1.01);
+    }
+
+    #heart-liked{
+        display: none;
+        transform: scale(0);
+        transition: transform 0.5s ease;
+    }
+
+    
+
+    
+    #heart-unliked{
+        transition: 0.3s ease-in-out;
     }
 }
 
