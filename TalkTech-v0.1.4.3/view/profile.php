@@ -1,6 +1,19 @@
 <?php
 session_start();
-include_once '../control/valida-permanencia.php'
+include_once '../control/valida-permanencia.php';
+include_once '../dao/DaoPerfil.php';
+
+if(!$_GET['id']){
+    $perfil = new Perfil();
+$perfil->setId($_SESSION['login-id']);
+
+$perfil = DaoPerfil::buscarDados($perfil);
+}else{
+    $perfil = new Perfil();
+    $perfil->setId($_GET['id']);
+    
+    $perfil = DaoPerfil::buscarDados($perfil);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,11 +109,16 @@ include_once '../control/valida-permanencia.php'
                 <div class="container-profile-user">
                     <div class="container-profile-user-info">
                         <div class="user-image">
-                            <div class="imagem-fds"></div>
+                            <img class="imagem-fds" src="../<?php echo $perfil['fotoPerfil'] ?>" ></img>
                         </div>
                         <div class="user-info-detalhes mx-2">
                             <div class="user-detalhes-name-btn mb-2">
-                                <h3 class="detalhes-name">KaizerDragon</h4>
+                                <h3 class="detalhes-name">
+                                    <?php if(!$perfil['apelido']){
+                                    echo $perfil['nome'];
+                                    }else{
+                                    echo $perfil['apelido'];}?>
+                                </h3>
                                 <div class="detalhes-btn">
                                     <a class="btn-detalhes" href="#">Editar Perfil</a>
                                     <a class="btn-detalhes" href="#">Configuração</a>
@@ -108,21 +126,25 @@ include_once '../control/valida-permanencia.php'
                             </div>
                             <div class="user-info-seguidores mb-2">
                                 <div class="info-seguidores">
-                                    <p class="p2 text-profile">10</p>
+                                    <p class="p2 text-profile">00</p>
                                     <p class="p2 text-profile">Publicações</p>
                                 </div>
                                 <div class="info-seguidores">
-                                    <p class="p2 text-profile">300</p>
+                                    <p class="p2 text-profile">00</p>
                                     <p class="p2 text-profile">Seguidores</p>
                                 </div>
                                 <div class="info-seguidores">
-                                    <p class="p2 text-profile">150</p>
+                                    <p class="p2 text-profile">00</p>
                                     <p class="p2 text-profile">Seguindo</p>
                                 </div>
                             </div>
                             <div class="user-info-descricao">
-                                <p class="p3 text-profile bold">Eduardo Alves Azevedo</p>
-                                <p class="p3 text-profile">Sou programador Front-End?</p>
+                                <p class="p3 text-profile bold">
+                                    <?php if($perfil['apelido']){
+                                    echo $perfil['nome'];
+                                    }?>
+                                </p>
+                                <p class="p3 text-profile"><?php $perfil['biografia']?></p>
                             </div>
                         </div>
                     </div>

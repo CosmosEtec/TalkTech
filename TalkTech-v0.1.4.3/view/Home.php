@@ -113,7 +113,7 @@ include_once '../control/valida-permanencia.php'
 
             <!---========= FIM NAV TIMELINE =========-->
         <div class="feed-roll">
-            <div class="overlayed" id="overlay"> </div>
+            <div class="overlayed" id="overlay" > </div>
                 <div class="post-container   mb-2" >
             
                     <div class="profile-top-post  ">
@@ -124,7 +124,6 @@ include_once '../control/valida-permanencia.php'
                             <h4>UserApelido</h4>
                             <p class="p3">@user</p>
                         </div>
-                        
                     </div>  
                     <div class="post-description">
                         <p class="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatum ipsam aperiam eveniet voluptatibus possimus nemo maiores ullam obcaecati quisquam laborum doloribus sed, saepe unde harum non itaque odit id!</p>
