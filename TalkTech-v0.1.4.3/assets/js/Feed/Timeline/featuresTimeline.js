@@ -1,8 +1,10 @@
 import {openPost} from './readPost.js';
 import { likePost } from './likePost.js';
+import { commentPost } from './commentPost.js';
 
 openPost();
 likePost();
+commentPost();
 
 // Apresentação
 $(document).ready(function() {

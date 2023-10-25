@@ -77,7 +77,10 @@
                                     <input type="password" name="SenhaCadastro" id="SenhaCadastro" required="required">
                                     <span>Senha</span>
                                     <br>
-                                    <input type="checkbox" class="senhaCadastro" onclick="myFunction()">Visualizar Senha
+                                    <div class="flex-start mt-1">
+                                        <input type="checkbox" class="senhaCadastro" id="xecaboquis" onclick="myFunction()">
+                                        <p class="form-text-Login ">Visualizar Senha</p>
+                                    </div>
                                 </div>
                                     
 
