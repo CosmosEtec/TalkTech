@@ -2,7 +2,7 @@
 
 require_once '../model/Postagem.php';
 require_once '../model/Reacao.php';
-require_once '../model/conexao.php.php';
+require_once '../model/conexao.php';
 
 Class DaoPostagem{
     public static function inserir(Postagem $postagem){
@@ -23,6 +23,15 @@ Class DaoPostagem{
             $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $resultado;
         }
+    }
+
+    public static function buscarQtddPostagem($perfil){
+        $sql = "SELECT COUNT(*) AS qtdPostagem FROM tbPostagem WHERE idPerfil = ?";
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $perfil['idPerfil']);
+        $stmt->execute();
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $resultado['qtdPostagem'];
     }
 
 }
