@@ -5,7 +5,7 @@ require_once '../model/Reacao.php';
 require_once '../model/conexao.php';
 
 Class DaoPostagem{
-    public static function inserir(Postagem $postagem){
+    public static function postar(Postagem $postagem){
         $sql = "INSERT INTO tbPostagem (idPerfil, Conteudo, legenda, dataPost) VALUES (?, ?, ?, ?)";
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $postagem->getIdPerfil());
