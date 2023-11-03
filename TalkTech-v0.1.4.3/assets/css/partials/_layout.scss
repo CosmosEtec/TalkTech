@@ -27,6 +27,7 @@ $container-s: 540px;
     @media screen and (max-width: $container-ml) {
       @content;
     }
+    
   } @else if $device == m {
     // Para resolucao entre 960px e 1440px
     @media screen and (max-width: $container-l) and (min-width: $container-s) {

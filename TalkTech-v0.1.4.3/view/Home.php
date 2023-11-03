@@ -39,9 +39,10 @@ include_once '../control/valida-permanencia.php'
                     
                     <a href="Home.php" class="nav-link mb-1">
                         <div class="nav-left-side-menu-icon-container">
-                        <img src="../assets/svg/icon-home.svg" width="50px" height="30px" alt="">
+                            <i class="fa-solid fa-house fa-lg" style="color: #ffffff;"></i>
+                            <span class="ml-1-4px">Home</span>    
                         </div>
-                        <span class="mt-1">Home</span>
+                        
                     </a>   
                     
                 </div>
@@ -51,9 +52,9 @@ include_once '../control/valida-permanencia.php'
             <div class="div-nav-left-side-menu-link">
                 <a href="chat.php" class="nav-link mb-1"> 
                     <div class="nav-left-side-menu-icon-container">
-                        <img src="../assets/svg/icon-chat.svg" width="60px" alt="">
+                        <i class="fa-solid fa-message fa-lg" style="color: #ffffff;"></i>
+                        <span class="ml-1-4px">Chat</span>
                     </div>
-                    <span class="mt-1">Chat</span>
                 </a>
             </div>
            
@@ -61,36 +62,36 @@ include_once '../control/valida-permanencia.php'
             <div class="div-nav-left-side-menu-link">
                 <a class="nav-link mb-1" id="create-post">
                     <div class="nav-left-side-menu-icon-container">
-                        <img src="../assets/svg/icon-add-plus-circle.svg" width="60px" alt="">
+                        <i class="fa-solid fa-circle-plus fa-lg" style="color: #ffffff;"></i>
+                        <span class="ml-1-4px">Postar</span>
                     </div>
-                    <span class="mb-1">Postar</span>
                 </a>
             </div>
 
             <div class="div-nav-left-side-menu-link">
                 <a href="profile.php" class="nav-link mb-1">
                 <div class="nav-left-side-menu-icon-container">
-                    <img src="../assets/svg/icon-profile-side-menu.svg" width="60px" alt="">
+                    <i class="fa-solid fa-user fa-lg" style="color: #ffffff;"></i>
+                    <span class="ml-1-4px">Perfil</span>
                 </div>
-                <span class="mt-1">Perfil</span>
                 </a>
             </div>
 
             <div class="div-nav-left-side-menu-link">
                 <a href="profile.php" class="nav-link mb-1">
                 <div class="nav-left-side-menu-icon-container">
-                    <img src="../assets/svg/icon-notification.svg" width="60px" alt="">
+                    <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
+                    <span class="ml-1-4px">Notificações</span>
                 </div>
-                <span class="mt-1">Notificações</span>
                 </a>
             </div>
 
             <div class="div-nav-left-side-menu-link">
                 <a href="../control/Logout-usuario.php" class="nav-link mb-1">
                 <div class="nav-left-side-menu-icon-container">
-                    <i class="fa-solid fa-right-from-bracket fa-2xl" style="color: #ffffff;"></i>
-                </div>
-                <span class="mt-1">Logout</span>
+                    <i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ffffff;"></i>
+                    <span class="ml-1-4px">Logout</span>
+                </div> 
                 </a>
             </div>
         </nav>
@@ -258,6 +259,7 @@ include_once '../control/valida-permanencia.php'
         </section>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../assets/js/createPost.js"></script>
+    <script src="../assets/js/button.js"></script>
     <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
 </body>
 </html>

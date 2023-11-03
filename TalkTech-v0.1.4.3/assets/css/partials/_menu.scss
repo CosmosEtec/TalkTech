@@ -80,7 +80,7 @@ header{
   border-right: 1px solid $gray-clean-border;
   transition: 0.7s ease;
 
-  @include responsive(ul){
+  @include responsive(s){
     height: 50px;
     transform: translateY(0);
     bottom: 0;
@@ -96,6 +96,7 @@ header{
 
 .div-nav-left-side-menu-link{
     width: 100%;
+    margin-top: 0.35rem;
 }
 .nav-link-left-side-menu{
     display: inline-block;

@@ -12,28 +12,34 @@ a{
 }
 
 a.nav-link{
-    width: 100%;
+    width: 96%;
     display: flex;
-    padding-left: 8%;
     align-items: center;
     justify-content: start;
-
+    padding: 0.65rem 0 0.65rem 8%;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-left: 1%;
+    border-left: 3px solid transparent;
     &:hover{
-       
-        opacity: 0.6;
+        border-left: 3px solid #ffffff;
+        opacity: 0.9;
         transform: translateY(-5px);
 
-        &::after{
-            width: 60px;
-            background: #5919a1;
-        }
+        
     }
 
+    &.active-link{
+        background: #5919a1;
+        border-left: 3px solid #ffffff;
+    }
     
 
     div.nav-left-side-menu-icon-container{
         max-width: 40px;
         width: 100%;
+        display: flex;
+        align-items: center;
     } 
 
     div.ml-1{
@@ -43,17 +49,19 @@ a.nav-link{
     }
 
     span {
-        @include responsive(uml){
+        @include responsive(s){
             display: none;
         }
     }
 
-    @include responsive(uml){
+    @include responsive(s){
         margin-bottom: 0;
         padding-left: 0;
         justify-content: center;
     }
 }
+
+
 
 // ============= Style Buttons Inicio =============
 

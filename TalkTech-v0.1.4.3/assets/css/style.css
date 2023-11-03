@@ -415,35 +415,42 @@ a:hover {
 }
 
 a.nav-link {
-  width: 100%;
+  width: 96%;
   display: flex;
-  padding-left: 8%;
   align-items: center;
   justify-content: start;
+  padding: 0.65rem 0 0.65rem 8%;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  margin-left: 1%;
+  border-left: 3px solid transparent;
 }
 a.nav-link:hover {
-  opacity: 0.6;
+  border-left: 3px solid #ffffff;
+  opacity: 0.9;
   transform: translateY(-5px);
 }
-a.nav-link:hover::after {
-  width: 60px;
+a.nav-link.active-link {
   background: #5919a1;
+  border-left: 3px solid #ffffff;
 }
 a.nav-link div.nav-left-side-menu-icon-container {
   max-width: 40px;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 @media screen and (max-width: 1140px) {
   a.nav-link div.ml-1 {
     margin-left: 0;
   }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 960px) {
   a.nav-link span {
     display: none;
   }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 960px) {
   a.nav-link {
     margin-bottom: 0;
     padding-left: 0;
@@ -951,7 +958,7 @@ header {
   border-right: 1px solid #4d5252;
   transition: 0.7s ease;
 }
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 960px) {
   .nav-left-side-menu {
     height: 50px;
     transform: translateY(0);
@@ -968,6 +975,7 @@ header {
 
 .div-nav-left-side-menu-link {
   width: 100%;
+  margin-top: 0.35rem;
 }
 
 .nav-link-left-side-menu {
@@ -2112,6 +2120,7 @@ button.direct-chat {
   background: #1B1B1C;
   padding-top: 0.25rem;
   border-right: 1px solid #4d5252;
+  border-top: 1px solid #4d5252;
 }
 
 .dropdown-content {

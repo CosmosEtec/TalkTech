@@ -30,7 +30,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../assets/css/style.css">
     <title>Perfil</title>
 </head>
@@ -65,9 +65,10 @@ $perfil = DaoPerfil::buscarDados($perfil);
                     
                     <a href="Home.php" class="nav-link mb-1">
                         <div class="nav-left-side-menu-icon-container">
-                        <img src="../assets/svg/icon-home.svg" width="50px" height="30px" alt="">
+                            <i class="fa-solid fa-house fa-lg" style="color: #ffffff;"></i>
+                            <span class="ml-1-4px">Home</span>    
                         </div>
-                        <span class="mt-1">Home</span>
+                        
                     </a>   
                     
                 </div>
@@ -77,9 +78,9 @@ $perfil = DaoPerfil::buscarDados($perfil);
             <div class="div-nav-left-side-menu-link">
                 <a href="chat.php" class="nav-link mb-1"> 
                     <div class="nav-left-side-menu-icon-container">
-                        <img src="../assets/svg/icon-chat.svg" width="60px" alt="">
+                        <i class="fa-solid fa-message fa-lg" style="color: #ffffff;"></i>
+                        <span class="ml-1-4px">Chat</span>
                     </div>
-                    <span class="mt-1">Chat</span>
                 </a>
             </div>
            
@@ -87,36 +88,36 @@ $perfil = DaoPerfil::buscarDados($perfil);
             <div class="div-nav-left-side-menu-link">
                 <a class="nav-link mb-1" id="create-post">
                     <div class="nav-left-side-menu-icon-container">
-                        <img src="../assets/svg/icon-add-plus-circle.svg" width="60px" alt="">
+                        <i class="fa-solid fa-circle-plus fa-lg" style="color: #ffffff;"></i>
+                        <span class="ml-1-4px">Postar</span>
                     </div>
-                    <span class="mb-1">Postar</span>
                 </a>
             </div>
 
             <div class="div-nav-left-side-menu-link">
                 <a href="profile.php" class="nav-link mb-1">
                 <div class="nav-left-side-menu-icon-container">
-                    <img src="../assets/svg/icon-profile-side-menu.svg" width="60px" alt="">
+                    <i class="fa-solid fa-user fa-lg" style="color: #ffffff;"></i>
+                    <span class="ml-1-4px">Perfil</span>
                 </div>
-                <span class="mt-1">Perfil</span>
                 </a>
             </div>
 
             <div class="div-nav-left-side-menu-link">
                 <a href="profile.php" class="nav-link mb-1">
                 <div class="nav-left-side-menu-icon-container">
-                    <img src="../assets/svg/icon-notification.svg" width="60px" alt="">
+                    <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
+                    <span class="ml-1-4px">Notificações</span>
                 </div>
-                <span class="mt-1">Notificações</span>
                 </a>
             </div>
 
             <div class="div-nav-left-side-menu-link">
                 <a href="../control/Logout-usuario.php" class="nav-link mb-1">
                 <div class="nav-left-side-menu-icon-container">
-                    <i class="fa-solid fa-right-from-bracket fa-2xl" style="color: #ffffff;"></i>
-                </div>
-                <span class="mt-1">Logout</span>
+                    <i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ffffff;"></i>
+                    <span class="ml-1-4px">Logout</span>
+                </div> 
                 </a>
             </div>
         </nav>
@@ -282,5 +283,6 @@ $perfil = DaoPerfil::buscarDados($perfil);
        
 
     <script src="../assets/js/createPost.js"></script>
+    <script src="../assets/js/button.js"></script>
 </body>
 </html>
