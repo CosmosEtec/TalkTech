@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25/10/2023 às 10:50
+-- Tempo de geração: 11/11/2023 às 18:50
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -127,7 +127,8 @@ CREATE TABLE `tbperfil` (
 
 INSERT INTO `tbperfil` (`idPerfil`, `nome`, `apelido`, `email`, `senha`, `idade`, `fotoPerfil`, `fotoBanner`, `biografia`, `perfilPrivado`) VALUES
 (14, 'UserTeste', NULL, 'Teste@Teste', '4d750439e3f39848345c6ef74ef3d719e34e7111', NULL, 'user/UserTeste/fotoperfil.png', 'user/UserTeste/fotobanner.png', NULL, 0),
-(15, 'LerO', NULL, 'Lero@Lero', '4d750439e3f39848345c6ef74ef3d719e34e7111', NULL, 'user/LerO/fotoperfil.png', 'user/LerO/fotobanner.png', NULL, 0);
+(15, 'LerO', NULL, 'Lero@Lero', '4d750439e3f39848345c6ef74ef3d719e34e7111', NULL, 'user/LerO/fotoperfil.png', 'user/LerO/fotobanner.png', NULL, 0),
+(16, 'Goes', NULL, 'gabrielgaldino205@outlook.com', '01391009769ac79e51e75a3bd6821ac71564d7f7', NULL, 'user/Goes/fotoperfil.png', 'user/Goes/fotobanner.png', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -301,7 +302,7 @@ ALTER TABLE `tbconteudo`
 -- AUTO_INCREMENT de tabela `tbperfil`
 --
 ALTER TABLE `tbperfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `tbperm`

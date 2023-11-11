@@ -75,6 +75,7 @@ function mostrarPosts(){
                     <p class="p4">@'. ($perfil["apelido"] ? $perfil["apelido"] : $perfil["nome"]) .'</p>
                     <p class="p5 ml-1-4px" id="comentario">'.$coment["comentario"].'</p>    
                 </div>
+                </div>
                 ';
                 
             }

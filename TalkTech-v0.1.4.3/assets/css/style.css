@@ -1607,7 +1607,7 @@ img.profile-pic-img {
   flex-direction: column;
   transform: translate(-50%, -50%);
   padding: 20px;
-  background-color: white;
+  background-color: #2e2e30;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 1100;
@@ -1693,6 +1693,7 @@ input[type=text].search-field {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0;
+  overflow-y: scroll;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1705,7 +1706,7 @@ input[type=text].search-field {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: blue;
+  border: 0;
 }
 
 .container-profile-father {
