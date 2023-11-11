@@ -104,7 +104,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
             </div>
 
             <div class="div-nav-left-side-menu-link">
-                <a href="profile.php" class="nav-link mb-1">
+                <a href="notificacoes.php" class="nav-link mb-1">
                 <div class="nav-left-side-menu-icon-container">
                     <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
                     <span class="ml-1-4px">Notificações</span>

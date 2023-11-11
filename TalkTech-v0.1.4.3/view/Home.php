@@ -11,7 +11,7 @@ include_once '../control/valida-permanencia.php'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Feed</title>
+    <title>Home</title>
 </head>
 <body>
     <!---========= HEADER =========-->
@@ -78,7 +78,7 @@ include_once '../control/valida-permanencia.php'
             </div>
 
             <div class="div-nav-left-side-menu-link">
-                <a href="profile.php" class="nav-link mb-1">
+                <a href="notificacoes.php" class="nav-link mb-1">
                 <div class="nav-left-side-menu-icon-container">
                     <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
                     <span class="ml-1-4px">Notificações</span>
@@ -165,13 +165,101 @@ include_once '../control/valida-permanencia.php'
                             </div>
                             <div class="post-commnet-profile-name">
                                 <p class="p4">@user</p>
-                                <p class="p5 ml-1-4px" id="comentario"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet corporis repellat temporibus est dignissimos tenetur aperiam impedit, eligendi at quae. Labore nostrum magni eos! Facilis nisi qui libero aut sunt.</p>    
+                                <p class="p3 ml-1-4px" id="comentario"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet corporis repellat temporibus est dignissimos tenetur aperiam impedit, eligendi at quae. Labore nostrum magni eos! Facilis nisi qui libero aut sunt.</p>    
                             </div>
                         </div>
                     </div>
                 </div>
-        </div>
+
+                <div class="post-container   mb-2" >
+                
+                    <div class="profile-top-post  ">
+                        <div class="profile-pic  ">
+                            <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                        </div>
+                        <div class="profile-username flex-column ml-1">
+                            <h4>UserApelido</h4>
+                            <p class="p3">@user</p>
+                        </div>
+                    </div>  
+                    <div class="post-description">
+                        <p class="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatum ipsam aperiam eveniet voluptatibus possimus nemo maiores ullam obcaecati quisquam laborum doloribus sed, saepe unde harum non itaque odit id!</p>
+                    </div>
+                    <div class="content-post">
+                        <img src="../assets/img/codimg.jpg" alt="" height="350px">
+                    </div>
+                    <!---interações---->
+                    <div class="post-interactions  ">
+                        <div class="like-heart-comment-container">
+                                <button id="like-heart">
+                                <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
+                                <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
+                                </button>
+
+                                <button class="mt-1-4px comment" id="comment">
+                                <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2" style="color: #d1d1d1;"></i>
+                                </button>
+                            </div>
+                    </div>
+                    <div class="post-comment-section">
+                        <p class="p2">Comentários</p>
+                        <div class="post-comment-cell">
+                            <div class="post-comment-profile-pic mt-1-4px">
+                                <img src="../assets/img/bruno-kawaii.jpg" alt="">
+                            </div>
+                            <div class="post-commnet-profile-name">
+                                <p class="p4">@user</p>
+                                <p class="p3 ml-1-4px" id="comentario"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet corporis repellat temporibus est dignissimos tenetur aperiam impedit, eligendi at quae. Labore nostrum magni eos! Facilis nisi qui libero aut sunt.</p>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-container   mb-2" >
+                
+                    <div class="profile-top-post  ">
+                        <div class="profile-pic  ">
+                            <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                        </div>
+                        <div class="profile-username flex-column ml-1">
+                            <h4>UserApelido</h4>
+                            <p class="p3">@user</p>
+                        </div>
+                    </div>  
+                    <div class="post-description">
+                        <p class="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatum ipsam aperiam eveniet voluptatibus possimus nemo maiores ullam obcaecati quisquam laborum doloribus sed, saepe unde harum non itaque odit id!</p>
+                    </div>
+                    <div class="content-post">
+                        <img src="../assets/img/codimg.jpg" alt="" height="350px">
+                    </div>
+                    <!---interações---->
+                    <div class="post-interactions  ">
+                        <div class="like-heart-comment-container">
+                                <button id="like-heart">
+                                <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
+                                <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
+                                </button>
+
+                                <button class="mt-1-4px comment" id="comment">
+                                <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2" style="color: #d1d1d1;"></i>
+                                </button>
+                            </div>
+                    </div>
+                    <div class="post-comment-section">
+                        <p class="p2">Comentários</p>
+                        <div class="post-comment-cell">
+                            <div class="post-comment-profile-pic mt-1-4px">
+                                <img src="../assets/img/bruno-kawaii.jpg" alt="">
+                            </div>
+                            <div class="post-commnet-profile-name">
+                                <p class="p4">@user</p>
+                                <p class="p3 ml-1-4px" id="comentario"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet corporis repellat temporibus est dignissimos tenetur aperiam impedit, eligendi at quae. Labore nostrum magni eos! Facilis nisi qui libero aut sunt.</p>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
         
         <!---========= FIM TIMELINE ===========-->
         

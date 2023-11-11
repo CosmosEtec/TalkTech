@@ -22,16 +22,31 @@ a.nav-link{
     margin-left: 1%;
     border-left: 3px solid transparent;
     &:hover{
-        border-left: 3px solid #ffffff;
+        border-left: 3px solid $white-dark;
+        
         opacity: 0.9;
         transform: translateY(-5px);
+
+        @include responsive(s){
+            border-top: 3px solid $white-dark;
+            border-left: none;
+            border-top-right-radius: 3px;
+            border-top-left-radius: 3px;
+        }
 
         
     }
 
     &.active-link{
         background: #5919a1;
-        border-left: 3px solid #ffffff;
+        border-left: 3px solid $white-dark;
+
+        @include responsive(s){
+            border-top: 3px solid $white-dark;
+            border-left: none;
+            border-top-right-radius: 3px;
+            border-top-left-radius: 3px;
+        }
     }
     
 
@@ -56,8 +71,9 @@ a.nav-link{
 
     @include responsive(s){
         margin-bottom: 0;
-        padding-left: 0;
+        padding: 1.60rem 0 1.60rem 0;
         justify-content: center;
+        border-left: none;
     }
 }
 

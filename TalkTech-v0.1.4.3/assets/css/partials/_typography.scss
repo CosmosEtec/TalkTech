@@ -65,13 +65,7 @@
   } @else if $size == p3 and $device == mobile {
     font-size: 8px;
     line-height: 150%;
-  } @else if $size == p5 and $device == desktop {
-    font-size: 12px;
-    line-height: 150%;
-  } @else if $size == p5 and $device == mobile {
-    font-size: 4px;
-    line-height: 150%;
-  }
+  } 
 }
 
 h1 {
