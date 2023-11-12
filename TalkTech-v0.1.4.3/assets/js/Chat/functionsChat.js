@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
     dropdownButton.parentNode.classList.add("active");
     arrow.style.transform = 'rotate(90deg)'
     // Defina a altura máxima para exibir o dropdown
-    dropdownList.style.maxHeight = "200px";
+    dropdownList.style.maxHeight = "100%";
    
     dropdownButton.addEventListener("click", function() {
-      dropdownList.style.maxHeight = dropdownList.style.maxHeight === "200px" ? "0" : "200px"; // Ajuste conforme necessário
+      dropdownList.style.maxHeight = dropdownList.style.maxHeight === "100%" ? "0" : "100%"; // Ajuste conforme necessário
       dropdownButton.parentNode.classList.toggle("active");
     });
   });

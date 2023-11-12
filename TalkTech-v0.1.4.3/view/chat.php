@@ -95,9 +95,18 @@ include_once '../control/valida-permanencia.php'
                 </button>
             </div>
             <div class="dropdown-content mt-1" id="dropdown-list">
-                <a class="dropdown-item" href="#">Pessoa 1</a>
-                <a class="dropdown-item" href="#">Pessoa 2</a>
-                <a class="dropdown-item" href="#">Pessoa 3</a>
+                <a class="dropdown-item" href="#">
+                    <div class="chat-cell-user">
+                        <div class="chat-cell-user-profile-pic mt-1-4px">
+                            <img src="../assets/img/bonoro-anao.jpg" alt="">
+                        </div>
+                        <div class="chat-user-name-and-message-prev ml-1-4px">
+                            <h6 >Pessoa Gay</h6>
+                            <p class="p3">Parabéns por ser viado fi..+</p>
+                        </div>                  
+                    </div>
+                </a>
+                
                 <!-- Adicione mais pessoas conforme necessário -->
             </div>
 

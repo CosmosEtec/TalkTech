@@ -259,17 +259,17 @@ h5 {
 }
 
 h6 {
-  color: #00000e;
+  color: #edeaef;
   font-family: "Sora", sans-serif;
   font-weight: 250;
-  font-size: 32px;
+  font-size: 12px;
   line-height: 150%;
 }
 @media screen and (max-width: 960px) {
   h6 {
     font-family: "Sora", sans-serif;
     font-weight: 250;
-    font-size: 16px;
+    font-size: 8px;
     line-height: 150%;
   }
 }
@@ -2094,7 +2094,6 @@ input.message-field:focus {
 
 .nav-chats {
   left: 0;
-  width: 19rem;
   height: 100vh;
   background: #1B1B1C;
 }
@@ -2124,7 +2123,7 @@ button.direct-chat {
 }
 
 .nav-list-chats {
-  width: 15%;
+  width: 20%;
   height: 100vh;
   background: #1B1B1C;
   padding-top: 0.25rem;
@@ -2132,29 +2131,52 @@ button.direct-chat {
   border-top: 1px solid #4d5252;
 }
 
-.dropdown-content {
+div.dropdown-content {
   max-height: 0;
   overflow: hidden;
+  overflow-y: scroll;
   transition: max-height 1s ease-in-out;
-  position: absolute;
-  background-color: black-light;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  padding: 0 0.25rem 0 0.25rem;
+}
+div.dropdown-content::-webkit-scrollbar {
+  width: 1px; /* Largura da barra de rolagem no Chrome/Safari */
 }
 
 .dropdown:hover .dropdown-content, .dropdown.active .dropdown-content {
   max-height: 200px; /* Ajuste a altura máxima conforme necessário */
 }
 
-.dropdown-item {
-  padding: 12px 16px;
+.chat-cell-user {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.chat-user-name-and-message-prev {
+  display: flex;
+  flex-direction: column;
+}
+
+a.dropdown-item {
+  padding: 10px 0 10px 4px;
   text-decoration: none;
-  display: block;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.chat-cell-user-profile-pic {
+  width: 40px;
+  height: 40px;
 }
 
 button.dropdown-item {
-  padding: 0.1rem 2rem 0.25rem 0.25rem;
+  padding: 0.1rem 5rem 0.25rem 0.25rem;
+  margin-left: 2%;
   text-decoration: none;
   display: block;
   border: none;
@@ -2180,7 +2202,7 @@ div.agroup-itens-button {
 }
 
 .dropdown-item:hover {
-  background-color: #b7b7b7;
+  background-color: rgba(46, 46, 48, 0.7);
 }
 
 html {
