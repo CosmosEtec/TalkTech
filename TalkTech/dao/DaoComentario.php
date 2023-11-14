@@ -1,4 +1,6 @@
 <?php 
+require_once '../model/Comentario.php';
+require_once '../model/conexao.php';
 
 Class DaoComentario{
     public static function inserir(Comentario $comentario){

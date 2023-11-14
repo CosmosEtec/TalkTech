@@ -76,11 +76,6 @@
                                 <div class="input-field my-2">
                                     <input type="password" name="SenhaCadastro" id="SenhaCadastro" required="required">
                                     <span>Senha</span>
-                                    <br>
-                                    <div class="flex-start mt-1">
-                                        <input type="checkbox" class="senhaCadastro" id="xecaboquis" onclick="myFunction()">
-                                        <p class="form-text-Login ">Visualizar Senha</p>
-                                    </div>
                                 </div>
                                     
 
@@ -88,15 +83,19 @@
                                     <input type="password" name="ConfirmaSenhaCadastro" id="ConfirmaSenhaCadastro" required="required">
                                     <span>Confirma Senha</span>
                                 </div>
+                                <div class="flex-start mt-1">
+                                    <input type="checkbox" class="senhaCadastro" id="xecaboquis" onclick="myFunction()">
+                                    <p class="form-text-Login ">Visualizar Senha</p>
+                                </div>
 
                                 <input type="submit" class="btn mt-2 mb-1" id="submitButton">
-                                <div id="message" style="display:none">
-  <p>A sua senha precisa de:</p>
-  <p id="letter" class="invalid"><b>letra Minuscula</b> </p>
-  <p id="capital" class="invalid"><b>letra Maiuscula</b></p>
-  <p id="number" class="invalid"><b>Numeros</b></p>
-  <p id="length" class="invalid">Minimo <b>8 caracteres</b></p>
-</div>
+                                <div id="message">
+                                    <p><b>A sua senha precisa de pelo menos:</b></p>
+                                    <p id="letter" class="invalid">Uma letra Minuscula </p>
+                                    <p id="capital" class="invalid">Uma letra Maiuscula</p>
+                                    <p id="number" class="invalid">Um Numero</p>
+                                    <p id="length" class="invalid">Minimo 8 caracteres</p>
+                                </div>
                                 <p class="form-text-Login mt-2">Você ja tem uma conta? <a class="form-link-login" href="#">Login</a></p>
                             </form>
                         </div>
@@ -104,10 +103,10 @@
                 </div>
             </div>
         </section>
-        <script src="../assets/js/login.js"></script>
-        <script src="../assets/js/criaruser.js"></script>
-        <script src="../assets/js/script.js?v3"></script>
-        <script src="../assets/js/app.js"></script>
-        <script src="../assets/js/sweetalert.js"></script>
+        <script src="../assets/js/login.js" defer></script>
+        <script src="../assets/js/criaruser.js" defer></script>
+        <script src="../assets/js/script.js?v3" defer></script>
+        <script src="../assets/js/app.js" defer></script>
+        <script src="../assets/js/sweetalert.js" defer></script>
     </body>
 </html>

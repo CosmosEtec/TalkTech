@@ -130,10 +130,13 @@ document.getElementById('cadForm').addEventListener('submit', function(event){
 
 function myFunction() {
     var x = document.getElementById("SenhaCadastro");
+    var y = document.getElementById("ConfirmaSenhaCadastro");
     if (x.type === "password") {
       x.type = "text";
+        y.type = "text";
     } else {
       x.type = "password";
+        y.type = "password";
     }
   }
 

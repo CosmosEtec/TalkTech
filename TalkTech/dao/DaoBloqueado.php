@@ -1,4 +1,8 @@
 <?php
+    require_once('../model/Bloqueado.php');
+    require_once('../model/conexao.php');
+
+
 Class DaoBloqueado{
     public static function inserir(Bloqueado $bloqueado){
         $sql = "INSERT INTO tbBloqueado (idPerfilBloqueador, idPerfilBloqueado) VALUES (?, ?)";
