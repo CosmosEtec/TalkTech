@@ -126,8 +126,7 @@ include_once '../control/valida-permanencia.php'
         <div class="feed-roll">
 
         <div class="overlayed" id="overlay" > </div>
-        <?php include_once '../control/ControlPostagem.php'; mostrarPosts(); ?> 
-                
+        <?php include_once '../control/ControlPostagem.php'; mostrarPostsFeed(); ?>     
             </div>
         </div>
         
@@ -155,67 +154,7 @@ include_once '../control/valida-permanencia.php'
               </div>  
             </div>
           </div> -->
-        <!---========= FIM Criar Post ===========-->
-
-         <!---========= FIM POST =========-->
-
-         <!---========= RIGHT SIDE MENU  =========
-        <nav class="right-side-menu  ">
-            
-            <div class="top-languages-right-side-menu  ">
-                <div class="top-languages-head">
-
-                    <h4 class=""> <> Melhores Linguagens</h4>
-                </div>       
-
-                <div class="top-languages-language-skill">
-                    <div class="language-icon">
-                        <img src="../assets/img/python.png" alt="">
-                    </div>
-                    <div class="language-details ">
-                        <h4 class="p2">Python</h4>
-                        <p class="p3">Linguagem</p>
-                    </div>
-                </div>   
-
-                <div class="top-languages-language-skill">
-                    <div class="language-icon">
-                        <img src="../assets/img/angular-framework.png" alt="">
-                    </div>
-                    <div class="language-details ">
-                        <h4 class="p2">Angular</h4>
-                        <p class="p3">Framework</p>
-                    </div>
-                </div>  
-
-                <div class="top-languages-language-skill">
-                    <div class="language-icon">
-                        <img src="../assets/img/angular-framework.png" alt="">
-                    </div>
-                    <div class="language-details ">
-                        <h4 class="p2">Angular</h4>
-                        <p class="p3">Framework</p>
-                    </div>
-                </div> 
-                <div class="btn-centralizar">
-                <button class="">
-                    <h4 class="p2">Adicionar mais</h4>
-                    <i class="fa-solid fa-plus fa-xl mt-1-4px ml-1" style="color: #e0e0e0;"></i>
-                </button>
-                </div>
-                
-            </div>
-
-            
-            
-
-            </div>
-        </nav>   
-
-        -->
-        <!---========= FIM RIGHT SIDE MENU  =========-->     
-          
-        
+        <!---========= FIM Criar Post ===========-->      
         </section>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../assets/js/createPost.js"></script>

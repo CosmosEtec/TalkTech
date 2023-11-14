@@ -1,5 +1,4 @@
 <?php
-
     require_once '../model/Conteudo.php';
     require_once '../dao/DaoConteudo.php';    
     require_once '../model/Postagem.php';

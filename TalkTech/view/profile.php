@@ -123,7 +123,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
         </nav>
         <!---========= FIM LEFT SIDE MENU =========-->
 
-        <!---========= CONTAINER TIMELINE =========-->
+        <!---========= CONTAINER Perfil =========-->
         <div class="container-profile-father">
             <div class="container-profile-child">
                 <div class="container-profile-user">
