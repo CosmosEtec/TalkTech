@@ -20,6 +20,7 @@
 @import "partials/timeline";
 @import "partials/intro";
 @import "partials/chat";
+@import "partials/notificacoes";
 
 html{
   overflow: hidden;
@@ -38,6 +39,10 @@ body {
 img {
   width: 100%;
   height: 100%;
+}
+
+i{
+  cursor: pointer;
 }
 
 .none{

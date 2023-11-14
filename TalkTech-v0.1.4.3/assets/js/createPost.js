@@ -12,6 +12,12 @@ closeCardButton.addEventListener('click', () => {
 
 // =============== Preview da Imagem sei lá
 
+function previewImageShowUp(){
+  const image = document.getElementById('image-preview');
+
+  image.style.display = 'block';
+}
+
 function previewImage() {
     const preview = document.getElementById('image-preview');
     const fileInput = document.getElementById('image-upload');
@@ -24,7 +30,10 @@ function previewImage() {
         preview.src = e.target.result;
       }
   
+      previewImageShowUp();
       reader.readAsDataURL(file);
+      
+
     } else {
       preview.src = '#'; // Limpa a visualização se nenhum arquivo estiver selecionado
     }

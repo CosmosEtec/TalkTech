@@ -135,13 +135,12 @@ include_once '../control/valida-permanencia.php'
         
         
         <!---========= Criar Post ===========-->
-        <!-- <div class="overlay" id="card-overlay" >
-        <button id="close-create-post"><i class="fa-solid fa-xmark fa-2xl" style="color: #e8ecf2;"></i></button>
+        <div class="overlay" id="card-overlay" >
             <div class="container-create-post" id="info-card" >
-              <div class="head-create-post">
-                <h3>Novo Post</h3>
+              <div class="flex-start">
+                <button id="close-create-post"><i class="fa-solid fa-xmark fa-2xl" style="color: #e8ecf2;"></i></button>
               </div>  
-              <div id="image-preview-container mt-2">
+              <div id="image-preview-container">
                 
                 <input type="file" id="image-upload" accept="image/*" onchange="previewImage()"/>
                 <img id="image-preview" src="#" alt="" />
@@ -154,7 +153,7 @@ include_once '../control/valida-permanencia.php'
                 <button class="publish-button mt-1 mb-1">Publicar</button>
               </div>  
             </div>
-          </div> -->
+          </div>
         <!---========= FIM Criar Post ===========-->
 
          <!---========= FIM POST =========-->
