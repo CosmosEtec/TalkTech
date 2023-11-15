@@ -32,7 +32,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Perfil</title>
+    <title>Editar Perfil</title>
 </head>
 <body>
 
@@ -128,9 +128,14 @@ $perfil = DaoPerfil::buscarDados($perfil);
             <div class="container-profile-child">
                 <div class="container-profile-user">
                     <div class="container-profile-user-info">
-                        <div class="user-image">
-                            <img class="imagem-fds" src="../<?php echo $perfil['fotoPerfil'] ?>" ></img>
-                        </div>
+                    <div class="user-image">
+                        <form action="edicaoPerfil.php" method="post" enctype="multipart/form-data">
+                            <img class="imagem-fds" src="../path/to/profile/image" onclick="triggerClick()"></img>
+                            <input type="file" id="profileImage" name="profileImage" style="display: none;" onchange="displayImage(this)">
+                            <input type="submit" value="Upload Image" name="submit">
+                        </form>
+                    </div>
+                    
                         <div class="user-info-detalhes mx-2">
                             <div class="user-detalhes-name-btn mb-2">
                                 <h3 class="detalhes-name">
@@ -140,7 +145,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
                                     echo $perfil['apelido'];}?>
                                 </h3>
                                 <div class="detalhes-btn">
-                                    <a class="btn-detalhes" href="./profileEdit.php">Editar Perfil</a>
+                                    <a class="btn-detalhes" href="#">Editar Perfil</a>
                                     <a class="btn-detalhes" href="#">Configuração</a>
                                 </div>
                             </div>
@@ -169,23 +174,16 @@ $perfil = DaoPerfil::buscarDados($perfil);
                         </div>
                     </div>
                 </div>
-                <div class="container-profile-child-public">
-                    <div class="public-title mt-2 mb-2">
-                        <h3 class="title-profile">Publicações</h3>
-                    </div>
-                <?php 
-                $postagens = DaoPostagem::buscarPostagensPerfil($perfil);
-                if(isset($postagens)){
-                    
-                }else{
-                    echo '<div class="child-public-post mt-2">
-                    <p>Não foram feitas publicações ainda!</p>
-                    </div>';
-                }
-                
-                
-                ?>
-                    
+                <div class="formulario-atualizacao">
+                    <form action="" method="post">
+                        <label for="nome">Nome:</label><br>
+                        <input type="text" id="nome" name="nome"><br>
+                        <label for="apelido">Apelido:</label><br>
+                        <input type="text" id="apelido" name="apelido"><br>
+                        <label for="biografia">Biografia:</label><br>
+                        <textarea id="biografia" name="biografia"></textarea><br>
+                        <input type="submit" value="Atualizar">
+                    </form>
                 </div>
             </div>
         </div>
@@ -215,5 +213,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
 
     <script src="../assets/js/createPost.js"></script>
     <script src="../assets/js/button.js"></script>
+    <script src="../assets/js/previewImage.js"></script>
+    <script src="../assets/js/profileEdit.js"></script>
 </body>
 </html>
