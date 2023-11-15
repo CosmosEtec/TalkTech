@@ -5,17 +5,15 @@
     class DaoPerfil {
         public static function cadastra(Perfil $perfil){
             $perfil->setFotoPerfil("user/". $perfil->getNome() ."/fotoperfil.png");
-            $perfil->setFotoBanner("user/". $perfil->getNome() ."/fotobanner.png");
 
 
-            $sql = "INSERT INTO tbPerfil (nome, email, senha, fotoPerfil, fotoBanner, perfilPrivado) VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO tbPerfil (nome, email, senha, fotoPerfil, perfilPrivado) VALUES (?, ?, ?, ?, ?)";
             $stmt = Conexao::getConn()->prepare($sql);
             $stmt->bindValue(1, $perfil->getNome());
             $stmt->bindValue(2, $perfil->getEmail());
             $stmt->bindValue(3, $perfil->getSenha());
             $stmt->bindValue(4, $perfil->getFotoPerfil());
-            $stmt->bindValue(5, $perfil->getFotoBanner());
-            $stmt->bindValue(6, "0");	
+            $stmt->bindValue(5, "0");	
             return $stmt->execute();
         }
 

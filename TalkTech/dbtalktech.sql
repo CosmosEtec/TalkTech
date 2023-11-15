@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/11/2023 às 18:50
+-- Tempo de geração: 15/11/2023 às 00:16
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -114,9 +114,7 @@ CREATE TABLE `tbperfil` (
   `apelido` varchar(50) DEFAULT NULL,
   `email` varchar(80) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `idade` int(11) DEFAULT NULL,
   `fotoPerfil` varchar(255) DEFAULT NULL,
-  `fotoBanner` varchar(255) DEFAULT NULL,
   `biografia` varchar(160) DEFAULT NULL,
   `perfilPrivado` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -125,10 +123,10 @@ CREATE TABLE `tbperfil` (
 -- Despejando dados para a tabela `tbperfil`
 --
 
-INSERT INTO `tbperfil` (`idPerfil`, `nome`, `apelido`, `email`, `senha`, `idade`, `fotoPerfil`, `fotoBanner`, `biografia`, `perfilPrivado`) VALUES
-(14, 'UserTeste', NULL, 'Teste@Teste', '4d750439e3f39848345c6ef74ef3d719e34e7111', NULL, 'user/UserTeste/fotoperfil.png', 'user/UserTeste/fotobanner.png', NULL, 0),
-(15, 'LerO', NULL, 'Lero@Lero', '4d750439e3f39848345c6ef74ef3d719e34e7111', NULL, 'user/LerO/fotoperfil.png', 'user/LerO/fotobanner.png', NULL, 0),
-(16, 'Goes', NULL, 'gabrielgaldino205@outlook.com', '01391009769ac79e51e75a3bd6821ac71564d7f7', NULL, 'user/Goes/fotoperfil.png', 'user/Goes/fotobanner.png', NULL, 0);
+INSERT INTO `tbperfil` (`idPerfil`, `nome`, `apelido`, `email`, `senha`, `fotoPerfil`, `biografia`, `perfilPrivado`) VALUES
+(14, 'UserTeste', NULL, 'Teste@Teste', '4d750439e3f39848345c6ef74ef3d719e34e7111', 'user/UserTeste/fotoperfil.png', NULL, 0),
+(15, 'LerO', NULL, 'Lero@Lero', '4d750439e3f39848345c6ef74ef3d719e34e7111', 'user/LerO/fotoperfil.png', NULL, 0),
+(16, 'Goes', NULL, 'gabrielgaldino205@outlook.com', '01391009769ac79e51e75a3bd6821ac71564d7f7', 'user/Goes/fotoperfil.png', NULL, 0);
 
 -- --------------------------------------------------------
 
