@@ -102,7 +102,7 @@ include_once '../control/valida-permanencia.php'
                         </div>
                         <div class="chat-user-name-and-message-prev ml-1-4px">
                             <h6 >Pessoa Gay</h6>
-                            <p class="p3">Parabéns por ser viado fi..+</p>
+                            <p class="p3">Parabéns por ser viado filho duma p</p>
                         </div>                  
                     </div>
                 </a>
@@ -167,25 +167,7 @@ include_once '../control/valida-permanencia.php'
     
     
           
-        <div class="overlay" id="card-overlay" >
-            <div class="container-create-post" id="info-card" >
-              <div class="flex-start">
-                <button id="close-create-post"><i class="fa-solid fa-xmark fa-2xl" style="color: #e8ecf2;"></i></button>
-              </div>  
-              <div id="image-preview-container">
-                
-                <input type="file" id="image-upload" accept="image/*" onchange="previewImage()"/>
-                <img id="image-preview" src="#" alt="" />
-                <label for="image-upload" class="custom-file-input">
-                    <img src="../assets/img/icon-img.png" alt="">
-                </label>
-              </div>   
-              <textarea class="mt-3" class="description-post" id="description" placeholder="Escreva a sua descrição"></textarea>
-              <div class="flex-end">
-                <button class="publish-button mt-1 mb-1">Publicar</button>
-              </div>  
-            </div>
-          </div>
+        
         </section>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="../assets/js/createPost.js"></script>
