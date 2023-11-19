@@ -157,6 +157,9 @@ $container-s: 540px;
     flex: 2 1 auto;
 }
 
+.w-null{
+  width: 0;
+}
 .w-0 {
   width: unset;
 }

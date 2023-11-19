@@ -91,6 +91,8 @@ img.profile-pic-img{
     border: none;
     background: none;
     width: 100%;
+    display: flex;
+    align-items: center;
     transition: 0.2s ease-in-out;
     cursor: pointer;
 
@@ -277,11 +279,12 @@ img.profile-pic-img{
 #description{
     
     width: 95%;
+    height: 1.50rem;
     border-left: 2px solid $purple-normal;
     background: transparent;
     outline: $purple-normal;
     border-radius: 2px;
-    padding: 5px 10px;
+    padding: 5px 12px;
     overflow: hidden;
     resize: none;
     color: $white-dark;

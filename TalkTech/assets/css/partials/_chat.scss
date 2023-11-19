@@ -94,12 +94,11 @@ input.message-field{
 .container-messages-roll{
     width: 100%;
     height: 100vh;
-    /* From https://css.glass */
-background: $xupi;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(25px);
-border: 1px solid rgba(13, 12, 43, 0.3);
+    background: $xupi;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(13, 12, 43, 0.3);
     overflow: auto;
     padding: 0.5%;
 

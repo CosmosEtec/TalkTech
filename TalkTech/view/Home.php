@@ -33,71 +33,111 @@ include_once '../control/valida-permanencia.php'
     <!---========= CONTAINER FEED =========-->
     <section class="container-feed ">
         <!---========= LEFT SIDE MENU =========--> 
-        <nav class="nav-left-side-menu   " id="side-menu">
-            
-                <div class="div-nav-left-side-menu-link  ">
-                    
-                    <a href="Home.php" class="nav-link mb-1">
-                        <div class="nav-left-side-menu-icon-container">
-                            <i class="fa-solid fa-house fa-lg" style="color: #ffffff;"></i>
-                            <span class="ml-1-4px">Home</span>    
-                        </div>
+        <div class="container-side-menu">
+            <nav class="nav-left-side-menu   " id="side-menu">
+                
+                    <div class="div-nav-left-side-menu-link  ">
                         
-                    </a>   
-                    
+                        <a href="Home.php" class="nav-link mb-1">
+                            <div class="nav-left-side-menu-icon-container">
+                                <i class="fa-solid fa-house fa-lg" style="color: #ffffff;"></i>
+                                <span class="ml-1-4px">Home</span>    
+                            </div>
+                            
+                        </a>   
+                        
+                    </div>
+                
+
+                
+                <div class="div-nav-left-side-menu-link">
+                    <a href="chat.php" class="nav-link mb-1"> 
+                        <div class="nav-left-side-menu-icon-container">
+                            <i class="fa-solid fa-message fa-lg" style="color: #ffffff;"></i>
+                            <span class="ml-1-4px">Chat</span>
+                        </div>
+                    </a>
                 </div>
             
-
-              
-            <div class="div-nav-left-side-menu-link">
-                <a href="chat.php" class="nav-link mb-1"> 
-                    <div class="nav-left-side-menu-icon-container">
-                        <i class="fa-solid fa-message fa-lg" style="color: #ffffff;"></i>
-                        <span class="ml-1-4px">Chat</span>
-                    </div>
-                </a>
-            </div>
-           
-            
-            <div class="div-nav-left-side-menu-link">
-                <a class="nav-link mb-1" id="create-post">
-                    <div class="nav-left-side-menu-icon-container">
-                        <i class="fa-solid fa-circle-plus fa-lg" style="color: #ffffff;"></i>
-                        <span class="ml-1-4px">Postar</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="div-nav-left-side-menu-link">
-                <a href="profile.php" class="nav-link mb-1">
-                <div class="nav-left-side-menu-icon-container">
-                    <i class="fa-solid fa-user fa-lg" style="color: #ffffff;"></i>
-                    <span class="ml-1-4px">Perfil</span>
+                
+                <div class="div-nav-left-side-menu-link">
+                    <a class="nav-link mb-1" id="create-post">
+                        <div class="nav-left-side-menu-icon-container">
+                            <i class="fa-solid fa-circle-plus fa-lg" style="color: #ffffff;"></i>
+                            <span class="ml-1-4px">Postar</span>
+                        </div>
+                    </a>
                 </div>
-                </a>
-            </div>
 
-            <div class="div-nav-left-side-menu-link">
-                <a href="notificacoes.php" class="nav-link mb-1">
-                <div class="nav-left-side-menu-icon-container">
-                    <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
-                    <span class="ml-1-4px">Notificações</span>
+                <div class="div-nav-left-side-menu-link">
+                    <a href="profile.php" class="nav-link mb-1">
+                    <div class="nav-left-side-menu-icon-container">
+                        <i class="fa-solid fa-user fa-lg" style="color: #ffffff;"></i>
+                        <span class="ml-1-4px">Perfil</span>
+                    </div>
+                    </a>
                 </div>
-                </a>
-            </div>
 
-            <div class="div-nav-left-side-menu-link">
-                <a href="../control/Logout-usuario.php" class="nav-link mb-1">
-                <div class="nav-left-side-menu-icon-container">
-                    <i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ffffff;"></i>
-                    <span class="ml-1-4px">Logout</span>
-                </div> 
-                </a>
-            </div>
-        </nav>
+                <div class="div-nav-left-side-menu-link">
+                    <a class="nav-link mb-1" onclick="toggleNotificacoes()">
+                    <div class="nav-left-side-menu-icon-container">
+                        <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
+                        <span class="ml-1-4px">Notificações</span>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="div-nav-left-side-menu-link">
+                    <a href="../control/Logout-usuario.php" class="nav-link mb-1">
+                    <div class="nav-left-side-menu-icon-container">
+                        <i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ffffff;"></i>
+                        <span class="ml-1-4px">Logout</span>
+                    </div> 
+                    </a>
+                </div>
+            </nav>
+
+            <!---========= Notificações =========-->
+            <nav class="menu-notificacoes">
+                <div class="menu-notificacoes-head">
+                    <i class="fa-regular fa-bell fa-xl" style="color: #ffffff;"></i>
+                    <h3 class="ml-1-4px bold">Notificações</h3>
+                </div>
+                <div class="menu-notifications-tag">
+                    <p>Saiba de todas suas interações por aqui. Todos os comentário, seguidores e curtidas. </p>
+                </div>
+                <div class="notification-novas mt-2">
+                    <h4>Últimas atualizações</h4>
+                </div>
+                <div class="menu-notifications-follower-cell mt-1">
+                    <div class="img-user-notification">
+                        <img src="../assets/img/bonoro-anao.jpg" alt="">
+                    </div>
+
+                    <div class="notification-info-cell ml-1-4px">
+                        <h6>@userzédamanga</h6>
+                        <p class="p3">curtiu seu comentário: @aroma_de_chuva ninguém liga pra isso não man fica na tua cabeça de alicate
+                            imundo sujo podre feio fedido pobre lascado.
+                        </p>
+                    </div>
+                    <div class="notification-interactions">
+                        <button class="mt-1-4px"id="like-heart">
+                            <i class="fa-solid fa-heart fa-lg heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
+                            <i class="fa-regular fa-heart fa-lg heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
+                        </button>
+                        <button class="mt-1-4px"><h6>Responder</h6></button>
+                    </div>
+                    <div class="notification-type">
+                        <i class="fa-solid fa-message fa-sm" style="color: #ffffff;"></i>
+                    </div>
+                </div>
+            </nav>
+
+            <!---========= Fim Notificações =========-->
+                
+        </div>
         <!---========= FIM LEFT SIDE MENU =========-->         
-    
-    
+        
         <!---========= TIMELINE =========-->
         <div class="container-timeline" id="scrollableDiv">
         
@@ -146,7 +186,7 @@ include_once '../control/valida-permanencia.php'
                     <input type="file" id="image-upload" accept="image/*" onchange="previewImage()"/>
                     <img id="image-preview" src="#" alt="" />
                     <label for="image-upload" class="custom-file-input">
-                        <img src="../assets/img/icon-img.png" alt="">
+                        <img src="../assets/img/icon-add-image.png" alt="">
                     </label> 
                     
                 </div> 
@@ -164,6 +204,7 @@ include_once '../control/valida-permanencia.php'
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../assets/js/createPost.js"></script>
     <script src="../assets/js/button.js"></script>
+    <script src="../assets/js/navbar.js"></script>
     <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
 </body>
 </html>
