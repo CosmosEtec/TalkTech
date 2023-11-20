@@ -11,18 +11,11 @@ require_once('../model/Comentario.php');
 require_once('../model/Seguidor.php');
 require_once('../dao/DaoComentario.php');
 
-
-if(!isset($_GET['id'])){
 $perfil = new Perfil();
 $perfil->setId($_SESSION['login-id']);
 
 $perfil = DaoPerfil::buscarDados($perfil);
-}else{
-    $perfil = new Perfil();
-    $perfil->setId($_GET['id']);
-    
-    $perfil = DaoPerfil::buscarDados($perfil);
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -129,24 +122,18 @@ $perfil = DaoPerfil::buscarDados($perfil);
                 <div class="container-profile-user">
                     <div class="container-profile-user-info">
                     <div class="user-image">
-                        <form action="edicaoPerfil.php" method="post" enctype="multipart/form-data">
-                            <img class="imagem-fds" src="../path/to/profile/image" onclick="triggerClick()"></img>
+                            <img class="imagem-fds" src="../<?php echo $perfil['fotoPerfil'] ?>" onclick="triggerClick()"></img>
                             <input type="file" id="profileImage" name="profileImage" style="display: none;" onchange="displayImage(this)">
-                            <input type="submit" value="Upload Image" name="submit">
                         </form>
                     </div>
                     
                         <div class="user-info-detalhes mx-2">
                             <div class="user-detalhes-name-btn mb-2">
                                 <h3 class="detalhes-name">
-                                    <?php if(!$perfil['apelido']){
-                                    echo $perfil['nome'];
-                                    }else{
-                                    echo $perfil['apelido'];}?>
+                                    <?php echo '@'.$perfil['nome']; ?>
                                 </h3>
                                 <div class="detalhes-btn">
-                                    <a class="btn-detalhes" href="#">Editar Perfil</a>
-                                    <a class="btn-detalhes" href="#">Configuração</a>
+                                    <a class="btn-detalhes" href="profile.php">voltar</a>
                                 </div>
                             </div>
                             <div class="user-info-seguidores mb-2">
@@ -164,26 +151,28 @@ $perfil = DaoPerfil::buscarDados($perfil);
                                 </div>
                             </div>
                             <div class="user-info-descricao">
-                                <p class="p3 text-profile bold">
-                                    <?php if($perfil['apelido']){
-                                    echo $perfil['nome'];
-                                    }?>
-                                </p>
-                                <p class="p3 text-profile"><?php $perfil['biografia']?></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="formulario-atualizacao">
-                    <form action="" method="post">
-                        <label for="nome">Nome:</label><br>
-                        <input type="text" id="nome" name="nome"><br>
                         <label for="apelido">Apelido:</label><br>
-                        <input type="text" id="apelido" name="apelido"><br>
+                        <input type="text" id="apelido" name="apelido" value="<?php echo $perfil['apelido'] ?>"><br>
                         <label for="biografia">Biografia:</label><br>
-                        <textarea id="biografia" name="biografia"></textarea><br>
+                        <textarea id="biografia" name="biografia" value="<?php echo $perfil['biografia'] ?>"></textarea><br>
+                        <?php
+                        if($perfil['perfilPrivado'] = 0)
+                        {
+                            echo '<label for="privado">Perfil privado:</label>';
+                            echo '<input type="checkbox" id="privado" name="privado" value="privado" checked>';
+                        }
+                        else
+                        {
+                            echo '<label for="privado">Perfil privado:</label>';
+                            echo '<input type="checkbox" id="privado" name="privado" value="privado">';
+                        }
+                        ?>
                         <input type="submit" value="Atualizar">
-                    </form>
                 </div>
             </div>
         </div>
