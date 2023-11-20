@@ -12,19 +12,21 @@ Class DaoPostagem{
         $stmt->bindValue(2, $postagem->getLegenda());
         $stmt->bindValue(3, $postagem->getConteudo());
         $stmt->bindValue(4, $postagem->getDataPost());
-
-        if($stmt->execute()){
-            return Conexao::getConn()->lastInsertId();
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            return true;
         } else {
             return false;
         }
     }
 
-    public static function alterConteudo($postagem){
-        $sql = "UPDATE tbPostagem SET Conteudo = 1 WHERE idPostagem = ?";
+    public static function buscarUltimaPostagem($idPerfil){
+        $sql = "SELECT idPostagem FROM tbPostagem WHERE idPerfil = ? ORDER BY idPostagem DESC LIMIT 1";
         $stmt = Conexao::getConn()->prepare($sql);
-        $stmt->bindValue(1, $postagem->getIdPostagem());
-        return $stmt->execute();
+        $stmt->bindValue(1, $idPerfil);
+        $stmt->execute();
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $resultado['idPostagem'];
     }
 
     public static function buscarDados(Postagem $postagem){

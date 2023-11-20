@@ -3,10 +3,12 @@
     require_once('../model/Perfil.php');
     require_once('../model/Comentario.php');
     require_once('../model/Seguidor.php');
+    require_once('../model/Conteudo.php');
     require_once('../dao/DaoPostagem.php');
     require_once('../dao/DaoPerfil.php');
     require_once('../dao/DaoComentario.php');
     require_once('../dao/DaoSeguidor.php');
+    require_once('../dao/DaoConteudo.php');
 
 function mostrarPostsFeed(){
     $postagens = new Postagem();
@@ -17,7 +19,11 @@ function mostrarPostsFeed(){
             $perfil = new Perfil();
             $perfil->setId($postagem['idPerfil']);
             $perfil = DaoPerfil::buscarDados($perfil);
-
+        if($postagem['Conteudo'] == 1){
+            $conteudo = new Conteudo();
+            $conteudo->setIdPostagem($postagem['idPostagem']);
+            $conteudo = DaoConteudo::buscarDados($conteudo);
+        }
             echo '
             <div class="post-container   mb-2" id="'.$postagem["idPostagem"].'">
                 <div class="profile-top-post  ">
@@ -26,14 +32,20 @@ function mostrarPostsFeed(){
                     </div>
                     <div class="profile-username flex-column ml-1">
                         <h4>'. ($perfil["apelido"] ? $perfil["apelido"] : $perfil["nome"]) .'</h4>
-                        <p class="p3">@'.($perfil["apelido"] ? $perfil["apelido"] : $perfil["nome"]).'</p>
+                        <p class="p3">@'.$perfil["nome"].'</p>
                     </div>
                 </div>
                 <div class="post-description">
                     <p class="p3">'. $postagem["legenda"] .'</p>
-                </div>
-                <div class="post-interactions  ">
-                    <div class="like-heart-comment-container">
+                </div>';
+                if(isset($conteudo)){
+                    echo '
+                    <div class="content-post">
+                        <img src="'.$conteudo['src'].'">
+                    </div>';
+                };
+                echo '<div class="post-interactions  ">
+                        <div class="like-heart-comment-container">
                             <button id="like-heart">
                                 <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
                                 <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
@@ -47,11 +59,7 @@ function mostrarPostsFeed(){
                 
             </div>    
             ';
-            if(!isset($postagem['Conteudo'])){
-                echo '<div class="post-img-container">
-                <img src="../'. $postagem["Conteudo"] .'" alt="" height="350px">
-                </div>';
-            }
+        $conteudo = null;
         }
     }
 }

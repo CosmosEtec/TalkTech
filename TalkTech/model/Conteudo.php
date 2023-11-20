@@ -3,6 +3,7 @@
     Class Conteudo {
         Private $idConteudo;
         Private $idPostagem;
+        Private $idPerfil;
         Private $arquivo;
         Private $src;
 
@@ -22,6 +23,14 @@
             $this->idPostagem = $idPostagem;
         }
 
+        public function getIdPerfil(){
+            return $this->idPerfil;
+        }
+
+        public function setIdPerfil($idPerfil){
+            $this->idPerfil = $idPerfil;
+        }
+        
         public function getArquivo(){
             return $this->arquivo;
         }

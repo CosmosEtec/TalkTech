@@ -166,7 +166,7 @@ include_once '../control/valida-permanencia.php'
         <div class="feed-roll">
 
         <div class="overlayed" id="overlay" > </div>
-        <?php include_once '../control/ControlPostagem.php'; mostrarPostsFeed(); ?>     
+        <?php include_once '../control/ControlPostagem.php'; mostrarPostsFeed(); ?>  
             </div>
         </div>
         
