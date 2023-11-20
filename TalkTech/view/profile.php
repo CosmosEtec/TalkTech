@@ -10,6 +10,7 @@ require_once('../model/Perfil.php');
 require_once('../model/Comentario.php');
 require_once('../model/Seguidor.php');
 require_once('../dao/DaoComentario.php');
+require_once('../control/ControlPostagem.php');
 
 
 if(!isset($_GET['id'])){
@@ -217,7 +218,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
                 <?php 
                 $postagens = DaoPostagem::buscarPostagensPerfil($perfil);
                 if(isset($postagens)){
-                    
+                    mostrarPostsUsuario($perfil);
                 }else{
                     echo '<div class="child-public-post mt-2">
                     <p>Não foram feitas publicações ainda!</p>
