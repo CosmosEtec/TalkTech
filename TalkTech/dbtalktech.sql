@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/11/2023 às 00:16
+-- Tempo de geração: 20/11/2023 às 23:22
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -81,14 +81,6 @@ CREATE TABLE `tbcomentario` (
   `dataComentario` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Despejando dados para a tabela `tbcomentario`
---
-
-INSERT INTO `tbcomentario` (`idComentario`, `idPostagem`, `idPerfil`, `comentario`, `dataComentario`) VALUES
-(1, 1, 14, 'Teste', '2023-10-25'),
-(2, 1, 15, 'Teste2', '2023-10-25');
-
 -- --------------------------------------------------------
 
 --
@@ -98,9 +90,18 @@ INSERT INTO `tbcomentario` (`idComentario`, `idPostagem`, `idPerfil`, `comentari
 CREATE TABLE `tbconteudo` (
   `idConteudo` int(11) NOT NULL,
   `idPostagem` int(11) NOT NULL,
+  `idPerfil` int(11) NOT NULL,
   `arquivo` varchar(30) NOT NULL,
   `src` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tbconteudo`
+--
+
+INSERT INTO `tbconteudo` (`idConteudo`, `idPostagem`, `idPerfil`, `arquivo`, `src`) VALUES
+(8, 56, 16, 'png', '../user/Goes/posts/56.png'),
+(9, 58, 16, 'jpg', '../user/Goes/posts/58.jpg');
 
 -- --------------------------------------------------------
 
@@ -150,7 +151,7 @@ CREATE TABLE `tbpostagem` (
   `idPerfil` int(11) NOT NULL,
   `Conteudo` tinyint(1) NOT NULL,
   `legenda` varchar(450) NOT NULL,
-  `dataPost` date NOT NULL
+  `dataPost` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -158,7 +159,10 @@ CREATE TABLE `tbpostagem` (
 --
 
 INSERT INTO `tbpostagem` (`idPostagem`, `idPerfil`, `Conteudo`, `legenda`, `dataPost`) VALUES
-(1, 14, 0, 'Teste teste teste', '2023-10-25');
+(55, 16, 0, 'Eu Amo programar :D ', '2023-11-20 23:01:33'),
+(56, 16, 1, 'DARE', '2023-11-20 23:10:17'),
+(57, 16, 0, 'Só texto', '2023-11-20 23:13:17'),
+(58, 16, 1, '', '2023-11-20 23:16:50');
 
 -- --------------------------------------------------------
 
@@ -230,7 +234,8 @@ ALTER TABLE `tbcomentario`
 --
 ALTER TABLE `tbconteudo`
   ADD PRIMARY KEY (`idConteudo`),
-  ADD KEY `fk_idPostagem` (`idPostagem`);
+  ADD KEY `fk_idPostagem` (`idPostagem`),
+  ADD KEY `fk_idPerfil` (`idPerfil`);
 
 --
 -- Índices de tabela `tbperfil`
@@ -294,7 +299,7 @@ ALTER TABLE `tbcomentario`
 -- AUTO_INCREMENT de tabela `tbconteudo`
 --
 ALTER TABLE `tbconteudo`
-  MODIFY `idConteudo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idConteudo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `tbperfil`
@@ -312,7 +317,7 @@ ALTER TABLE `tbperm`
 -- AUTO_INCREMENT de tabela `tbpostagem`
 --
 ALTER TABLE `tbpostagem`
-  MODIFY `idPostagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idPostagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de tabela `tbreação`
@@ -362,7 +367,8 @@ ALTER TABLE `tbcomentario`
 -- Restrições para tabelas `tbconteudo`
 --
 ALTER TABLE `tbconteudo`
-  ADD CONSTRAINT `tbconteudo_ibfk_1` FOREIGN KEY (`idPostagem`) REFERENCES `tbpostagem` (`idPostagem`);
+  ADD CONSTRAINT `tbconteudo_ibfk_1` FOREIGN KEY (`idPostagem`) REFERENCES `tbpostagem` (`idPostagem`),
+  ADD CONSTRAINT `tbconteudo_ibfk_2` FOREIGN KEY (`idPerfil`) REFERENCES `tbperfil` (`idPerfil`);
 
 --
 -- Restrições para tabelas `tbpostagem`
