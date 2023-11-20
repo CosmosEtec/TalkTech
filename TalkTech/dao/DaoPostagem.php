@@ -6,12 +6,24 @@ require_once '../model/conexao.php';
 
 Class DaoPostagem{
     public static function postar(Postagem $postagem){
-        $sql = "INSERT INTO tbPostagem (idPerfil, Conteudo, legenda, dataPost) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO tbPostagem (idPerfil, legenda, conteudo, dataPost) VALUES (?, ?, ?, ?)";
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $postagem->getIdPerfil());
-        $stmt->bindValue(2, $postagem->getConteudo());
-        $stmt->bindValue(3, $postagem->getLegenda());
+        $stmt->bindValue(2, $postagem->getLegenda());
+        $stmt->bindValue(3, $postagem->getConteudo());
         $stmt->bindValue(4, $postagem->getDataPost());
+
+        if($stmt->execute()){
+            return Conexao::getConn()->lastInsertId();
+        } else {
+            return false;
+        }
+    }
+
+    public static function alterConteudo($postagem){
+        $sql = "UPDATE tbPostagem SET Conteudo = 1 WHERE idPostagem = ?";
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $postagem->getIdPostagem());
         return $stmt->execute();
     }
 

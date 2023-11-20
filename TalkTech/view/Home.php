@@ -195,7 +195,7 @@ include_once '../control/valida-permanencia.php'
                 </div> 
                 <textarea class="" class="description-post" id="description" placeholder="Escreva a sua descrição"></textarea>
                 <div class="flex-end">
-                    <button class="publish-button mt-1 mb-1"><h4 class="mr-1">Próximo</h4><i class="fa-solid fa-circle-right fa-2xl" style="color: #82269e;"></i></button>
+                    <button class="publish-button mt-1 mb-1" id="submitPost"><h4 class="mr-1">Próximo</h4><i class="fa-solid fa-circle-right fa-2xl" style="color: #82269e;"></i></button>
                 </div>  
             </div>
           </div>
@@ -206,5 +206,6 @@ include_once '../control/valida-permanencia.php'
     <script src="../assets/js/button.js"></script>
     <script src="../assets/js/navbar.js"></script>
     <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>
 </html>
