@@ -35,12 +35,12 @@ function mostrarPostsFeed(){
                         <p class="p3">@'.$perfil["nome"].'</p>
                     </div>
                 </div>
-                <div class="post-description">
+                <div class="post-description mt-1">
                     <p class="p3">'. $postagem["legenda"] .'</p>
                 </div>';
                 if(isset($conteudo)){
                     echo '
-                    <div class="content-post">
+                    <div class="content-post mt-1">
                         <img src="'.$conteudo['src'].'">
                     </div>';
                 };
@@ -50,7 +50,6 @@ function mostrarPostsFeed(){
                                 <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
                                 <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
                             </button>
-
                             <button class="mt-1-4px comment" id="comment">
                             <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2" style="color: #d1d1d1;"></i>
                             </button>

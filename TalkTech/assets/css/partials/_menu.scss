@@ -58,9 +58,12 @@ box-shadow: 0px 13px 15px -8px rgba(0,0,0,0.33);
 
 
 ///////////////////////  Side Menu - Menu Lateral Esquerdo  /////////////////////// 
+
 .container-side-menu{
     display: flex;
-    position: relative;
+    height: 100vh;
+    position: sticky;
+    top: 0;
 }
 .nav-left-side-menu{ 
   height: 100vh;
@@ -70,7 +73,7 @@ box-shadow: 0px 13px 15px -8px rgba(0,0,0,0.33);
   -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.47); 
 box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.47);
 border-top: 1px solid $gray-clean-border;
-  padding: 40px 0px 0 0px; 
+  padding: 40px 0px 0 0px;
   position: sticky;
   top: 0;
   z-index: 900;
@@ -132,17 +135,27 @@ border-top: 1px solid $gray-clean-border;
 ///////////////////////  Menu Nofitificações  ///////////////////////
 
 .menu-notificacoes{
-    width: 200%;
+    width: 40%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     position: absolute;
-    padding: 0.85rem 0.60rem 0 0.85rem;
+    padding: 0.85rem 0.60rem 0 1.3rem;
     border: 1px solid $gray-clean-border;
     z-index: 800;
     background: $black-corno;
     transition: left 0.7s ease; 
-    left: -100%;
+    left: -50%;
+
+    @include responsive(s){
+        width: 100%;
+        left: 0;
+        top: -100%;
+        z-index: 1200;
+
+        padding-top: 2rem;
+    
+    }
 
     .menu-notificacoes-head{
         width: 98%;
@@ -199,8 +212,19 @@ border-top: 1px solid $gray-clean-border;
     }
 }
 
+.close-notificacoes-mobile{
+    position: absolute;
+    top: 0.6%;
+    left: 0.6%;
+}
+
 .menu-notificacoes.aberto {
-    left: 100%;
+    left: 170px;
+
+    @include responsive(s){
+        left: 0;
+        top: 0;
+    }
 }
 
 

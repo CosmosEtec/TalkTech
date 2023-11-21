@@ -959,7 +959,9 @@ header {
 
 .container-side-menu {
   display: flex;
-  position: relative;
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 .nav-left-side-menu {
@@ -1021,17 +1023,26 @@ header {
 }
 
 .menu-notificacoes {
-  width: 200%;
+  width: 40%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   position: absolute;
-  padding: 0.85rem 0.6rem 0 0.85rem;
+  padding: 0.85rem 0.6rem 0 1.3rem;
   border: 1px solid #4d5252;
   z-index: 800;
   background: #1B1B1C;
   transition: left 0.7s ease;
-  left: -100%;
+  left: -50%;
+}
+@media screen and (max-width: 960px) {
+  .menu-notificacoes {
+    width: 100%;
+    left: 0;
+    top: -100%;
+    z-index: 1200;
+    padding-top: 2rem;
+  }
 }
 .menu-notificacoes .menu-notificacoes-head {
   width: 98%;
@@ -1081,8 +1092,20 @@ header {
   left: 96%;
 }
 
+.close-notificacoes-mobile {
+  position: absolute;
+  top: 0.6%;
+  left: 0.6%;
+}
+
 .menu-notificacoes.aberto {
-  left: 100%;
+  left: 170px;
+}
+@media screen and (max-width: 960px) {
+  .menu-notificacoes.aberto {
+    left: 0;
+    top: 0;
+  }
 }
 
 .right-side-menu {
@@ -1514,6 +1537,7 @@ header {
   flex-direction: column;
   position: relative;
   border-radius: 10px;
+  z-index: 100;
   cursor: default;
   /* From https://css.glass */
   background: #1c1c1e;
@@ -1709,8 +1733,8 @@ img.profile-pic-img {
 }
 
 #image-preview-container {
-  width: 95%;
-  height: 350px;
+  width: 15%;
+  height: 15%;
   margin-top: 2%;
   display: flex;
   flex-direction: column;
@@ -1718,6 +1742,19 @@ img.profile-pic-img {
   justify-content: center;
   background: #1c1c1e;
   position: relative;
+}
+#image-preview-container label {
+  background: transparent;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  width: 24px;
+  height: 26px;
+  right: -34%;
+  bottom: -1px;
+  display: flex;
+  align-items: end;
+  display: none;
 }
 
 #image-preview {
@@ -1727,40 +1764,65 @@ img.profile-pic-img {
 }
 
 .publish-button {
-  display: flex;
-  align-items: center;
-  padding: 6px 6px;
+  padding: 6px 12px;
   background: none;
   border: none;
   border-radius: 3px;
   cursor: pointer;
   transition: 0.2s ease;
+  background: #701f88;
 }
 .publish-button:hover {
-  background: rgba(28, 28, 30, 0.4);
+  background: rgba(112, 31, 136, 0.9);
 }
 
 #close-create-post {
   z-index: 4;
   position: absolute;
   right: -2%;
-  top: -4%;
+  top: -10%;
   background: none;
   border: none;
   cursor: pointer;
 }
 
-#description {
+.description-align {
   width: 95%;
-  height: 1.5rem;
-  border-left: 2px solid #82269e;
+  display: flex;
+  justify-content: flex-start;
+}
+.description-align .profile-pic {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin: 1% 0 0 1%;
+  z-index: 800;
+}
+
+#description {
+  width: 100%;
+  height: 5.5rem;
+  border: none;
   background: transparent;
-  outline: #82269e;
-  border-radius: 2px;
-  padding: 5px 12px;
+  outline: none;
+  border-radius: 4px;
+  padding: 5px 12px 5px 9.5%;
   overflow: hidden;
   resize: none;
   color: #edeaef;
+  position: relative;
+  transition: 1s ease;
+}
+#description:focus {
+  background: #1c1c1e;
+}
+
+.elements-create-post {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #4d5252;
 }
 
 #image-upload {
@@ -1768,14 +1830,13 @@ img.profile-pic-img {
 }
 
 .custom-file-input {
-  position: absolute;
   display: inline-block;
   color: white;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s ease;
-  width: 90px;
-  height: 94px;
+  width: 30px;
+  height: 32px;
   opacity: 0.3;
 }
 
@@ -1897,6 +1958,10 @@ input[type=text].search-field {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.feed-roll {
+  z-index: 700;
 }
 
 .container-timeline {

@@ -12,15 +12,11 @@ closeCardButton.addEventListener('click', () => {
 
 // =============== Preview da Imagem sei lá
 
-function previewImageShowUp(){
-  const image = document.getElementById('image-preview');
-
-  image.style.display = 'block';
-}
 
 function previewImage() {
     const preview = document.getElementById('image-preview');
     const fileInput = document.getElementById('image-upload');
+    const removeImageButton = document.querySelector('.custom-file-input.remove');
     const file = fileInput.files[0];
   
     if (file) {
@@ -30,14 +26,34 @@ function previewImage() {
         preview.src = e.target.result;
       }
   
-      previewImageShowUp();
+      preview.style.display = 'block';
+      removeImageButton.style.display = 'flex';
       reader.readAsDataURL(file);
       
 
     } else {
       preview.src = '#'; // Limpa a visualização se nenhum arquivo estiver selecionado
+      preview.style.display = 'none';
     }
   }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const removeImageButton = document.querySelector('.custom-file-input.remove');
+    const imagePreview = document.getElementById('image-preview');
+    const fileInput = document.getElementById('image-upload');
+  
+    removeImageButton.addEventListener('click', function () {
+      // Limpa a visualização da imagem
+      imagePreview.src = '#';
+  
+      // Esconde a imagem e o botão "Remover"
+      imagePreview.style.display = 'none';
+      removeImageButton.style.display = 'none';
+  
+      // Limpa o valor do campo de entrada de arquivo
+      fileInput.value = '';
+    });
+  });
 
 var btnPost = document.getElementById('submitPost');
 

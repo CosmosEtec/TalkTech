@@ -15,25 +15,54 @@ include_once '../control/valida-permanencia.php'
 </head>
 <body>
     <!---========= HEADER =========-->
-    <header id="header">
-        <!---========= NAV-BAR DESKTOP =========-->
-        <nav class="navbar-desktop" data-aos="fade-up">
-            <a href="#Inicio" class="navbar-desktop-logo"><img src="../assets/svg/t-logo.svg" alt="" width="60px" height="70px"></a>
-            <div class="search-field flex-start ">
-                <div class="px-1">
-                    <img src="../assets/svg/icon-search-nav.svg" alt="" width="26px" height="26px">
-                </div>
-                    <input class="search-field" type="text" placeholder="Quem você busca?">
-            </div>
-            <div class=""> 
-            </div>
-        </nav>
-    </header>
+   
     
     <!---========= CONTAINER FEED =========-->
     <section class="container-feed ">
-        <!---========= LEFT SIDE MENU =========--> 
-        <div class="container-side-menu">
+        
+        
+        <!---========= Notificações =========-->
+        <nav class="menu-notificacoes">
+                <a class="close-notificacoes-mobile" onclick="toggleNotificacoes()">
+                    <i class="fa-solid fa-xmark fa-2xl" style="color: #e8ecf2;"></i>
+                </a>
+                <div class="menu-notificacoes-head">
+                    <i class="fa-regular fa-bell fa-xl" style="color: #ffffff;"></i>
+                    <h3 class="ml-1-4px bold">Notificações</h3>
+                </div>
+                <div class="menu-notifications-tag">
+                    <p>Saiba de todas suas interações por aqui. Todos os comentário, seguidores e curtidas. </p>
+                </div>
+                <div class="notification-novas mt-2">
+                    <h4>Últimas atualizações</h4>
+                </div>
+                <div class="menu-notifications-follower-cell mt-1">
+                    <div class="img-user-notification">
+                        <img src="../assets/img/bonoro-anao.jpg" alt="">
+                    </div>
+
+                    <div class="notification-info-cell ml-1-4px">
+                        <h6>@userzédamanga</h6>
+                        <p class="p3">curtiu seu comentário: @aroma_de_chuva ninguém liga pra isso não man fica na tua cabeça de alicate
+                            imundo sujo podre feio fedido pobre lascado.
+                        </p>
+                    </div>
+                    <div class="notification-interactions">
+                        <button class="mt-1-4px"id="like-heart">
+                            <i class="fa-solid fa-heart fa-lg heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
+                            <i class="fa-regular fa-heart fa-lg heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
+                        </button>
+                        <button class="mt-1-4px"><h6>Responder</h6></button>
+                    </div>
+                    <div class="notification-type">
+                        <i class="fa-solid fa-message fa-sm" style="color: #ffffff;"></i>
+                    </div>
+                </div>
+            </nav>
+
+            <!---========= Fim Notificações =========-->
+
+            <!---========= LEFT SIDE MENU =========--> 
             <nav class="nav-left-side-menu   " id="side-menu">
                 
                     <div class="div-nav-left-side-menu-link  ">
@@ -95,47 +124,10 @@ include_once '../control/valida-permanencia.php'
                     </div> 
                     </a>
                 </div>
-            </nav>
 
-            <!---========= Notificações =========-->
-            <nav class="menu-notificacoes">
-                <div class="menu-notificacoes-head">
-                    <i class="fa-regular fa-bell fa-xl" style="color: #ffffff;"></i>
-                    <h3 class="ml-1-4px bold">Notificações</h3>
-                </div>
-                <div class="menu-notifications-tag">
-                    <p>Saiba de todas suas interações por aqui. Todos os comentário, seguidores e curtidas. </p>
-                </div>
-                <div class="notification-novas mt-2">
-                    <h4>Últimas atualizações</h4>
-                </div>
-                <div class="menu-notifications-follower-cell mt-1">
-                    <div class="img-user-notification">
-                        <img src="../assets/img/bonoro-anao.jpg" alt="">
-                    </div>
-
-                    <div class="notification-info-cell ml-1-4px">
-                        <h6>@userzédamanga</h6>
-                        <p class="p3">curtiu seu comentário: @aroma_de_chuva ninguém liga pra isso não man fica na tua cabeça de alicate
-                            imundo sujo podre feio fedido pobre lascado.
-                        </p>
-                    </div>
-                    <div class="notification-interactions">
-                        <button class="mt-1-4px"id="like-heart">
-                            <i class="fa-solid fa-heart fa-lg heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
-                            <i class="fa-regular fa-heart fa-lg heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
-                        </button>
-                        <button class="mt-1-4px"><h6>Responder</h6></button>
-                    </div>
-                    <div class="notification-type">
-                        <i class="fa-solid fa-message fa-sm" style="color: #ffffff;"></i>
-                    </div>
-                </div>
-            </nav>
-
-            <!---========= Fim Notificações =========-->
                 
-        </div>
+            </nav>
+
         <!---========= FIM LEFT SIDE MENU =========-->         
         
         <!---========= TIMELINE =========-->
@@ -181,21 +173,37 @@ include_once '../control/valida-permanencia.php'
                 <div class="head-create-post">
                     <h4>Nova Publicação</h4>
                 </div>  
-                <div id="image-preview-container">
-                    
-                    <input type="file" id="image-upload" accept="image/*" onchange="previewImage()"/>
-                    <img id="image-preview" src="#" alt="" />
-                    <label for="image-upload" class="custom-file-input">
-                        <img src="../assets/img/icon-add-image.png" alt="">
-                    </label> 
-                    
-                </div> 
                 <div class="flex-start">
-                    <p class="p1 mt-1">Legenda</p> 
+                    <div id="image-preview-container">
+                        <label class="custom-file-input remove">
+                            <img src="../assets/img/icon-remove-image.png" alt="">
+                            <h6 class="mt-1 ml-1-4px">Remover</h6>
+                        </label> 
+                        <div class="remove-image"></div>
+                        <input type="file" id="image-upload" accept="image/*" onchange="previewImage()"/>
+                        <img id="image-preview" src="#" alt="" />
+                        
+                        
+                    </div> 
+                </div>
+                <div class="flex-start">
+                    <p class="p1 mt-1">Qual a boa?</p> 
                 </div> 
-                <textarea class="" class="description-post" id="description" placeholder="Escreva a sua descrição"></textarea>
-                <div class="flex-end">
-                    <button class="publish-button mt-1 mb-1" id="submitPost"><h4 class="mr-1">Próximo</h4><i class="fa-solid fa-circle-right fa-2xl" style="color: #82269e;"></i></button>
+
+                <div class="description-align">
+                    <div class="profile-pic  ">
+                        <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                    </div>
+
+                    <textarea class="" class="description-post" id="description" placeholder="Compartilhe o que está acontecendo"></textarea>
+                </div>
+                <div class="elements-create-post">
+                    <div class="elements">
+                        <label for="image-upload" class="custom-file-input">
+                            <img src="../assets/img/icon-add-image.png" alt="">
+                        </label> 
+                    </div>
+                    <button class="publish-button mt-1 mb-1" id="submitPost"><h6>Publicar</h6></button>
                 </div>  
             </div>
           </div>
