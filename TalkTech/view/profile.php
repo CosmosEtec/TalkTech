@@ -191,32 +191,24 @@ $perfil = DaoPerfil::buscarDados($perfil);
                                     echo '@'.$perfil['nome'];
                                     }?>
                                 </p>
+                                <div class="detalhes-btn">
                                 <?php 
-            if($perfil['idPerfil'] == $_SESSION['login-id']){
-            echo   '<div class="detalhes-btn">
-                        <a class="btn-detalhes" href="./profileEdit.php">Editar Perfil</a>
-                    </div>';
-            } else {
-                if(DaoBloqueado::verificarBloqueio($perfil['idPerfil'], $_SESSION['login-id'])){
-                    echo '<div class="detalhes-btn">
-                            <a class="btn-detalhes">Desbloquear</a>
-                        </div>';
-                }else{
-                    echo '<div class="detalhes-btn">
-                            <a class="btn-detalhes">Bloquear</a>
-                        </div>';
-                }
-                if(DaoSeguidor::verificarSeguidor($perfil['idPerfil'], $_SESSION['login-id'])){
-                    echo '<div class="detalhes-btn">
-                            <a class="btn-detalhes">Deixar de Seguir</a>
-                        </div>';
-                }else{
-                    echo '<div class="detalhes-btn">
-                            <a class="btn-detalhes">Seguir</a>
-                        </div>';
-                }
-            }
-            ?>
+                                if($perfil['idPerfil'] == $_SESSION['login-id']){
+                                echo   '<a class="btn-detalhes" href="./profileEdit.php">Editar Perfil</a>';
+                                } else {
+                                    if(DaoBloqueado::verificarBloqueio($perfil['idPerfil'], $_SESSION['login-id'])){
+                                        echo '<a class="btn-detalhes" id="desbloquear">Desbloquear</a>';
+                                    }else{
+                                        echo '<a class="btn-detalhes" id="bloquear" >Bloquear</a>';
+                                    }
+                                    if(DaoSeguidor::verificarSeguidor($perfil['idPerfil'], $_SESSION['login-id'])){
+                                        echo '<a class="btn-detalhes" id="unfollow" >Deixar de Seguir</a>';
+                                    }else{
+                                        echo '<a class="btn-detalhes" id="follow" >Seguir</a>';
+                                    }
+                                }
+                                ?>
+                                </div>
                             </div>
                             <div class="user-info-seguidores mb-2">
                                 <div class="info-seguidores">
