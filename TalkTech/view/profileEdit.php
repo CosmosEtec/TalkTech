@@ -156,10 +156,13 @@ $perfil = DaoPerfil::buscarDados($perfil);
                     </div>
                 </div>
                 <div class="formulario-atualizacao">
-                        <label for="apelido">Apelido:</label><br>
-                        <input type="text" id="apelido" name="apelido" value="<?php echo $perfil['apelido'] ?>"><br>
-                        <label for="biografia">Biografia:</label><br>
-                        <textarea id="biografia" name="biografia" value="<?php echo $perfil['biografia'] ?>"></textarea><br>
+                        <label for="apelido">Apelido:</label>
+                        <input type="text" id="apelido" name="apelido" value="<?php echo $perfil['apelido'] ?>">
+
+                        <label for="biografia">Biografia:</label>
+                        <textarea id="biografia" name="biografia" value="<?php echo $perfil['biografia'] ?>"></textarea>
+                        <p id="quantidade-caracteres">0</p><p>/160</p>
+
                         <?php
                         if($perfil['perfilPrivado'] = 0)
                         {
@@ -172,7 +175,8 @@ $perfil = DaoPerfil::buscarDados($perfil);
                             echo '<input type="checkbox" id="privado" name="privado" value="privado">';
                         }
                         ?>
-                        <input type="submit" value="Atualizar">
+
+                            <button class="edit-button mt-1 mb-1">Salvar</button>
                 </div>
             </div>
         </div>
