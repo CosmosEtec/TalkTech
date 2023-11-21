@@ -158,10 +158,11 @@ $perfil = DaoPerfil::buscarDados($perfil);
                 <div class="formulario-atualizacao">
                         <label for="apelido">Apelido:</label>
                         <input type="text" id="apelido" name="apelido" value="<?php echo $perfil['apelido'] ?>">
+                        <p id="contadorApelido">0/50</p>
 
                         <label for="biografia">Biografia:</label>
                         <textarea id="biografia" name="biografia" value="<?php echo $perfil['biografia'] ?>"></textarea>
-                        <p id="quantidade-caracteres">0</p><p>/160</p>
+                        <p id="contadorBio">0/160</p>
 
                         <?php
                         if($perfil['perfilPrivado'] = 0)
@@ -176,7 +177,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
                         }
                         ?>
 
-                            <button class="edit-button mt-1 mb-1">Salvar</button>
+                            <button id="submitEdit">Salvar</button>
                 </div>
             </div>
         </div>
@@ -202,11 +203,55 @@ $perfil = DaoPerfil::buscarDados($perfil);
           </div>
     </section>
     <!---========= FIM CONTAINER PERFIL =========-->
-       
+            <!---========= Criar Post ===========-->
+            <div class="overlay" id="card-overlay" >
+        
+        <div class="container-create-post" id="info-card" >
+            <button id="close-create-post"><i class="fa-solid fa-xmark fa-2xl" style="color: #e8ecf2;"></i></button>
+            <div class="head-create-post">
+                <h4>Nova Publicação</h4>
+            </div>  
+            <div class="flex-start">
+                <div id="image-preview-container">
+                    <label class="custom-file-input remove">
+                        <img src="../assets/img/icon-remove-image.png" alt="">
+                        <h6 class="mt-1 ml-1-4px">Remover</h6>
+                    </label> 
+                    <div class="remove-image"></div>
+                    <input type="file" id="image-upload" accept="image/*" onchange="previewImage()"/>
+                    <img id="image-preview" src="#" alt="" />
+                    
+                    
+                </div> 
+            </div>
+            <div class="flex-start">
+                <p class="p1 mt-1">Qual a boa?</p> 
+            </div> 
+
+            <div class="description-align">
+                <div class="profile-pic  ">
+                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                </div>
+
+                <textarea class="" class="description-post" id="description" placeholder="Compartilhe o que está acontecendo"></textarea>
+            </div>
+            <div class="elements-create-post">
+                <div class="elements">
+                    <label for="image-upload" class="custom-file-input">
+                        <img src="../assets/img/icon-add-image.png" alt="">
+                    </label> 
+                </div>
+                <button class="publish-button mt-1 mb-1" id="submitPost"><h6>Publicar</h6></button>
+            </div>  
+        </div>
+      </div>
+    <!---========= FIM Criar Post ===========--> 
 
     <script src="../assets/js/createPost.js"></script>
     <script src="../assets/js/button.js"></script>
     <script src="../assets/js/previewImage.js"></script>
     <script src="../assets/js/profileEdit.js"></script>
+    <script src="../assets/js/edit.js"></script>
+    
 </body>
 </html>
