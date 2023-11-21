@@ -33,7 +33,12 @@ $perfil = DaoPerfil::buscarDados($perfil);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Perfil</title>
+    <title><?php if(!$perfil['apelido']){
+                    echo '@'.$perfil['nome'].' | Perfil do Usuário';
+                }else{
+                    echo $perfil['apelido'].' (@'.$perfil['nome'].') | Perfil do Usuário';}
+            ?>
+    </title>
 </head>
 <body>
 
@@ -177,14 +182,41 @@ $perfil = DaoPerfil::buscarDados($perfil);
                             <div class="user-detalhes-name-btn mb-2">
                                 <h3 class="detalhes-name">
                                     <?php if(!$perfil['apelido']){
-                                    echo $perfil['nome'];
+                                    echo '@'.$perfil['nome'];
                                     }else{
                                     echo $perfil['apelido'];}?>
                                 </h3>
-                                <div class="detalhes-btn">
-                                    <a class="btn-detalhes" href="./profileEdit.php">Editar Perfil</a>
-                                    <a class="btn-detalhes" href="#">Configuração</a>
-                                </div>
+                                <p class="p3 text-profile bold">
+                                    <?php if($perfil['apelido']){
+                                    echo '@'.$perfil['nome'];
+                                    }?>
+                                </p>
+                                <?php 
+            if($perfil['idPerfil'] == $_SESSION['login-id']){
+            echo   '<div class="detalhes-btn">
+                        <a class="btn-detalhes" href="./profileEdit.php">Editar Perfil</a>
+                    </div>';
+            } else {
+                if(DaoBloqueado::verificarBloqueio($perfil['idPerfil'], $_SESSION['login-id'])){
+                    echo '<div class="detalhes-btn">
+                            <a class="btn-detalhes">Desbloquear</a>
+                        </div>';
+                }else{
+                    echo '<div class="detalhes-btn">
+                            <a class="btn-detalhes">Bloquear</a>
+                        </div>';
+                }
+                if(DaoSeguidor::verificarSeguidor($perfil['idPerfil'], $_SESSION['login-id'])){
+                    echo '<div class="detalhes-btn">
+                            <a class="btn-detalhes">Deixar de Seguir</a>
+                        </div>';
+                }else{
+                    echo '<div class="detalhes-btn">
+                            <a class="btn-detalhes">Seguir</a>
+                        </div>';
+                }
+            }
+            ?>
                             </div>
                             <div class="user-info-seguidores mb-2">
                                 <div class="info-seguidores">
@@ -201,11 +233,6 @@ $perfil = DaoPerfil::buscarDados($perfil);
                                 </div>
                             </div>
                             <div class="user-info-descricao">
-                                <p class="p3 text-profile bold">
-                                    <?php if($perfil['apelido']){
-                                    echo $perfil['nome'];
-                                    }?>
-                                </p>
                                 <p class="p3 text-profile"><?php $perfil['biografia']?></p>
                             </div>
                         </div>

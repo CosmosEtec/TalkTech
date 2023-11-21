@@ -31,5 +31,19 @@ Class DaoBloqueado{
             return $result;
         }
     }
+
+    public static function verificarBloqueio($id, $idsession){
+        $sql = "SELECT * FROM tbBloqueado WHERE idPerfilBloqueador = ? AND idPerfilBloqueado = ?";
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $idsession);
+        $stmt->bindValue(2, $id);
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 ?>

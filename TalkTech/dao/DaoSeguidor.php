@@ -38,5 +38,19 @@ class DaoSeguidor{
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
         return isset($resultado['qtdSeguidos']) ? $resultado['qtdSeguidos'] : 0;
     }
+
+    public static function verificarSeguidor($id, $idsession){
+        $sql = "SELECT * FROM tbSeguidor WHERE idPerfilSeguidor = ? AND idPerfilSeguido = ?";
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $idsession);
+        $stmt->bindValue(2, $id);
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 ?>

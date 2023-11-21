@@ -70,7 +70,9 @@ function mostrarPostsUsuario($perfil){
             $conteudo = new Conteudo();
             $conteudo->setIdPostagem($Postagem['idPostagem']);
             $conteudo = DaoConteudo::buscarDados($conteudo);
-        }
+        }else{
+            $conteudo = null;
+        }	
         echo '
         <div class="post-container   mb-2" id="'.$Postagem['idPostagem'].'">
             <div class="profile-top-post  ">
@@ -97,7 +99,7 @@ function mostrarPostsUsuario($perfil){
                             <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
                             <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
                         </button>';
-        $conteudo = null;
+        $conteudo = 0;
     }
 }
 ?>
