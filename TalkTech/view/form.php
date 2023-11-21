@@ -40,7 +40,7 @@
                     <div class="form-login-relative form-panel">
                         <div class="form-login">
                             <form action="../control/valida-acesso-usuario.php" method="POST"  id="loginForm" class="form-login-fields">
-                                <h6 class="title-login">Login</h6>
+                                <h3 class="title-login">Login</h3>
                                 <div class="input-field my-2">
                                     <input type="email" name="Email" id="emailLogin" required="required">
                                     <span>Email</span>
@@ -61,10 +61,9 @@
 
                     <div class="form-cadastro-relative form-panel">
                         <div class="form-cadastro">
-                           <!-- <form action="../control/cadastra-Perfil.php" method="POST" class="form-cadastro-fields">
--->
+                           <!-- <form action="../control/cadastra-Perfil.php" method="POST" class="form-cadastro-fields">-->
                             <form id="cadForm">
-                           <h6 class="title-cadastro">Cadastro</h6>
+                                <h3 class="title-cadastro">Cadastro</h3>
                                 <div class="input-field my-2">
                                     <input type="text" name="NomeCadastro" id="NomeCadastro" required="required">
                                     <span>Nome de Usuário</span>
@@ -85,7 +84,7 @@
                                 </div>
                                 <div class="flex-start mt-1">
                                     <input type="checkbox" class="senhaCadastro" id="xecaboquis" onclick="myFunction()">
-                                    <p class="form-text-Login ">Visualizar Senha</p>
+                                    <p class="form-text-Login ml-1">Visualizar Senha</p>
                                 </div>
 
                                 <input type="submit" class="btn mt-2 mb-1" id="submitButton">

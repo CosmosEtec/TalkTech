@@ -12,24 +12,42 @@ links.forEach(link => {
 
 // ===================== Animation Form Login Cadastro ====================
 
+// ===================== Animation Form Login Cadastro ====================
+
 document.addEventListener("DOMContentLoaded", function () {
   const loginLink = document.querySelector(".form-link-login");
   const loginForm = document.querySelector(".form-login-relative");
   const cadastroForm = document.querySelector(".form-cadastro-relative");
 
   loginLink.addEventListener("click", function (e) {
-      e.preventDefault();
+    e.preventDefault();
 
-      loginForm.style.transform = "translateX(19vw)"; // Move o formulário de login de volta para a tela
-      cadastroForm.style.transform = "translateX(50vw)"; // Move o formulário de cadastro para a direita, saindo da tela
+    const screenWidth = window.innerWidth;
+    const screenWidthThreshold = 540;
+
+    if (screenWidth <= screenWidthThreshold) {
+      loginForm.style.transform = "translateX(19vw)";
+      cadastroForm.style.transform = "translateX(100vw)";
+    } else {
+      loginForm.style.transform = "translateX(19vw)";
+      cadastroForm.style.transform = "translateX(50vw)";
+    }
   });
 
   const cadastroLink = document.querySelector(".form-link-cadastrar");
 
   cadastroLink.addEventListener("click", function (e) {
-      e.preventDefault();
+    e.preventDefault();
 
-      loginForm.style.transform = "translateX(70vw)"; // Move o formulário de login para a esquerda, saindo da tela
-      cadastroForm.style.transform = "translateX(-21vw)"; // Move o formulário de cadastro de volta para a tela
+    const screenWidth = window.innerWidth;
+    const screenWidthThreshold = 540;
+
+    if (screenWidth <= screenWidthThreshold) {
+      loginForm.style.transform = "translateX(130vw)";
+      cadastroForm.style.transform = "translateX(-45vw)";
+    } else {
+      loginForm.style.transform = "translateX(80vw)";
+      cadastroForm.style.transform = "translateX(-21vw)";
+    }
   });
 });
