@@ -177,7 +177,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
                         }
                         ?>
 
-                            <button id="submitEdit">Salvar</button>
+                            <button id="submitEdit" disabled>Salvar</button>
                 </div>
             </div>
         </div>
