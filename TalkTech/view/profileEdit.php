@@ -155,29 +155,41 @@ $perfil = DaoPerfil::buscarDados($perfil);
                         </div>
                     </div>
                 </div>
+
+                <!-- Configuração do perfil -->
+
                 <div class="formulario-atualizacao">
-                        <label for="apelido">Apelido:</label>
-                        <input type="text" id="apelido" name="apelido" value="<?php echo $perfil['apelido'] ?>">
-                        <p id="contadorApelido">0/50</p>
 
-                        <label for="biografia">Biografia:</label>
-                        <textarea id="biografia" name="biografia" value="<?php echo $perfil['biografia'] ?>"></textarea>
-                        <p id="contadorBio">0/160</p>
+                    <div class="input-field-profile my-2">
+                        <input type="text" id="apelido" name="apelido" value="<?php echo $perfil['apelido'] ?>" required="required">
+                        <span>Apelido:</span>
+                    </div>
+                    <p class="contador-letras" id="contadorApelido">0/50</p>
 
-                        <?php
-                        if($perfil['perfilPrivado'] = 0)
-                        {
-                            echo '<label for="privado">Perfil privado:</label>';
-                            echo '<input type="checkbox" id="privado" name="privado" value="privado" checked>';
-                        }
-                        else
-                        {
-                            echo '<label for="privado">Perfil privado:</label>';
-                            echo '<input type="checkbox" id="privado" name="privado" value="privado">';
-                        }
-                        ?>
+                    <div class="input-field-profile my-2">
+                        <textarea id="biografia" name="biografia" value="<?php echo $perfil['biografia'] ?>" required="required"></textarea>
+                        <span>Biografia:</span>
+                    </div>
+                    <p class="contador-letras mb-1" id="contadorBio">0/160</p>
 
-                            <button id="submitEdit" disabled>Salvar</button>
+                    <?php
+                    if($perfil['perfilPrivado'] = 0)
+                    {
+                        echo '<label class="checked-privado" for="privado">Perfil privado:</label>';
+                        echo '<input type="checkbox" id="privado" name="privado" value="privado" checked>';
+                    }
+                    else
+                    {
+                        echo '<label class="checked-privado" for="privado">Perfil privado:</label>';
+                        echo '<input type="checkbox" id="privado" name="privado" value="privado">';
+                    }
+                    ?>
+
+                    <div class="solitaria"></div>
+
+                    <div class="btn-profile-edit">
+                        <button class="btn" id="submitEdit" disabled>Salvar</button>
+                    </div>
                 </div>
             </div>
         </div>

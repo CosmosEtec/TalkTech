@@ -111,7 +111,7 @@
     }
 }
 
-.input-field input{
+.input-field input, textarea{
     width: 100%;
     padding: 10px;
     border: 2px solid $gray-3;
@@ -134,7 +134,9 @@
 }
 
 .input-field input:valid ~ span,
-.input-field input:focus ~ span{
+.input-field input:focus ~ span,
+.input-field textarea:valid ~ span,
+.input-field textarea:focus ~ span{
     color: $white-dark;
     transform: translateX(10px) translateY(-7px);
     font-size: 0.65em;
@@ -145,7 +147,9 @@
 }
 
 .input-field input:valid,
-.input-field input:focus{
+.input-field input:focus,
+.input-field textarea:valid,
+.input-field textarea:focus{
     border: 2px solid $purple;
 }
 

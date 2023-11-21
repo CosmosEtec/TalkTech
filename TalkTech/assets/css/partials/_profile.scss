@@ -118,3 +118,96 @@
     flex-direction: column;
     align-items: center;
 }
+
+.contador-letras{
+    color: $gray-3 !important;
+    margin-top: -8px;
+}
+
+.checked-privado{
+    color: #505055;
+  @include typeface-2(p2, desktop);
+  @include responsive(s) {
+    @include typeface-2(p2, mobile);
+  }
+
+  &.white{
+    color: $white-dark;
+  }
+}
+
+.input-field-profile{
+    position: relative;
+    width: 100%;
+
+    @include responsive(xs){
+        width: 100%;
+    }
+}
+
+.input-field-profile input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid $gray-3;
+    background: transparent;
+    border-radius: 5px;
+    outline: none;
+    color: $white-dark;
+    font-size: 1em;
+}
+
+.input-field-profile textarea{
+    width: 100%;
+    height: 10vw;
+    padding: 10px;
+    border: 2px solid $gray-3;
+    background: transparent;
+    border-radius: 5px;
+    outline: none;
+    color: $white-dark;
+    font-size: 1em;
+}
+
+.input-field-profile span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: $gray-3;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.input-field-profile input:valid ~ span,
+.input-field-profile input:focus ~ span,
+.input-field-profile textarea:valid ~ span,
+.input-field-profile textarea:focus ~ span{
+    color: $white-dark;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: $purple;
+    letter-spacing: 0.2em;
+    border-radius: 2px;
+}
+
+.input-field-profile input:valid,
+.input-field-profile input:focus,
+.input-field-profile textarea:valid,
+.input-field-profile textarea:focus{
+    border: 2px solid $purple;
+}
+
+.btn-profile-edit{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.btn:disabled {
+    /* Estilo quando o botão está desabilitado */
+    opacity: 0.6;
+    cursor: not-allowed;
+  }

@@ -41,11 +41,11 @@
                         <div class="form-login">
                             <form action="../control/valida-acesso-usuario.php" method="POST"  id="loginForm" class="form-login-fields">
                                 <h3 class="title-login">Login</h3>
-                                <div class="input-field my-2">
+                                <div class="input-field my-1">
                                     <input type="email" name="Email" id="emailLogin" required="required">
                                     <span>Email</span>
                                 </div>
-                                <div class="input-field my-2">
+                                <div class="input-field my-1">
                                     <input type="password" name="Senha" id="senhaLogin" required="required">
                                     <span>Senha</span>
                                 </div>
@@ -64,21 +64,21 @@
                            <!-- <form action="../control/cadastra-Perfil.php" method="POST" class="form-cadastro-fields">-->
                             <form id="cadForm">
                                 <h3 class="title-cadastro">Cadastro</h3>
-                                <div class="input-field my-2">
+                                <div class="input-field my-1">
                                     <input type="text" name="NomeCadastro" id="NomeCadastro" required="required">
                                     <span>Nome de Usuário</span>
                                 </div>
-                                <div class="input-field my-2">
+                                <div class="input-field my-1">
                                     <input type="text" name="EmailCadastro" id="EmailCadastro" required="required">
                                     <span>Email</span>
                                 </div>
-                                <div class="input-field my-2">
+                                <div class="input-field my-1">
                                     <input type="password" name="SenhaCadastro" id="SenhaCadastro" required="required">
                                     <span>Senha</span>
                                 </div>
                                     
 
-                                <div class="input-field my-2">
+                                <div class="input-field my-1">
                                     <input type="password" name="ConfirmaSenhaCadastro" id="ConfirmaSenhaCadastro" required="required">
                                     <span>Confirma Senha</span>
                                 </div>
@@ -87,7 +87,7 @@
                                     <p class="form-text-Login ml-1">Visualizar Senha</p>
                                 </div>
 
-                                <input type="submit" class="btn mt-2 mb-1" id="submitButton">
+                                <input type="submit" class="btn mt-1 mb-1" id="submitButton">
                                 <div id="message">
                                     <p><b>A sua senha precisa de pelo menos:</b></p>
                                     <p id="letter" class="invalid">Uma letra Minuscula </p>
