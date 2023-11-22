@@ -40,6 +40,4 @@ require_once('../dao/DaoComentario.php');
         ];
         echo json_encode($data);
     }
-
-
 ?>
