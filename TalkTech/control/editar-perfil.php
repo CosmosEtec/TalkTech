@@ -73,6 +73,11 @@ if($_SESSION['login-nome'] != $_POST['nomePerfil']){
         $extensao = pathinfo($arquivo['name'], PATHINFO_EXTENSION);
         $novoNome = "fotoperfil.".$extensao;
         $caminho = "user/".$perfil->getNome()."/".$novoNome;
+
+        if (file_exists("../".$caminho)) {
+            unlink("../".$caminho);
+        }
+        
         $perfil->setFotoPerfil($caminho);
         if(DaoPerfil::editarFotoPerfil($perfil)){
             move_uploaded_file($arquivo['tmp_name'], "../".$caminho);
