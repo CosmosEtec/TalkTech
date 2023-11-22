@@ -3,12 +3,14 @@
     require_once('../model/Perfil.php');
     require_once('../model/Comentario.php');
     require_once('../model/Seguidor.php');
+    require_once('../model/Reacao.php');
     require_once('../model/Conteudo.php');
     require_once('../dao/DaoPostagem.php');
     require_once('../dao/DaoPerfil.php');
     require_once('../dao/DaoComentario.php');
     require_once('../dao/DaoSeguidor.php');
     require_once('../dao/DaoConteudo.php');
+    require_once('../dao/DaoReacao.php');
 
 function mostrarPostsFeed(){
     $postagens = new Postagem();
@@ -19,6 +21,16 @@ function mostrarPostsFeed(){
             $perfil = new Perfil();
             $perfil->setId($postagem['idPerfil']);
             $perfil = DaoPerfil::buscarDados($perfil);
+
+            $reacoes = new Reacao();
+            $reacoes->setIdPostagem($postagem['idPostagem']);
+            $reacoes = DaoReacao::buscarReacoesPost($reacoes);
+
+            $comentarios = new Comentario();
+            $comentarios->setIdPostagem($postagem['idPostagem']);
+            $comentarios = DaoComentario::buscarComentariosPost($comentarios);
+
+
         if($postagem['Conteudo'] == 1){
             $conteudo = new Conteudo();
             $conteudo->setIdPostagem($postagem['idPostagem']);
@@ -28,11 +40,15 @@ function mostrarPostsFeed(){
             <div class="post-container   mb-2" id="'.$postagem["idPostagem"].'">
                 <div class="profile-top-post  ">
                     <div class="profile-pic  ">
+                    <a href="profile.php?id='.$perfil['idPerfil'].'">
                         <img class="profile-pic-img" src="../'.$perfil['fotoPerfil'].'" alt="">
+                    </a>
                     </div>
                     <div class="profile-username flex-column ml-1">
+                    <a href="profile.php?id='.$perfil['idPerfil'].'">
                         <h4>'. ($perfil["apelido"] ? $perfil["apelido"] : $perfil["nome"]) .'</h4>
                         <p class="p3">@'.$perfil["nome"].'</p>
+                    </a>
                     </div>
                 </div>
                 <div class="post-description mt-1">
@@ -47,11 +63,13 @@ function mostrarPostsFeed(){
                 echo '<div class="post-interactions  ">
                         <div class="like-heart-comment-container">
                             <button id="like-heart">
-                                <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
-                                <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
+                                <p class="ContReacao" id="'.$postagem["idPostagem"].'" >'.$reacoes.'</p>
+                                <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked" onclick="descurtir()"></i>
+                                <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked" onclick="curtir()"></i>
                             </button>
                             <button class="mt-1-4px comment" id="comment">
-                            <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2" style="color: #d1d1d1;"></i>
+                                <p class="ContComentario" >'.$comentarios.'</p>
+                                <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2" style="color: #d1d1d1;"></i>
                             </button>
                         </div>
                 </div>
@@ -66,6 +84,15 @@ function mostrarPostsFeed(){
 function mostrarPostsUsuario($perfil){
     $Posts = DaoPostagem::buscarPostagensPerfil($perfil);
     foreach($Posts as $Postagem){
+        
+        $reacoes = new Reacao();
+        $reacoes->setIdPostagem($Postagem['idPostagem']);
+        $reacoes = DaoReacao::buscarReacoesPost($reacoes);
+
+        $comentarios = new Comentario();
+        $comentarios->setIdPostagem($Postagem['idPostagem']);
+        $comentarios = DaoComentario::buscarComentariosPost($comentarios);
+
         if($Postagem['Conteudo'] == 1){
             $conteudo = new Conteudo();
             $conteudo->setIdPostagem($Postagem['idPostagem']);
@@ -95,10 +122,15 @@ function mostrarPostsUsuario($perfil){
             };
             echo '<div class="post-interactions  ">
                     <div class="like-heart-comment-container">
-                        <button id="like-heart">
-                            <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
-                            <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
-                        </button>
+                    <button id="like-heart">
+                    <p class="ContReacao" id="'.$Postagem["idPostagem"].'" >'.$reacoes.'</p>
+                    <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
+                    <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
+                </button>
+                <button class="mt-1-4px comment" id="comment">
+                <p class="ContComentario" >'.$comentarios.'</p>
+                    <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2" style="color: #d1d1d1;"></i>
+                </button>
                     </div>
                   </div>
                 </div>';

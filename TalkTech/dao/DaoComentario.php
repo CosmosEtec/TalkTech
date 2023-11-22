@@ -13,20 +13,13 @@ Class DaoComentario{
         return $stmt->execute();
     }
 
-    public static function buscarDados(Comentario $comentario){
-        $sql= "SELECT c.*, p.nome, COUNT(r.idReação) AS qtdReacoes FROM tbComentario c 
-        INNER JOIN tbPerfil p ON c.idPerfil = p.idPerfil 
-        LEFT JOIN tbreação r ON c.idComentario = r.idComentario 
-        WHERE c.idPostagem = ? 
-        GROUP BY c.idComentario 
-        ORDER BY c.dataComentario DESC";
+    public static function buscarComentariosPost(Comentario $comentario){
+        $sql = "SELECT COUNT(*) AS qtdComentario FROM tbComentario WHERE idPostagem = ?";
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $comentario->getIdPostagem());
         $stmt->execute();
-        if($stmt->rowCount() > 0){
-            $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
-        }
+        $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $resultado[0]['qtdComentario'];
     }
 }
 ?>

@@ -5,7 +5,7 @@ require_once "../model/conexao.php";
 require_once "../model/Perfil.php";
 
 class DaoSeguidor{
-    public static function inserir(Seguidor $seguidor){
+    public static function follow(Seguidor $seguidor){
         $sql = "INSERT INTO tbSeguidor (idPerfilSeguidor, idPerfilSeguido) VALUES (?, ?)";
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $seguidor->getIdPerfilSeguidor());
@@ -13,7 +13,7 @@ class DaoSeguidor{
         return $stmt->execute();
     }
 
-    public static function excluir(Seguidor $seguidor){
+    public static function unfollow(Seguidor $seguidor){
         $sql = "DELETE FROM tbSeguidor WHERE idPerfilSeguidor = ? AND idPerfilSeguido = ?";
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $seguidor->getIdPerfilSeguidor());

@@ -7,6 +7,9 @@ function likePost() {
     heartUnliked.forEach(function (element, index) {
       element.addEventListener('click', function (event) {
         // Aqui, você pode acessar o elemento específico que foi clicado usando "element"
+
+
+        
         element.style.display = 'none';
         heartLiked[index].style.display = 'block';
         setTimeout(() => {

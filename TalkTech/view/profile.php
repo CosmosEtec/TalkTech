@@ -211,9 +211,9 @@ $perfil = DaoPerfil::buscarDados($perfil);
                                     }
                                     */
                                     if(DaoSeguidor::verificarSeguidor($perfil['idPerfil'], $_SESSION['login-id'])){
-                                        echo '<a class="btn-detalhes" id="unfollow" >Deixar de Seguir</a>';
+                                        echo '<button class="publish-button mt-1 mb-1" id="unfollow" onclick="dejarSeguir()" >Deixar de Seguir</button>';
                                     }else{
-                                        echo '<a class="btn-detalhes" id="follow" >Seguir</a>';
+                                        echo '<button class="publish-button mt-1 mb-1" id="follow" onclick="seguir()">Seguir</button>';
                                     }
                                 }
                                 ?>
@@ -319,5 +319,6 @@ $perfil = DaoPerfil::buscarDados($perfil);
     <script src="../assets/js/button.js"></script>
     <script src="../assets/js/navbar.js"></script>
     <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
+    <script src="../assets/js/seguir.js"></script>
 </body>
 </html>
