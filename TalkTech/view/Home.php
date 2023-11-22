@@ -178,7 +178,8 @@ $perfil = DaoPerfil::buscarDados($perfil);
 
             <!---========= FIM NAV TIMELINE =========-->
         <div class="feed-roll">
-
+        
+        <!---========= POST ===========
         <div class="post-container   mb-2" >
             <div class="profile-top-post  ">
                 <div class="profile-pic  ">
@@ -234,6 +235,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
                     </div>
                 </div>
             </div>    
+            -->
         <?php include_once '../control/ControlPostagem.php'; mostrarPostsFeed(); ?>  
       
         <div class="overlayed" id="overlay" > </div>    

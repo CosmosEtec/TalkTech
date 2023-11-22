@@ -53,7 +53,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
         
         <!---========= LEFT SIDE MENU =========--> 
         <nav class="nav-left-side-menu   " id="side-menu">
-            
+                
                 <div class="div-nav-left-side-menu-link  ">
                     
                     <a href="Home.php" class="nav-link mb-1">
@@ -67,7 +67,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
                 </div>
             
 
-              
+            <!--
             <div class="div-nav-left-side-menu-link">
                 <a href="chat.php" class="nav-link mb-1"> 
                     <div class="nav-left-side-menu-icon-container">
@@ -76,7 +76,8 @@ $perfil = DaoPerfil::buscarDados($perfil);
                     </div>
                 </a>
             </div>
-           
+            -->
+        
             
             <div class="div-nav-left-side-menu-link">
                 <a class="nav-link mb-1" id="create-post">
@@ -96,14 +97,16 @@ $perfil = DaoPerfil::buscarDados($perfil);
                 </a>
             </div>
 
+            <!-- 
             <div class="div-nav-left-side-menu-link">
-                <a href="notificacoes.php" class="nav-link mb-1">
+                <a class="nav-link mb-1" onclick="toggleNotificacoes()">
                 <div class="nav-left-side-menu-icon-container">
                     <i class="fa-solid fa-bell fa-lg" style="color: #ffffff;"></i>
                     <span class="ml-1-4px">Notificações</span>
                 </div>
                 </a>
             </div>
+            -->
 
             <div class="div-nav-left-side-menu-link">
                 <a href="../control/Logout-usuario.php" class="nav-link mb-1">
@@ -113,6 +116,8 @@ $perfil = DaoPerfil::buscarDados($perfil);
                 </div> 
                 </a>
             </div>
+
+            
         </nav>
         <!---========= FIM LEFT SIDE MENU =========-->
 
@@ -215,8 +220,8 @@ $perfil = DaoPerfil::buscarDados($perfil);
           </div>
     </section>
     <!---========= FIM CONTAINER PERFIL =========-->
-            <!---========= Criar Post ===========-->
-            <div class="overlay" id="card-overlay" >
+                    <!---========= Criar Post ===========-->
+        <div class="overlay" id="card-overlay" >
         
         <div class="container-create-post" id="info-card" >
             <button id="close-create-post"><i class="fa-solid fa-xmark fa-2xl" style="color: #e8ecf2;"></i></button>
@@ -242,7 +247,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
 
             <div class="description-align">
                 <div class="profile-pic  ">
-                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                    <img class="profile-pic-img" src="../<?php echo $perfil['fotoPerfil']?>" alt="">
                 </div>
 
                 <textarea class="" class="description-post" id="description" placeholder="Compartilhe o que está acontecendo"></textarea>
@@ -257,7 +262,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
             </div>  
         </div>
       </div>
-    <!---========= FIM Criar Post ===========--> 
+    <!---========= FIM Criar Post ===========-->  
 
     <script src="../assets/js/createPost.js"></script>
     <script src="../assets/js/button.js"></script>

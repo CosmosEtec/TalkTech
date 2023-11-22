@@ -266,49 +266,49 @@ $perfil = DaoPerfil::buscarDados($perfil);
                 </div>
             </div>
         </div>
-        <!---========= Criar Post ===========-->
-        <div class="overlay" id="card-overlay" >
+                <!---========= Criar Post ===========-->
+                <div class="overlay" id="card-overlay" >
         
-            <div class="container-create-post" id="info-card" >
-                <button id="close-create-post"><i class="fa-solid fa-xmark fa-2xl" style="color: #e8ecf2;"></i></button>
-                <div class="head-create-post">
-                    <h4>Nova Publicação</h4>
-                </div>  
-                <div class="flex-start">
-                    <div id="image-preview-container">
-                        <label class="custom-file-input remove">
-                            <img src="../assets/img/icon-remove-image.png" alt="">
-                            <h6 class="mt-1 ml-1-4px">Remover</h6>
-                        </label> 
-                        <div class="remove-image"></div>
-                        <input type="file" id="image-upload" accept="image/*" onchange="previewImage()"/>
-                        <img id="image-preview" src="#" alt="" />
-                        
-                        
-                    </div> 
-                </div>
-                <div class="flex-start">
-                    <p class="p1 mt-1">Qual a boa?</p> 
+        <div class="container-create-post" id="info-card" >
+            <button id="close-create-post"><i class="fa-solid fa-xmark fa-2xl" style="color: #e8ecf2;"></i></button>
+            <div class="head-create-post">
+                <h4>Nova Publicação</h4>
+            </div>  
+            <div class="flex-start">
+                <div id="image-preview-container">
+                    <label class="custom-file-input remove">
+                        <img src="../assets/img/icon-remove-image.png" alt="">
+                        <h6 class="mt-1 ml-1-4px">Remover</h6>
+                    </label> 
+                    <div class="remove-image"></div>
+                    <input type="file" id="image-upload" accept="image/*" onchange="previewImage()"/>
+                    <img id="image-preview" src="#" alt="" />
+                    
+                    
                 </div> 
-
-                <div class="description-align">
-                    <div class="profile-pic  ">
-                        <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                    </div>
-
-                    <textarea class="" class="description-post" id="description" placeholder="Compartilhe o que está acontecendo"></textarea>
-                </div>
-                <div class="elements-create-post">
-                    <div class="elements">
-                        <label for="image-upload" class="custom-file-input">
-                            <img src="../assets/img/icon-add-image.png" alt="">
-                        </label> 
-                    </div>
-                    <button class="publish-button mt-1 mb-1" id="submitPost"><h6>Publicar</h6></button>
-                </div>  
             </div>
-          </div>
-        <!---========= FIM Criar Post ===========--> 
+            <div class="flex-start">
+                <p class="p1 mt-1">Qual a boa?</p> 
+            </div> 
+
+            <div class="description-align">
+                <div class="profile-pic  ">
+                    <img class="profile-pic-img" src="../<?php echo $perfil['fotoPerfil']?>" alt="">
+                </div>
+
+                <textarea class="" class="description-post" id="description" placeholder="Compartilhe o que está acontecendo"></textarea>
+            </div>
+            <div class="elements-create-post">
+                <div class="elements">
+                    <label for="image-upload" class="custom-file-input">
+                        <img src="../assets/img/icon-add-image.png" alt="">
+                    </label> 
+                </div>
+                <button class="publish-button mt-1 mb-1" id="submitPost"><h6>Publicar</h6></button>
+            </div>  
+        </div>
+      </div>
+    <!---========= FIM Criar Post ===========-->  
     </section>
     <!---========= FIM CONTAINER PERFIL =========-->
 
