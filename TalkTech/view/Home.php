@@ -179,8 +179,64 @@ $perfil = DaoPerfil::buscarDados($perfil);
             <!---========= FIM NAV TIMELINE =========-->
         <div class="feed-roll">
 
-        <div class="overlayed" id="overlay" > </div>
+        <div class="post-container   mb-2" >
+            <div class="profile-top-post  ">
+                <div class="profile-pic  ">
+                    <img class="profile-pic-img" src="../" alt="">
+                </div>
+                <div class="profile-username flex-column ml-1">
+                    <h4>fdsfdsf</h4>
+                    <p class="p3">fsdfsd</p>
+                </div>
+            </div>
+            <div class="post-description">
+                <p class="p3">fsdfdsf</p>
+            </div>
+                <div class="content-post">
+                    <img src="../assets/img/bonoro-anao">
+                </div>
+                <div class="post-interactions  ">
+                    <div class="like-heart-comment-container">
+                        <button id="like-heart">
+                            <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
+                            <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="post-comment-section">
+                    <div class="input-comentario-align mb-1">
+                        <div class="profile-pic  ">
+                            <img class="profile-pic-img" src="../<?php echo $perfil['fotoPerfil']?>" alt="">
+                        </div>
+
+                        <textarea class="" class="input-comentario-align" id="input-comentario" placeholder="Escreva um comentário"></textarea>
+                     </div>
+                    <h4 class="comentarios-k mb-2">Comentários</h4>
+                    
+                    <div class="post-comment-cell mb-1">
+                        <div class="post-comment-profile-pic">
+                            <img src="../assets/img/bonoro-anao.jpg" alt="">
+                        </div>
+                        <div class="flex-column ml-1-4px">
+                        <h6 class="">@userzédamanga</h6>
+                        <p class="p3 mb-1">vish</p>
+                        </div>
+                    </div>
+
+                    <div class="post-comment-cell mb-1">
+                        <div class="post-comment-profile-pic">
+                            <img src="../assets/img/bonoro-anao.jpg" alt="">
+                        </div>
+                        <div class="flex-column ml-1-4px">
+                        <h6 class="">@userzédamanga</h6>
+                        <p class="p3 mb-1">vish</p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
         <?php include_once '../control/ControlPostagem.php'; mostrarPostsFeed(); ?>  
+      
+        <div class="overlayed" id="overlay" > </div>    
             </div>
         </div>
         

@@ -133,7 +133,10 @@ img.profile-pic-img{
 
     
 }
-
+.comentarios-k{
+    width: 100%;
+    border-bottom: 1px solid $gray-clean-border;
+}
 .post-comment-section{
     display: flex;
     flex-direction: column;
@@ -151,15 +154,24 @@ img.profile-pic-img{
 
 .post-comment-cell{
     width: 100%;
-    background: $xupi;
+    border-left: 3px solid $white-dark;
+    background-image: linear-gradient(to right top, #1a1a1c, #1a1a1d, #1a1a1e, #1a1a1e, #1a1a1f);
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.4); 
+box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.4);
     display: flex;
     align-items: center;
-    padding: 0 0 0 0.25rem;
-    border-radius: 8px;
+    padding: 0.25rem 0 0 0.25rem;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
     cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover{
+        opacity: 0.8;
+    }
 
     .post-comment-profile-pic{
-        width: 60px;
+        width: 35px;
         img{
             border-radius: 50%;
             
@@ -167,6 +179,39 @@ img.profile-pic-img{
     }
 }
 
+
+.input-comentario-align{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+    .profile-pic{
+        position: absolute;
+        width: 38px;
+        height: 35px;
+        margin: 1% 0 0 1%;
+        z-index: 800;
+    }
+}
+
+#input-comentario {
+    width: 100%;
+    height: 5.5rem;
+    border: none;
+    background: transparent;
+    outline: none;
+    border-radius: 4px;
+    padding: 5px 12px 5px 9.5%;
+    overflow: hidden;
+    resize: none;
+    color: $white-dark;
+    position: relative;
+    transition: 1s ease;
+
+    &:focus{
+        background: $black-lights;
+    }
+}
 
 
 
