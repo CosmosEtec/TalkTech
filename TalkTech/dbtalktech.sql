@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/11/2023 às 23:22
+-- Tempo de geração: 22/11/2023 às 03:30
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -95,14 +95,6 @@ CREATE TABLE `tbconteudo` (
   `src` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Despejando dados para a tabela `tbconteudo`
---
-
-INSERT INTO `tbconteudo` (`idConteudo`, `idPostagem`, `idPerfil`, `arquivo`, `src`) VALUES
-(8, 56, 16, 'png', '../user/Goes/posts/56.png'),
-(9, 58, 16, 'jpg', '../user/Goes/posts/58.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -125,9 +117,7 @@ CREATE TABLE `tbperfil` (
 --
 
 INSERT INTO `tbperfil` (`idPerfil`, `nome`, `apelido`, `email`, `senha`, `fotoPerfil`, `biografia`, `perfilPrivado`) VALUES
-(14, 'UserTeste', NULL, 'Teste@Teste', '4d750439e3f39848345c6ef74ef3d719e34e7111', 'user/UserTeste/fotoperfil.png', NULL, 0),
-(15, 'LerO', NULL, 'Lero@Lero', '4d750439e3f39848345c6ef74ef3d719e34e7111', 'user/LerO/fotoperfil.png', NULL, 0),
-(16, 'Goes', NULL, 'gabrielgaldino205@outlook.com', '01391009769ac79e51e75a3bd6821ac71564d7f7', 'user/Goes/fotoperfil.png', NULL, 0);
+(20, 'Goes', NULL, 'gabrielgaldino205@outlook.com', '01391009769ac79e51e75a3bd6821ac71564d7f7', 'user/Goes/fotoperfil.png', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -153,16 +143,6 @@ CREATE TABLE `tbpostagem` (
   `legenda` varchar(450) NOT NULL,
   `dataPost` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Despejando dados para a tabela `tbpostagem`
---
-
-INSERT INTO `tbpostagem` (`idPostagem`, `idPerfil`, `Conteudo`, `legenda`, `dataPost`) VALUES
-(55, 16, 0, 'Eu Amo programar :D ', '2023-11-20 23:01:33'),
-(56, 16, 1, 'DARE', '2023-11-20 23:10:17'),
-(57, 16, 0, 'Só texto', '2023-11-20 23:13:17'),
-(58, 16, 1, '', '2023-11-20 23:16:50');
 
 -- --------------------------------------------------------
 
@@ -305,7 +285,7 @@ ALTER TABLE `tbconteudo`
 -- AUTO_INCREMENT de tabela `tbperfil`
 --
 ALTER TABLE `tbperfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `tbperm`
@@ -317,7 +297,7 @@ ALTER TABLE `tbperm`
 -- AUTO_INCREMENT de tabela `tbpostagem`
 --
 ALTER TABLE `tbpostagem`
-  MODIFY `idPostagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `idPostagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT de tabela `tbreação`
