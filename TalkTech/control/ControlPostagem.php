@@ -122,6 +122,7 @@ function mostrarPostsUsuario($perfil){
             };
             echo '<div class="post-interactions  ">
                     <div class="like-heart-comment-container">
+<<<<<<< Updated upstream
                     <button id="like-heart">
                     <p class="ContReacao" id="'.$Postagem["idPostagem"].'" >'.$reacoes.'</p>
                     <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
@@ -131,9 +132,19 @@ function mostrarPostsUsuario($perfil){
                 <p class="ContComentario" >'.$comentarios.'</p>
                     <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2" style="color: #d1d1d1;"></i>
                 </button>
+=======
+                        <button id="like-heart">
+                            <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
+                            <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
+                        </button>
+                        <button class="mt-1-4px comment" id="comment">
+                            <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2" style="color: #d1d1d1;"></i>
+                            </button>
+                        
+>>>>>>> Stashed changes
                     </div>
                   </div>
-                </div>';
+                  </div>';
         $conteudo = 0;
     }
 }
