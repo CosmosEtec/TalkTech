@@ -98,7 +98,10 @@ function mostrarPostsUsuario($perfil){
                         <button id="like-heart">
                             <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
                             <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
-                        </button>';
+                        </button>
+                    </div>
+                  </div>
+                </div>';
         $conteudo = 0;
     }
 }

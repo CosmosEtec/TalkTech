@@ -17,17 +17,22 @@ function likePost() {
     });
 
     // Adicione o evento de "click" a cada elemento "heart-liked"
-    heartLiked.forEach(function (element, index) {
-      element.addEventListener('click', function (event) {
-        // Aqui, você pode acessar o elemento específico que foi clicado usando "element"
-        heartUnliked[index].style.display = 'block';
-        element.style.transform = 'scale(0)';
-        setTimeout(() => {
-          element.style.display = 'none';
-        }, 500);
+      heartLiked.forEach(function (element, index) {
+        element.addEventListener('click', function (event) {
+          // Aqui, você pode acessar o elemento específico que foi clicado usando "element"
+          
+          
+          element.style.transform = 'scale(0)';
+          heartUnliked[index].style.transform = 'scale(0)';
+          setTimeout(() => {
+            
+            heartUnliked[index].style.display = 'block'; 
+            element.style.display = 'none'; 
+            heartUnliked[index].style.transform = 'scale(1)';
+          }, 500);
+        });
       });
     });
-  });
 }
 
 export { likePost };

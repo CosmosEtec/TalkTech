@@ -401,6 +401,10 @@ strong {
   text-align: center;
 }
 
+.white-dark {
+  color: #edeaef;
+}
+
 a {
   font-family: "Sora", sans-serif;
   font-weight: 250;
@@ -1621,7 +1625,7 @@ img.profile-pic-img {
   transition: transform 0.5s ease;
 }
 #like-heart .heart-unliked {
-  transition: 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 #comment {
@@ -1896,7 +1900,6 @@ input[type=text].search-field {
 }
 
 .detalhes-btn {
-  width: 40%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1934,11 +1937,11 @@ input[type=text].search-field {
   width: 100%;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid #4d5252;
 }
 
 .title-profile {
   padding: 0px 5px;
-  border-bottom: 2px solid #121111;
 }
 
 .container-profile-child-public {

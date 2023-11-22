@@ -64,7 +64,6 @@
 }
 
 .detalhes-btn{
-    width: 40%;
 
     display: flex;
     flex-direction: row;
@@ -106,11 +105,11 @@
 
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid $gray-clean-border;
 }
 
 .title-profile{
     padding: 0px 5px;
-    border-bottom: 2px solid $white-normal;
 }
 
 .container-profile-child-public{
