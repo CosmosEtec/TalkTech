@@ -15,7 +15,20 @@ include_once '../control/valida-permanencia.php'
 </head>
 <body>
     <!---========= HEADER =========-->
-   
+    <header id="header">
+        <!---========= NAV-BAR DESKTOP =========-->
+        <nav class="navbar-desktop" data-aos="fade-up">
+            <a href="#Inicio" class="navbar-desktop-logo"><img src="../assets/svg/t-logo.svg" alt="" width="60px" height="70px"></a>
+            <div class="search-field flex-start ">
+                <div class="px-1">
+                    <img src="../assets/svg/icon-search-nav.svg" alt="" width="26px" height="26px">
+                </div>
+                    <input class="search-field" type="text" placeholder="Quem você busca?">
+            </div>
+            <div class=""> 
+            </div>
+        </nav>
+    </header>
     
     <!---========= CONTAINER FEED =========-->
     <section class="container-feed ">
@@ -78,7 +91,7 @@ include_once '../control/valida-permanencia.php'
                     </div>
                 
 
-                
+                <!--
                 <div class="div-nav-left-side-menu-link">
                     <a href="chat.php" class="nav-link mb-1"> 
                         <div class="nav-left-side-menu-icon-container">
@@ -87,6 +100,7 @@ include_once '../control/valida-permanencia.php'
                         </div>
                     </a>
                 </div>
+                -->
             
                 
                 <div class="div-nav-left-side-menu-link">
@@ -107,6 +121,7 @@ include_once '../control/valida-permanencia.php'
                     </a>
                 </div>
 
+                <!-- 
                 <div class="div-nav-left-side-menu-link">
                     <a class="nav-link mb-1" onclick="toggleNotificacoes()">
                     <div class="nav-left-side-menu-icon-container">
@@ -115,6 +130,7 @@ include_once '../control/valida-permanencia.php'
                     </div>
                     </a>
                 </div>
+                -->
 
                 <div class="div-nav-left-side-menu-link">
                     <a href="../control/Logout-usuario.php" class="nav-link mb-1">
