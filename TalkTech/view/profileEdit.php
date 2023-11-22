@@ -122,14 +122,14 @@ $perfil = DaoPerfil::buscarDados($perfil);
                 <div class="container-profile-user">
                     <div class="container-profile-user-info">
                     <div class="user-image">
-                            <img class="imagem-fds" src="../<?php echo $perfil['fotoPerfil'] ?>" onclick="triggerClick()"></img>
+                            <img class="imagem-fds" id="imgperfil" src="../<?php echo $perfil['fotoPerfil'] ?>" onclick="triggerClick()"></img>
                             <input type="file" id="profileImage" name="profileImage" style="display: none;" onchange="displayImage(this)">
                         </form>
                     </div>
                     
                         <div class="user-info-detalhes mx-2">
                             <div class="user-detalhes-name-btn mb-2">
-                                <h3 class="detalhes-name">
+                                <h3 class="detalhes-name" id="nomePerfil">
                                     <?php echo '@'.$perfil['nome']; ?>
                                 </h3>
                                 <div class="detalhes-btn">
@@ -167,13 +167,13 @@ $perfil = DaoPerfil::buscarDados($perfil);
                     <p class="contador-letras" id="contadorApelido">0/50</p>
 
                     <div class="input-field-profile my-2">
-                        <textarea id="biografia" name="biografia" value="<?php echo $perfil['biografia'] ?>" required="required"></textarea>
+                        <textarea id="biografia" name="biografia" value="<?php echo $perfil['biografia'] ?>" required="required"><?php echo $perfil['biografia'] ?></textarea>
                         <span>Biografia:</span>
                     </div>
                     <p class="contador-letras mb-1" id="contadorBio">0/160</p>
 
                     <?php
-                    if($perfil['perfilPrivado'] = 0)
+                    if($perfil['perfilPrivado'] != 0)
                     {
                         echo '<label class="checked-privado" for="privado">Perfil privado:</label>';
                         echo '<input type="checkbox" id="privado" name="privado" value="privado" checked>';

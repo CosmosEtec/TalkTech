@@ -68,14 +68,6 @@
             $this->fotoPerfil = $fotoPerfil;
         }
 
-        public function getFotoBanner(){
-            return $this->fotoBanner;
-        }
-
-        public function setFotoBanner($fotoBanner){
-            $this->fotoBanner = $fotoBanner;
-        }
-
         public function getBiografia(){
             return $this->biografia;
         }

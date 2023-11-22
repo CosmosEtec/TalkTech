@@ -5,45 +5,33 @@ var capital = document.getElementById("capital");
 var number = document.getElementById("number");
 var length = document.getElementById("length");
 
-myInput.onkeyup = function() {
-  var myInput = document.getElementById("SenhaCadastro");
+function verificar() {
   var lowerCaseLetters = /[a-z]/g;
   if(myInput.value.match(lowerCaseLetters)) {  
-    letter.classList.remove("invalid");
-    letter.classList.add("valid");
+    letter.style.color = "green";
   } else {
-    letter.classList.remove("valid");
-    letter.classList.add("invalid");
-    return;
+    letter.style.color = "white";
   }
 
   var upperCaseLetters = /[A-Z]/g;
   if(myInput.value.match(upperCaseLetters)) {  
-    capital.classList.remove("invalid");
-    capital.classList.add("valid");
+    capital.style.color = "green";
   } else {
-    capital.classList.remove("valid");
-    capital.classList.add("invalid");
-    return;
+    capital.style.color = "white";
   }
 
   var numbers = /[0-9]/g;
   if(myInput.value.match(numbers)) {  
-    number.classList.remove("invalid");
-    number.classList.add("valid");
+    number.style.color = "green";
   } else {
-    number.classList.remove("valid");
-    number.classList.add("invalid");
-    return;
+    number.style.color = "white";
   }
 
   if(myInput.value.length >= 8) {
-    length.classList.remove("invalid");
-    length.classList.add("valid");
+    length.style.color = "green";
   } else {
-    
-    length.classList.remove("valid");
-    length.classList.add("invalid");
-    return;
+    length.style.color = "white";
   }
 }
+verificar();
+myInput.addEventListener('keyup', verificar);

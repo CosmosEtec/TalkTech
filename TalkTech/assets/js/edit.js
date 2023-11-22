@@ -1,4 +1,7 @@
 const btnEditar = document.getElementById('submitEdit');
+var nomePerfil = document.getElementById('nomePerfil');
+//retire o @ do nome do perfil e deixe apenas o nome
+nomePerfil = nomePerfil.innerHTML.replace(/@/g, '').trim();
 
 //Apelido
 const limiteApelido = 50;
@@ -30,15 +33,21 @@ function contBio(){
     }
 }
 
+//Privacidade
 const privadoElement = document.getElementById('privado');
-let privado;
+let privado = false;
 
+//imagem
+const inputImagem = document.getElementById('profileImage');
+
+//Verificações para enviar ao Back
 const apelidoAtual = Apelido.value;
 const bioAtual = biografia.value;
 const privadoAtual = privadoElement.checked;
 
 function habilitarBotao(){
-    if(apelidoAtual == Apelido.value && bioAtual == biografia.value && privadoAtual == privadoElement.checked){
+
+    if(apelidoAtual == Apelido.value && bioAtual == biografia.value && privadoAtual == privadoElement.checked && inputImagem.files[0] == undefined){
         btnEditar.setAttribute('disabled', true);
     }else{
         btnEditar.removeAttribute('disabled');
@@ -59,8 +68,38 @@ function Editar(){
         alert("A biografia deve ter no máximo 160 caracteres!");
         return;
     }
+
+    const formData = new FormData();
+    formData.append('nomePerfil', nomePerfil);
+    formData.append('apelido', Apelido.value);
+    formData.append('biografia', biografia.value);
+    formData.append('privado', privado);
+    formData.append('imagem', inputImagem.files[0]);
  
-console.log(Apelido.value + " " + biografia.value + " " + privado);
+    fetch('../control/editar-perfil.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            if (response.status === 401) {
+                throw new Error('Não autorizado');
+            } else {
+                throw new Error('Sem rede ou não conseguiu localizar o recurso');
+            }
+        }
+        return response.json();
+    })
+    .then(data => {
+        if(data.status == true){
+            alert('Perfil editado com sucesso!');
+            window.location.reload();
+        }else{
+            alert('Erro ao editar perfil' + data.status + ' ' + data.mensagem + ' ' + data.descricao);
+        }
+    })
+
+console.log(nomePerfil +" " + Apelido.value + " " + biografia.value + " " + privado + " " + inputImagem.files[0]);
 }
 
 habilitarBotao(); contApelido(); contBio();
@@ -72,6 +111,7 @@ biografia.addEventListener('input', function() {
     contBio();
     habilitarBotao();
 });
+inputImagem.addEventListener('change', habilitarBotao);
 privadoElement.addEventListener('change', habilitarBotao);
 
 btnEditar.addEventListener('click', Editar);

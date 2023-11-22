@@ -23,6 +23,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
     $perfil->setId($_GET['id']);
     
     $perfil = DaoPerfil::buscarDados($perfil);
+
 }
 ?>
 <!DOCTYPE html>
@@ -196,11 +197,13 @@ $perfil = DaoPerfil::buscarDados($perfil);
                                 if($perfil['idPerfil'] == $_SESSION['login-id']){
                                 echo   '<a class="btn-detalhes" href="./profileEdit.php">Editar Perfil</a>';
                                 } else {
+                                    /*
                                     if(DaoBloqueado::verificarBloqueio($perfil['idPerfil'], $_SESSION['login-id'])){
                                         echo '<a class="btn-detalhes" id="desbloquear">Desbloquear</a>';
                                     }else{
                                         echo '<a class="btn-detalhes" id="bloquear" >Bloquear</a>';
                                     }
+                                    */
                                     if(DaoSeguidor::verificarSeguidor($perfil['idPerfil'], $_SESSION['login-id'])){
                                         echo '<a class="btn-detalhes" id="unfollow" >Deixar de Seguir</a>';
                                     }else{
@@ -225,7 +228,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
                                 </div>
                             </div>
                             <div class="user-info-descricao">
-                                <p class="p3 text-profile"><?php $perfil['biografia']?></p>
+                                <p class="p3 text-profile"><?php echo $perfil['biografia']?></p>
                             </div>
                         </div>
                     </div>

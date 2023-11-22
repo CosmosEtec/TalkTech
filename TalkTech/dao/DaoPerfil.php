@@ -92,5 +92,37 @@
                 return $result;
             }
         }
+
+        public static function editarApelido(Perfil $perfil){
+            $sql = "UPDATE tbPerfil SET apelido = ? WHERE idPerfil = ?";
+            $stmt = Conexao::getConn()->prepare($sql);
+            $stmt->bindValue(1, $perfil->getApelido());
+            $stmt->bindValue(2, $perfil->getId());
+            return $stmt->execute();
+        }
+
+        public static function editarBiografia(Perfil $perfil){
+            $sql = "UPDATE tbPerfil SET biografia = ? WHERE idPerfil = ?";
+            $stmt = Conexao::getConn()->prepare($sql);
+            $stmt->bindValue(1, $perfil->getBiografia());
+            $stmt->bindValue(2, $perfil->getId());
+            return $stmt->execute();
+        }
+
+        public static function editarPrivacidade(Perfil $perfil){
+            $sql = "UPDATE tbPerfil SET perfilPrivado = ? WHERE idPerfil = ?";
+            $stmt = Conexao::getConn()->prepare($sql);
+            $stmt->bindValue(1, $perfil->getPerfilPrivado());
+            $stmt->bindValue(2, $perfil->getId());
+            return $stmt->execute();
+        }
+
+        public static function editarFotoPerfil(Perfil $perfil){
+            $sql = "UPDATE tbPerfil SET fotoPerfil = ? WHERE idPerfil = ?";
+            $stmt = Conexao::getConn()->prepare($sql);
+            $stmt->bindValue(1, $perfil->getFotoPerfil());
+            $stmt->bindValue(2, $perfil->getId());
+            return $stmt->execute();
+        }
     }
 ?>
