@@ -8,7 +8,7 @@ require_once('../dao/DaoPostagem.php');
 require_once('../dao/DaoComentario.php');
 
     session_start();
-
+    
     $reacao = new Reacao();
     $reacao->setIdPerfil($_SESSION['login-id']);
     $reacao->setIdPostagem($_POST['idPost']);
@@ -21,7 +21,7 @@ require_once('../dao/DaoComentario.php');
                 'status' => true,
                 'mensagem' => "Postagem curtida com sucesso!",
                 'descricao' => "Postagem curtida com sucesso!",
-                'curtidas' => DaoReacao::buscarReacoesPost($reacao)
+                'curtidas' => DaoReacao::buscarReacoesPost($reacao),
             ];
             echo json_encode($data);
         } else {
@@ -40,4 +40,5 @@ require_once('../dao/DaoComentario.php');
         ];
         echo json_encode($data);
     }
+
 ?>
