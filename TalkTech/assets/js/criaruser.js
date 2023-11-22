@@ -118,10 +118,18 @@ document.getElementById('cadForm').addEventListener('submit', function(event){
             }
         }else{
             Swal.fire({
-                icon: 'success',
-                title: 'Seja Bem-Vindo',
-                text: 'Faça o login para acessar a plataforma!',
-            })
+                title: "Seja Bem-Vindo!",
+                text: "Faça o login para acessar a plataforma!",
+                icon: "sucess",
+                showCancelButton: false,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Acessar"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload();
+                }
+              });
         } 
        
     })

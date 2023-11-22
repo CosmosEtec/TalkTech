@@ -1,6 +1,12 @@
 <?php
 session_start();
-include_once '../control/valida-permanencia.php'
+include_once '../control/valida-permanencia.php';
+require_once '../dao/DaoPerfil.php';
+require_once '../model/Perfil.php';
+$perfil = new Perfil();
+$perfil->setID($_SESSION['login-id']);
+$perfil = DaoPerfil::buscarDados($perfil);
+
 ?>
 
 <!DOCTYPE html>
@@ -208,7 +214,7 @@ include_once '../control/valida-permanencia.php'
 
                 <div class="description-align">
                     <div class="profile-pic  ">
-                        <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                        <img class="profile-pic-img" src="../<?php echo $perfil['fotoPerfil']?>" alt="">
                     </div>
 
                     <textarea class="" class="description-post" id="description" placeholder="Compartilhe o que está acontecendo"></textarea>

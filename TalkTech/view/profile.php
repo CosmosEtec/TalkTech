@@ -234,7 +234,12 @@ $perfil = DaoPerfil::buscarDados($perfil);
                                 </div>
                             </div>
                             <div class="user-info-descricao">
-                                <p class="p3 text-profile"><?php echo $perfil['biografia']?></p>
+                                <p class="p3 text-profile">
+                                    <?php 
+                                        $biografia = preg_replace("/[\r\n]{2,}/", "\n", $perfil['biografia']);
+                                        echo nl2br($biografia)
+                                    ?>
+                                </p>
                             </div>
                         </div>
                     </div>
