@@ -5,7 +5,7 @@ require_once('../model/conexao.php');
 
 Class DaoReacao{
     public static function reagirPost(Reacao $reacao){
-        $sql = "INSERT INTO tbreação (idPerfil, idPostagem) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO tbreação (idPerfil, idPostagem) VALUES (?, ?)";
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $reacao->getIdPerfil());
         $stmt->bindValue(2, $reacao->getIdPostagem());
@@ -27,6 +27,21 @@ Class DaoReacao{
         $stmt->execute();
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
         return $resultado['qtdReacoes'];
+    }
+
+    public static function buscarReacoesPostUsuario(Reacao $reacao){
+        $sql = "SELECT * FROM tbReação WHERE idPostagem = ? AND idPerfil = ?";
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $reacao->getIdPostagem());
+        $stmt->bindValue(2, $reacao->getIdPerfil());
+        $stmt->execute();
+        $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        if (count($resultado) > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 ?>

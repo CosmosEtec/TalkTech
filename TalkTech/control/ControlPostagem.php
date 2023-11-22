@@ -64,8 +64,8 @@ function mostrarPostsFeed(){
                         <div class="like-heart-comment-container">
                             <button id="like-heart">
                                 <p class="ContReacao" id="'.$postagem["idPostagem"].'" >'.$reacoes.'</p>
-                                <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked" onclick="descurtir()"></i>
-                                <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked" onclick="curtir()"></i>
+                                <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
+                                <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
                             </button>
                             <button class="mt-1-4px comment" id="comment">
                                 <p class="ContComentario" >'.$comentarios.'</p>
