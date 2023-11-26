@@ -217,9 +217,9 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
                 <i class="fa-solid fa-arrow-right fa-flip-horizontal fa-2xl" style="color: #d1d1d1;"></i>
             </a>
         </div>
-        <div class="post-container   mb-2" >
-            <div class="profile-top-post  ">
-                <div class="profile-pic  ">
+        <div class="post-container mb-2" >
+            <div class="profile-top-post">
+                <div class="profile-pic">
                     <img class="profile-pic-img" src="../<?php echo $perfilPost["fotoPerfil"] ?>" alt="">
                 </div>
                 <div class="profile-username flex-column ml-1">
@@ -289,9 +289,15 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
                             <img src="../assets/img/bonoro-anao.jpg" alt="">
                         </div>
                         <div class="flex-column ml-1-4px">
-                        <h6 class="">@userzédamanga</h6>
-                        <p class="p3 mb-1">vish</p>
+                            <h6 class="">@userzédamanga</h6>
+                            <p class="p3 mb-1">vish</p>
                         </div>
+
+                        <button id="like-heart">
+                            <i class="fa-solid fa-heart fa-xl heart-liked my-2" style="color: #bd02c0;" id="heart-liked"></i>
+                            <i class="fa-regular fa-heart fa-xl heart-unliked my-2" style="color: #d1d1d1;" id="heart-unliked"></i>
+                            <p class="ContReacao" id="'.$Postagem["idPostagem"].'" > 0 </p>
+                        </button>
                     </div>
 
                 </div>

@@ -72,10 +72,10 @@ function mostrarPostsFeed(){
                                 <p class="ContReacao" id="'.$postagem["idPostagem"].'" >'.$reacoes.'</p>
                             </button>
                             <button class="mt-1-4px comment" id="comment">
-                            <a class="mt-1-4px comment" id="comment" href="postagem.php?idPost='.$postagem["idPostagem"] .'" >
-                            <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
-                            <p class="ContComentario" >'.$comentarios.'</p>
-                            </a>
+                                <a class="mt-1-4px comment" id="comment" href="postagem.php?idPost='.$postagem["idPostagem"] .'" >
+                                    <i class="fa-solid fa-message fa-flip-horizontal fa-xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                                    <p class="ContComentario" >'.$comentarios.'</p>
+                                </a>
                             </button>
                             <button class="mt-1-4px share" id="share">
                                 <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
@@ -125,16 +125,16 @@ function mostrarPostsUsuario($perfil){
                 echo '
                 </div>
             </div>
-            <div class="post-description">
+            <div class="post-description mt-1">
                 <p class="p3">'. $Postagem['legenda'] .'</p>
             </div>';
             if($conteudo){
                 echo '
-                <div class="content-post">
+                <div class="content-post mt-1">
                     <img src="'.$conteudo['src'].'">
                 </div>';
             };
-            echo '<div class="post-interactions  ">
+            echo '<div class="post-interactions mt-2">
                     <div class="like-heart-comment-container">
                         <button id="like-heart">
                             <i class="fa-solid fa-heart fa-2xl heart-liked my-2" style="color: #bd02c0;" id="heart-liked"></i>
@@ -144,7 +144,7 @@ function mostrarPostsUsuario($perfil){
 
                         <button class="mt-1-4px comment" id="comment">
                         <a class="mt-1-4px comment" id="comment" href="postagem.php?idPost='.$Postagem["idPostagem"] .'" >
-                        <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                        <i class="fa-solid fa-message fa-flip-horizontal fa-xl ml-2 my-2" style="color: #d1d1d1;"></i>
                         <p class="ContComentario" >'.$comentarios.'</p>
                         </a>
                         </button>
