@@ -30,74 +30,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
                     <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #ffffff;"></i>
                 </button>
                     <input class="search-field-input" id="searchInput" type="search" placeholder="Quem você busca?">
-                    <ul id="suggestionList" class="suggestion-list">
-                        <li>
-                            <a href="">
-                                <div class="profile-pic">
-                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                                </div>
-                                <div class="profile-username flex-column ml-1-4px">
-                                        <h6>Macaco</h6>
-                                        <p class="p3">@sougay</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="profile-pic">
-                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                                </div>
-                                <div class="profile-username flex-column ml-1-4px">
-                                        <h6>Macaco</h6>
-                                        <p class="p3">@sougay</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="profile-pic">
-                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                                </div>
-                                <div class="profile-username flex-column ml-1-4px">
-                                        <h6>Macaco</h6>
-                                        <p class="p3">@sougay</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="profile-pic">
-                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                                </div>
-                                <div class="profile-username flex-column ml-1-4px">
-                                        <h6>Macaco</h6>
-                                        <p class="p3">@sougay</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="profile-pic">
-                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                                </div>
-                                <div class="profile-username flex-column ml-1-4px">
-                                        <h6>Macaco</h6>
-                                        <p class="p3">@sougay</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="profile-pic">
-                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                                </div>
-                                <div class="profile-username flex-column ml-1-4px">
-                                        <h6>Macaco</h6>
-                                        <p class="p3">@sougay</p>
-                                </div>
-                            </a>
-                        </li>
-                       
+                    <ul id="suggestionList" class="suggestion-list">            
                     </ul>
             </div>
             <div class=""> 
