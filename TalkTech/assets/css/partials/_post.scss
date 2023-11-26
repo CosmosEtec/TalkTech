@@ -93,6 +93,7 @@ img.profile-pic-img{
     background: none;
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     transition: 0.2s ease-in-out;
     cursor: pointer;
@@ -125,6 +126,30 @@ img.profile-pic-img{
     &:hover{
         transform: scale(1.1);
     }
+}
+
+#share{
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    transition: 0.2s ease-in-out;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+.ContComentario{
+    margin-right: -15px;
+    margin-top: -3px;
+    margin-bottom: 2px;
+}
+
+.ContCompartilhar{
+    margin-left: 11px;
+    margin-top: -1px;
+    margin-bottom: 3px;
 }
 
 .post-description{
