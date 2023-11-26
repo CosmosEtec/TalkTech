@@ -93,6 +93,7 @@ img.profile-pic-img{
     background: none;
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     transition: 0.2s ease-in-out;
     cursor: pointer;
@@ -125,6 +126,30 @@ img.profile-pic-img{
     &:hover{
         transform: scale(1.1);
     }
+}
+
+#share{
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    transition: 0.2s ease-in-out;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+.ContComentario{
+    margin-right: -15px;
+    margin-top: -3px;
+    margin-bottom: 2px;
+}
+
+.ContCompartilhar{
+    margin-left: 11px;
+    margin-top: -1px;
+    margin-bottom: 3px;
 }
 
 .post-description{
@@ -181,11 +206,13 @@ box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.4);
 
 
 .input-comentario-align{
+    border: 2px solid #d1d1d1;
+    border-radius: 8px;
     width: 100%;
     display: flex;
     justify-content: flex-start;
 
-    .profile-pic{
+    .profile-pic{ 
         position: absolute;
         width: 38px;
         height: 35px;
@@ -213,6 +240,10 @@ box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.4);
     }
 }
 
+
+.input-comentario-input{
+    padding: 8px 16px 8px 8px;
+}
 
 
 
@@ -395,7 +426,16 @@ box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.4);
     opacity: 1;
   }
 
+.btn-voltar-postagem{
+    position: fixed;
+    z-index: 800;
+    margin-left: -8vw;
 
+    padding: 11px 7px 11px 7px;
+
+    background-color: $purple;
+    border-radius: 50%;
+}
 
 
 

@@ -61,15 +61,19 @@ function mostrarPostsFeed(){
                     </div>';
                 };
                 echo '<div class="post-interactions  ">
-                        <div class="like-heart-comment-container">
+                        <div class="like-heart-comment-container mt-1">
                             <button id="like-heart">
-                                <p class="ContReacao" id="'.$postagem["idPostagem"].'" >'.$reacoes.'</p>
-                                    <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
-                                    <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
+                                <i class="fa-solid fa-heart fa-2xl heart-liked my-2" style="color: #bd02c0;" id="heart-liked"></i>
+                                <i class="fa-regular fa-heart fa-2xl heart-unliked my-2" style="color: #d1d1d1;" id="heart-unliked"></i>
+                                    <p class="ContReacao" id="'.$postagem["idPostagem"].'" >'.$reacoes.'</p>
                             </button>
-                            <button class="mt-1-4px comment" id="comment">
+                            <a class="mt-1-4px comment" id="comment" href="postagem.php" >
+                                <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
                                 <p class="ContComentario" >'.$comentarios.'</p>
-                                <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2" style="color: #d1d1d1;"></i>
+                            </a>
+                            <button class="mt-1-4px share" id="share">
+                                <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                                <p class="ContCompartilhar" >'.$comentarios.'</p>
                             </button>
                         </div>
                 </div>
@@ -122,15 +126,21 @@ function mostrarPostsUsuario($perfil){
             };
             echo '<div class="post-interactions  ">
                     <div class="like-heart-comment-container">
-                    <button id="like-heart">
-                    <p class="ContReacao" id="'.$Postagem["idPostagem"].'" >'.$reacoes.'</p>
-                    <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
-                    <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
-                    </button>
-                <button class="mt-1-4px comment" id="comment">
-                <p class="ContComentario" >'.$comentarios.'</p>
-                    <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2" style="color: #d1d1d1;"></i>
-                </button>
+                        <button id="like-heart">
+                            <i class="fa-solid fa-heart fa-2xl heart-liked my-2" style="color: #bd02c0;" id="heart-liked"></i>
+                            <i class="fa-regular fa-heart fa-2xl heart-unliked my-2" style="color: #d1d1d1;" id="heart-unliked"></i>
+                            <p class="ContReacao" id="'.$Postagem["idPostagem"].'" >'.$reacoes.'</p>
+                        </button>
+
+                        <button class="mt-1-4px comment" id="comment">
+                            <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                            <p class="ContComentario" >'.$comentarios.'</p>
+                        </button>
+
+                        <button class="mt-1-4px share" id="share">
+                            <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                            <p class="ContCompartilhar" >'.$comentarios.'</p>
+                        </button>
                     </div>
                   </div>
                 </div>';

@@ -248,7 +248,12 @@ $perfil = DaoPerfil::buscarDados($perfil);
             <!---========= FIM NAV TIMELINE =========-->
         <div class="feed-roll">
         
-        <!---========= POST ===========
+        <!---========= POST =========== -->
+        <div class="btn-voltar">
+            <a href="Home.php" class="btn-voltar-postagem">
+                <i class="fa-solid fa-arrow-right fa-flip-horizontal fa-2xl" style="color: #d1d1d1;"></i>
+            </a>
+        </div>
         <div class="post-container   mb-2" >
             <div class="profile-top-post  ">
                 <div class="profile-pic  ">
@@ -260,16 +265,27 @@ $perfil = DaoPerfil::buscarDados($perfil);
                 </div>
             </div>
             <div class="post-description">
-                <p class="p3">fsdfdsf</p>
+                <p class="p3 mt-2">fsdfdsf</p>
             </div>
-                <div class="content-post">
+                <div class="content-post my-2">
                     <img src="../assets/img/bonoro-anao">
                 </div>
-                <div class="post-interactions  ">
+                <div class="post-interactions my-1  ">
                     <div class="like-heart-comment-container">
                         <button id="like-heart">
-                            <i class="fa-solid fa-heart fa-2xl heart-liked" style="color: #bd02c0;" id="heart-liked"></i>
-                            <i class="fa-regular fa-heart fa-2xl heart-unliked" style="color: #d1d1d1;" id="heart-unliked"></i>
+                            <i class="fa-solid fa-heart fa-2xl heart-liked my-2" style="color: #bd02c0;" id="heart-liked"></i>
+                            <i class="fa-regular fa-heart fa-2xl heart-unliked my-2" style="color: #d1d1d1;" id="heart-unliked"></i>
+                            <p class="ContReacao" id="'.$Postagem["idPostagem"].'" > 0 </p>
+                        </button>
+
+                        <button class="mt-1-4px comment" id="comment">
+                            <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                            <p class="ContComentario" > 0 </p>
+                        </button>
+
+                        <button class="mt-1-4px share" id="share">
+                            <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                            <p class="ContCompartilhar" > 0 </p>
                         </button>
                     </div>
                 </div>
@@ -279,8 +295,13 @@ $perfil = DaoPerfil::buscarDados($perfil);
                             <img class="profile-pic-img" src="../<?php echo $perfil['fotoPerfil']?>" alt="">
                         </div>
 
-                        <textarea class="" class="input-comentario-align" id="input-comentario" placeholder="Escreva um comentário"></textarea>
+                        <textarea class="input-comentario-input" id="input-comentario" placeholder="Escreva um comentário"></textarea>
+
+                        <button class="enviar-comentario pr-2">
+                            <i class="fa-solid fa-paper-plane fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                        </button>
                      </div>
+
                     <h4 class="comentarios-k mb-2">Comentários</h4>
                     
                     <div class="post-comment-cell mb-1">
@@ -303,9 +324,8 @@ $perfil = DaoPerfil::buscarDados($perfil);
                         </div>
                     </div>
                 </div>
-            </div>    
-            -->
-        <?php include_once '../control/ControlPostagem.php'; mostrarPostsFeed(); ?>  
+            </div>
+          
       
         <div class="overlayed" id="overlay" > </div>    
             </div>
