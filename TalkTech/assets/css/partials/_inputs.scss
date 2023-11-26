@@ -1,7 +1,70 @@
-input[type=text].search-field{
-    padding: 12px 12px;
-    width: 340px;
-    border-radius: 2px;
-    background: #D9D9D9;
-    border: none;
+/* Estilos para o campo de busca */
+input[type=search].search-field-input {
+    padding: 12px 12px 12px 50px;
+    width: 380px;
+    border-radius: 4px;
+    background: $black-lights;
+    color: $white-dark;
+    border: 1px solid $gray-clean-border;
+    outline: none;
+    transition: 0.7s ease-in-out;
+
+    &:focus{
+        opacity: 0.7;
+    }
 }
+
+#suggestionList {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 8px 4px;
+    position: absolute;
+    top: 101%;
+    left: 0;
+    width: 100%;
+    background-color: $smooth-dark;
+    border-top: none;
+    border-bottom: 1px solid $gray-clean-border;
+    border-left: 1px solid $gray-clean-border;
+    border-right: 1px solid $gray-clean-border;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 800;
+
+    .title-search {
+        border-bottom: 1px solid $gray-clean-border;
+        width: 93%;
+    }
+
+    li{
+        display: flex;
+        margin-top: 8px;
+        width: 98%;
+        border-radius: 8px;
+        
+    }
+
+    .profile-pic{
+        width: 30px;
+        height: 30px;
+    }
+}
+
+#suggestionList a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 3px;
+    cursor: pointer;
+    text-decoration: none; /* Remova a decoração padrão do link */
+    z-index: 800;
+    color: $white-dark;
+    border-radius: 8px;
+}
+
+#suggestionList a:hover {
+    background: $xupi;
+}
+

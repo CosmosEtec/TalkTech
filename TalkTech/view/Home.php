@@ -26,10 +26,79 @@ $perfil = DaoPerfil::buscarDados($perfil);
         <nav class="navbar-desktop" data-aos="fade-up">
             <a href="#Inicio" class="navbar-desktop-logo"><img src="../assets/svg/t-logo.svg" alt="" width="60px" height="70px"></a>
             <div class="search-field flex-start ">
-                <div class="px-1">
-                    <img src="../assets/svg/icon-search-nav.svg" alt="" width="26px" height="26px">
-                </div>
-                    <input class="search-field" type="text" placeholder="Quem você busca?">
+                <button class="search-field-button">
+                    <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #ffffff;"></i>
+                </button>
+                    <input class="search-field-input" id="searchInput" type="search" placeholder="Quem você busca?">
+                    <ul id="suggestionList" class="suggestion-list">
+                        <li>
+                            <a href="">
+                                <div class="profile-pic">
+                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                                </div>
+                                <div class="profile-username flex-column ml-1-4px">
+                                        <h6>Macaco</h6>
+                                        <p class="p3">@sougay</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="profile-pic">
+                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                                </div>
+                                <div class="profile-username flex-column ml-1-4px">
+                                        <h6>Macaco</h6>
+                                        <p class="p3">@sougay</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="profile-pic">
+                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                                </div>
+                                <div class="profile-username flex-column ml-1-4px">
+                                        <h6>Macaco</h6>
+                                        <p class="p3">@sougay</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="profile-pic">
+                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                                </div>
+                                <div class="profile-username flex-column ml-1-4px">
+                                        <h6>Macaco</h6>
+                                        <p class="p3">@sougay</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="profile-pic">
+                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                                </div>
+                                <div class="profile-username flex-column ml-1-4px">
+                                        <h6>Macaco</h6>
+                                        <p class="p3">@sougay</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="profile-pic">
+                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
+                                </div>
+                                <div class="profile-username flex-column ml-1-4px">
+                                        <h6>Macaco</h6>
+                                        <p class="p3">@sougay</p>
+                                </div>
+                            </a>
+                        </li>
+                       
+                    </ul>
             </div>
             <div class=""> 
             </div>
@@ -293,6 +362,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
     <script src="../assets/js/createPost.js"></script>
     <script src="../assets/js/button.js"></script>
     <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/search.js"></script>
     <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>
