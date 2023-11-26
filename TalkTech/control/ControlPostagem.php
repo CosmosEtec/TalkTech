@@ -45,10 +45,14 @@ function mostrarPostsFeed(){
                     </a>
                     </div>
                     <div class="profile-username flex-column ml-1">
-                    <a href="profile.php?id='.$perfil['idPerfil'].'">
-                        <h4>'. ($perfil["apelido"] ? $perfil["apelido"] : $perfil["nome"]) .'</h4>
-                        <p class="p3">@'.$perfil["nome"].'</p>
-                    </a>
+                    <a href="profile.php?id='.$perfil['idPerfil'].'">';
+                    if($perfil["apelido"]){
+                        echo '<h4>'. $perfil["apelido"] .'</h4>
+                        <p class="p3">@'.$perfil["nome"].'</p>';	
+                    }else{
+                        echo '<h4>@'. $perfil["nome"] .'</h4>';	
+                    }
+                    echo '   </a>
                     </div>
                 </div>
                 <div class="post-description mt-1">
@@ -65,15 +69,16 @@ function mostrarPostsFeed(){
                             <button id="like-heart">
                                 <i class="fa-solid fa-heart fa-2xl heart-liked my-2" style="color: #bd02c0;" id="heart-liked"></i>
                                 <i class="fa-regular fa-heart fa-2xl heart-unliked my-2" style="color: #d1d1d1;" id="heart-unliked"></i>
-                                    <p class="ContReacao" id="'.$postagem["idPostagem"].'" >'.$reacoes.'</p>
+                                <p class="ContReacao" id="'.$postagem["idPostagem"].'" >'.$reacoes.'</p>
                             </button>
-                            <a class="mt-1-4px comment" id="comment" href="postagem.php" >
-                                <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
-                                <p class="ContComentario" >'.$comentarios.'</p>
+                            <button class="mt-1-4px comment" id="comment">
+                            <a class="mt-1-4px comment" id="comment" href="postagem.php?idPost='.$postagem["idPostagem"] .'" >
+                            <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                            <p class="ContComentario" >'.$comentarios.'</p>
                             </a>
+                            </button>
                             <button class="mt-1-4px share" id="share">
                                 <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
-                                <p class="ContCompartilhar" >'.$comentarios.'</p>
                             </button>
                         </div>
                 </div>
@@ -110,9 +115,14 @@ function mostrarPostsUsuario($perfil){
                 <div class="profile-pic  ">
                     <img class="profile-pic-img" src="../'.$perfil['fotoPerfil'].'" alt="">
                 </div>
-                <div class="profile-username flex-column ml-1">
-                    <h4>'. ($perfil["apelido"] ? $perfil["apelido"] : $perfil["nome"]) .'</h4>
-                    <p class="p3">@'.$perfil["nome"].'</p>
+                <div class="profile-username flex-column ml-1">';
+                if($perfil["apelido"]){
+                    echo '<h4>'. $perfil["apelido"] .'</h4>
+                    <p class="p3">@'.$perfil["nome"].'</p>';	
+                }else{
+                    echo '<h4>@'. $perfil["nome"] .'</h4>';	
+                }
+                echo '
                 </div>
             </div>
             <div class="post-description">
@@ -133,13 +143,14 @@ function mostrarPostsUsuario($perfil){
                         </button>
 
                         <button class="mt-1-4px comment" id="comment">
-                            <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
-                            <p class="ContComentario" >'.$comentarios.'</p>
+                        <a class="mt-1-4px comment" id="comment" href="postagem.php?idPost='.$Postagem["idPostagem"] .'" >
+                        <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                        <p class="ContComentario" >'.$comentarios.'</p>
+                        </a>
                         </button>
 
                         <button class="mt-1-4px share" id="share">
                             <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
-                            <p class="ContCompartilhar" >'.$comentarios.'</p>
                         </button>
                     </div>
                   </div>

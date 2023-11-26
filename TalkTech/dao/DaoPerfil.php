@@ -124,5 +124,18 @@
             $stmt->bindValue(2, $perfil->getId());
             return $stmt->execute();
         }
+
+        public static function procurarPerfil(Perfil $perfil){
+            $sql = "SELECT * FROM tbPerfil WHERE nome LIKE ? OR apelido LIKE ?";
+            $stmt = Conexao::getConn()->prepare($sql);
+            $stmt->bindValue(1, "%".$perfil->getNome()."%");
+            $stmt->bindValue(2, "%".$perfil->getNome()."%");
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0){
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return $result;
+            }
+        }
     }
 ?>

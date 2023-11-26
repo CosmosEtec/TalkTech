@@ -2,10 +2,30 @@
 session_start();
 include_once '../control/valida-permanencia.php';
 require_once '../dao/DaoPerfil.php';
+require_once '../dao/DaoPostagem.php';
+require_once '../dao/DaoConteudo.php';
 require_once '../model/Perfil.php';
+require_once '../model/Postagem.php';
+require_once '../model/Conteudo.php';
 $perfil = new Perfil();
 $perfil->setID($_SESSION['login-id']);
 $perfil = DaoPerfil::buscarDados($perfil);
+
+$post = $_GET['idPost'];
+$postagem = new Postagem();
+$postagem->setIdPostagem($post);
+$postagem = DaoPostagem::buscarDadosId($postagem);
+
+if($postagem['Conteudo'] == 1){
+    $conteudo = new Conteudo();
+    $conteudo->setIdPostagem($postagem['idPostagem']);
+    $conteudo = DaoConteudo::buscarDados($conteudo);
+}
+
+$perfilPost = new Perfil();
+$perfilPost->setId($postagem["idPerfil"]);
+$perfilPost = DaoPerfil::buscarDados($perfilPost);
+
 
 ?>
 
@@ -42,62 +62,6 @@ $perfil = DaoPerfil::buscarDados($perfil);
                                 </div>
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                <div class="profile-pic">
-                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                                </div>
-                                <div class="profile-username flex-column ml-1-4px">
-                                        <h6>Macaco</h6>
-                                        <p class="p3">@sougay</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="profile-pic">
-                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                                </div>
-                                <div class="profile-username flex-column ml-1-4px">
-                                        <h6>Macaco</h6>
-                                        <p class="p3">@sougay</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="profile-pic">
-                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                                </div>
-                                <div class="profile-username flex-column ml-1-4px">
-                                        <h6>Macaco</h6>
-                                        <p class="p3">@sougay</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="profile-pic">
-                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                                </div>
-                                <div class="profile-username flex-column ml-1-4px">
-                                        <h6>Macaco</h6>
-                                        <p class="p3">@sougay</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="profile-pic">
-                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                                </div>
-                                <div class="profile-username flex-column ml-1-4px">
-                                        <h6>Macaco</h6>
-                                        <p class="p3">@sougay</p>
-                                </div>
-                            </a>
-                        </li>
-                       
                     </ul>
             </div>
             <div class=""> 
@@ -109,7 +73,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
     <section class="container-feed ">
         
         
-        <!---========= Notificações =========-->
+        <!---========= Notificações =========
         <nav class="menu-notificacoes">
                 <a class="close-notificacoes-mobile" onclick="toggleNotificacoes()">
                     <i class="fa-solid fa-xmark fa-2xl" style="color: #e8ecf2;"></i>
@@ -147,8 +111,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
                     </div>
                 </div>
             </nav>
-
-            <!---========= Fim Notificações =========-->
+        -->
 
             <!---========= LEFT SIDE MENU =========--> 
             <nav class="nav-left-side-menu   " id="side-menu">
@@ -257,19 +220,36 @@ $perfil = DaoPerfil::buscarDados($perfil);
         <div class="post-container   mb-2" >
             <div class="profile-top-post  ">
                 <div class="profile-pic  ">
-                    <img class="profile-pic-img" src="../" alt="">
+                    <img class="profile-pic-img" src="../<?php echo $perfilPost["fotoPerfil"] ?>" alt="">
                 </div>
                 <div class="profile-username flex-column ml-1">
-                    <h4>fdsfdsf</h4>
-                    <p class="p3">fsdfsd</p>
+                    <h4><?php 
+                    if($perfilPost["apelido"] != null){
+                        echo $perfilPost["apelido"];
+                    }else{
+                        echo "@".$perfilPost["nome"];
+                    }
+                    ?></h4>
+                    <p class="p3"><?php
+                    if($perfilPost["apelido"] != null){
+                        echo "@".$perfilPost["nome"];
+                    }
+                     ?></p>
                 </div>
             </div>
             <div class="post-description">
-                <p class="p3 mt-2">fsdfdsf</p>
+                <p class="p3 mt-2"><?php echo $postagem['legenda']?></p>
             </div>
+            <!-- Conteudo Post -->
+            <?php
+            if($postagem['Conteudo'] == 1)
+                    if($conteudo['tipo'] == 'foto')
+                echo '
                 <div class="content-post my-2">
-                    <img src="../assets/img/bonoro-anao">
-                </div>
+                    <img src="../'.$conteudo['src'].'">
+                </div>';
+            ?>
+            <!-- Intereações Post -->
                 <div class="post-interactions my-1  ">
                     <div class="like-heart-comment-container">
                         <button id="like-heart">
@@ -285,10 +265,10 @@ $perfil = DaoPerfil::buscarDados($perfil);
 
                         <button class="mt-1-4px share" id="share">
                             <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
-                            <p class="ContCompartilhar" > 0 </p>
                         </button>
                     </div>
                 </div>
+                <!-- Comentários Post -->
                 <div class="post-comment-section">
                     <div class="input-comentario-align mb-1">
                         <div class="profile-pic  ">
@@ -314,15 +294,6 @@ $perfil = DaoPerfil::buscarDados($perfil);
                         </div>
                     </div>
 
-                    <div class="post-comment-cell mb-1">
-                        <div class="post-comment-profile-pic">
-                            <img src="../assets/img/bonoro-anao.jpg" alt="">
-                        </div>
-                        <div class="flex-column ml-1-4px">
-                        <h6 class="">@userzédamanga</h6>
-                        <p class="p3 mb-1">vish</p>
-                        </div>
-                    </div>
                 </div>
             </div>
           

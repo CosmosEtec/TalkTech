@@ -13,18 +13,23 @@ require_once('../dao/DaoComentario.php');
 require_once('../control/ControlPostagem.php');
 
 
-if(!isset($_GET['id'])){
-$perfil = new Perfil();
-$perfil->setId($_SESSION['login-id']);
-
-$perfil = DaoPerfil::buscarDados($perfil);
-}else{
+if($_GET['id'] == $_SESSION['login-id']){
     $perfil = new Perfil();
     $perfil->setId($_GET['id']);
     
     $perfil = DaoPerfil::buscarDados($perfil);
+}else if(!isset($_GET['id'])){
+    $perfil = new Perfil();
+    $perfil->setId($_SESSION['login-id']);
+    
+    $perfil = DaoPerfil::buscarDados($perfil);
+}else {
+    $perfil = new Perfil();
+    $perfil->setId($_GET['id']);
+    
+    $perfil = DaoPerfil::buscarDados($perfil);
+}	
 
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
