@@ -67,10 +67,10 @@ function mostrarPostsFeed(){
                                 <i class="fa-regular fa-heart fa-2xl heart-unliked my-2" style="color: #d1d1d1;" id="heart-unliked"></i>
                                     <p class="ContReacao" id="'.$postagem["idPostagem"].'" >'.$reacoes.'</p>
                             </button>
-                            <button class="mt-1-4px comment" id="comment">
+                            <a class="mt-1-4px comment" id="comment" href="postagem.php" >
                                 <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
                                 <p class="ContComentario" >'.$comentarios.'</p>
-                            </button>
+                            </a>
                             <button class="mt-1-4px share" id="share">
                                 <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
                                 <p class="ContCompartilhar" >'.$comentarios.'</p>
