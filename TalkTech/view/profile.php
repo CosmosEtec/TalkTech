@@ -311,10 +311,6 @@ $perfil = DaoPerfil::buscarDados($perfil);
     <!---========= FIM Criar Post ===========-->  
     </section>
     <!---========= FIM CONTAINER PERFIL =========-->
-
-     
-       
-
     <script src="../assets/js/createPost.js"></script>
     <script src="../assets/js/button.js"></script>
     <script src="../assets/js/navbar.js"></script>
