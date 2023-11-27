@@ -39,20 +39,30 @@ function mostrarPostsFeed(){
             echo '
             <div class="post-container   mb-2" id="'.$postagem["idPostagem"].'">
                 <div class="profile-top-post  ">
-                    <div class="profile-pic  ">
-                    <a href="profile.php?id='.$perfil['idPerfil'].'">
-                        <img class="profile-pic-img" src="../'.$perfil['fotoPerfil'].'" alt="">
-                    </a>
+                    <div class="profile-credentials  flex-start">
+                        <div class="profile-pic  ">
+                            <a href="profile.php?id='.$perfil['idPerfil'].'">
+                                <img class="profile-pic-img" src="../'.$perfil['fotoPerfil'].'" alt="">
+                            </a>
+                        </div>
+                            <div class="profile-username ml-1">
+                            <a href="profile.php?id='.$perfil['idPerfil'].'">';
+                            if($perfil["apelido"]){
+                                echo '<h4>'. $perfil["apelido"] .'</h4>
+                                <p class="p3">@'.$perfil["nome"].'</p>';	
+                            }else{
+                                echo '<h4>@'. $perfil["nome"] .'</h4>';	
+                            }
+                            echo '   </a>
+                            </div>
                     </div>
-                    <div class="profile-username flex-column ml-1">
-                    <a href="profile.php?id='.$perfil['idPerfil'].'">';
-                    if($perfil["apelido"]){
-                        echo '<h4>'. $perfil["apelido"] .'</h4>
-                        <p class="p3">@'.$perfil["nome"].'</p>';	
-                    }else{
-                        echo '<h4>@'. $perfil["nome"] .'</h4>';	
-                    }
-                    echo '   </a>
+                    <div class="post-config" >
+                    <i class="fa-solid fa-ellipsis fa-2xl" style="color: #ffffff;"></i>
+                        <div class="post-config-content">
+                            <a href="ui" class="post-config-item alert" style="color: #ca0202;">Denunciar <i class="fa-solid fa-triangle-exclamation mr-1" style="color: #ca0202;"></i></a>
+                            <a href="ai" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can mr-1" style="color: #ffffff;"></i></a>
+                            <a href="deixa" class="post-config-item" style="color: #ffffff;">Editar <i class="fa-solid fa-pen-to-square mr-1-4px" style="color: #ffffff;"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="post-description mt-1">
@@ -61,7 +71,8 @@ function mostrarPostsFeed(){
                 if(isset($conteudo)){
                     echo '
                     <div class="content-post mt-1">
-                        <img src="'.$conteudo['src'].'">
+                            <img src="'.$conteudo['src'].'">
+                        
                     </div>';
                 };
                 echo '<div class="post-interactions  ">
