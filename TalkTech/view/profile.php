@@ -234,15 +234,15 @@ if(!isset($_GET['id'])){
                             </div>
                             <div class="user-info-seguidores mb-2">
                                 <div class="info-seguidores">
-                                    <p class="p2 text-profile"><?php echo DaoPostagem::buscarQtddPostagem($perfil) ?></p>
+                                    <p class="p2 black-light"><?php echo DaoPostagem::buscarQtddPostagem($perfil) ?></p>
                                     <p class="p2 text-profile">Publicações</p>
                                 </div>
                                 <div class="info-seguidores">
-                                    <p class="p2 text-profile"><?php echo DaoSeguidor::buscarSeguidores($perfil) ?></p>
+                                    <p class="p2 black-light"><?php echo DaoSeguidor::buscarSeguidores($perfil) ?></p>
                                     <p class="p2 text-profile">Seguidores</p>
                                 </div>
                                 <div class="info-seguidores">
-                                    <p class="p2 text-profile"><?php echo DaoSeguidor::buscarSeguidos($perfil) ?></p>
+                                    <p class="p2 black-light"><?php echo DaoSeguidor::buscarSeguidos($perfil) ?></p>
                                     <p class="p2 text-profile">Seguindo</p>
                                 </div>
                             </div>

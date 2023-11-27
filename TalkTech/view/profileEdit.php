@@ -127,7 +127,10 @@ $perfil = DaoPerfil::buscarDados($perfil);
                 <div class="container-profile-user">
                     <div class="container-profile-user-info">
                     <div class="user-image">
-                            <img class="imagem-fds" id="imgperfil" src="../<?php echo $perfil['fotoPerfil'] ?>" onclick="triggerClick()"></img>
+                            <img class="imagem-fds opacity-low" id="imgperfil" src="../<?php echo $perfil['fotoPerfil'] ?> " ></img>
+                            <label  class="custom-file-input" onclick="triggerClick()">
+                                 <img src="../assets/img/icon-add-image.png" alt="">
+                            </label> 
                             <input type="file" id="profileImage" name="profileImage" style="display: none;" onchange="displayImage(this)">
                         </form>
                     </div>
@@ -138,20 +141,20 @@ $perfil = DaoPerfil::buscarDados($perfil);
                                     <?php echo '@'.$perfil['nome']; ?>
                                 </h3>
                                 <div class="detalhes-btn">
-                                    <a class="btn-detalhes" href="profile.php">voltar</a>
+                                    <a class="btn-detalhes" href="profile.php">Voltar</a>
                                 </div>
                             </div>
                             <div class="user-info-seguidores mb-2">
                                 <div class="info-seguidores">
-                                    <p class="p2 text-profile"><?php echo DaoPostagem::buscarQtddPostagem($perfil) ?></p>
+                                    <p class="p2 black-light"><?php echo DaoPostagem::buscarQtddPostagem($perfil) ?></p>
                                     <p class="p2 text-profile">Publicações</p>
                                 </div>
                                 <div class="info-seguidores">
-                                    <p class="p2 text-profile"><?php echo DaoSeguidor::buscarSeguidores($perfil) ?></p>
+                                    <p class="p2 black-light"><?php echo DaoSeguidor::buscarSeguidores($perfil) ?></p>
                                     <p class="p2 text-profile">Seguidores</p>
                                 </div>
                                 <div class="info-seguidores">
-                                    <p class="p2 text-profile"><?php echo DaoSeguidor::buscarSeguidos($perfil) ?></p>
+                                    <p class="p2 black-light"><?php echo DaoSeguidor::buscarSeguidos($perfil) ?></p>
                                     <p class="p2 text-profile">Seguindo</p>
                                 </div>
                             </div>

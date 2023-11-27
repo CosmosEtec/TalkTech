@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+.black-light {
+  color: #b7b7b7;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -2111,6 +2115,22 @@ input[type=search].search-field-input:focus {
   height: 150px;
   border-radius: 50%;
   border: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.opacity-low {
+  opacity: 0.6;
+}
+
+.user-image {
+  position: relative;
+}
+.user-image label {
+  position: absolute;
+  right: 30%;
+  top: 30%;
+  width: 60px;
+  height: 62px;
 }
 
 .container-profile-father {
@@ -2175,7 +2195,7 @@ input[type=search].search-field-input:focus {
   border: 1px solid #4d5252;
   background: #1B1B1C;
   font-size: 12px;
-  padding: 5px 10px;
+  padding: 8px 20px;
   border-radius: 7px;
 }
 .btn-detalhes:hover {
