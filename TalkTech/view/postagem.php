@@ -243,7 +243,6 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
             <!-- Conteudo Post -->
             <?php
             if($postagem['Conteudo'] == 1)
-                    if($conteudo['tipo'] == 'foto')
                 echo '
                 <div class="content-post my-2">
                     <img src="../'.$conteudo['src'].'">
