@@ -156,7 +156,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
         
         <!---========= TIMELINE =========-->
         <div class="container-timeline" id="scrollableDiv">
-        
+            
             <!---========= NAV TIMELINE =========
             
             <nav class="nav-menu-timeline">
@@ -179,7 +179,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
             -->
 
             <!---========= FIM NAV TIMELINE =========-->
-        <div class="feed-roll">
+        
         
         <!---========= POST ===========
         <div class="post-container   mb-2" >
@@ -238,14 +238,43 @@ $perfil = DaoPerfil::buscarDados($perfil);
                 </div>
             </div>    
             -->
-        <?php include_once '../control/ControlPostagem.php'; mostrarPostsFeed(); ?>  
+            <?php include_once '../control/ControlPostagem.php'; mostrarPostsFeed(); ?>  
+
+        
       
-        <div class="overlayed" id="overlay" > </div>    
+             <div class="overlayed" id="overlay" > 
+
+             </div>    
             </div>
-        </div>
         
+
         <!---========= FIM TIMELINE ===========-->
-        
+
+        <!---========= CARD PERFIL CRIAR POST ===========-->
+            <div class="container-card-profile-create-post mr-2 mt-2">
+             
+                <div class="card-profile-create-post-title">
+                <div class="radial-glow">
+                    <h3 class="bold">Compartilhe código</h3>
+                    <div class="circle-dev ml-1-4px">
+                        <i class="fa-solid fa-code fa-xl ml-1-4px mr-1-4px" style="color: #ffffff;"></i>
+                    </div>
+                    </div>
+                </div>
+                
+                    <div class="profile-pic mt-1">
+                    
+                        <img class="profile-pic-img" src="../<?php echo $perfil['fotoPerfil']?>" alt="">
+                    </div>
+                <h4><?php echo $perfil['apelido']?></h4>
+               
+                <a class="create-post-card-button mt-2" id="create-post">
+                        <span class="ml-1-4px"><h4 class="bold">Criar Postagem</h4></span>
+                        <i class="fa-solid fa-square-pen fa-xl ml-1-4px mt-1-4px" style="color: #ffffff;"></i>
+                </a>
+            </div>
+
+        <!---========= FIM CARD PERFIL CRIAR POST ===========-->
         
         <!---========= Criar Post ===========-->
         <div class="overlay" id="card-overlay" >
@@ -269,7 +298,8 @@ $perfil = DaoPerfil::buscarDados($perfil);
                     </div> 
                 </div>
                 <div class="flex-start">
-                    <p class="p1 mt-1">Qual a boa?</p> 
+                    <p class="p1 mt-1">No que está pensando?</p> 
+                    <i class="fa-regular fa-comment-dots fa-xl mt-1 ml-1" style="color: #b7b7b7;"></i>
                 </div> 
 
                 <div class="description-align">

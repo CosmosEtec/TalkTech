@@ -35,7 +35,7 @@
   background: transparent;
   overflow-y: scroll;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
 }
 @media screen and (max-width: 960px) {
@@ -51,6 +51,10 @@
 
 .left-0 {
   left: 0;
+}
+
+.space-around {
+  justify-content: space-around;
 }
 
 .flex-start {
@@ -170,14 +174,13 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
   background-color: transparent;
-  border: 5px solid #1f1f27;
+  border: 5px solid #15151A;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #b7b7b7;
-  border-radius: 50px;
   border: 2px solid #b7b7b7;
 }
 
@@ -402,7 +405,6 @@ span {
 
 .bold {
   font-weight: bold;
-  color: #b7b7b7;
 }
 
 strong {
@@ -1011,7 +1013,7 @@ header {
 
 .nav-left-side-menu {
   height: 100vh;
-  width: 13rem;
+  width: 12rem;
   min-width: 6rem;
   background: #27272A;
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.47);
@@ -1569,10 +1571,9 @@ header {
   flex-direction: column;
   position: relative;
   border-radius: 10px;
-  z-index: 100;
   cursor: default;
   /* From https://css.glass */
-  background: #161618;
+  background: #22222A;
 }
 @media screen and (max-width: 960px) {
   .post-container {
@@ -1639,7 +1640,7 @@ header {
   position: absolute;
   min-width: 160px;
   background: #060613;
-  z-index: 1;
+  z-index: 1100;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -1902,7 +1903,7 @@ img.profile-pic-img {
   display: flex;
   justify-content: center;
   padding: 0.65rem 0;
-  background: #161618;
+  background: #22222A;
   opacity: 1;
   box-shadow: -1px 3px 5px -1px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -1px 3px 5px -1px rgba(0, 0, 0, 0.75);
@@ -1919,7 +1920,7 @@ img.profile-pic-img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #161618;
+  background: #22222A;
   position: relative;
 }
 #image-preview-container label {
@@ -1993,7 +1994,7 @@ img.profile-pic-img {
   transition: 1s ease;
 }
 #description:focus {
-  background: #161618;
+  background: #22222A;
 }
 
 .elements-create-post {
@@ -2325,7 +2326,6 @@ input[type=search].search-field-input:focus {
 
 .container-timeline {
   height: 100vh;
-  width: 100%;
   flex-direction: column;
   align-items: center;
   padding: 28px 0 0 0px;
@@ -2510,7 +2510,7 @@ div.create-post-directly-container {
   justify-content: end;
   align-items: center;
   padding-bottom: 0.15rem;
-  background: #1f1f27;
+  background: #15151A;
 }
 
 .sending-container {
@@ -2741,6 +2741,80 @@ div.agroup-itens-button {
   background-color: rgba(46, 46, 48, 0.7);
 }
 
+.container-card-profile-create-post {
+  max-width: 360px;
+  /* From https://css.glass */
+  background: rgba(54, 52, 52, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(54, 52, 52, 0.3);
+  height: 360px;
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 0 0;
+  position: sticky;
+  top: 16px;
+  z-index: 800;
+}
+@media screen and (max-width: 960px) {
+  .container-card-profile-create-post {
+    display: none;
+  }
+}
+.container-card-profile-create-post .profile-pic {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #edeaef;
+  box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.25);
+}
+
+.radial-glow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: -2;
+  box-shadow: 0px 0px 6px 5px rgba(5, 5, 5, 0.26);
+}
+
+.circle-dev {
+  border-radius: 50%;
+  width: 44px;
+  height: 43px;
+  background: #591E9C;
+  box-shadow: 0px 0px 3px 3px rgba(89, 30, 156, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-profile-create-post-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 16px;
+  width: 100%;
+}
+
+.create-post-card-button {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: #591E9C;
+  border-radius: 12px;
+  transition: 0.3s ease-in-out;
+}
+.create-post-card-button:hover {
+  box-shadow: 0px 0px 5px 5px rgba(89, 30, 156, 0.51);
+}
+
 html {
   overflow: hidden;
 }
@@ -2750,7 +2824,7 @@ body {
   height: 100vh;
   position: relative;
   overflow-y: hidden;
-  background: #1f1f27;
+  background: #15151A;
 }
 
 img {
