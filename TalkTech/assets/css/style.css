@@ -2005,6 +2005,28 @@ img.profile-pic-img {
   border-top: 1px solid #4d5252;
 }
 
+.fa-heart {
+  transition: color 0.5s ease; /* Adicione uma transição para a propriedade desejada (por exemplo, color) */
+}
+
+.animate-like {
+  animation: scaleAndColor 1s ease; /* Adicione uma animação para a classe animate-like */
+}
+
+@keyframes scaleAndColor {
+  0% {
+    transform: scale(1);
+    color: inherit;
+  }
+  50% {
+    transform: scale(1.2);
+    color: #ff0000; /* Cor desejada durante a animação */
+  }
+  100% {
+    transform: scale(1);
+    color: inherit;
+  }
+}
 #image-upload {
   display: none;
 }
