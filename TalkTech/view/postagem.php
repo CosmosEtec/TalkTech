@@ -70,7 +70,7 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
     </header>
     
     <!---========= CONTAINER FEED =========-->
-    <section class="container-feed ">
+    <section class="container-feed space-around">
         
         
         <!---========= Notificações =========

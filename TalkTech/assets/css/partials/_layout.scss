@@ -75,7 +75,7 @@ $container-s: 540px;
     
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
 
 
@@ -91,6 +91,10 @@ $container-s: 540px;
 
 .left-0{
     left: 0;
+}
+
+.space-around{
+  justify-content: space-around;
 }
 .flex-start{
     display: flex;
@@ -211,13 +215,12 @@ $container-s: 540px;
 }
 
 ::-webkit-scrollbar{
-    width: 8px;
+    width: 4px;
     background-color: transparent;
-    border: 5px solid $black-fundo;
+    border: 5px solid $smooth-background;;
 }
 
 ::-webkit-scrollbar-thumb{
     background-color: $black-light;
-    border-radius: 50px;
     border: 2px solid $black-light;
 }

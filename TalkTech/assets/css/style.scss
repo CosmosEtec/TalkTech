@@ -21,6 +21,7 @@
 @import "partials/intro";
 @import "partials/chat";
 @import "partials/notificacoes";
+@import "partials/cards";
 
 html{
   overflow: hidden;
@@ -33,7 +34,7 @@ body {
   overflow-y: hidden;
   
 
-  background: $black-fundo;
+  background: $smooth-background;
 }
   
 img {

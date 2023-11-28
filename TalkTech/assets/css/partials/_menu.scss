@@ -76,10 +76,11 @@ box-shadow: 0px 13px 15px -8px rgba(0,0,0,0.33);
     height: 100vh;
     position: sticky;
     top: 0;
+    z-index: 800;
 }
 .nav-left-side-menu{ 
   height: 100vh;
-  width: 13rem;
+  width: 12rem;
   min-width: 6rem;
   background: $smooth-dark;
   -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.47); 
@@ -88,7 +89,7 @@ border-top: 1px solid $gray-clean-border;
   padding: 40px 0px 0 0px;
   position: sticky;
   top: 0;
-  z-index: 400;
+  z-index: 800;
 
 
   display: flex;
