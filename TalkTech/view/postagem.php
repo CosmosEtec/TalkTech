@@ -4,9 +4,14 @@ include_once '../control/valida-permanencia.php';
 require_once '../dao/DaoPerfil.php';
 require_once '../dao/DaoPostagem.php';
 require_once '../dao/DaoConteudo.php';
+require_once '../dao/DaoComentario.php';
 require_once '../model/Perfil.php';
 require_once '../model/Postagem.php';
+require_once '../model/Comentario.php';
 require_once '../model/Conteudo.php';
+
+require '../control/controlComentario.php';
+
 $perfil = new Perfil();
 $perfil->setID($_SESSION['login-id']);
 $perfil = DaoPerfil::buscarDados($perfil);
@@ -15,6 +20,10 @@ $post = $_GET['idPost'];
 $postagem = new Postagem();
 $postagem->setIdPostagem($post);
 $postagem = DaoPostagem::buscarDadosId($postagem);
+
+$Qtdcomentarios = new Comentario();
+$Qtdcomentarios->setIdPostagem($postagem['idPostagem']);
+$Qtdcomentarios = DaoComentario::QtdComentariosPost($Qtdcomentarios);
 
 if($postagem['Conteudo'] == 1){
     $conteudo = new Conteudo();
@@ -25,7 +34,6 @@ if($postagem['Conteudo'] == 1){
 $perfilPost = new Perfil();
 $perfilPost->setId($postagem["idPerfil"]);
 $perfilPost = DaoPerfil::buscarDados($perfilPost);
-
 
 ?>
 
@@ -51,17 +59,6 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
                 </button>
                     <input class="search-field-input" id="searchInput" type="search" placeholder="Quem você busca?">
                     <ul id="suggestionList" class="suggestion-list">
-                        <li>
-                            <a href="">
-                                <div class="profile-pic">
-                                    <img class="profile-pic-img" src="../assets/img/bonoro-anao.jpg" alt="">
-                                </div>
-                                <div class="profile-username flex-column ml-1-4px">
-                                        <h6>Macaco</h6>
-                                        <p class="p3">@sougay</p>
-                                </div>
-                            </a>
-                        </li>
                     </ul>
             </div>
             <div class=""> 
@@ -236,6 +233,18 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
                     }
                      ?></p>
                 </div>
+                <div class="post-config" >
+                    <i class="fa-solid fa-ellipsis fa-2xl" style="color: #ffffff;"></i>
+                        <div class="post-config-content">
+                            <?php
+                            if($perfilPost["idPerfil"] == $_SESSION["login-id"]){
+                                echo '<a href="ai" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can mr-1" style="color: #ffffff;"></i></a>';
+                            } else {
+                                echo '<a href="ui" class="post-config-item alert" style="color: #ca0202;">Denunciar <i class="fa-solid fa-triangle-exclamation mr-1" style="color: #ca0202;"></i></a>';
+                            }
+                            ?>
+                        </div>
+                </div>
             </div>
             <div class="post-description">
                 <p class="p3 mt-2"><?php echo $postagem['legenda']?></p>
@@ -254,12 +263,12 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
                         <button id="like-heart">
                             <i class="fa-solid fa-heart fa-2xl heart-liked my-2" style="color: #bd02c0;" id="heart-liked"></i>
                             <i class="fa-regular fa-heart fa-2xl heart-unliked my-2" style="color: #d1d1d1;" id="heart-unliked"></i>
-                            <p class="ContReacao" id="'.$Postagem["idPostagem"].'" > 0 </p>
+                            <p class="ContReacao" id="<?php echo $postagem["idPostagem"] ?>"><?php echo $postagem["qtdReação"] ?></p>
                         </button>
 
                         <button class="mt-1-4px comment" id="comment">
                             <i class="fa-solid fa-message fa-flip-horizontal fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
-                            <p class="ContComentario" > 0 </p>
+                            <p class="ContComentario" ><?php echo $Qtdcomentarios ?></p>
                         </button>
 
                         <button class="mt-1-4px share" id="share">
@@ -276,28 +285,16 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
 
                         <textarea class="input-comentario-input" id="input-comentario" placeholder="Escreva um comentário"></textarea>
 
-                        <button class="enviar-comentario pr-2">
+                        <button class="enviar-comentario pr-2" id="submitComentario">
                             <i class="fa-solid fa-paper-plane fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
                         </button>
                      </div>
 
                     <h4 class="comentarios-k mb-2">Comentários</h4>
-                    
-                    <div class="post-comment-cell mb-1">
-                        <div class="post-comment-profile-pic">
-                            <img src="../assets/img/bonoro-anao.jpg" alt="">
-                        </div>
-                        <div class="flex-column ml-1-4px">
-                            <h6 class="">@userzédamanga</h6>
-                            <p class="p3 mb-1">vish</p>
-                        </div>
 
-                        <button id="like-heart">
-                            <i class="fa-solid fa-heart fa-xl heart-liked my-2" style="color: #bd02c0;" id="heart-liked"></i>
-                            <i class="fa-regular fa-heart fa-xl heart-unliked my-2" style="color: #d1d1d1;" id="heart-unliked"></i>
-                            <p class="ContReacao" id="'.$Postagem["idPostagem"].'" > 0 </p>
-                        </button>
-                    </div>
+                    <?php 
+                    MostrarComentariosPost($post);
+                    ?>
 
                 </div>
             </div>
@@ -359,6 +356,7 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
     <script src="../assets/js/button.js"></script>
     <script src="../assets/js/navbar.js"></script>
     <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/createComent.js" defer></script>
     <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>

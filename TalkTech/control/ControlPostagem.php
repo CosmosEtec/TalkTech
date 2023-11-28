@@ -28,7 +28,7 @@ function mostrarPostsFeed(){
 
             $comentarios = new Comentario();
             $comentarios->setIdPostagem($postagem['idPostagem']);
-            $comentarios = DaoComentario::buscarComentariosPost($comentarios);
+            $comentarios = DaoComentario::QtdComentariosPost($comentarios);
 
 
         if($postagem['Conteudo'] == 1){
@@ -58,11 +58,13 @@ function mostrarPostsFeed(){
                     </div>
                     <div class="post-config" >
                     <i class="fa-solid fa-ellipsis fa-2xl" style="color: #ffffff;"></i>
-                        <div class="post-config-content">
-                            <a href="ui" class="post-config-item alert" style="color: #ca0202;">Denunciar <i class="fa-solid fa-triangle-exclamation mr-1" style="color: #ca0202;"></i></a>
-                            <a href="ai" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can mr-1" style="color: #ffffff;"></i></a>
-                            <a href="deixa" class="post-config-item" style="color: #ffffff;">Editar <i class="fa-solid fa-pen-to-square mr-1-4px" style="color: #ffffff;"></i></a>
-                        </div>
+                        <div class="post-config-content">';
+                        if($perfil["idPerfil"] == $_SESSION["login-id"]){
+                            echo '<a value="'.$postagem['idPostagem'].'" id="btnExcluir" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can mr-1" style="color: #ffffff;"></i></a>';
+                        } else {
+                            echo '<a value="'.$postagem['idPostagem'].'" id="btnDenunciar" class="post-config-item alert" style="color: #ca0202;">Denunciar <i class="fa-solid fa-triangle-exclamation mr-1" style="color: #ca0202;"></i></a>';
+                        }
+                     echo '</div>
                     </div>
                 </div>
                 <div class="post-description mt-1">
@@ -111,7 +113,7 @@ function mostrarPostsUsuario($perfil){
 
         $comentarios = new Comentario();
         $comentarios->setIdPostagem($Postagem['idPostagem']);
-        $comentarios = DaoComentario::buscarComentariosPost($comentarios);
+        $comentarios = DaoComentario::QtdComentariosPost($comentarios);
 
         if($Postagem['Conteudo'] == 1){
             $conteudo = new Conteudo();
@@ -143,11 +145,13 @@ function mostrarPostsUsuario($perfil){
                 </div>
                 <div class="post-config" >
                     <i class="fa-solid fa-ellipsis fa-2xl" style="color: #ffffff;"></i>
-                        <div class="post-config-content">
-                            <a href="ui" class="post-config-item alert" style="color: #ca0202;">Denunciar <i class="fa-solid fa-triangle-exclamation mr-1" style="color: #ca0202;"></i></a>
-                            <a href="ai" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can mr-1" style="color: #ffffff;"></i></a>
-                            <a href="deixa" class="post-config-item" style="color: #ffffff;">Editar <i class="fa-solid fa-pen-to-square mr-1-4px" style="color: #ffffff;"></i></a>
-                        </div>
+                        <div class="post-config-content">';
+                        if($perfil["idPerfil"] == $_SESSION["login-id"]){
+                            echo '<a value="'.$Postagem['idPostagem'].'" id="btnExcluir" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can mr-1" style="color: #ffffff;"></i></a>';
+                        } else {
+                            echo '<a value="'.$Postagem['idPostagem'].'" id="btnDenunciar" class="post-config-item alert" style="color: #ca0202;">Denunciar <i class="fa-solid fa-triangle-exclamation mr-1" style="color: #ca0202;"></i></a>';
+                        }
+                     echo '</div>
                 </div>
             </div>
             <div class="post-description mt-1">
