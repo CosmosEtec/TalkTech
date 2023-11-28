@@ -155,7 +155,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
         <!---========= FIM LEFT SIDE MENU =========-->         
         
         <!---========= TIMELINE =========-->
-        <div class="container-timeline" id="scrollableDiv">
+        <div class="container-timeline">
             
             <!---========= NAV TIMELINE =========
             

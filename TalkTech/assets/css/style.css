@@ -30,10 +30,12 @@
 
 .container-feed {
   max-width: 1440px;
+  height: 100vh;
   margin: 0 auto;
   position: relative;
   background: transparent;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  padding: 0 0 0 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -41,7 +43,7 @@
 @media screen and (max-width: 960px) {
   .container-feed {
     align-items: center;
-    padding: 110px 0 0 0;
+    padding: 6px 0 0 0;
   }
 }
 
@@ -1577,8 +1579,8 @@ header {
 }
 @media screen and (max-width: 960px) {
   .post-container {
-    min-width: 230px;
-    width: auto;
+    max-width: 550px;
+    width: 100%;
   }
 }
 
@@ -1810,8 +1812,8 @@ img.profile-pic-img {
   padding: 0.25rem 8px 0 0.25rem;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
-  cursor: pointer;
   transition: 0.3s ease;
+  position: relative;
 }
 .post-comment-cell:hover {
   opacity: 0.8;
@@ -1821,6 +1823,16 @@ img.profile-pic-img {
 }
 .post-comment-cell .post-comment-profile-pic img {
   border-radius: 50%;
+}
+.post-comment-cell .post-config-content {
+  right: 2%;
+  margin-top: -2px;
+}
+
+.align-config-comment {
+  position: absolute;
+  left: 96%;
+  top: -16px;
 }
 
 .input-comentario-align {
@@ -2346,20 +2358,30 @@ input[type=search].search-field-input:focus {
   z-index: 700;
 }
 
+.suicidio {
+  height: 1500px;
+}
+
 .container-timeline {
-  height: 100vh;
+  height: 100%;
   flex-direction: column;
   align-items: center;
-  padding: 28px 0 0 0px;
+  margin-top: 24px;
+  padding: 0 0 80px 0px;
+  overflow-y: auto;
   display: flex;
 }
 @media screen and (max-width: 960px) {
   .container-timeline {
-    padding: 48px 16px 0 16px;
+    padding: 48px 16px 140px 16px;
   }
 }
 .container-timeline::-webkit-scrollbar {
   width: 1px; /* Largura da barra de rolagem no Chrome/Safari */
+}
+
+.div-linda {
+  height: 100px;
 }
 
 nav.nav-menu-timeline {

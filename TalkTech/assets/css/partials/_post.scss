@@ -12,8 +12,8 @@
    background: $oi;
    
    @include responsive(s){
-    min-width: 230px;
-    width: auto;
+    max-width: 550px;
+    width: 100%;
 }
    
 }
@@ -270,8 +270,8 @@ img.profile-pic-img{
     padding: 0.25rem 8px 0 0.25rem;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
-    cursor: pointer;
     transition: 0.3s ease;
+    position: relative;
 
     &:hover{
         opacity: 0.8;
@@ -284,6 +284,17 @@ img.profile-pic-img{
             
         }
     }
+
+    .post-config-content{
+        right: 2%;
+        margin-top: -2px;
+    }
+}
+
+.align-config-comment{
+    position: absolute;
+    left: 96%;
+        top: -16px;
 }
 
 
