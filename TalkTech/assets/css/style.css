@@ -1580,7 +1580,7 @@ header {
 }
 @media screen and (max-width: 960px) {
   .post-container {
-    max-width: 550px;
+    max-width: 650px;
     width: 100%;
   }
 }
@@ -2377,7 +2377,8 @@ input[type=search].search-field-input:focus {
 }
 @media screen and (max-width: 960px) {
   .container-timeline {
-    padding: 48px 16px 140px 16px;
+    padding: 48px 8px 140px 8px;
+    margin: 4px 4px 0 4px;
     width: 100%;
   }
 }

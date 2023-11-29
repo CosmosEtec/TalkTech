@@ -251,7 +251,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
         <!---========= FIM TIMELINE ===========-->
 
         <!---========= CARD PERFIL CRIAR POST ===========-->
-            <div class="container-card-profile-create-post mr-2 mt-2">
+            <div class="container-card-profile-create-post mr-2 mt-2 flex-item-2    ">
              
                 <div class="card-profile-create-post-title">
                 <div class="radial-glow">

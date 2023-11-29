@@ -20,7 +20,8 @@
 
     
     @include responsive(s){
-     padding: 48px 16px 140px 16px; 
+     padding: 48px 8px 140px 8px; 
+     margin: 4px 4px 0 4px;
      width: 100%;  
     }
 
