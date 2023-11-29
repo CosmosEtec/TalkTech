@@ -255,7 +255,7 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
             if($postagem['Conteudo'] == 1)
                 echo '
                 <div class="content-post my-2">
-                    <img src="../'.$conteudo['src'].'">
+                    <img src="'.$conteudo['src'].'">
                 </div>';
             ?>
             <!-- Intereações Post -->
