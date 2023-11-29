@@ -73,8 +73,7 @@ function mostrarPostsFeed(){
                 if(isset($conteudo)){
                     echo '
                     <div class="content-post mt-1">
-                            <img src="'.$conteudo['src'].'">
-                        
+                            <img class="imagem-post" src="'.$conteudo['src'].'">
                     </div>';
                 };
                 echo '<div class="post-interactions  ">
@@ -160,7 +159,7 @@ function mostrarPostsUsuario($perfil){
             if($conteudo){
                 echo '
                 <div class="content-post mt-1">
-                    <img src="'.$conteudo['src'].'">
+                    <img class="imagem-post" src="'.$conteudo['src'].'">
                 </div>';
             };
             echo '<div class="post-interactions mt-2">
