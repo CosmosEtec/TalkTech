@@ -51,7 +51,7 @@
                 echo '<h6>@'. $perfil["nome"] .'</h6>';	
             }
             echo '</a>
-            <p class="p3 mb-1">'.$comentario['comentario'].'</p>
+            <p class="p3 comentario-p3 mb-1">'.$comentario['comentario'].'</p>
             </div>
 
             <button id="like-heart">
