@@ -1566,7 +1566,8 @@ header {
 }
 
 .post-container {
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
   padding: 10px;
   margin-bottom: 30px;
   display: flex;
@@ -2366,14 +2367,18 @@ input[type=search].search-field-input:focus {
   height: 100%;
   flex-direction: column;
   align-items: center;
-  margin-top: 24px;
+  margin: 24px 24px 0 24px;
   padding: 0 0 80px 0px;
+  top: 0;
+  left: 0;
+  height: 100%;
   overflow-y: auto;
   display: flex;
 }
 @media screen and (max-width: 960px) {
   .container-timeline {
     padding: 48px 16px 140px 16px;
+    width: 100%;
   }
 }
 .container-timeline::-webkit-scrollbar {

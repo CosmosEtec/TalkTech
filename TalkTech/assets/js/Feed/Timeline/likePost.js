@@ -18,7 +18,7 @@ function likePost() {
           // Restante do seu código
           heartLiked[index].style.transform = 'scale(1.1)';
           heartLiked[index].style.transform = 'scale(1)';
-        }, 300); // Ajuste o tempo conforme necessário
+        }, 500); // Ajuste o tempo conforme necessário
       });
     });
   });

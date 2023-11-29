@@ -8,8 +8,11 @@
     height: 100%;
     flex-direction: column;
     align-items: center;
-    margin-top: 24px;
+    margin: 24px 24px 0 24px;
     padding: 0 0 80px 0px;
+    top: 0;
+      left: 0;
+      height: 100%;
     overflow-y: auto;
     
 
@@ -17,7 +20,8 @@
 
     
     @include responsive(s){
-     padding: 48px 16px 140px 16px;   
+     padding: 48px 16px 140px 16px; 
+     width: 100%;  
     }
 
     @include responsive(lu) {
