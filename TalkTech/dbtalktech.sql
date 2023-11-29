@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/11/2023 às 03:30
+-- Tempo de geração: 29/11/2023 às 22:50
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -77,7 +77,7 @@ CREATE TABLE `tbcomentario` (
   `idComentario` int(11) NOT NULL,
   `idPostagem` int(11) NOT NULL,
   `idPerfil` int(11) NOT NULL,
-  `comentario` varchar(225) NOT NULL,
+  `comentario` varchar(600) NOT NULL,
   `dataComentario` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -111,13 +111,6 @@ CREATE TABLE `tbperfil` (
   `biografia` varchar(160) DEFAULT NULL,
   `perfilPrivado` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Despejando dados para a tabela `tbperfil`
---
-
-INSERT INTO `tbperfil` (`idPerfil`, `nome`, `apelido`, `email`, `senha`, `fotoPerfil`, `biografia`, `perfilPrivado`) VALUES
-(20, 'Goes', NULL, 'gabrielgaldino205@outlook.com', '01391009769ac79e51e75a3bd6821ac71564d7f7', 'user/Goes/fotoperfil.png', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -273,19 +266,19 @@ ALTER TABLE `tbcargo`
 -- AUTO_INCREMENT de tabela `tbcomentario`
 --
 ALTER TABLE `tbcomentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `tbconteudo`
 --
 ALTER TABLE `tbconteudo`
-  MODIFY `idConteudo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idConteudo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `tbperfil`
 --
 ALTER TABLE `tbperfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de tabela `tbperm`
@@ -297,19 +290,19 @@ ALTER TABLE `tbperm`
 -- AUTO_INCREMENT de tabela `tbpostagem`
 --
 ALTER TABLE `tbpostagem`
-  MODIFY `idPostagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `idPostagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT de tabela `tbreação`
 --
 ALTER TABLE `tbreação`
-  MODIFY `idReação` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idReação` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `tbseguidor`
 --
 ALTER TABLE `tbseguidor`
-  MODIFY `idSeguidor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idSeguidor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restrições para tabelas despejadas

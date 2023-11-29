@@ -63,7 +63,11 @@ function postar(){
   const conteudo = fileInput.files[0];
 
   if(description == '' && conteudo == undefined){
-    alert('O Post deve conter pelo menos Uma imagem ou Um texto');
+    Swal.fire({
+      icon: 'error',
+      title: 'OPA!',
+      text: 'Você não pode fazer um post sem nada!',
+    })
 }else{
     const formData = new FormData();
     formData.append('legenda', description);

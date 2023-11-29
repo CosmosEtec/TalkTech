@@ -26,7 +26,7 @@
             $conteudo->setIdPostagem($idPostagem);
             $dadosConteudo = DaoConteudo::buscarDados($conteudo);
             if(DaoConteudo::excluirConteudo($conteudo)){
-                unlink("../".$dadosConteudo['src']);
+                unlink($dadosConteudo['src']);
             } else {
                 $erro = true;
             }   

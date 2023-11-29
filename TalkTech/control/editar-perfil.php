@@ -18,9 +18,10 @@ if($_SESSION['login-nome'] != $_POST['nomePerfil']){
     $perfil = new Perfil();
     $perfil->setID($idPerfil);
 
-    $apelido = isset($_POST['apelido']) ? $_POST['apelido'] : null;
+    $sucesso = true;
+    $apelido = !empty(trim($_POST['apelido'])) ? $_POST['apelido'] : null;
     $biografia = isset($_POST['biografia']) ? $_POST['biografia'] : null;
-    $privado = isset($_POST['privado']) ? $_POST['privado'] : null;
+    $privado = isset($_POST['privado']) ? $_POST['privado'] : 0;
     $imagem = isset($_FILES['imagem']) ? $_FILES['imagem'] : null;
 
     $perfil->setNome($_SESSION['login-nome']);
@@ -28,10 +29,9 @@ if($_SESSION['login-nome'] != $_POST['nomePerfil']){
     $perfil->setBiografia($biografia);
     $perfil->setPerfilPrivado($privado);
     $perfil->setFotoPerfil($imagem);
-
     $sucesso = true;
 
-    if($apelido != null){
+    
         if(DaoPerfil::editarApelido($perfil)){
         }else{
             $sucesso = false;
@@ -42,7 +42,6 @@ if($_SESSION['login-nome'] != $_POST['nomePerfil']){
             ];
             echo json_encode($data);
         }
-    }
     if($biografia != null){
         if(DaoPerfil::editarBiografia($perfil)){
         }else{
@@ -56,7 +55,6 @@ if($_SESSION['login-nome'] != $_POST['nomePerfil']){
         }
     }
     if($privado != false){
-        $perfil->setPerfilPrivado(1);
         if(DaoPerfil::editarPrivacidade($perfil)){
         }else{
             $sucesso = false;

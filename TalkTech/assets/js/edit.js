@@ -61,11 +61,19 @@ function Editar(){
         privado = false;
     }
     if(Apelido.value.length > limiteApelido){
-        alert("O apelido deve ter no máximo 50 caracteres!");
+        Swal.fire({
+            icon: 'error',
+            title: 'OPA!',
+            text: 'O apelido deve ter no máximo 50 caracteres!',
+          })
         return;
     }
     if(biografia.value.length > limiteBio){
-        alert("A biografia deve ter no máximo 160 caracteres!");
+        Swal.fire({
+            icon: 'error',
+            title: 'OPA!',
+            text: 'A biografia deve ter no máximo 160 caracteres!',
+          })
         return;
     }
 
@@ -92,8 +100,18 @@ function Editar(){
     })
     .then(data => {
         if(data.status == true){
-            alert('Perfil editado com sucesso!');
-            window.location.reload();
+            Swal.fire({
+                title: "Perfil editado!",
+                icon: "sucess",
+                showCancelButton: false,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "OK!"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload();
+                }
+              });
         }else{
             alert('Erro ao editar perfil' + data.status + ' ' + data.mensagem + ' ' + data.descricao);
         }

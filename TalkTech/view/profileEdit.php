@@ -272,6 +272,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
     <script src="../assets/js/previewImage.js"></script>
     <script src="../assets/js/profileEdit.js"></script>
     <script src="../assets/js/edit.js"></script>
+    <script src="../assets/js/sweetalert.js" defer></script>
     
 </body>
 </html>
