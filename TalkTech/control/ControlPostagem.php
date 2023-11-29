@@ -60,7 +60,7 @@ function mostrarPostsFeed(){
                     <i class="fa-solid fa-ellipsis fa-2xl" style="color: #ffffff;"></i>
                         <div class="post-config-content">';
                         if($perfil["idPerfil"] == $_SESSION["login-id"]){
-                            echo '<a value="'.$postagem['idPostagem'].'" id="btnExcluir" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can mr-1" style="color: #ffffff;"></i></a>';
+                            echo '<a value="'.$postagem['idPostagem'].'" onclick="excluirPost('.$postagem['idPostagem'].')" id="btnExcluir" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can mr-1" style="color: #ffffff;"></i></a>';
                         } else {
                             echo '<a value="'.$postagem['idPostagem'].'" id="btnDenunciar" class="post-config-item alert" style="color: #ca0202;">Denunciar <i class="fa-solid fa-triangle-exclamation mr-1" style="color: #ca0202;"></i></a>';
                         }
@@ -127,26 +127,27 @@ function mostrarPostsUsuario($perfil){
                 <div class="profile-credentials  flex-start">
                 
                     <div class="profile-pic  ">
-                        <a href="profile.php?id='.$perfil['idPerfil'].'">
-                            <img class="profile-pic-img" src="../'.$perfil['fotoPerfil'].'" alt="">
-                        <a href="profile.php?id='.$perfil['idPerfil'].'">
+                    <a href="profile.php?id='.$perfil['idPerfil'].'">
+                    <img class="profile-pic-img" src="../'.$perfil['fotoPerfil'].'" alt="">
+                    </a>
                     </div>
                     
-                    <div class="profile-username flex-column ml-1">';
-                    if($perfil["apelido"]){
-                        echo '<h4>'. $perfil["apelido"] .'</h4>
-                        <p class="p3">@'.$perfil["nome"].'</p>';	
-                    }else{
-                        echo '<h4>@'. $perfil["nome"] .'</h4>';	
-                    }
-                    echo '
+                    <div class="profile-username ml-1">
+                            <a href="profile.php?id='.$perfil['idPerfil'].'">';
+                            if($perfil["apelido"]){
+                                echo '<h4>'. $perfil["apelido"] .'</h4>
+                                <p class="p3">@'.$perfil["nome"].'</p>';	
+                            }else{
+                                echo '<h4>@'. $perfil["nome"] .'</h4>';	
+                            }
+                    echo '</a>
                     </div>
                 </div>
                 <div class="post-config" >
                     <i class="fa-solid fa-ellipsis fa-2xl" style="color: #ffffff;"></i>
                         <div class="post-config-content">';
                         if($perfil["idPerfil"] == $_SESSION["login-id"]){
-                            echo '<a value="'.$Postagem['idPostagem'].'" id="btnExcluir" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can mr-1" style="color: #ffffff;"></i></a>';
+                            echo '<a value="'.$Postagem['idPostagem'].'" onclick="excluirPost('.$Postagem['idPostagem'].')" id="btnExcluir" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can mr-1" style="color: #ffffff;"></i></a>';
                         } else {
                             echo '<a value="'.$Postagem['idPostagem'].'" id="btnDenunciar" class="post-config-item alert" style="color: #ca0202;">Denunciar <i class="fa-solid fa-triangle-exclamation mr-1" style="color: #ca0202;"></i></a>';
                         }

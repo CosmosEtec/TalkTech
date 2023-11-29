@@ -81,6 +81,18 @@ Class DaoPostagem{
         }
     }
 
+    public static function excluirPost(Postagem $postagem){
+        $sql = "DELETE FROM tbPostagem WHERE idPostagem = ?";
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $postagem->getIdPostagem());
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
 
 ?>

@@ -239,9 +239,9 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
                         <div class="post-config-content">
                             <?php
                             if($perfilPost["idPerfil"] == $_SESSION["login-id"]){
-                                echo '<a href="ai" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can mr-1" style="color: #ffffff;"></i></a>';
+                                echo '<a onclick="excluirPost('. $post .')" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can mr-1" style="color: #ffffff;"></i></a>';
                             } else {
-                                echo '<a href="ui" class="post-config-item alert" style="color: #ca0202;">Denunciar <i class="fa-solid fa-triangle-exclamation mr-1" style="color: #ca0202;"></i></a>';
+                                echo '<a class="post-config-item alert" style="color: #ca0202;">Denunciar <i class="fa-solid fa-triangle-exclamation mr-1" style="color: #ca0202;"></i></a>';
                             }
                             ?>
                         </div>
@@ -368,6 +368,7 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
     <script src="../assets/js/navbar.js"></script>
     <script src="../assets/js/search.js"></script>
     <script src="../assets/js/createComent.js" defer></script>
+    <script src="../assets/js/excluirPost.js" defer></script>
     <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>

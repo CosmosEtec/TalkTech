@@ -22,6 +22,13 @@ Class DaoComentario{
         return $resultado[0]['qtdComentario'];
     }
 
+    public static function excluirComentariosPost(Comentario $comentario){
+        $sql = "DELETE FROM tbComentario WHERE idPostagem = ?";
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $comentario->getIdPostagem());
+        return $stmt->execute();
+    }
+
     public static function buscarComentariosPost(Comentario $comentario){
         $sql = "SELECT c.*, COUNT(r.idReação) as QtdReacao FROM tbComentario c 
         LEFT JOIN tbReação r ON c.idComentario = r.idComentario 

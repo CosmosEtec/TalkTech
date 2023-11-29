@@ -29,6 +29,13 @@ Class DaoReacao{
         return $resultado['qtdReacoes'];
     }
 
+    public static function excluirReacaoPost(Reacao $reacao){
+        $sql = "DELETE FROM tbreação WHERE idPostagem = ?";
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $reacao->getIdPostagem());
+        return $stmt->execute();
+    }
+
     public static function buscarReacoesPostUsuario(Reacao $reacao){
         $sql = "SELECT * FROM tbReação WHERE idPostagem = ? AND idPerfil = ?";
         $stmt = Conexao::getConn()->prepare($sql);
