@@ -68,7 +68,7 @@ function mostrarPostsFeed(){
                     </div>
                 </div>
                 <div class="post-description mt-1">
-                    <p class="p3">'. $postagem["legenda"] .'</p>
+                    <p class="p3 legenda-post">'. $postagem["legenda"] .'</p>
                 </div>';
                 if(isset($conteudo)){
                     echo '
@@ -155,7 +155,7 @@ function mostrarPostsUsuario($perfil){
                 </div>
             </div>
             <div class="post-description mt-1">
-                <p class="p3">'. $Postagem['legenda'] .'</p>
+                <p class="p3 legenda-post">'. $Postagem['legenda'] .'</p>
             </div>';
             if($conteudo){
                 echo '
