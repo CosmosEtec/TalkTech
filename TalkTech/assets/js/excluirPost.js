@@ -16,8 +16,19 @@ function excluirPost(id){
   })
   .then(data => {
     if(data.status == true){
-      alert('Post excluido com sucesso');
-      window.location.reload();
+      Swal.fire({
+        title: "Post Excluido!",
+        text: "Seu post foi excluido com sucesso!",
+        icon: "sucess",
+        showCancelButton: false,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "OK!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            location.reload();
+        }
+      });
     }else{
       alert('Erro ao excluir post' + data.status + ' ' + data.mensagem + ' ' + data.descricao);
 

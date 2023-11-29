@@ -24,8 +24,18 @@ function comentar() {
       })
     .then(function (data) {
         if(data.status == true){
-            alert('Post criado com sucesso');
-            window.location.reload();
+            Swal.fire({
+                title: "Comentario Feito!",
+                icon: "sucess",
+                showCancelButton: false,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "OK!"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload();
+                }
+              });
           }else{
             alert('Erro ao criar post' + data.status + ' ' + data.mensagem + ' ' + data.descricao);
           }

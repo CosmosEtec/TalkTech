@@ -371,5 +371,6 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
     <script src="../assets/js/excluirPost.js" defer></script>
     <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../assets/js/sweetalert.js" defer></script>
 </body>
 </html>

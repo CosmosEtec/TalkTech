@@ -331,5 +331,6 @@ if(!isset($_GET['id'])){
     <script src="../assets/js/excluirPost.js" defer></script>
     <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
     <script src="../assets/js/seguir.js"></script>
+    <script src="../assets/js/sweetalert.js" defer></script>
 </body>
 </html>
