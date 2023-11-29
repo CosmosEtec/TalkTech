@@ -90,7 +90,7 @@ function mostrarPostsFeed(){
                                 </a>
                             </button>
                             <button class="mt-1-4px share" id="share">
-                                <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                                <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" onclick="compLink('.$postagem['idPostagem'].')" style="color: #d1d1d1;"></i>
                             </button>
                         </div>
                 </div>
@@ -179,7 +179,7 @@ function mostrarPostsUsuario($perfil){
                         </button>
 
                         <button class="mt-1-4px share" id="share">
-                            <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                            <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" onclick="compLink('.$Postagem['idPostagem'].')" style="color: #d1d1d1;"></i>
                         </button>
                     </div>
                   </div>
