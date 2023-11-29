@@ -1,30 +1,27 @@
 function likePost() {
   document.addEventListener('DOMContentLoaded', function () {
-    const heartLiked = document.querySelectorAll('.heart-liked');
-    const heartUnliked = document.querySelectorAll('.heart-unliked');
+    const heartLiked = document.querySelectorAll('.fa-regular.fa-heart.fa-2xl');
 
-heartUnliked.forEach(function (element, index) {
-    element.addEventListener('click', function (event) {
-        element.style.display = 'none';
-        heartLiked[index].style.display = 'block';
+    heartLiked.forEach(function (element, index) {
+      element.addEventListener('click', function (event) {
+        // Toggle entre fa-regular e fa-solid
+        element.classList.toggle('fa-regular');
+        element.classList.toggle('fa-solid');
+
+        // Adiciona uma classe para ativar a animação
+        element.classList.add('animate-like');
+
         setTimeout(() => {
+          // Remove a classe para a animação ser aplicada novamente na próxima vez
+          element.classList.remove('animate-like');
+
+          // Restante do seu código
           heartLiked[index].style.transform = 'scale(1.1)';
           heartLiked[index].style.transform = 'scale(1)';
-      }, 0);
+        }, 500); // Ajuste o tempo conforme necessário
+      });
     });
-});
-
-heartLiked.forEach(function (element, index) {
-  element.addEventListener('click', function (event) {
-    heartUnliked[index].style.transform = 'scale(0)';
-    setTimeout(() => {
-      heartUnliked[index].style.display = 'block'; 
-       element.style.display = 'none'; 
-       heartUnliked[index].style.transform = 'scale(1)';
-    }, 500);
   });
-});
-    });
 }
 
 export { likePost };

@@ -1,19 +1,28 @@
 .feed-roll{
     z-index: 700;
 }
-
+.suicidio{
+    height: 1500px;
+}
 .container-timeline{
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     align-items: center;
-    padding: 28px 0 0 0px;
+    margin: 24px 24px 0 24px;
+    padding: 0 0 80px 0px;
+    top: 0;
+      left: 0;
+      height: 100%;
+    overflow-y: auto;
     
 
     display: flex;
 
     
     @include responsive(s){
-     padding: 48px 16px 0 16px;   
+     padding: 48px 8px 140px 8px; 
+     margin: 4px 4px 0 4px;
+     width: 100%;  
     }
 
     @include responsive(lu) {
@@ -25,7 +34,9 @@
       }
 }
 
-
+.div-linda{
+    height: 100px;
+}
 nav.nav-menu-timeline {
     width: 750px;
     

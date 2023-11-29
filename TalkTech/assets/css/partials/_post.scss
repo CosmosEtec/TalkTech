@@ -1,5 +1,6 @@
 .post-container{
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     padding: 10px;
     margin-bottom: 30px;
     display: flex;
@@ -12,8 +13,8 @@
    background: $oi;
    
    @include responsive(s){
-    min-width: 230px;
-    width: auto;
+    max-width: 650px;
+    width: 100%;
 }
    
 }
@@ -270,8 +271,8 @@ img.profile-pic-img{
     padding: 0.25rem 8px 0 0.25rem;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
-    cursor: pointer;
     transition: 0.3s ease;
+    position: relative;
 
     &:hover{
         opacity: 0.8;
@@ -284,6 +285,17 @@ img.profile-pic-img{
             
         }
     }
+
+    .post-config-content{
+        right: 2%;
+        margin-top: -2px;
+    }
+}
+
+.align-config-comment{
+    position: absolute;
+    left: 96%;
+        top: -16px;
 }
 
 
@@ -489,6 +501,29 @@ img.profile-pic-img{
     align-items: center;
     border-top: 1px solid $gray-clean-border;
 }
+
+.fa-heart {
+    transition: color 0.5s ease; /* Adicione uma transição para a propriedade desejada (por exemplo, color) */
+  }
+  
+  .animate-like {
+    animation: scaleAndColor 1s ease; /* Adicione uma animação para a classe animate-like */
+  }
+  
+  @keyframes scaleAndColor {
+    0% {
+      transform: scale(1);
+      color: inherit;
+    }
+    50% {
+      transform: scale(1.2);
+      color: #ff0000; /* Cor desejada durante a animação */
+    }
+    100% {
+      transform: scale(1);
+      color: inherit;
+    }
+  }
 
 #image-upload{
     display: none;

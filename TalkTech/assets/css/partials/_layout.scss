@@ -66,10 +66,12 @@ $container-s: 540px;
 
 .container-feed{
     max-width: $container-xl;
+    height: 100vh;
     margin: 0 auto;
     position: relative;
     background: transparent;
-    overflow-y: scroll;
+    overflow-y: hidden;
+    padding: 0 0 0 0;
     
     
     
@@ -81,7 +83,7 @@ $container-s: 540px;
 
     @include responsive(s){
         align-items: center;
-        padding: 110px 0 0 0;
+        padding: 6px 0 0 0;
     }
 }
 

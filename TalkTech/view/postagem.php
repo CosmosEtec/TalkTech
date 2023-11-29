@@ -67,7 +67,7 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
     </header>
     
     <!---========= CONTAINER FEED =========-->
-    <section class="container-feed space-around">
+    <section class="container-feed flex-start">
         
         
         <!---========= Notificações =========
@@ -182,7 +182,7 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
         <!---========= FIM LEFT SIDE MENU =========-->         
         
         <!---========= TIMELINE =========-->
-        <div class="container-timeline" id="scrollableDiv">
+        <div class="container-timeline w-100" id="scrollableDiv">
         
             <!---========= NAV TIMELINE =========
             
@@ -206,15 +206,16 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
             -->
 
             <!---========= FIM NAV TIMELINE =========-->
-        <div class="feed-roll">
+        
         
         <!---========= POST =========== -->
-        <div class="btn-voltar">
-            <a href="Home.php" class="btn-voltar-postagem">
-                <i class="fa-solid fa-arrow-right fa-flip-horizontal fa-2xl" style="color: #d1d1d1;"></i>
-            </a>
-        </div>
+        
         <div class="post-container mb-2" >
+            <div class="btn-voltar">
+                <a href="Home.php" class="btn-voltar-postagem">
+                    <i class="fa-solid fa-arrow-right fa-flip-horizontal fa-2xl" style="color: #d1d1d1;"></i>
+                </a>
+            </div>
             <div class="profile-top-post">
                 <div class="profile-pic">
                     <img class="profile-pic-img" src="../<?php echo $perfilPost["fotoPerfil"] ?>" alt="">
@@ -295,14 +296,24 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
                     <?php 
                     MostrarComentariosPost($post);
                     ?>
+                     
+                
 
                 </div>
-            </div>
+           
           
       
-        <div class="overlayed" id="overlay" > </div>    
+                <div class="overlayed" id="overlay" > 
+
+                </div>    
+            </div>
+            
+            <div class="suicidio">
+                
             </div>
         </div>
+        
+        
         
         <!---========= FIM TIMELINE ===========-->
         
