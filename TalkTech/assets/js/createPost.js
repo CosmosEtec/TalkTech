@@ -1,9 +1,11 @@
-const showCardButton = document.getElementById('create-post');
+const showCardButton = document.querySelectorAll('.create-post');
 const closeCardButton = document.getElementById('close-create-post');
 const cardOverlay = document.getElementById('card-overlay');
 
-showCardButton.addEventListener('click', () => {
-  cardOverlay.style.display = 'block';
+showCardButton.forEach(button => {
+  button.addEventListener('click', () => {
+    cardOverlay.style.display = 'block';
+  });
 });
 
 closeCardButton.addEventListener('click', () => {

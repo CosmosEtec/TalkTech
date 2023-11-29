@@ -113,7 +113,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
             
                 
                 <div class="div-nav-left-side-menu-link">
-                    <a class="nav-link mb-1" id="create-post">
+                    <a class="nav-link mb-1 create-post" id="create-post">
                         <div class="nav-left-side-menu-icon-container">
                             <i class="fa-solid fa-circle-plus fa-lg" style="color: #ffffff;"></i>
                             <span class="ml-1-4px">Postar</span>
@@ -269,7 +269,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
                     </div>
                 <h4><?php echo $perfil['apelido']?></h4>
                
-                <a class="create-post-card-button mt-2" id="create-post2">
+                <a class="create-post-card-button mt-2 create-post" id="create-post2">
                         <span class="ml-1-4px"><h4 class="bold">Criar Postagem</h4></span>
                         <i class="fa-solid fa-square-pen fa-xl ml-1-4px mt-1-4px" style="color: #ffffff;"></i>
                 </a>
