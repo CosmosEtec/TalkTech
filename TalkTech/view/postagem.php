@@ -273,7 +273,7 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
                         </button>
 
                         <button class="mt-1-4px share" id="share">
-                            <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" style="color: #d1d1d1;"></i>
+                            <i class="fa-regular fa-share-from-square fa-2xl ml-2 my-2" onclick="compLink(<?php echo $postagem['idPostagem'] ?>)" style="color: #d1d1d1;"></i>
                         </button>
                     </div>
                 </div>
@@ -369,6 +369,7 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
     <script src="../assets/js/search.js"></script>
     <script src="../assets/js/createComent.js" defer></script>
     <script src="../assets/js/excluirPost.js" defer></script>
+    <script src="../assets/js/compartilhar.js" defer></script>
     <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="../assets/js/sweetalert.js" defer></script>
