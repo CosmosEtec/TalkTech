@@ -28,5 +28,17 @@ Class DaoConteudo{
             return $resultado;
         }
     }
+
+    public static function excluirConteudo(Conteudo $conteudo){
+        $sql = "DELETE FROM tbconteudo WHERE idPostagem = ?";
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $conteudo->getIdPostagem());
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 ?>
