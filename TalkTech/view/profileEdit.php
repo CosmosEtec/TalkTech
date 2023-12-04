@@ -29,15 +29,17 @@ $perfil = DaoPerfil::buscarDados($perfil);
 </head>
 <body>
 
-    <header id="header">
+<header id="header">
         <!---========= NAV-BAR DESKTOP =========-->
         <nav class="navbar-desktop" data-aos="fade-up">
             <a href="#Inicio" class="navbar-desktop-logo"><img src="../assets/svg/t-logo.svg" alt="" width="60px" height="70px"></a>
             <div class="search-field flex-start ">
-                <div class="px-1">
-                    <img src="../assets/svg/icon-search-nav.svg" alt="" width="26px" height="26px">
-                </div>
-                    <input class="search-field" type="text" placeholder="Quem você busca?">
+                <button class="search-field-button">
+                    <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #ffffff;"></i>
+                </button>
+                    <input class="search-field-input" id="searchInput" type="search" placeholder="Quem você busca?">
+                    <ul id="suggestionList" class="suggestion-list">            
+                    </ul>
             </div>
             <div class=""> 
             </div>
@@ -150,12 +152,16 @@ $perfil = DaoPerfil::buscarDados($perfil);
                                     <p class="p2 text-profile">Publicações</p>
                                 </div>
                                 <div class="info-seguidores">
-                                    <p class="p2 black-light"><?php echo DaoSeguidor::buscarSeguidores($perfil) ?></p>
-                                    <p class="p2 text-profile">Seguidores</p>
+                                    <button class="openModalBtn">
+                                        <p class="p2 black-light" id="openModalBtn"><?php echo DaoSeguidor::buscarSeguidores($perfil) ?></p>
+                                        <p class="p2 text-profile">Seguidores</p>
+                                    </button>
                                 </div>
                                 <div class="info-seguidores">
-                                    <p class="p2 black-light"><?php echo DaoSeguidor::buscarSeguidos($perfil) ?></p>
-                                    <p class="p2 text-profile">Seguindo</p>
+                                    <button class="openModalBtn">
+                                        <p class="p2 black-light"><?php echo DaoSeguidor::buscarSeguidos($perfil) ?></p>
+                                        <p class="p2 text-profile">Seguindo</p>
+                                    </button>
                                 </div>
                             </div>
                             <div class="user-info-descricao">
@@ -201,6 +207,118 @@ $perfil = DaoPerfil::buscarDados($perfil);
                 </div>
             </div>
         </div>
+
+                    <!---========= Modal Seguidores ===========-->
+                <div class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3>Seguidores</h3>
+
+                        <div class="profile-cell mt-1">
+                            <a href="">
+                                <div class="profile-name-pic">
+                                <img src="../<?php echo $perfil['fotoPerfil']?>">
+                                    <div class="profile-name ml-1-4px">
+                                        <h6>Zé da manga</h6>
+                                        <h6>@GazetaFM</h6>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                                <button class="publish-button mt-1 mb-1" id="follow" onclick="seguir()">Seguir</button>
+                            
+                        </div>
+
+                        <div class="profile-cell mt-1">
+                            <a href="">
+                                <div class="profile-name-pic">
+                                <img src="../<?php echo $perfil['fotoPerfil']?>">
+                                    <div class="profile-name ml-1-4px">
+                                        <h6>Zé da manga</h6>
+                                        <h6>@GazetaFM</h6>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                                <button class="publish-button mt-1 mb-1" id="follow" onclick="seguir()">Seguir</button>
+                            
+                        </div>
+
+                        <div class="profile-cell mt-1">
+                            <a href="">
+                                <div class="profile-name-pic">
+                                <img src="../<?php echo $perfil['fotoPerfil']?>">
+                                    <div class="profile-name ml-1-4px">
+                                        <h6>Zé da manga</h6>
+                                        <h6>@GazetaFM</h6>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                                <button class="publish-button mt-1 mb-1" id="follow" onclick="seguir()">Seguir</button>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!---========= FIM Modal Seguidores ===========-->
+
+                <!---========= FIM Modal Seguindo ===========-->
+
+                <div class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3>Seguindo</h3>
+
+                        <div class="profile-cell mt-1">
+                            <a href="">
+                                <div class="profile-name-pic">
+                                <img src="../<?php echo $perfil['fotoPerfil']?>">
+                                    <div class="profile-name ml-1-4px">
+                                        <h6>Zé da manga</h6>
+                                        <h6>@GazetaFM</h6>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            <button class="publish-button mt-1 mb-1" id="unfollow" onclick="dejarSeguir()" >Deixar de Seguir</button>
+                            
+                        </div>
+
+                        <div class="profile-cell mt-1">
+                            <a href="">
+                                <div class="profile-name-pic">
+                                <img src="../<?php echo $perfil['fotoPerfil']?>">
+                                    <div class="profile-name ml-1-4px">
+                                        <h6>Zé da manga</h6>
+                                        <h6>@GazetaFM</h6>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            <button class="publish-button mt-1 mb-1" id="unfollow" onclick="dejarSeguir()" >Deixar de Seguir</button>
+                            
+                        </div>
+
+                        <div class="profile-cell mt-1">
+                            <a href="">
+                                <div class="profile-name-pic">
+                                <img src="../<?php echo $perfil['fotoPerfil']?>">
+                                    <div class="profile-name ml-1-4px">
+                                        <h6>Zé da manga</h6>
+                                        <h6>@GazetaFM</h6>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            <button class="publish-button mt-1 mb-1" id="unfollow" onclick="dejarSeguir()" >Deixar de Seguir</button>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!---========= Modal Seguindo ===========-->
+
         <!---========= FIM CONTAINER TIMELINE =========-->
         <div class="overlay" id="card-overlay" >
             <div class="container-create-post" id="info-card" >
@@ -273,6 +391,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
     <script src="../assets/js/profileEdit.js"></script>
     <script src="../assets/js/edit.js"></script>
     <script src="../assets/js/sweetalert.js" defer></script>
+    <script type="module" src="../assets/js/Profile/modalSeguidores.js"></script>
     
 </body>
 </html>
