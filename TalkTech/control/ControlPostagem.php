@@ -25,6 +25,9 @@ function mostrarPostsFeed(){
             $reacoes = new Reacao();
             $reacoes->setIdPostagem($postagem['idPostagem']);
             $reacoes = DaoReacao::buscarReacoesPost($reacoes);
+            $oReacao = new Reacao();
+            $oReacao->setIdPostagem($postagem['idPostagem']);
+            $oReacao->setIdPerfil($_SESSION['login-id']);
 
             $comentarios = new Comentario();
             $comentarios->setIdPostagem($postagem['idPostagem']);
@@ -78,9 +81,13 @@ function mostrarPostsFeed(){
                 };
                 echo '<div class="post-interactions  ">
                         <div class="like-heart-comment-container mt-1">
-                            <button id="like-heart">
-                                <i class="fa-regular fa-heart fa-2xl my-2" style="color: #bd02c0;" id="heart-liked"></i>
-                                <p class="ContReacao" id="'.$postagem["idPostagem"].'" >'.$reacoes.'</p>
+                            <button id="like-heart">';
+                            if(DaoReacao::buscarReacoesPostUsuario($oReacao)){
+                                echo '<i value='.$postagem['idPostagem'].' class="fa-solid fa-heart fa-2xl my-2" style="color: #bd02c0;" id="heart-liked"></i>';
+                            }else{
+                                echo '<i value='.$postagem['idPostagem'].' class="fa-regular fa-heart fa-2xl my-2" style="color: #d1d1d1;" id="heart-liked"></i>';
+                            }
+                             echo '<p class="ContReacao" id="'.$postagem["idPostagem"].'cr" >'.$reacoes.'</p>
                             </button>
                             <button class="mt-1-4px comment" id="comment">
                                 <a class="mt-1-4px comment" id="comment" href="postagem.php?idPost='.$postagem["idPostagem"] .'" >
@@ -165,9 +172,8 @@ function mostrarPostsUsuario($perfil){
             echo '<div class="post-interactions mt-2">
                     <div class="like-heart-comment-container">
                         <button id="like-heart">
-                            <i class="fa-solid fa-heart fa-2xl heart-liked my-2" style="color: #bd02c0;" id="heart-liked"></i>
-                            <i class="fa-regular fa-heart fa-2xl heart-unliked my-2" style="color: #d1d1d1;" id="heart-unliked"></i>
-                            <p class="ContReacao" id="'.$Postagem["idPostagem"].'" >'.$reacoes.'</p>
+                            <i value='.$Postagem['idPostagem'].' class="fa-solid fa-heart fa-2xl heart-liked my-2" style="color: #bd02c0;" id="heart-liked"></i>
+                            <p class="ContReacao" id="'.$Postagem["idPostagem"].'cr" >'.$reacoes.'</p>
                         </button>
 
                         <button class="mt-1-4px comment" id="comment">

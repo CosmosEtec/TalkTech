@@ -1,9 +1,6 @@
 import {openPost} from './readPost.js';
-import { likePost } from './likePost.js';
-
 
 openPost();
-likePost();
 
 // Apresentação
 $(document).ready(function() {

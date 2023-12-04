@@ -11,34 +11,42 @@ require_once('../dao/DaoComentario.php');
     
     $reacao = new Reacao();
     $reacao->setIdPerfil($_SESSION['login-id']);
-    $reacao->setIdPostagem($_POST['idPost']);
-    if(!DaoReacao::buscarReacoesPostUsuario($reacao)){
-        if(DaoReacao::reagirPost($reacao)){
-            $postagem = new Postagem();
-            $postagem->setIdPostagem($_POST['idPost']);
-            $postagem = DaoPostagem::buscarDados($postagem);
-            $data = [
-                'status' => true,
-                'mensagem' => "Postagem curtida com sucesso!",
-                'descricao' => "Postagem curtida com sucesso!",
-                'curtidas' => DaoReacao::buscarReacoesPost($reacao),
-            ];
-            echo json_encode($data);
-        } else {
+    $reacao->setIdPostagem($_POST['idPostagem']);
+    $curtir = $_POST['curtir'];
+
+    if($curtir == 1){
+        if(DaoReacao::buscarReacoesPostUsuario($reacao)){
             $data = [
                 'status' => false,
-                'mensagem' => "Erro ao curtir postagem!",
-                'descricao' => "Erro na curtida da postagem!"
+                'message' => 'Você já curtiu essa postagem'
+            ];
+            echo json_encode($data);
+        }else{
+            DaoReacao::reagirPost($reacao);
+            $data = [
+                'status' => true,
+                'message' => 'Postagem curtida com sucesso',
+                'qtdReacoes' => DaoReacao::buscarReacoesPost($reacao)
             ];
             echo json_encode($data);
         }
-    }else{
-        $data = [
-            'status' => true,
-            'mensagem' => "Erro ao curtir postagem!",
-            'descricao' => "Você já curtiu essa postagem!"
-        ];
-        echo json_encode($data);
+    }
+    else{
+        if(DaoReacao::buscarReacoesPostUsuario($reacao)){
+            DaoReacao::desreagirPost($reacao);
+            $data = [
+                'status' => true,
+                'message' => 'Postagem descurtida com sucesso',
+                'qtdReacoes' => DaoReacao::buscarReacoesPost($reacao)
+            ];
+            echo json_encode($data);
+        }else{
+            $data = [
+                'status' => false,
+                'message' => 'Você não curtiu essa postagem'
+            ];
+            echo json_encode($data);
+        }
     }
 
 ?>
