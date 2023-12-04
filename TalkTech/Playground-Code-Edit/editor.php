@@ -7,7 +7,7 @@ $t = $text['editor'];
 
 <html style="margin: 0" onmousedown="parent.ICEcoder.mouseDown = true; parent.ICEcoder.resetAutoLogoutTimer()" onmouseup="parent.ICEcoder.mouseDown = false; parent.ICEcoder.mouseDownInCM = false; parent.ICEcoder.resetAutoLogoutTimer(); if (!parent.ICEcoder.overCloseLink) {parent.ICEcoder.tabDragEnd()}" onmousemove="if (parent.ICEcoder) {parent.ICEcoder.getMouseXY(event, 'editor'); parent.ICEcoder.functionArgsTooltip(event, 'editor'); parent.ICEcoder.resetAutoLogoutTimer(); parent.ICEcoder.canResizeFilesW()}" ondrop="if (parent.ICEcoder) {parent.ICEcoder.getMouseXY(event, 'editor')}">
 <head>
-<title>Playground do Talibã</title>
+<title>ICEcoder <?php echo $ICEcoder["versionNo"];?> editor</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="<?php echo $settingsClass->assetsRoot;?>/css/codemirror.css?microtime=<?php echo microtime(true);?>">

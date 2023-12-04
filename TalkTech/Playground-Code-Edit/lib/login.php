@@ -2,8 +2,6 @@
 include "headers.php";
 include "settings.php";
 
-
-
 // Redirect up 2 dirs to get into ICEcoder (useful if we changed setting and refresh)
 if (false === $ICEcoder['loginRequired']) {
 	$tgtDir = dirname(dirname($_SERVER['REQUEST_URI']));
@@ -59,7 +57,7 @@ echo true === $settingPW ? "Setup" : "Login";
 		<form name="settingsUpdate" action="login.php" method="POST"<?php if (true === $settingPW) {?> onsubmit="return checkCanSubmit();"<?php } ?>>
 		<?php
 		if (true === $settingPW && false === $ICEcoder["multiUser"]) {
-			echo '<div class="text adminUser">taux</div>';
+			echo '<div class="text adminUser">User: admin</div>';
 		}
 		?>
         <?php
