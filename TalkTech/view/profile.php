@@ -256,6 +256,10 @@ if(!isset($_GET['id'])){
                             </div>
                         </div>
                     </div>
+                    <div class="playground-content">
+                        <a class="btn-playground mt-1-4px" href="../Playground-Code-Edit">PlayGround <i class="fa-solid fa-code fa-lg ml-1-4px mt-1-4px" style="color: #ffffff;"></i></a>
+                        
+                    </div>
                 </div>
                 <div class="container-profile-child-public">
                     <div class="public-title mt-2 mb-2">

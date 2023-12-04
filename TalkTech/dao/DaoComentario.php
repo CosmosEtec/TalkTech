@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once '../model/Comentario.php';
 require_once '../model/conexao.php';
 
