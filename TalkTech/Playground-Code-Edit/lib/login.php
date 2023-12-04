@@ -34,16 +34,13 @@ $assetsPath = "assets" === $settingsClass->assetsRoot
 
 <html>
 <head>
-<title>ICEcoder <?php
-echo $ICEcoder["versionNo"] . " : ";
-echo true === $settingPW ? "Setup" : "Login";
-?></title>
+<title>Playground Edit Code</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" type="text/css" href="<?php echo $assetsPath;?>/css/resets.css?microtime=<?php echo microtime(true);?>">
 <link rel="stylesheet" type="text/css" href="<?php echo $assetsPath;?>/css/icecoder.css?microtime=<?php echo microtime(true);?>">
-<link rel="icon" type="image/png" href="<?php echo $assetsPath;?>/images/favicon.png">
+<link rel="icon" href="../../assets/svg/t-logo.svg" type="image/svg">
 </head>
 
 <body style="background-color: #181817" onLoad="<?php if (false === isset($_GET["get"])) {$inputFocus = true === $ICEcoder["multiUser"] && (true === $ICEcoder["enableRegistration"] || 1 < count($configUsernames)) ? "username" : "password"; echo "document.settingsUpdate." . $inputFocus . ".focus(); ";}; ?>setTimeout(function(){document.getElementById('screenContainer').style.opacity = '1'}, 50)">
