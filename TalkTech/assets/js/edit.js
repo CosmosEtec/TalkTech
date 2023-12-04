@@ -109,7 +109,7 @@ function Editar(){
                 confirmButtonText: "OK!"
               }).then((result) => {
                 if (result.isConfirmed) {
-                    location.reload();
+                    window.location.href = 'profile.php';
                 }
               });
         }else{

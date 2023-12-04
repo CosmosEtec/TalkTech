@@ -5,6 +5,7 @@ require_once '../dao/DaoPerfil.php';
 require_once '../dao/DaoPostagem.php';
 require_once '../dao/DaoConteudo.php';
 require_once '../dao/DaoComentario.php';
+require_once '../dao/DaoReacao.php';
 require_once '../model/Perfil.php';
 require_once '../model/Postagem.php';
 require_once '../model/Comentario.php';
@@ -20,6 +21,9 @@ $post = $_GET['idPost'];
 $postagem = new Postagem();
 $postagem->setIdPostagem($post);
 $postagem = DaoPostagem::buscarDadosId($postagem);
+$oReacao = new Reacao();
+$oReacao->setIdPostagem($post);
+$oReacao->setIdPerfil($_SESSION["login-id"]);
 
 $Qtdcomentarios = new Comentario();
 $Qtdcomentarios->setIdPostagem($postagem['idPostagem']);
@@ -262,9 +266,14 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
                 <div class="post-interactions my-1  ">
                     <div class="like-heart-comment-container">
                         <button id="like-heart">
-                            <i class="fa-solid fa-heart fa-2xl heart-liked my-2" style="color: #bd02c0;" id="heart-liked"></i>
-                            <i class="fa-regular fa-heart fa-2xl heart-unliked my-2" style="color: #d1d1d1;" id="heart-unliked"></i>
-                            <p class="ContReacao" id="<?php echo $postagem["idPostagem"] ?>"><?php echo $postagem["qtdReação"] ?></p>
+                        <?php
+                            if(DaoReacao::buscarReacoesPostUsuario($oReacao)){
+                                echo '<i value='.$postagem['idPostagem'].' class="fa-solid fa-heart fa-2xl my-2" style="color: #bd02c0;" id="heart-liked"></i>';
+                            }else{
+                                echo '<i value='.$postagem['idPostagem'].' class="fa-regular fa-heart fa-2xl my-2" style="color: #d1d1d1;" id="heart-liked"></i>';
+                            }
+                        ?>
+                        <p class="ContReacao" id="<?php echo $postagem["idPostagem"] ?>cr"><?php echo $postagem["qtdReação"] ?></p>
                         </button>
 
                         <button class="mt-1-4px comment" id="comment">
@@ -373,5 +382,6 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
     <script type="module" src="../assets/js/Feed/Timeline/featuresTimeline.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="../assets/js/sweetalert.js" defer></script>
+    <script src="../assets/js/curtir.js" defer></script>
 </body>
 </html>
