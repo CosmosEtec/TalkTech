@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="../assets/svg/t-logo.svg" type="image/svg">
         <title>Talk Tech</title>
     </head>
     <body>

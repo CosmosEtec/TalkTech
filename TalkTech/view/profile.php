@@ -45,6 +45,7 @@ if(!isset($_GET['id'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" href="../assets/svg/t-logo.svg" type="image/svg">
     <title><?php if(!$perfil['apelido']){
                     echo '@'.$perfil['nome'].' | Perfil do Usuário';
                 }else{
@@ -107,13 +108,13 @@ if(!isset($_GET['id'])){
         
             
             <div class="div-nav-left-side-menu-link">
-                <a class="nav-link mb-1" id="create-post">
-                    <div class="nav-left-side-menu-icon-container">
-                        <i class="fa-solid fa-circle-plus fa-lg" style="color: #ffffff;"></i>
-                        <span class="ml-1-4px">Postar</span>
-                    </div>
-                </a>
-            </div>
+                    <a class="nav-link mb-1 create-post" id="create-post">
+                        <div class="nav-left-side-menu-icon-container">
+                            <i class="fa-solid fa-circle-plus fa-lg" style="color: #ffffff;"></i>
+                            <span class="ml-1-4px">Postar</span>
+                        </div>
+                    </a>
+                </div>
 
             <div class="div-nav-left-side-menu-link">
                 <a href="profile.php" class="nav-link mb-1">
@@ -257,7 +258,7 @@ if(!isset($_GET['id'])){
                         </div>
                     </div>
                     <div class="playground-content">
-                        <a class="btn-playground mt-1-4px" href="../Playground-Code-Edit">PlayGround <i class="fa-solid fa-code fa-lg ml-1-4px mt-1-4px" style="color: #ffffff;"></i></a>
+                        <a class="btn-playground mt-1-4px" href="../Playground-Code-Edit" target="_blank">PlayGround <i class="fa-solid fa-code fa-lg ml-1-4px mt-1-4px" style="color: #ffffff;"></i></a>
                         
                     </div>
                 </div>

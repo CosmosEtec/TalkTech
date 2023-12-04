@@ -79,10 +79,10 @@ echo true === $settingPW ? "Setup" : "Login";
 		if (true === $settingPW) {
 			echo '<div id="pwReqs">'.
 				 '<div class="text" style="display: inline-block" id="pwChars">10+</div> &nbsp; ' .
-				 '<div class="text" style="display: inline-block" id="pwUpper">upper</div> &nbsp; ' .
-				 '<div class="text" style="display: inline-block" id="pwLower">lower</div> &nbsp; ' .
-				 '<div class="text" style="display: inline-block" id="pwNum">number</div> &nbsp; ' .
-				 '<div class="text" style="display: inline-block" id="pwSpecial">special</div>' .
+				 '<div class="text" style="display: inline-block" id="pwUpper">Caixa Alta</div> &nbsp; ' .
+				 '<div class="text" style="display: inline-block" id="pwLower">Caixa Baixa</div> &nbsp; ' .
+				 '<div class="text" style="display: inline-block" id="pwNum">Número</div> &nbsp; ' .
+				 '<div class="text" style="display: inline-block" id="pwSpecial">Caractere Especial</div>' .
 				 '</div>';
 		}
 		?><br>
