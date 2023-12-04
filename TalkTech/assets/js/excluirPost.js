@@ -26,7 +26,11 @@ function excluirPost(id){
         confirmButtonText: "OK!"
       }).then((result) => {
         if (result.isConfirmed) {
-            location.reload();
+            if(window.location.href.includes('postagem.php')){
+              window.location.href = 'Home.php';
+            }else{
+              window.location.reload();
+            }
         }
       });
     }else{

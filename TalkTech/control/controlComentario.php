@@ -16,6 +16,8 @@
         $comentario = new Comentario();
         $comentario->setIdPostagem($post);
         $comentarios = DaoComentario::buscarComentariosPost($comentario);
+
+       
         
         foreach($comentarios as $comentario){
             $perfil = new Perfil();
@@ -27,14 +29,8 @@
                 <div class="align-config-comment">
                     <div class="post-config" >
                         <i class="fa-solid fa-ellipsis fa-lg" style="color: #ffffff;"></i>
-                            <div class="post-config-content" style="max-height: 42px;">
-                                
-                                
-                                    <a href="ai" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can fa-sm mr-1" style="color: #ffffff;"></i></a>;
-                                
-                                   
-                                
-                                
+                            <div class="post-config-content" style="max-height: 42px;">   
+                                <a href="ai" class="post-config-item" style="color: #ffffff;">Excluir <i class="fa-solid fa-trash-can fa-sm mr-1" style="color: #ffffff;"></i></a>;                            
                             </div>
                     </div>
                 </div>
@@ -53,11 +49,6 @@
             echo '</a>
             <p class="p3 comentario-p3 mb-1">'.$comentario['comentario'].'</p>
             </div>
-
-            <button id="like-heart">
-                <i class="fa-regular fa-heart fa-lg my-2" style="color: #bd02c0;" id="heart-liked"></i>
-                <p class="ContReacao" id="'.$comentario['idPostagem'].'" >'.$comentario['QtdReacao'].'</p>
-            </button>
             </div>
             ';
         }

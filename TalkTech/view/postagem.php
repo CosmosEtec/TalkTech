@@ -20,7 +20,12 @@ $perfil = DaoPerfil::buscarDados($perfil);
 $post = $_GET['idPost'];
 $postagem = new Postagem();
 $postagem->setIdPostagem($post);
-$postagem = DaoPostagem::buscarDadosId($postagem);
+if(DaoPostagem::buscarDadosId($postagem) == null){
+    header("Location: Home.php");
+}else{
+    $postagem = DaoPostagem::buscarDadosId($postagem);
+}
+
 $oReacao = new Reacao();
 $oReacao->setIdPostagem($post);
 $oReacao->setIdPerfil($_SESSION["login-id"]);

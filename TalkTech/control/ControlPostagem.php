@@ -115,6 +115,9 @@ function mostrarPostsUsuario($perfil){
         $reacoes = new Reacao();
         $reacoes->setIdPostagem($Postagem['idPostagem']);
         $reacoes = DaoReacao::buscarReacoesPost($reacoes);
+        $oReacao = new Reacao();
+        $oReacao->setIdPostagem($Postagem['idPostagem']);
+        $oReacao->setIdPerfil($_SESSION['login-id']);
 
         $comentarios = new Comentario();
         $comentarios->setIdPostagem($Postagem['idPostagem']);
@@ -171,9 +174,13 @@ function mostrarPostsUsuario($perfil){
             };
             echo '<div class="post-interactions mt-2">
                     <div class="like-heart-comment-container">
-                        <button id="like-heart">
-                            <i value='.$Postagem['idPostagem'].' class="fa-solid fa-heart fa-2xl heart-liked my-2" style="color: #bd02c0;" id="heart-liked"></i>
-                            <p class="ContReacao" id="'.$Postagem["idPostagem"].'cr" >'.$reacoes.'</p>
+                        <button id="like-heart">';
+                        if(DaoReacao::buscarReacoesPostUsuario($oReacao)){
+                            echo '<i value='.$Postagem['idPostagem'].' class="fa-solid fa-heart fa-2xl my-2" style="color: #bd02c0;" id="heart-liked"></i>';
+                        }else{
+                            echo '<i value='.$Postagem['idPostagem'].' class="fa-regular fa-heart fa-2xl my-2" style="color: #d1d1d1;" id="heart-liked"></i>';
+                        }
+                         echo '<p class="ContReacao" id="'.$Postagem["idPostagem"].'cr" >'.$reacoes.'</p>
                         </button>
 
                         <button class="mt-1-4px comment" id="comment">
