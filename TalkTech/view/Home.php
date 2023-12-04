@@ -269,7 +269,13 @@ $perfil = DaoPerfil::buscarDados($perfil);
                     
                         <img class="profile-pic-img" src="../<?php echo $perfil['fotoPerfil']?>" alt="">
                     </div>
-                <h4><?php echo $perfil['apelido']?></h4>
+                <h4><?php 
+                if($perfil['apelido'] == null){
+                    echo '@'.$perfil['nome'];
+                }else{
+                    echo $perfil['apelido'];
+                }
+                ?></h4>
                
                 <a class="create-post-card-button mt-2 create-post">
                         <span class="ml-1-4px"><h4 class="bold">Criar Postagem</h4></span>
