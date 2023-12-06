@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/12/2023 às 01:21
+-- Tempo de geração: 06/12/2023 às 03:37
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -81,6 +81,21 @@ CREATE TABLE `tbcomentario` (
   `dataComentario` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Despejando dados para a tabela `tbcomentario`
+--
+
+INSERT INTO `tbcomentario` (`idComentario`, `idPostagem`, `idPerfil`, `comentario`, `dataComentario`) VALUES
+(19, 85, 26, 'Tenho vontade de aprender a utilizar melhor ele no meu dia a dia', '2023-12-06'),
+(20, 86, 25, 'já estou com saudades de SE e montar o Winguinho! ', '2023-12-06'),
+(21, 94, 25, 'Sim, mas felizmente não foi pra frente!!!', '2023-12-06'),
+(22, 94, 27, 'Ainda bem que não deu certo, mó medo de ser cobrado por hora jogada kkk', '2023-12-06'),
+(23, 96, 28, 'Amigo!! vou dar uma olhada depois', '2023-12-06'),
+(24, 85, 28, 'Uso muito para fazer resumos !!', '2023-12-06'),
+(25, 99, 25, 'Sou péssimo com front ', '2023-12-06'),
+(26, 99, 29, 'Eu salvo o Goes no front toda tarefa de PW!! kkkkk', '2023-12-06'),
+(27, 93, 29, 'tão viciado que vai começar a fazer jogo tambem kkk', '2023-12-06');
+
 -- --------------------------------------------------------
 
 --
@@ -101,7 +116,13 @@ CREATE TABLE `tbconteudo` (
 
 INSERT INTO `tbconteudo` (`idConteudo`, `idPostagem`, `idPerfil`, `arquivo`, `src`) VALUES
 (21, 85, 23, 'png', '../user/alinemendonca/posts/85.png'),
-(22, 86, 23, 'png', '../user/alinemendonca/posts/86.png');
+(22, 86, 23, 'png', '../user/alinemendonca/posts/86.png'),
+(23, 93, 25, 'png', '../user/SrGoes/posts/93.png'),
+(24, 96, 27, 'png', '../user/Caio/posts/96.png'),
+(26, 99, 28, 'png', '../user/Yolanda/posts/99.png'),
+(27, 101, 29, 'png', '../user/Lorena/posts/101.png'),
+(28, 102, 30, 'jpg', '../user/Inina/posts/102.jpg'),
+(29, 103, 30, 'jpg', '../user/Inina/posts/103.jpg');
 
 -- --------------------------------------------------------
 
@@ -125,7 +146,13 @@ CREATE TABLE `tbperfil` (
 --
 
 INSERT INTO `tbperfil` (`idPerfil`, `nome`, `apelido`, `email`, `senha`, `fotoPerfil`, `biografia`, `perfilPrivado`) VALUES
-(23, 'alinemendonca', 'Prof Aline', 'profalinemendonca@gmail.com', '8278bc2ab97087aaa05a705e9c5d9dfa392b985b', 'user/alinemendonca/fotoperfil.png', 'Sou Prof. na área de tecnologia há 20 anos', 0);
+(23, 'alinemendonca', 'Prof Aline', 'profalinemendonca@gmail.com', '8278bc2ab97087aaa05a705e9c5d9dfa392b985b', 'user/alinemendonca/fotoperfil.png', 'Sou Prof. na área de tecnologia há 20 anos', 0),
+(25, 'SrGoes', 'Steve', 'gabrielgaldino205@outlook.com', '01391009769ac79e51e75a3bd6821ac71564d7f7', 'user/SrGoes/fotoperfil.jpg', ':D ', 0),
+(26, 'Eduardo', 'Dudu', 'eduardoalvesazevedo12@gmail.com', '4d750439e3f39848345c6ef74ef3d719e34e7111', 'user/Eduardo/fotoperfil.jpg', 'Estudo na ETEC CT\r\nIdade 18\r\n', 0),
+(27, 'Caio', NULL, 'caiorasgabucho@gmail.com', '4d750439e3f39848345c6ef74ef3d719e34e7111', 'user/Caio/fotoperfil.jpg', 'Tenho 18 Anos\r\nSP-Capital', 0),
+(28, 'Yolanda', 'Landa', 'narutozx222@gmail.com', '4d750439e3f39848345c6ef74ef3d719e34e7111', 'user/Yolanda/fotoperfil.jpg', 'Idade: 18\r\nSou da CT\r\n', 0),
+(29, 'Lorena', 'Lolo', 'lorenaarj0@gmail.com', '4d750439e3f39848345c6ef74ef3d719e34e7111', 'user/Lorena/fotoperfil.jpg', 'Tenho 18 Anos\r\nSou da ETEC CT\r\nSou Fullstack', 0),
+(30, 'Inina', 'Isis', 'inina2005@gmail.com', '4d750439e3f39848345c6ef74ef3d719e34e7111', 'user/Inina/fotoperfil.jpg', 'Assistente em Teltec Solutions São Paulo\r\n', 0);
 
 -- --------------------------------------------------------
 
@@ -158,7 +185,14 @@ CREATE TABLE `tbpostagem` (
 
 INSERT INTO `tbpostagem` (`idPostagem`, `idPerfil`, `Conteudo`, `legenda`, `dataPost`) VALUES
 (85, 23, 1, 'Como o chat GPT poderá impactar na carreira de desenvolvedor nós próximos anos', '2023-11-30 01:12:46'),
-(86, 23, 1, 'Como a robótica vem se tornando primordial na automatização de processos \r\n', '2023-11-30 01:16:50');
+(86, 23, 1, 'Como a robótica vem se tornando primordial na automatização de processos \r\n', '2023-11-30 01:16:50'),
+(93, 25, 1, 'Recomendo d+ o Game Maker pra quem quer começar a desenvolver um game!\r\n', '2023-12-06 02:06:09'),
+(94, 26, 0, 'Mano, vocês viram que estão querendo fazer ser pago a Unreal Engine?', '2023-12-06 02:09:25'),
+(96, 27, 1, 'Recomendo muito o Sass, bem mais facil de estilizar as paginas!', '2023-12-06 02:32:35'),
+(99, 28, 1, 'Codando!!', '2023-12-06 02:56:02'),
+(101, 29, 1, 'já viram esse novo navegador?? ele tem diversas funções para devs', '2023-12-06 03:11:18'),
+(102, 30, 1, 'Iai, gostou? Vem!', '2023-12-06 03:21:29'),
+(103, 30, 1, 'Vi uma matéria do G1 hoje que dizia que tecnologia em Análise e Desenvolvimento de Sistemas, é a profissão do momento!', '2023-12-06 03:23:50');
 
 -- --------------------------------------------------------
 
@@ -173,6 +207,34 @@ CREATE TABLE `tbreação` (
   `idPerfil` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Despejando dados para a tabela `tbreação`
+--
+
+INSERT INTO `tbreação` (`idReação`, `idPostagem`, `idComentario`, `idPerfil`) VALUES
+(73, 86, NULL, 26),
+(74, 93, NULL, 26),
+(75, 94, NULL, 25),
+(76, 86, NULL, 25),
+(77, 85, NULL, 25),
+(79, 94, NULL, 27),
+(80, 93, NULL, 27),
+(81, 86, NULL, 27),
+(82, 96, NULL, 27),
+(83, 99, NULL, 28),
+(84, 96, NULL, 28),
+(85, 94, NULL, 28),
+(86, 93, NULL, 28),
+(87, 86, NULL, 28),
+(88, 85, NULL, 28),
+(89, 99, NULL, 25),
+(90, 99, NULL, 29),
+(91, 93, NULL, 29),
+(92, 96, NULL, 29),
+(93, 86, NULL, 29),
+(94, 85, NULL, 29),
+(95, 102, NULL, 30);
+
 -- --------------------------------------------------------
 
 --
@@ -184,6 +246,18 @@ CREATE TABLE `tbseguidor` (
   `idPerfilSeguidor` int(11) NOT NULL,
   `idPerfilSeguido` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tbseguidor`
+--
+
+INSERT INTO `tbseguidor` (`idSeguidor`, `idPerfilSeguidor`, `idPerfilSeguido`) VALUES
+(21, 28, 23),
+(22, 29, 25),
+(23, 29, 23),
+(24, 30, 29),
+(25, 30, 25),
+(26, 30, 23);
 
 --
 -- Índices para tabelas despejadas
@@ -289,19 +363,19 @@ ALTER TABLE `tbcargo`
 -- AUTO_INCREMENT de tabela `tbcomentario`
 --
 ALTER TABLE `tbcomentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de tabela `tbconteudo`
 --
 ALTER TABLE `tbconteudo`
-  MODIFY `idConteudo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `idConteudo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `tbperfil`
 --
 ALTER TABLE `tbperfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de tabela `tbperm`
@@ -313,19 +387,19 @@ ALTER TABLE `tbperm`
 -- AUTO_INCREMENT de tabela `tbpostagem`
 --
 ALTER TABLE `tbpostagem`
-  MODIFY `idPostagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `idPostagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT de tabela `tbreação`
 --
 ALTER TABLE `tbreação`
-  MODIFY `idReação` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `idReação` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT de tabela `tbseguidor`
 --
 ALTER TABLE `tbseguidor`
-  MODIFY `idSeguidor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idSeguidor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Restrições para tabelas despejadas
