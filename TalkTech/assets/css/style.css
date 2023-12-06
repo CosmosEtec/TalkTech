@@ -2206,6 +2206,7 @@ input[type=search].search-field-input:focus {
 
 .container-profile-user {
   width: 100%;
+  padding-top: 40px;
 }
 
 .container-profile-user-info {
@@ -2278,6 +2279,7 @@ input[type=search].search-field-input:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 80px;
 }
 
 .contador-letras {
