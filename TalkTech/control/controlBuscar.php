@@ -7,6 +7,14 @@ session_start();
 
 $escrito = $_POST['escrito'];
 
+if($escrito == ''){
+    $data = [
+        'nome' => 'Nenhum perfil encontrado',
+        'descricao' => 'Nenhum perfil encontrado',
+        'imagem' => ''
+    ];
+    echo json_encode($data);
+}
 $perfil = new Perfil();
 $perfil->setNome($escrito);
 if(DaoPerfil::procurarPerfil($perfil)){
