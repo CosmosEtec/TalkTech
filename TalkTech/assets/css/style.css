@@ -1715,6 +1715,14 @@ img.profile-pic-img {
   border-radius: 50%;
 }
 
+.profile-pic-codigo {
+  width: 150px !important;
+  height: 150px !important;
+  border: 2px solid #edeaef;
+  border-radius: 50%;
+  overflow: hidden; /* Para garantir que a imagem fique dentro do contêiner */
+}
+
 .container-content-post {
   width: 100%;
 }

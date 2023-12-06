@@ -265,7 +265,7 @@ $perfil = DaoPerfil::buscarDados($perfil);
                     </div>
                 </div>
                 
-                    <div class="profile-pic mt-1">
+                    <div class="profile-pic-codigo mt-1">
                     
                         <img class="profile-pic-img" src="../<?php echo $perfil['fotoPerfil']?>" alt="">
                     </div>
