@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29/11/2023 às 22:50
+-- Tempo de geração: 06/12/2023 às 01:21
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -95,6 +95,14 @@ CREATE TABLE `tbconteudo` (
   `src` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Despejando dados para a tabela `tbconteudo`
+--
+
+INSERT INTO `tbconteudo` (`idConteudo`, `idPostagem`, `idPerfil`, `arquivo`, `src`) VALUES
+(21, 85, 23, 'png', '../user/alinemendonca/posts/85.png'),
+(22, 86, 23, 'png', '../user/alinemendonca/posts/86.png');
+
 -- --------------------------------------------------------
 
 --
@@ -111,6 +119,13 @@ CREATE TABLE `tbperfil` (
   `biografia` varchar(160) DEFAULT NULL,
   `perfilPrivado` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tbperfil`
+--
+
+INSERT INTO `tbperfil` (`idPerfil`, `nome`, `apelido`, `email`, `senha`, `fotoPerfil`, `biografia`, `perfilPrivado`) VALUES
+(23, 'alinemendonca', 'Prof Aline', 'profalinemendonca@gmail.com', '8278bc2ab97087aaa05a705e9c5d9dfa392b985b', 'user/alinemendonca/fotoperfil.png', 'Sou Prof. na área de tecnologia há 20 anos', 0);
 
 -- --------------------------------------------------------
 
@@ -136,6 +151,14 @@ CREATE TABLE `tbpostagem` (
   `legenda` varchar(450) NOT NULL,
   `dataPost` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tbpostagem`
+--
+
+INSERT INTO `tbpostagem` (`idPostagem`, `idPerfil`, `Conteudo`, `legenda`, `dataPost`) VALUES
+(85, 23, 1, 'Como o chat GPT poderá impactar na carreira de desenvolvedor nós próximos anos', '2023-11-30 01:12:46'),
+(86, 23, 1, 'Como a robótica vem se tornando primordial na automatização de processos \r\n', '2023-11-30 01:16:50');
 
 -- --------------------------------------------------------
 
@@ -266,19 +289,19 @@ ALTER TABLE `tbcargo`
 -- AUTO_INCREMENT de tabela `tbcomentario`
 --
 ALTER TABLE `tbcomentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `tbconteudo`
 --
 ALTER TABLE `tbconteudo`
-  MODIFY `idConteudo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idConteudo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `tbperfil`
 --
 ALTER TABLE `tbperfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de tabela `tbperm`
@@ -290,19 +313,19 @@ ALTER TABLE `tbperm`
 -- AUTO_INCREMENT de tabela `tbpostagem`
 --
 ALTER TABLE `tbpostagem`
-  MODIFY `idPostagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `idPostagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT de tabela `tbreação`
 --
 ALTER TABLE `tbreação`
-  MODIFY `idReação` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idReação` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT de tabela `tbseguidor`
 --
 ALTER TABLE `tbseguidor`
-  MODIFY `idSeguidor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idSeguidor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Restrições para tabelas despejadas
