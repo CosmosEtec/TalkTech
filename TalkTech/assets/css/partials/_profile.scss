@@ -15,13 +15,19 @@
     transition: .5s ease;
 }
 
-.imagem-fds{
-    width: 150px;
+.imagem-fds {
+    width: 200px;
     height: 150px;
     border-radius: 50%;
     border: 0;
-    transition: 0.4s ease-in-out;
-    
+    overflow: hidden; /* Para garantir que a imagem fique dentro do contêiner */
+}
+
+img.imagem-fds {
+    max-width: 100%; /* Define a largura máxima como 100% do contêiner */
+    max-height: 100%; /* Define a altura máxima como 100% do contêiner */
+    object-fit: cover; /* Redimensiona a imagem para preencher o contêiner sem distorção */
+    border-radius: 50%;
 }
 
 .opacity-low{

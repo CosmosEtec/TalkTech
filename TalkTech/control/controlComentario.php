@@ -34,8 +34,10 @@
                             </div>
                     </div>
                 </div>
-                <div class="post-comment-profile-pic">
-                    <img src="../'.$perfil['fotoPerfil'].'">
+                <div class="profile-pic  ">
+                    <a href="profile.php?id='.$perfil['idPerfil'].'">
+                        <img class="profile-pic-img" src="../'.$perfil['fotoPerfil'].'" alt="">
+                    </a>
                 </div>
             <div class="flex-column ml-1-4px">
             <a href="../view/profile.php?id='.$perfil["idPerfil"].'">';

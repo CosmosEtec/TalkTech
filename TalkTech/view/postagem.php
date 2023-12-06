@@ -227,7 +227,7 @@ $perfilPost = DaoPerfil::buscarDados($perfilPost);
             </div>
             <div class="profile-top-post">
                 <div class="profile-pic">
-                    <img class="profile-pic-img" src="../<?php echo $perfilPost["fotoPerfil"] ?>" alt="">
+                    <img class="profile-pic-img mt-1-4px" src="../<?php echo $perfilPost["fotoPerfil"] ?>" alt="">
                 </div>
                 <div class="profile-username flex-column ml-1">
                     <h4><?php 

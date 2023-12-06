@@ -1701,12 +1701,17 @@ header {
 }
 
 .profile-pic {
-  width: 50px;
-  height: 50px;
+  width: 42px !important;
+  height: 42px !important;
   border-radius: 50%;
+  overflow: hidden; /* Para garantir que a imagem fique dentro do contêiner */
 }
 
 img.profile-pic-img {
+  width: 100%; /* Para preencher todo o espaço disponível */
+  height: 100%; /* Para preencher todo o espaço disponível */
+  -o-object-fit: cover;
+     object-fit: cover; /* Redimensiona a imagem para preencher o contêiner sem distorção */
   border-radius: 50%;
 }
 
@@ -1839,12 +1844,6 @@ img.profile-pic-img {
 }
 .post-comment-cell:hover {
   opacity: 0.8;
-}
-.post-comment-cell .post-comment-profile-pic {
-  width: 35px;
-}
-.post-comment-cell .post-comment-profile-pic img {
-  border-radius: 50%;
 }
 .post-comment-cell .post-config-content {
   right: 2%;
@@ -2132,10 +2131,6 @@ input[type=search].search-field-input:focus {
   width: 98%;
   border-radius: 8px;
 }
-#suggestionList .profile-pic {
-  width: 30px;
-  height: 30px;
-}
 
 #suggestionList a {
   display: flex;
@@ -2168,11 +2163,19 @@ input[type=search].search-field-input:focus {
 }
 
 .imagem-fds {
-  width: 150px;
+  width: 200px;
   height: 150px;
   border-radius: 50%;
   border: 0;
-  transition: 0.4s ease-in-out;
+  overflow: hidden; /* Para garantir que a imagem fique dentro do contêiner */
+}
+
+img.imagem-fds {
+  max-width: 100%; /* Define a largura máxima como 100% do contêiner */
+  max-height: 100%; /* Define a altura máxima como 100% do contêiner */
+  -o-object-fit: cover;
+     object-fit: cover; /* Redimensiona a imagem para preencher o contêiner sem distorção */
+  border-radius: 50%;
 }
 
 .opacity-low {
